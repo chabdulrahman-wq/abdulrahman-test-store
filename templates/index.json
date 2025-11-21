@@ -61,76 +61,6 @@
         "main_Golime_New_Banner_hppb_box_btm_content_right_title": "Proudly Canadian"
       }
     },
-    "featured_product_83NNCx": {
-      "type": "featured-product",
-      "blocks": {
-        "text_JGfFdT": {
-          "type": "text",
-          "settings": {
-            "text": "{{ section.settings.product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
-        "title_9AxzD6": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price_kdUdHX": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_cgwk4W": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector_8bqVX8": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_mWpRLD": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "share_4wxW6D": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        }
-      },
-      "block_order": [
-        "text_JGfFdT",
-        "title_9AxzD6",
-        "price_kdUdHX",
-        "variant_picker_cgwk4W",
-        "quantity_selector_8bqVX8",
-        "buy_buttons_mWpRLD",
-        "share_4wxW6D"
-      ],
-      "name": "t:sections.featured-product.presets.name",
-      "settings": {
-        "product": "",
-        "color_scheme": "",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "golime_banner_pmWTAg": {
       "type": "Golime-banner",
       "name": "Golime Banner",
@@ -625,7 +555,6 @@
   },
   "order": [
     "golime_new_banner_home_page_Pkq7RX",
-    "featured_product_83NNCx",
     "golime_banner_pmWTAg",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
