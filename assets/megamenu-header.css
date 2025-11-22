@@ -1,0 +1,1638 @@
+.Golime-header-new-section {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: -60px; 
+  transition: all 0.4s ease;
+  /* padding-top: 12px !important; */
+}
+
+.Golime-header-new-section.show {
+  top: 0;
+  transform: translateY(0);
+  transition: all .3s ease-in-out !important;
+}
+
+.main-box-golime-header-infofaqs-right-text-box_links {
+    text-decoration: none;
+}
+
+.Golime-header-new-section.hide {
+  top: -60px;
+  transform: translateY(-40px);
+  transition: all .3s 
+ease-in-out !important;
+}
+
+.Golime-header-new-section.at-top {
+      top: 47px;
+  transition: all .3s 
+ease-in-out !important;
+}
+
+
+.Golime-header-new-section.active-blur {
+  position: fixed;
+  /* top: 0; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000004d;
+  z-index: 999;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.Section-golime-new-header {
+  padding: 12px;
+    width: 100%;
+    max-width: 1437px;
+    margin: 0 auto;
+}
+
+.container-header-golime {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  border-radius: 50px;
+  background: #ffffff95;
+  border: 1px solid #0005;
+  backdrop-filter: blur(10px) !important;
+}
+
+.flex-header-Golime-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.main-nav-logo-header-golime {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-logo-images-box-header {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-images {
+  max-width: 40px;
+  width: 100%;
+  display: flex;
+}
+
+.main-none-logo-header {
+  width: 65px;
+}
+
+.main-logo-img-none-header {
+  max-width: 60px;
+  margin-left: 5px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navs-links-header-ul-golime-section {
+  padding-left: 20px;
+  display: flex;
+}
+
+.desktop-menu-list-header-golime {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 3px 0;
+}
+
+.desktop-menu-list-header-golime-li-hover,
+.desktop-menu-list-header-golime-li {
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.desktop-menu-list-header-golime-li-a-hover {
+  color: #2f7400;
+  display: flex;
+  padding: 8px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: #cef34e;
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.main-icon-down-section-header {
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.desktop-menu-list-header-golime-li-a {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  padding: 15px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.desktop-menu-list-header-golime-li-Retail {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  padding: 15px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.desktop-menu-list-header-golime-li-about {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  padding: 15px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.desktop-menu-list-header-golime-li-Commercial {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  padding: 15px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.main-all-icon-box-header-seciton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 30%;
+}
+
+.golime-search-icon {
+  display: flex;
+  align-items: center;
+}
+
+.main-icon-search-header-box {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.mian-images-icon-search-box-header {
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-images-icon-search-box-header-img {
+  width: 30px;
+  height: 30px;
+}
+
+.desktop-menu-list-header-golime-li-a:hover {
+  color: #454545;
+  background: #eee;
+  box-shadow: 0 0 5px transparent;
+}
+.desktop-menu-list-header-golime-li-about:hover {
+  color: #454545;
+  background: #eee;
+  box-shadow: 0 0 5px transparent;
+}
+
+.desktop-menu-list-header-golime-li-Commercial:hover {
+  color: #454545;
+  background: #eee;
+  box-shadow: 0 0 5px transparent;
+}
+
+.desktop-menu-list-header-golime-li-Retail:hover {
+  color: #454545;
+  background: #eee;
+  box-shadow: 0 0 5px transparent;
+}
+
+.sub-golime-cart-icon {
+  display: block;
+  padding: 0 21px 0 20px;
+}
+
+.sub-icon-golime-cart-icon-box-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+}
+
+.main-sub-icon-golime-cart-icon-images-img {
+  width: 27px;
+  height: 27px;
+  margin: 0 4px 4px 0;
+}
+
+.sub-phone-number-tel-box {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  background: #d7fa96;
+  border-radius: 50px;
+  justify-content: center;
+}
+
+.main-call-number-golime-header {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateX(-10px);
+  transition: all 0.4s ease-in-out;
+  padding: 0 0px;
+}
+
+.sub-phone-number-tel-box:hover .main-call-number-golime-header {
+  opacity: 1;
+  max-width: 200px;
+  transform: translateX(0);
+  padding: 0 10px;
+}
+
+.call-icon-phones-nember-section-header {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+.call-icon-phones-nember-section-header-images-box {
+  display: flex;
+}
+
+.call-icon-phones-nember-section-header-images-img {
+  max-width: 24px;
+  width: 100%;
+}
+
+.golime-search-bar-wrapper {
+  display: none;
+  background: white;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px 50px;
+  box-shadow: 0 0 10px #ccc;
+  z-index: 1000;
+  position: relative;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 10px 0px;
+}
+
+.search-bar-container input.search-input {
+  border: none;
+  flex: 1;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 50px;
+}
+
+.search-bar-container button.search-button {
+  background-color: #7ed321;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-tags-button {
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  border-radius: 25px;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.search-tags-button:hover {
+  background-color: #f0f0f0;
+}
+
+.main-golime-new-header-11-boxs-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: #656565;
+  border-radius: 24px;
+  align-items: stretch;
+}
+
+.main-box-sub-golime-header-box-flex-golime-left-box {
+  display: flex;
+  width: 69%;
+  justify-content: flex-start;
+  padding-right: 8px;
+  align-items: flex-start;
+}
+
+.main-golime-tab-navtabdiv-flex-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: fit-content;
+  width: 100%;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.main-golime-tab-tn-main-header {
+  display: flex;
+  cursor: pointer;
+  background: #fff !important;
+  overflow: hidden;
+  padding: 31px;
+  border-radius: 10px;
+  transition: opacity .5s ease-in-out;
+  height: 148px;
+}
+
+.Main_golime_tab_tn_main_header_a {
+    width: 32.2%;
+    text-decoration: none;
+}
+
+.main-get-images-box-tab-main-header-box {
+  margin-bottom: 0;
+  margin-right: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.golime-img-tab-header-box-images {
+  max-width: 80px !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 auto;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-golime-header-box-tab-title-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.get-navtab-title-para {
+  font-size: 14px;
+  color: #454545;
+  transition: all 0.5s ease-in-out;
+  letter-spacing: 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+.get-navtab-title-para-heading {
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 0;
+  color: #454545;
+  letter-spacing: 0;
+  opacity: 0;
+  display: none;
+  width: 82%;
+}
+
+.main-golime-title-tan-nav-icons {
+  min-width: 36px;
+  height: 36px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid #cacaca;
+}
+
+.main-box-sub-golime-header-box-flex-golime-right-box {
+  width: 31%;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 16px;
+  height: auto;
+}
+
+.main-rightcbflex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.main-golime-header-rightcbflex-box {
+  position: relative;
+  height: 226px;
+  display: block;
+}
+
+.main-golime-header-golime-right-box-logo-goflex {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.main-golime-header-golime-right-box-logo-goflex-img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.main-golime-header-main-heading-main-text-righe-box {
+  position: absolute;
+  bottom: 0;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  width: 80%;
+  z-index: 2;
+}
+
+.main-golime-header-main-heading-main-text-h4 {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  width: 70%;
+}
+
+.main-golime-header-main-heading-main-text-para {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.main-golime-header-right-flex-col-images-box {
+  height: 100%;
+}
+
+.main-golime-header-right-flex-col-images-box-img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(1);
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.main-golime-header-right-flex-col-images-box-img1 {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(1);
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.main-golime-right-box-tab-icon-box {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #70bc0e;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-golime-new-header-11-boxs-section {
+  display: none;
+  padding: 12px 0 0;
+  height: fit-content;
+  overflow-y: scroll;
+  scrollbar-width: none !important;
+}
+
+.fa-chevron-down {
+  transition: transform 0.3s ease;
+}
+
+.fa-chevron-down.rotate-icon {
+  transform: rotate(180deg);
+}
+
+.main-golime-header-banner-info-faqs-box-tab {
+  padding: 12px 0 0;
+  height: fit-content;
+  display: none;
+  overflow-y: scroll;
+  scrollbar-width: none !important;
+}
+
+.main-golime-header-banner-info-faqs-box-tab-flex {
+  display: flex;
+  justify-content: space-between;
+  background: #989898;
+  padding: 10px;
+  border-radius: 16px;
+  gap: 8px;
+}
+
+.main-left-Alldata-text-heading-images-box-infofaqs {
+  width: 82%;
+}
+
+.FAQ-main-text-para-box-col-tab-h4text {
+  line-height: 1.2;
+  font-size: 14px;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  color: #454545;
+}
+
+.FAQ-main-text-para-box-col-tab-p-para {
+  line-height: 1.2;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  color: #454545;
+}
+
+.main-golime-header-info-faq-box-left-col {
+  width: 33.6%;
+  display: block;
+  padding: 20px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(
+    circle at bottom left,
+    #fff 10% 20%,
+    #fff 30% 40%
+  );
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.main-golime-header-blog-left-tab-flex-sdiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.main-golime-header-blog-left-tab-sdiv-abox {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0;
+  color: #454545 !important;
+  line-height: 1.2;
+  border: 1px solid #d9d9d9;
+  padding: 6px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: capitalize;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-golime-main-box-lefcol-tab-view-all-box {
+  color: #70bc0e;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration-color: transparent;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+  text-underline-offset: 3px;
+  letter-spacing: 0;
+}
+
+.main-fq-nav-images-box-flex-left-box {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  bottom: -100px;
+}
+
+.main-fq-nav-images-box-flex-left-box-img {
+  width: 260px;
+  object-fit: cover;
+
+  height: 200px;
+}
+
+.get-nav-box-content-icpon-box-flex {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #70bc0e;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-golime-header-info-faq-box-right-col {
+  width: 65.4%;
+}
+
+.main-box-golime-header-infofaqs-right-text-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  height: 182px;
+  width: 100%;
+}
+
+.main-box-golime-header-infofaqs-right-data-text-box {
+  line-height: 1.2;
+  font-size: 20px;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  color: #454545;
+}
+
+.main-box-golime-header-infofaqs-right-data-para-box {
+  font-size: 12px;
+  letter-spacing: 0;
+  color: #454545;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.fa-solid.fa-chevron-right.Icon {
+    color: #70BC0E !important;
+}
+
+.fa-solid.fa-chevron-right {
+    font-size: 14px !important;
+    color: white !important;
+    margin: 0 !important;
+}
+
+.main-golime-tab-tn-main-header:hover .fa-solid.fa-chevron-right{
+  color: white !important;
+}
+
+.main-box-golime-header-infofaqs-right-data-images-box {
+  width: 48%;
+  margin-right: -85px;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-box-golime-header-infofaqs-right-data-images-box-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-box-golime-header-infofaqs-right-data-icon-box {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #70bc0e;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-golime-tab-tn-main-header:hover {
+      background: url(//golime.com/cdn/shop/files/906ef984637c969aff1c150ab6ad10e6d33486a0_1.jpg?v=1751378872) no-repeat center center / cover !important;
+}
+.main-golime-tab-tn-main-header:hover img.golime-img-tab-header-box-images {
+  transform: scale(1.1);
+}
+.main-golime-tab-tn-main-header:hover .get-navtab-title-para-heading {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: move_subtitle 0.3s linear;
+}
+
+.main-golime-tab-tn-main-header:hover .main-golime-title-tan-nav-icons {
+  background: #70bc0e;
+  border-color: #70bc0e;
+}
+
+.main-box-sub-golime-header-box-flex-golime-right-box:hover
+  .main-golime-header-right-flex-col-images-box-img {
+  filter: grayscale(0);
+}
+
+.main-box-sub-golime-header-box-flex-golime-right-box:hover
+  .main-golime-right-box-tab-icon-box {
+  transform: translate(10px);
+}
+
+.main-box-sub-golime-header-box-flex-golime-right-box:hover
+  .main-golime-header-right-flex-col-images-box-img1 {
+  filter: grayscale(0);
+}
+
+.main-golime-header-info-faq-box-left-col:hover {
+  background-image: radial-gradient(
+    circle at bottom left,
+    #e8ea9e 10%,
+    #aee567,
+    #a6efa7,
+    #fff 40%
+  );
+  border-radius: 20px;
+}
+
+.main-golime-header-info-faq-box-left-col:hover
+  .main-fq-nav-images-box-flex-left-box {
+  bottom: -94px;
+}
+
+.main-box-golime-header-infofaqs-right-text-box:hover
+  .main-box-golime-header-infofaqs-right-data-images-box {
+  margin-right: -65px;
+}
+.main-box-golime-header-infofaqs-right-text-box:hover
+  .main-box-golime-header-infofaqs-right-data-icon-box {
+  transform: translate(10px);
+}
+
+.main-golime-header-info-faq-box-left-col:hover
+  .get-nav-box-content-icpon-box-flex {
+  transform: translate(10px);
+}
+
+.main-main-about-box-header-golime {
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    border-radius: 12px;
+    transition: all 0.5s 
+ease-in-out;
+}
+
+.About_main-main-about-box-header-golime:hover .main-golime-title-tan-nav-icons-about{
+    transform: translate(10px);
+}
+
+
+
+.About_main-main-about-box-header-golime {
+    position: relative;
+    width: 32.9%;
+    display: block;
+    text-decoration: none;
+    height: 300px;
+}
+
+.main-main-about-box-header-golime_links {
+  width: 32.9%;
+  position: relative;
+  display: block;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  height: 300px;
+  overflow: hidden;
+}
+
+.main-aboutgolime-header-main-2-box {
+  width: 32.9%;
+}
+
+.main-about-box-main-text-box-header-golime {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 16px;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-about-main-data-textandpara-header-golime {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 20px 0 0 20px;
+  width: 70%;
+}
+
+.main-about-main-data-text-box-h4 {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+}
+
+.main-about-main-data-para-box-p {
+  font-size: 13px;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.main-box-about-go-lime-video-box {
+  width: 100%;
+  height: 100%;
+}
+
+.main-box-about-go-lime-video-box-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: all 0.5s ease-in-out;
+  border-radius: 16px;
+}
+
+.main-golime-title-tan-nav-icons-about {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #70bc0e;
+  width: 30px;
+  height: 30px;
+  color: white !important;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-about-main-data-textandpara-header-golime-text-box2 {
+  width: 90%;
+}
+
+.main-about-main-data-text-box2-h4 {
+  color: #454545;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+}
+
+.main-about-main-data-para-box2-p {
+  font-size: 13px;
+  color: #454545;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.main-box-about-go-lime-video-box2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: -67px;
+  left: -40px;
+  right: 0;
+  margin: 0 auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.main-box-about-go-lime-video-box2-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-main-about-box-header-golime-3top-link {
+  position: relative;
+  background: #fff;
+  display: block;
+  padding: 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  height: 147px;
+}
+
+.main-golime-about-box-3-header-golime {
+  width: 86%;
+}
+
+.main-about-main-data-text-box3-h4 {
+  color: #454545;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+}
+
+.main-about-main-data-para-box3-p {
+  font-size: 13px;
+  color: #454545;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.main-main-about-box-header-golime-3bot {
+  position: relative;
+  background: #fff;
+  display: block;
+  padding: 25px;
+  border-radius: 16px;
+  text-decoration: none;
+  height: 147px;
+  margin-top: 8px;
+}
+
+.main-about-flex-header-golime {
+  display: flex;
+  justify-content: center;
+  background: #989898;
+  padding: 10px;
+  border-radius: 16px;
+  gap: 8px;
+  align-items: center;
+}
+
+.main-golime-header-banner-About-Go-Lime-box-tab {
+  display: none;
+  padding: 12px 0 0;
+  height: fit-content;
+  overflow-y: scroll;
+  scrollbar-width: none !important;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box-flex {
+  display: flex;
+  justify-content: center;
+  background: #989898;
+  padding: 10px;
+  border-radius: 16px;
+  gap: 8px;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box1 {
+  background: #fff;
+  display: block;
+  border-radius: 16px;
+  height: 250px;
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box2 {
+  background: #fff;
+  display: block;
+  cursor: pointer;
+  border-radius: 16px;
+  height: 250px;
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box-alldata {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in-out;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box-data-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 5;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box-data-text-h4 {
+  color: #454545;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box-data-text-para {
+  font-size: 13px;
+  color: #454545;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box1:hover {
+  background-image: url(//golime.com/cdn/shop/files/Go_Lime_Walmart.png?v=1752609045);
+  background-size: cover;
+  background-position: center;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box2:hover {
+  background-image: url(//golime.com/cdn/shop/files/Go_Lime_Home_Depot.png?v=1752609075);
+  background-size: cover;
+  background-position: center;
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box2:hover
+  .main-golime-title-tan-nav-icons-about {
+  transform: translate(10px);
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box1:hover
+  .main-golime-title-tan-nav-icons-about {
+  transform: translate(10px);
+}
+
+.main-golime-header-banner-Retail-Go-Lime-box-tab {
+  display: none;
+  padding: 12px 0 0;
+  height: fit-content;
+  overflow-y: scroll;
+  scrollbar-width: none !important;
+}
+
+.main-logo-images-box-header:hover img.main-logo-img-none-header {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box-flex {
+  display: flex;
+  justify-content: center;
+  background: #989898;
+  padding: 10px;
+  border-radius: 16px;
+  gap: 8px;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box1-tab {
+  background: #fff;
+  display: block;
+  background-image: url(//golime.com/cdn/shop/files/Go_Lime_in_Commercial_Space.png?v=1752609227);
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  height: 250px;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box2-tab {
+  background: #fff;
+  display: block;
+
+  border-radius: 12px;
+  height: 250px;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-free-box1-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box1-data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 5;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box1-data-text-h4 {
+  color: #454545;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  letter-spacing: 0;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box1-data-text-para {
+  font-size: 13px;
+  color: #454545;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.main-golime-header-banner-Commercial-Go-Lime-box-tab {
+  display: none;
+  padding: 12px 0 0;
+  height: fit-content;
+  overflow-y: scroll;
+  scrollbar-width: none !important;
+}
+
+.main-faq-text-box-rigle-col-tab-golime-header-flex {
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  width: 49.8%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.faqs-main-box-nav-flex-rightcolbotbox {
+  margin: 0 0 20px;
+}
+
+.faqs-main-box-nav-flex-rightcolbotbox-text-h4 {
+  line-height: 1.2;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  color: #454545;
+}
+
+.faqs-main-box-nav-flex-rightcolbotbox-text-para-p {
+  font-size: 13px;
+  letter-spacing: 0;
+  color: #454545;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.faq-nav-main-flex-right-bot-div-left-faqs-main {
+  margin: 0;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.faq-nav-main-flex-right-bot-div-left-faqs-main-box-1 {
+  border-bottom: 1px solid #ccc;
+      padding: 2px 0;
+}
+
+.faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex {
+  display: flex;
+  padding: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-nav-main-flex-right-bot-div-left-faqs-box-data-para {
+  font-size: 12px;
+  letter-spacing: 0;
+  color: #a3a3a3;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.fa-solid.fa-plus {
+  color: #a3a3a3;
+  font-size: 16px;
+  letter-spacing: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.faqs-main-box-nav-flex-right-col-bot-box-data-para {
+  font-size: 12px;
+  color: #454545;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.faqs-main-box-nav-flex-right-col-bot-box-data-para-none {
+  padding-top: 6px;
+  display: none;
+}
+
+.faqs-main-box-nav-flex-right-col-bot-box-data-span-text {
+  color: #70bc0e;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration-color: transparent;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+  text-underline-offset: 3px;
+  letter-spacing: 0;
+}
+
+.faq-toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-toggle-icon.rotate-cross {
+  transform: rotate(45deg);
+}
+
+.main-faq-and-images-video-box-bottom-flex {
+  display: flex;
+  /* justify-content: center; */
+  gap: 8px;
+  margin-top: 8px;
+}
+
+
+p {
+    margin: 0;
+}
+
+.Section-golime-new-header_black.active-style {
+    border-radius: 38px 38px 24px 24px;
+    padding: 12px;
+    background: #000000bf;
+}
+
+.menu-overlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000004d;
+    z-index: 9;
+    display: none;
+    backdrop-filter: blur(10px) !important;
+}
+
+.main-bar-number-golime-header {
+    display: none
+;
+}
+
+.navs-links-header-ul-golime-section-bot {
+    display: none;
+}
+
+.header-main-top-banner-text-golime-new-top-banner{
+    background: #CEF34E;
+    padding: 13px 50px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    max-height: 0;
+  opacity: 0;
+  transform: translateY(-20px); /* upar se neeche effect */
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.header-main-top-banner-text-golime-new-top-banner.show {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+      display: block;
+}
+
+.header-main-top-banner-text-golime-new-top-banner-content {
+    display: flex
+;
+    justify-content: center;
+    gap: 80px;
+}
+
+.header-main-top-banner-text-golime-new-top-banner-heading {
+    line-height: 1.2;
+}
+
+.header-main-top-banner-text-golime-new-top-banner-heading-span
+ {
+    color: #2F7400;
+    font-size: 20px;
+    letter-spacing: 0;
+    /* font-family: 'Avenir_LT_Std_85_Heavy' !important; */
+}
+
+.hide {
+  display: none !important;
+}
+
+.faq-slide-item_images_golime {
+  text-align: center;
+  padding: 5px;
+}
+
+.faq-slide-item_images_img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.owl-nav button {
+  background: rgba(0,0,0,0.5);
+  color: #fff !important;
+  padding: 5px 12px !important;
+  border-radius: 50%;
+  border: none;
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.owl-dot span {
+  background: #ddd !important;
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.owl-dot.active span {
+  background: #333 !important;
+}
+
+.main-faq-and-images-flex-2boxs-slider-images {
+    width: 49.2%;
+}
+
+@media screen and (max-width: 767px){
+    .desktop-menu-list-header-golime {
+    display: none;
+    align-items: center;
+    list-style: none;
+    margin: 3px 0;
+}
+.call-icon-phones-nember-section-header-images-img {
+    width: 16px;
+    height: 16px;
+}
+.main-bar-number-golime-header {
+    display: flex
+;
+}
+
+.fa-solid.fa-bars {
+    font-size: 20px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+
+.sub-images-icon-search-box-header-img {
+    width: 19px;
+        height: 19px;
+}
+
+.main-sub-icon-golime-cart-icon-images-img {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px 4px 0;
+}
+
+.sub-phone-number-tel-box {
+            height: 36px;
+        width: 36px;
+    /* margin-right: 10px; */
+    overflow-x: visible;
+}
+
+.main-bar-number-golime-header{
+        display: block;
+        padding: 0px 10px 0px 0;
+    }
+
+.sub-golime-cart-icon {
+    display: block;
+    padding: 0 5px;
+}
+
+.desktop-menu-list-header-golime-li-a-hover.bot {
+    background: #cef34e;
+    color: #000;
+    border: 1px solid transparent;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 0 5px transparent;
+}
+
+.desktop-menu-list-header-golime-li-a.bot {
+    border-radius: 10px;
+    background: #666;
+    padding: 8px 18px;
+    color: white;
+    justify-content: space-between;
+}
+
+.desktop-menu-list-header-golime-li-about.bot {
+    border-radius: 10px;
+    background: #666;
+    padding: 8px 18px;
+    
+    justify-content: space-between;
+    color: white;
+}
+.desktop-menu-list-header-golime-li-Retail.bot {
+    border-radius: 10px;
+    background: #666;
+    color: white;
+    padding: 8px 18px;
+    justify-content: space-between;
+}
+
+.desktop-menu-list-header-golime-li-Commercial.bot {
+    border-radius: 10px;
+    background: #666;
+    color: white;
+    padding: 8px 18px;
+    justify-content: space-between;
+}
+
+.desktop-menu-list-header-golime-bot {
+    width: 100%;
+    flex-direction: column;
+    display: flex
+;
+
+    gap: 6px;    
+    padding: 6px 0 0;
+}
+
+.cfame-left-golime {
+    width: 100%;
+}
+
+.cfame-right-golime {
+    display: none;
+
+  }
+h2.cfame-topdata-title-golime {
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+}
+
+.cfame-topdata-paradiv-golime {
+    width: 95%;
+    font-size: 16px;
+}
+
+.faq-item-golime-flex-icon-text h3 {
+    font-size: 20px;
+    width: 86%;
+    line-height: 1.4;
+}
+.cfame-topdata-golime {
+    margin: 0 0 48px;
+}
+.header-main-top-banner-text-golime-new-top-banner.show {
+    padding: 10px 15px;
+}
+.header-main-top-banner-text-golime-new-top-banner-content {
+    gap: 20px;
+}
+.header-main-top-banner-text-golime-new-top-banner-heading {
+    text-align: center;
+}
+
+.header-main-top-banner-text-golime-new-top-banner-heading-span {
+    font-size: 14px;
+}
+}
+@media screen and (max-width: 1150px) {
+    .main-all-icon-box-header-seciton {
+        width: 21.5%;
+    }
+    .navs-links-header-ul-golime-section {
+    padding-left: 30px;
+}
+li.desktop-menu-list-header-golime-li {
+    font-size: 9.4px;
+}
+
+.container-header-golime {
+    padding: 8px 10px;
+  }
+  
+
+  img.header-logo-images {
+    max-width: 25px;
+    object-fit: contain;
+}
+
+span.sub-golime-cart-icon {
+    display: block;
+    padding: 0 5px;
+}
+
+a.main-logo-images-box-header {
+    padding-left: 10px;
+}
+
+}
+
+@media screen and (max-width: 962px) {
+    .main-all-icon-box-header-seciton {
+        width: 60%;
+        gap: 16px;
+    }
+
+     .desktop-menu-list-header-golime {
+    display: none;
+    align-items: center;
+    list-style: none;
+    margin: 3px 0;
+}
+
+.main-bar-number-golime-header {
+    display: block;
+        padding: 0 18px 0 20px;
+}
+
+.navs-links-header-ul-golime-section-bot {
+    display: none;
+}
+  }

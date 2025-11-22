@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "golime_banner_new_RcA768": {
+      "type": "Golime-banner-new",
+      "name": "Golime Banner New",
+      "settings": {
+        "banner_golime_img_desktop": "shopify://shop_images/download_1d8f7aec-6452-4265-bed3-f5e1d42bcdd6.webp",
+        "banner_golime_img_mobile": "shopify://shop_images/download_cdebdebd-8777-4785-ba8c-c9dc0b8acea1.webp",
+        "main_golime_banner_heading_new": "Hot Water\n<br>\nWithout the Wait",
+        "golime_new_Banner_section_position_bar_Para": "<p>Upgrade to a high-efficiency tankless for just<strong>$39.96/month</strong>or $3,596 outright and enjoy unlimited hot water, lower bills, and more space.<br/><br/><br/></p>",
+        "golime_banner_new_section_position_button": "BUY NOW",
+        "golime_banner_new_section_position_text": "Speak With An Expert",
+        "main_golime_new_banner_section_position_text_btm_images": "shopify://shop_images/buy_tankless_water_heater_online_in_Ontario.webp"
+      }
+    },
+    "water_heater_slider_Djq4ar": {
+      "type": "Water-Heater-slider",
+      "blocks": {
+        "slider_a8Qm4w": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        },
+        "slider_UqPhAe": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Enbridge_logo1.png"
+          }
+        },
+        "slider_AbBVzz": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Homestars_-_Go_Lime_Partners.avif"
+          }
+        },
+        "slider_QJHWwm": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/CLA_and_Go_Lime3.png"
+          }
+        },
+        "slider_FE3KWT": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_3bt8nr": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/TSSA_-_Go_Lime_Partners6.webp"
+          }
+        },
+        "slider_B7MJAa": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Home_Depot_-_Go_Lime_Partners4.png"
+          }
+        },
+        "slider_HFnHLG": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_tzywPx": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slider_a8Qm4w",
+        "slider_UqPhAe",
+        "slider_AbBVzz",
+        "slider_QJHWwm",
+        "slider_FE3KWT",
+        "slider_3bt8nr",
+        "slider_B7MJAa",
+        "slider_HFnHLG",
+        "slider_tzywPx"
+      ],
+      "name": "Images Slider Golime",
+      "settings": {
+        "main-golime-slider-heading-h3": "We Are Proud to Partner With"
+      }
+    }
+  },
+  "order": [
+    "golime_banner_new_RcA768",
+    "water_heater_slider_Djq4ar"
+  ]
+}

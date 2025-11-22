@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "golime_banner_new_RcA768": {
+      "type": "Golime-banner-new",
+      "name": "Golime Banner New",
+      "settings": {
+        "banner_golime_img_desktop": "shopify://shop_images/download_cb3649ac-e31e-4e9d-aeab-be9efd5f6f9e.webp",
+        "banner_golime_img_mobile": "shopify://shop_images/download_58391e1b-6af5-4b96-af33-f9f32985a8b1.webp",
+        "main_golime_banner_heading_new": "Efficient Cooling That Lasts",
+        "golime_new_Banner_section_position_bar_Para": "<p>Stay cool all summer with a reliable, energy-efficient air conditioner built to perform season after season, starting at just $44.95/month or $4,045 outright.<br/><br/></p>",
+        "golime_banner_new_section_position_button": "BUY NOW",
+        "golime_banner_new_section_position_text": "Speak With An Expert",
+        "main_golime_new_banner_section_position_text_btm_images": "shopify://shop_images/buy_air_conditioners_online_in_Ontario.webp"
+      }
+    },
+    "water_heater_slider_Djq4ar": {
+      "type": "Water-Heater-slider",
+      "blocks": {
+        "slider_a8Qm4w": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        },
+        "slider_UqPhAe": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Enbridge_logo1.png"
+          }
+        },
+        "slider_AbBVzz": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Homestars_-_Go_Lime_Partners.avif"
+          }
+        },
+        "slider_QJHWwm": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/CLA_and_Go_Lime3.png"
+          }
+        },
+        "slider_FE3KWT": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_3bt8nr": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/TSSA_-_Go_Lime_Partners6.webp"
+          }
+        },
+        "slider_B7MJAa": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Home_Depot_-_Go_Lime_Partners4.png"
+          }
+        },
+        "slider_HFnHLG": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_tzywPx": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slider_a8Qm4w",
+        "slider_UqPhAe",
+        "slider_AbBVzz",
+        "slider_QJHWwm",
+        "slider_FE3KWT",
+        "slider_3bt8nr",
+        "slider_B7MJAa",
+        "slider_HFnHLG",
+        "slider_tzywPx"
+      ],
+      "name": "Images Slider Golime",
+      "settings": {
+        "main-golime-slider-heading-h3": "We Are Proud to Partner With"
+      }
+    }
+  },
+  "order": [
+    "golime_banner_new_RcA768",
+    "water_heater_slider_Djq4ar"
+  ]
+}

@@ -1,0 +1,172 @@
+<style>
+      .golime_faq-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .golime_faq-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    gap: 40px;
+  }
+
+  .golime_faq-left {
+    width: 38%;
+  }
+
+  .golime_faq-title {
+    color: #454545;
+    font-size: 40px;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 20px;
+    line-height: 1.2;
+    display: block;
+  }
+
+  .golime_view-all-faqs {
+    font-size: 20px;
+    text-decoration: none;
+    color: #70BC0E;
+    display: inline-block;
+    padding-top: 10px;
+  }
+
+  .golime_view-all-faqs:hover {
+    text-decoration: underline;
+  }
+
+  .golime_faq-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .golime_faq-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 18px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    background: #f9f7f2;
+    cursor: pointer;
+  }
+
+  .golime_faq-question {
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    color: #454545;
+  }
+
+  .golime_faq-item_Flex {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .golime_faq-answer {
+    display: none;
+    width: 100%;
+    color: #454545;
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .golime_faq-item.active .golime_faq-answer {
+    display: block;
+  }
+
+  .golime_faq-item.active .fa-solid.fa-plus {
+    transform: rotate(45deg);
+  }
+
+  .golime_faq-item.active .golime_faq-question {
+    color: #70BC0E;
+  }
+</style>
+<section class="golime_faq-section">
+  <div class="golime_faq-container">
+    <div class="golime_faq-left">
+      <h1 class="golime_faq-title">{{ section.settings.main_golime_faq-title }}</h1>
+      <a href="{{ section.settings.main_golime_view-all-faqs_para_links }}" class="golime_view-all-faqs">
+        {{ section.settings.main_golime_view-all-faqs_para }}
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="golime_faq-right">
+        {% for block in section.blocks %}
+      <div class="golime_faq-item">
+        <div class="golime_faq-item_Flex">
+          <span class="golime_faq-question">{{ block.settings.sub_golime_faq-question }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="golime_faq-answer">{{ block.settings.Para_sub_golime_faq-answer }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+    <script>
+      const faqItems = document.querySelectorAll(".golime_faq-item");
+
+      faqItems.forEach(item => {
+        const question = item.querySelector(".golime_faq-item_Flex");
+        question.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+{% schema %}
+{
+  "name": "Golime Section Faqs",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main_golime_faq-title",
+    "label": "Top Golime Faqs Text"
+    },
+    {
+    "type": "url",
+    "id": "main_golime_view-all-faqs_para_links",
+    "label": "Golime Faqs Link"
+    },
+    {
+    "type": "text",
+    "id": "main_golime_view-all-faqs_para",
+    "label": "Golime Faqs Button"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Faqs_Box",
+    "name": "Faqs Box",
+    "settings": [
+        {
+        "type": "text",
+        "id": "sub_golime_faq-question",
+        "label": "Faqs Question"
+        },
+        {
+        "type": "richtext",
+        "id": "Para_sub_golime_faq-answer",
+        "label": "Faqs Answer"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Section Faqs"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,276 @@
+<style>
+      .Golime_New_Section_Info_Faqs_page {
+      padding-top: 110px;
+      padding-bottom: 40px;
+  }
+
+  .Golime_New_Container_Info_Faqs_page {
+      width: 100%;
+      max-width: 1334px;
+      padding: 0 50px;
+      margin: 0 auto;
+  }
+
+  .Golime_New_Flex_Info_Faqs_page {
+      display: flex
+  ;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: row;
+  }
+
+  .Golime_New_Box_Left_Info_Faqs_page {
+      width: 48%;
+      display: flex
+  ;
+      align-items: center;
+      height: 100%;
+  }
+
+  .Golime_New_Box_Left_Data_Info_Faqs_page {
+      width: 90%;
+  }
+
+  .Golime_New_Box_Left_Data_Images_box_page {
+      height: 100%;
+      line-height: 100%;
+      width: fit-content;
+      margin: 0 0 30px;
+  }
+  .Golime_New_Box_Left_Data_Images_box_page_img {
+      width: 100%;
+      max-width: 36px;
+  }
+
+  .Golime_New_Box_Left_Data_Title_box_page {
+      font-size: 56px;
+      letter-spacing: 0;
+      margin: 0 0 20px;
+      line-height: 1.2;
+      color: #454545;
+      font-weight: 800;
+  }
+
+  .Golime_New_Box_Left_Data_Para_box_page p {
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: 1.3;
+      color: #454545;
+      margin: 0;
+  }
+
+  .Golime_New_Box_Right_Info_Faqs_page {
+      width: 48%;
+  }
+
+  .Golime_New_Box_Right_Data_Flex_page{
+      display: flex
+  ;
+      gap: 10px;
+  }
+
+
+  .Golime_New_Box_Right_Data_box_First_page {
+      width: 49%;
+      display: flex
+  ;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .Golime_New_Box_Right_Data_box_First_Images_box_page {
+      line-height: 100%;
+  }
+
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page {
+      width: 100%;
+      border-radius: 24px;
+      height: 480px;
+      object-fit: cover;
+  }
+
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page.Page_Golime_height1 {
+      height: 190px;
+  }
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page.Page_Golime_height2 {
+      height: 280px;
+  }
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page.Page_Golime_height3 {
+      height: 480px;
+  }
+
+
+  .Golime_New_Box_Right_Data_box_second_page{
+      width: 49%;
+      display: flex
+  ;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .Golime_New_Box_Left_Data_Para_box_page {
+      width: 66%;
+  }
+
+  @media screen and (max-width: 767px) {
+      .Golime_New_Section_Info_Faqs_page {
+          padding-top: 30px;
+          padding-bottom: 30px;
+      }
+
+      .Golime_New_Container_Info_Faqs_page {
+      padding: 0 15px;
+  }
+
+  .Golime_New_Flex_Info_Faqs_page {
+      flex-direction: column;
+              row-gap: 26px;
+  }
+  .Golime_New_Box_Left_Info_Faqs_page {
+      width: 100%;
+  }
+
+  .Golime_New_Box_Left_Data_Info_Faqs_page {
+      width: 100%;
+      text-align: center;
+  }
+
+  .Golime_New_Box_Left_Data_Images_box_page
+   {
+      width: auto;
+      margin: 0 0 20px;
+  }
+
+  .Golime_New_Box_Left_Data_Title_box_page {
+      font-size: 32px;
+  }
+
+  .Golime_New_Box_Left_Data_Para_box_page {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  .Golime_New_Box_Left_Data_Para_box_page p {
+      font-size: 16px;
+  }
+
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page.Page_Golime_height1 {
+      height: 170px;
+  }
+
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page.Page_Golime_height2 {
+      height: 170px;
+  }
+
+  .Golime_New_Box_Right_Data_box_First_Images_box_img_page.Page_Golime_height3 {
+      height: 353px;
+  }
+
+  .Golime_New_Box_Right_Info_Faqs_page {
+      width: 100%;
+  }
+  }
+</style>
+<section class="Golime_New_Section_Info_Faqs_page">
+  <div class="Golime_New_Container_Info_Faqs_page">
+    <div class="Golime_New_Flex_Info_Faqs_page">
+      <div class="Golime_New_Box_Left_Info_Faqs_page">
+        <div class="Golime_New_Box_Left_Data_Info_Faqs_page">
+          <div class="Golime_New_Box_Left_Data_Images_box_page">
+            {% if section.settings.main_Golime_New_Box_Left_Data_Images_box_page !=blank%}
+            <img src="{{ section.settings.main_Golime_New_Box_Left_Data_Images_box_page |img_url:'master' }}" alt="" class="Golime_New_Box_Left_Data_Images_box_page_img">
+            {% endif %}
+          </div>
+          <div class="Golime_New_Box_Left_Data_Text_Para_box_page">
+            <h1 class="Golime_New_Box_Left_Data_Title_box_page">{{ section.settings.main_sub_Golime_New_Box_Left_Data_Title_box_page }}</h1>
+            <div class="Golime_New_Box_Left_Data_Para_box_page">
+              <p>
+                {{ section.settings.main_para_Golime_New_Box_Left_Data_Para_box_page }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Golime_New_Box_Right_Info_Faqs_page">
+        <div class="Golime_New_Box_Right_Data_Faqs_page">
+          <div class="Golime_New_Box_Right_Data_Flex_page">
+            <div class="Golime_New_Box_Right_Data_box_First_page">
+              <div class="Golime_New_Box_Right_Data_box_First_Images_box_page">
+                {% if section.settings.sub_images_box_First_Images_box_img_page_Page_Golime_height1 !=blank%}
+                <img
+                  src="{{ section.settings.sub_images_box_First_Images_box_img_page_Page_Golime_height1 |img_url:'master' }}"
+                  alt=""
+                  class="Golime_New_Box_Right_Data_box_First_Images_box_img_page Page_Golime_height1"
+                >
+                    {% endif %}
+              </div>
+              <div class="Golime_New_Box_Right_Data_box_First_Images_box_page">
+                {% if section.settings.sub_images_box_First_Images_box_img_page_Page_Golime_height2 !=blank %}
+                <img
+                  src="{{ section.settings.sub_images_box_First_Images_box_img_page_Page_Golime_height2 |img_url:'master' }}"
+                  alt=""
+                  class="Golime_New_Box_Right_Data_box_First_Images_box_img_page Page_Golime_height2"
+                >
+                    {% endif %}
+              </div>
+            </div>
+            <div class="Golime_New_Box_Right_Data_box_second_page">
+              <div class="Golime_New_Box_Right_Data_box_First_Images_box_page">
+                {% if section.settings.sub_images_box_First_Images_box_img_page_Page_Golime_height3 !=blank %}
+                <img
+                  src="{{ section.settings.sub_images_box_First_Images_box_img_page_Page_Golime_height3 |img_url:'master' }}"
+                  alt=""
+                  class="Golime_New_Box_Right_Data_box_First_Images_box_img_page Page_Golime_height3"
+                >
+                    {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime About Us Section",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main_Golime_New_Box_Left_Data_Images_box_page",
+    "label": "Logo Images"
+    },
+    {
+    "type": "text",
+    "id": "main_sub_Golime_New_Box_Left_Data_Title_box_page",
+    "label": "Top Text Golime"
+    },
+    {
+    "type": "richtext",
+    "id": "main_para_Golime_New_Box_Left_Data_Para_box_page",
+    "label": "Top Para Go Lime"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_images_box_First_Images_box_img_page_Page_Golime_height1",
+    "label": "Golime Images 1"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_images_box_First_Images_box_img_page_Page_Golime_height2",
+    "label": "Golime Images 2"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_images_box_First_Images_box_img_page_Page_Golime_height3",
+    "label": "Golime Images 3"
+    },
+  ],
+  "presets": [
+    {
+    "name": "Golime About Us Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "golime_banner_new_RcA768": {
+      "type": "Golime-banner-new",
+      "name": "Golime Banner New",
+      "settings": {
+        "banner_golime_img_desktop": "shopify://shop_images/download_aecc3eee-364f-46ef-b9ee-c544601867e6.webp",
+        "banner_golime_img_mobile": "shopify://shop_images/download_c3926f94-55f7-4b61-a137-59fee3884872.webp",
+        "main_golime_banner_heading_new": "Any Home. Any Season.\n<br>\nOne System.",
+        "golime_new_Banner_section_position_bar_Para": "<p>Upgrade to a high-efficiency heat pump to heat and cool with one system, reduce energy costs, and get up to<strong>$7,500 in rebates.</strong><br/></p>",
+        "golime_banner_new_section_position_button": "BUY NOW",
+        "golime_banner_new_section_position_text": "Speak With An Expert",
+        "main_golime_new_banner_section_position_text_btm_images": "shopify://shop_images/heat_pumps_rebate_Ontario.webp"
+      }
+    },
+    "water_heater_slider_Djq4ar": {
+      "type": "Water-Heater-slider",
+      "blocks": {
+        "slider_a8Qm4w": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        },
+        "slider_UqPhAe": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Enbridge_logo1.png"
+          }
+        },
+        "slider_AbBVzz": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Homestars_-_Go_Lime_Partners.avif"
+          }
+        },
+        "slider_QJHWwm": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/CLA_and_Go_Lime3.png"
+          }
+        },
+        "slider_FE3KWT": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_3bt8nr": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/TSSA_-_Go_Lime_Partners6.webp"
+          }
+        },
+        "slider_B7MJAa": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Home_Depot_-_Go_Lime_Partners4.png"
+          }
+        },
+        "slider_HFnHLG": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_tzywPx": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slider_a8Qm4w",
+        "slider_UqPhAe",
+        "slider_AbBVzz",
+        "slider_QJHWwm",
+        "slider_FE3KWT",
+        "slider_3bt8nr",
+        "slider_B7MJAa",
+        "slider_HFnHLG",
+        "slider_tzywPx"
+      ],
+      "name": "Images Slider Golime",
+      "settings": {
+        "main-golime-slider-heading-h3": "We Are Proud to Partner With"
+      }
+    }
+  },
+  "order": [
+    "golime_banner_new_RcA768",
+    "water_heater_slider_Djq4ar"
+  ]
+}

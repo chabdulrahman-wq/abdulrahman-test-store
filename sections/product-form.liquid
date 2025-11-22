@@ -1,0 +1,71 @@
+{%- comment -%}
+TAG-BASED FREE GIFT
+— Sirf un products par chalega jinke paas `trigger_tag` lagi ho.
+— `gift_variant_id` ko apne FREE gift ke variant ID se replace karo.
+{%- endcomment -%}
+
+{% assign trigger_tag = 'free-gift' %}  {# <- yeh tag product ko lagao #}
+{% assign gift_variant_id = 1234567890 %} {# <- apna gift variant ID #}
+
+{% if product.tags contains trigger_tag %}
+  <script>
+  (function () {
+    const GIFT_VARIANT_ID = {{ gift_variant_id | json }};
+
+    // helpers
+    const addItem = (id, qty, props={}) =>
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, quantity: qty, properties: props })
+      });
+
+    const getCart = () => fetch('/cart.js').then(r => r.json());
+
+    const hasGift = (cart) =>
+      cart.items?.some(i => i.id === GIFT_VARIANT_ID || (i.properties && i.properties._auto_gift === 'true'));
+
+    const refreshDrawer = async (cart) => {
+      if (typeof window.updateCartDrawer === 'function') {
+        window.updateCartDrawer(cart);
+      } else if (typeof window.renderCart === 'function') {
+        window.renderCart(cart);
+      } else {
+        // fallback
+        document.dispatchEvent(new CustomEvent('cart:refresh', { detail: cart }));
+        try { window.Shopify && Shopify.theme && Shopify.theme.sections && Shopify.theme.sections.load && Shopify.theme.sections.load('*'); } catch(e){}
+        location.pathname.includes('/cart') && location.reload();
+      }
+    };
+
+    // intercept ANY add-to-cart on this product page
+    document.addEventListener('submit', async function (e) {
+      const form = e.target.closest('form[action*="/cart/add"]');
+      if (!form) return;
+
+      // prevent native add-to-cart to chain our logic
+      e.preventDefault();
+
+      const idInput = form.querySelector('[name="id"]');
+      const qtyInput = form.querySelector('[name="quantity"]');
+      const mainId = idInput ? idInput.value : null;
+      const qty = qtyInput ? Number(qtyInput.value || 1) : 1;
+
+      if (!mainId) { form.submit(); return; }
+
+      // 1) add main product
+      await addItem(mainId, qty);
+
+      // 2) add gift only if not already present
+      const cart = await getCart();
+      if (!hasGift(cart)) {
+        await addItem(GIFT_VARIANT_ID, 1, { _auto_gift: 'true' });
+      }
+
+      // 3) refresh cart UI
+      const newCart = await getCart();
+      await refreshDrawer(newCart);
+    });
+  })();
+  </script>
+{% endif %}

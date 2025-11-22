@@ -1,0 +1,164 @@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<style>
+      .golime_section_slider_new_golime {
+      padding: 40px 0;
+  }
+
+  .golime-container_slider_new_golime {
+      width: 100%;
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 0 23px;
+  }
+
+  .golime_logo_heading_main_golime_new_slider {
+      margin: 0 0 36px;
+  }
+
+
+  .golime_logo_heading_main_golime_new_slider_h3 {
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 0;
+      font-size: 28px;
+      color: #454545;
+  }
+
+  .main-golime-golime-slider-new-golime {
+      display: flex
+  ;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+  }
+
+  .main-golime-new-slider-images-box {
+      height: 60px;
+  }
+
+
+  .item-images-golime-slider {
+      height: 100%;
+      object-fit: contain;
+      max-width: 150px;
+  }
+
+
+
+  @media screen and (max-width: 767px){
+      .golime_logo_heading_main_golime_new_slider_h3 {
+      font-size: 20px;
+  }
+
+  .golime_section_slider_new_golime {
+      padding: 20px 0;
+  }
+
+  .golime-container_slider_new_golime {
+      padding: 0;
+  }
+
+  .golime_logo_heading_main_golime_new_slider {
+      margin: 0 0 30px;
+  }
+
+  .main-golime-new-slider-images-box {
+      height: 55px;
+  }
+  }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<section class="golime_section_slider_new_golime">
+  <div class="golime-container_slider_new_golime">
+    <div class="golime_logo_heading_main_golime_new_slider">
+      <h3 class="golime_logo_heading_main_golime_new_slider_h3">{{ section.settings.main-golime-slider-heading-h3 }}</h3>
+    </div>
+    <div class="golime_owl-carousel owl-carousel">
+      {% for block in section.blocks %}
+      <div class="item">
+        <div class="main-golime-golime-slider-new-golime">
+          <div class="main-golime-new-slider-images-box">
+            {% if block.settings.golime-item-images-golime-slider != blank %}
+            <img class="item-images-golime-slider" src="{{ block.settings.golime-item-images-golime-slider | img_url: 'master' }}">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var $owl = $('.golime_owl-carousel');
+
+    $owl.owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      dots: false,
+      nav: false,
+      responsive: {
+        0: { items: 1 },
+        480: { items: 2 },
+        768: { items: 3 },
+        1024: { items: 4 },
+        1200: { items: 5 }
+      }
+    });
+
+    // Last slide pe fast restart karna ho to
+    $owl.on('changed.owl.carousel', function (event) {
+      var totalItems = event.item.count;
+      var currentIndex = event.item.index + event.page.size;
+
+      if (currentIndex >= totalItems) {
+        setTimeout(function () {
+          $owl.trigger('to.owl.carousel', [0, 200]);
+        }, 2000);
+      }
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Images Slider Golime",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-golime-slider-heading-h3",
+    "label": "Heading"
+    }
+  ],
+  
+  "blocks": [
+    {
+    "type": "Slider",
+    "name": "Slider",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "golime-item-images-golime-slider",
+        "label": "Images"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Images Slider Golime"
+    }
+  ]
+}
+{% endschema %}

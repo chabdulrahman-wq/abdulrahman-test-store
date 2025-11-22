@@ -1,0 +1,173 @@
+<style>
+
+  .Wy-chos-golime-section {
+      background: #F9F7F2;
+      margin: 40px 0;
+      padding-top: 100px;
+      padding-bottom: 100px;
+  }
+
+  .Wy-chos-golime-conainer {
+      max-width: 1137px;
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .Wy-chos-golime-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  .Wy-chos-golime-box-left {
+      width: 40%;
+      position: sticky;
+      top: 170px;
+      align-self: flex-start;
+  }
+
+ .Wy-chos-golime-box-left-title {
+    line-height: 38px;
+    font-size: 40px;
+    color: #454545;
+    margin: 0;
+    font-weight: 700;
+}
+
+  .Wy-chos-golime-box-left-content p {
+      padding-top: 20px;
+      font-size: 18px;
+      line-height: 27px;
+      width: 89%;
+      color: #454545;
+  }
+
+  .Wy-chos-golime-box-right {
+      width: 56%;
+  }
+
+  .Wy-chos-golime-box-right-box-block-flex {
+      padding-bottom: 70px;
+      display: flex;
+      justify-content: end;
+  }
+
+  .Wy-chos-golime-box-right-box-title-content {
+      width: 88%;
+  }
+
+  .Wy-chos-golime-box-right-box-images-content {
+      padding-bottom: 54%;
+      height: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+  }
+
+  .Wy-chos-golime-box-right-box-images-content-img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+  }
+
+  .Wy-chos-golime-box-right-box-title {
+    font-weight: 700;
+        margin: 0;
+      padding-top: 25px;
+      font-size: 28px;
+      color: #454545;
+      line-height: 1;
+      letter-spacing: 0;
+  }
+
+  .Wy-chos-golime-box-right-box-title-content p {
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0;
+      margin: 0;
+      color: #454545;
+      padding-top: 10px;
+  }
+</style>
+<section class="Wy-chos-golime-section">
+  <div class="Wy-chos-golime-conainer">
+    <div class="Wy-chos-golime-flex">
+      <div class="Wy-chos-golime-box-left">
+        <div class="Wy-chos-golime-box-left-content">
+          <h2 class="Wy-chos-golime-box-left-title">{{ section.settings.main-Wy-chos-golime-box-left-title }}</h2>
+          <p>
+            {{ section.settings.main-Wy-chos-golime-box-left-content-para }}
+          </p>
+        </div>
+      </div>
+      <div class="Wy-chos-golime-box-right">
+        {% for block in section.blocks %}
+        <div class="Wy-chos-golime-box-right-box-block-flex">
+          <div class="Wy-chos-golime-box-right-box-title-content">
+            <div class="Wy-chos-golime-box-right-box-images-content">
+                {% if block.settings.main-Wy-chos-golime-box-right-box-images-content-img !=blank%}
+              <img src="{{ block.settings.main-Wy-chos-golime-box-right-box-images-content-img |img_url:'master' }}" alt="" class="Wy-chos-golime-box-right-box-images-content-img">
+            {% endif %}
+            </div>
+            <h2 class="Wy-chos-golime-box-right-box-title">
+                {{ block.settings.main-Wy-chos-golime-box-right-box-title }}
+            </h2>
+            <p>
+              {{ block.settings.main-Wy-chos-golime-box-right-box-para-conten }}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Why Choose Us",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-Wy-chos-golime-box-left-title",
+    "label": "Left Box Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-Wy-chos-golime-box-left-content-para",
+    "label": "Left Box Para"
+    },
+    
+  ],
+  "blocks": [
+    {
+    "type": "Right_Box",
+    "name": "Right Box",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "main-Wy-chos-golime-box-right-box-images-content-img",
+        "label": "Right Box Images"
+        },
+        {
+        "type": "text",
+        "id": "main-Wy-chos-golime-box-right-box-title",
+        "label": "Right Box Title"
+        },
+        {
+        "type": "richtext",
+        "id": "main-Wy-chos-golime-box-right-box-para-conten",
+        "label": "Right Box Para"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Why Choose Us Section"
+    }
+  ]
+}
+{% endschema %}

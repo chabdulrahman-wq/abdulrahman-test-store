@@ -1,0 +1,129 @@
+<style>
+      .golime_Newsroom_section {
+        padding-top: 110px;
+        padding-bottom: 40px;
+      }
+
+      .golime_Newsroom_Container {
+        max-width: 1130px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .golime_Newsroom_contant {
+        text-align: center;
+        font-size: 56px;
+        margin-bottom: 30px;
+        color: #454545;
+      }
+
+      .golime_Newsroom_video_wrapper {
+        position: relative;
+        border-radius: 30px;
+        overflow: hidden;
+      }
+
+      .golime_Newsroom_video_box {
+        width: 100%;
+        display: block;
+        border-radius: 30px;
+      }
+
+      .golime_Newsroom_video_btn {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        background-color: #fff;
+        color: #333;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 0 10px #00000026;
+        z-index: 5;
+        transition: all 0.3s ease;
+      }
+
+      .golime_Newsroom_video_btn:hover {
+        background-color: #f0f0f0;
+      }
+
+      @media screen and (max-width: 768px){
+          .golime_Newsroom_section {
+      padding-top: 32px;
+      padding-bottom: 16px;
+  }
+
+  .golime_Newsroom_contant {
+      margin-bottom: 0;
+      font-size: 32px;
+      padding-bottom: 20px;
+  }
+
+  .golime_Newsroom_flex_box
+   {
+      display: flex;
+      flex-wrap: wrap;
+  }
+      }
+</style>
+<section class="golime_Newsroom_section">
+  <div class="golime_Newsroom_Container">
+    <h1 class="golime_Newsroom_contant">{{ section.settings.main-Golime_Newsroom-contant }}</h1>
+    <div class="golime_Newsroom_flex_box">
+      <div class="golime_Newsroom_video_wrapper">
+        <video class="golime_Newsroom_video_box" autoplay muted loop playsinline>
+          {% if section.settings.video-golime_Newsroom_video_box !=blank%}
+          <source src="{{ section.settings.video-golime_Newsroom_video_box.sources[1].url }}" type="video/mp4">
+        {% endif %}
+        </video>
+        <div class="golime_Newsroom_video_btn">
+          <i class="fa-solid fa-pause"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const video = document.querySelector('.golime_Newsroom_video_box');
+  const btn = document.querySelector('.golime_Newsroom_video_btn');
+  const icon = btn.querySelector('i');
+
+  btn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      icon.classList.remove('fa-play');
+      icon.classList.add('fa-pause');
+    } else {
+      video.pause();
+      icon.classList.remove('fa-pause');
+      icon.classList.add('fa-play');
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Golime Video About",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-Golime_Newsroom-contant",
+    "label": "Title"
+    },
+    {
+    "type": "video",
+    "id": "video-golime_Newsroom_video_box",
+    "label": "Video"
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Video About Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,225 @@
+<style>
+       .section_Golime_Footer_section_top_2{
+        padding: 30px 0;
+    }
+
+    .container_Golime_Footer_section_top_2 {
+        width: 100%;
+        max-width: 1520px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .Flex_Golime_Footer_section_top_2 {
+        display: flex
+    ;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .effrt_block_Golime_Footer_section_top_2 {
+        border-radius: 24px;
+        background: #F1FBCC;
+        padding: 20px 20px;
+        width: 24%;
+        display: flex
+    ;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .imgaes_top_content_effrt_block_Golime_Footer_section_top_2 {
+        margin: 0 auto;
+        max-width: 40px;
+    }
+
+    .img_top_content_effrt_block_Golime_Footer_section_top_2 {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    .content_effrt_block_Golime_Footer_section_top_2 {
+        margin: 0;
+        color: #454545;
+        text-align: center;
+        font-size: 13px;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+
+    .bottm_content_effrt_block_Golime_Footer_section_top_2 p {
+        margin: 0;
+        color: #454545;
+        text-align: center;
+        line-height: 21px;
+        font-size: 16px;
+        display: block;
+        letter-spacing: 0;
+    }
+    .bottm_content_effrt_block_Golime_Footer_section_top_2 a {
+            text-decoration: none;
+        color: #454545;
+        font-weight: 900;
+    }
+
+    .bottm_content_effrt_block_Golime_Footer_section_top_2_botton {
+        text-align: center;
+    }
+
+    .effrt_block_Golime_Footer_us_btn {
+        color: #085A54;
+        border-radius: 100px;
+        border: 1px solid #085A54;
+        padding: 4px 20px;
+        font-size: 15px;
+        transition: all .5s ease-in-out;
+        text-decoration: none;
+        display: inline-block;
+        letter-spacing: 0;
+    }
+    .effrt_block_Golime_Footer_us_btn:hover {
+           background: #085A54;
+        color: #fff;
+        border: 1px solid #085A54;
+    }
+    .bottm_content_effrt_block_Golime_Footer_section_top_2.para p {
+      display: none;
+  }
+    @media screen and (max-width: 767px) {
+    .effrt_block_Golime_Footer_section_top_2 {
+      padding: 44px 10px 30px 10px;
+      width: 48.3%;
+      display: flex
+  ;
+      margin-bottom: 10px;
+  }
+  .imgaes_top_content_effrt_block_Golime_Footer_section_top_2 {
+      max-width: 25px;
+  }
+
+  .content_effrt_block_Golime_Footer_section_top_2 {
+      font-size: 11px;
+      font-weight: 900;
+  }
+
+  .bottm_content_effrt_block_Golime_Footer_section_top_2.para p {
+      display: block;
+  }
+  .bottm_content_effrt_block_Golime_Footer_section_top_2 p{
+  display:none;
+  }
+    }
+</style>
+<section class="section_Golime_Footer_section_top_2">
+  <div class="container_Golime_Footer_section_top_2">
+    <div class="Flex_Golime_Footer_section_top_2">
+      {% for block in section.blocks %}
+        <div class="effrt_block_Golime_Footer_section_top_2">
+          <div class="top_content_effrt_block_Golime_Footer_section_top_2">
+            <div class="imgaes_top_content_effrt_block_Golime_Footer_section_top_2">
+              {% if block.settings.main_img_top_content_effrt_block_Golime_Footer_section_top_2 != blank %}
+                <img
+                  src="{{ block.settings.main_img_top_content_effrt_block_Golime_Footer_section_top_2 | img_url:'master' }}"
+                  alt=""
+                  class="img_top_content_effrt_block_Golime_Footer_section_top_2"
+                >
+              {% endif %}
+            </div>
+            <div class="content_effrt_block_Golime_Footer_section_top_2_title">
+              <h5 class="content_effrt_block_Golime_Footer_section_top_2">
+                {{ block.settings.sub_content_effrt_block_Golime_Footer_section_top_2 }}
+              </h5>
+            </div>
+          </div>
+          {% if block.settings.cust_userselect == 'description' %}
+            <div class="bottm_content_effrt_block_Golime_Footer_section_top_2">
+              <p>{{ block.settings.Sub_bottm_content_effrt_block_Golime_Footer_section_top_2 }}</p>
+            </div>
+            <div class="bottm_content_effrt_block_Golime_Footer_section_top_2 para">
+              <p>{{ block.settings.Sub_bottm_content_effrt_block_Golime_Footer_section_top_3 }}</p>
+            </div>
+          {% elsif block.settings.cust_userselect == 'button' %}
+            <div class="bottm_content_effrt_block_Golime_Footer_section_top_2_botton">
+              <a
+                href="{{ block.settings.Link_effrt_block_Golime_Footer_us_btn }}"
+                class="effrt_block_Golime_Footer_us_btn"
+              >
+                {{ block.settings.main_effrt_block_Golime_Footer_us_btn }}
+              </a>
+            </div>
+          {% else %}
+
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Footer Top Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "main_img_top_content_effrt_block_Golime_Footer_section_top_2",
+          "label": "Images Golime Content"
+        },
+        {
+          "type": "text",
+          "id": "sub_content_effrt_block_Golime_Footer_section_top_2",
+          "label": "Content Text Golime"
+        },
+        {
+          "type": "select",
+          "id": "cust_userselect",
+          "label": "Select Option",
+          "options": [
+            {
+              "value": "description",
+              "label": "Description"
+            },
+            {
+              "value": "button",
+              "label": "Button"
+            }
+          ],
+          "default": "description"
+        },
+        {
+          "type": "textarea",
+          "id": "Sub_bottm_content_effrt_block_Golime_Footer_section_top_2",
+          "label": "Description Para"
+        },
+        {
+          "type": "textarea",
+          "id": "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3",
+          "label": "Description Para"
+        },
+        {
+          "type": "url",
+          "id": "Link_effrt_block_Golime_Footer_us_btn",
+          "label": "Button Links Section"
+        },
+        {
+          "type": "text",
+          "id": "main_effrt_block_Golime_Footer_us_btn",
+          "label": "Button Text Golime"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Golime Footer Top Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+{% if cart == empty %}
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0665/4712/2348/files/download.png?v=1754048844"
+                    alt="{{ section.settings.cart-icon.alt | escape }}"
+                    class="main-sub-icon-golime-cart-icon-images-img"
+                  >
+{% else %}
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0665/4712/2348/files/download.png?v=1754048844"
+                    alt="{{ section.settings.cart-icon.alt | escape }}"
+                    class="main-sub-icon-golime-cart-icon-images-img"
+                  >
+{% endif %}
+
+<span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+{%- if cart != empty -%}
+  <div class="cart-count-bubble">
+    {%- if cart.item_count < 100 -%}
+      <span aria-hidden="true">{{ cart.item_count }}</span>
+    {%- endif -%}
+    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+  </div>
+{%- endif -%}

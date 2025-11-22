@@ -1,0 +1,219 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "golime_new_section_3boxs_EeEVwn": {
+      "type": "Golime_New_section_3boxs",
+      "name": "Golime About Us Section",
+      "settings": {
+        "main_Golime_New_Box_Left_Data_Images_box_page": "shopify://shop_images/logo.avif",
+        "main_sub_Golime_New_Box_Left_Data_Title_box_page": "Why ChooseGo Lime?",
+        "main_para_Golime_New_Box_Left_Data_Para_box_page": "<p>We know that millions of Ontario homeowners are frustrated by costly rentals, complicated buyouts, and confusing pricing - the perennial elements of most companies in the home comfort space. So we created a simpler way, transparent pricing, clear choices, seamless shopping experience and exceptional service.<br/><br/></p>",
+        "sub_images_box_First_Images_box_img_page_Page_Golime_height1": "shopify://shop_images/Frame2.webp",
+        "sub_images_box_First_Images_box_img_page_Page_Golime_height2": "shopify://shop_images/same_day_install_service_in_Ontario.webp",
+        "sub_images_box_First_Images_box_img_page_Page_Golime_height3": "shopify://shop_images/hvac_near_me_c87f7894-022e-4f26-9fc1-1ab97cf32815.webp"
+      }
+    },
+    "golime_why_choose_us_section_4qGzRw": {
+      "type": "golime-why-choose-us-section",
+      "blocks": {
+        "right_box_WUNz4F": {
+          "type": "Right_Box",
+          "settings": {
+            "main-Wy-chos-golime-box-right-box-images-content-img": "shopify://shop_images/Personalized_Choice.webp",
+            "main-Wy-chos-golime-box-right-box-title": "Personalized Choice",
+            "main-Wy-chos-golime-box-right-box-para-conten": "<p>Forget settling for whatever came with your home. At Go Lime, you select exactly what suits your family's needs.</p>"
+          }
+        },
+        "right_box_iLfKeq": {
+          "type": "Right_Box",
+          "settings": {
+            "main-Wy-chos-golime-box-right-box-images-content-img": "shopify://shop_images/2_fd60368e-2dcd-4e14-91da-76897c17c74f.webp",
+            "main-Wy-chos-golime-box-right-box-title": "Proudly Canadian",
+            "main-Wy-chos-golime-box-right-box-para-conten": "<p>We're 100% Canadian-owned, supporting local businesses and communities. Choosing Go Lime means investing in Canada.</p>"
+          }
+        },
+        "right_box_i3NAee": {
+          "type": "Right_Box",
+          "settings": {
+            "main-Wy-chos-golime-box-right-box-images-content-img": "shopify://shop_images/Complete_Transparency_by_Go_Lime.webp",
+            "main-Wy-chos-golime-box-right-box-title": "Complete Transparency",
+            "main-Wy-chos-golime-box-right-box-para-conten": "<p>No hidden fees or surprises. The price you see on our website is exactly what you'll pay - simple, clear, and reliable.</p>"
+          }
+        },
+        "right_box_nCAdVN": {
+          "type": "Right_Box",
+          "settings": {
+            "main-Wy-chos-golime-box-right-box-images-content-img": "shopify://shop_images/Unbeatable_Affordability.webp",
+            "main-Wy-chos-golime-box-right-box-title": "Unbeatable Affordability",
+            "main-Wy-chos-golime-box-right-box-para-conten": "<p>Get top-quality home comfort solutions at prices that make sense. Whether you choose a flexible monthly plan or a one-time payment, you’ll get affordable options without cutting corners on quality.</p>"
+          }
+        },
+        "right_box_bU7E8g": {
+          "type": "Right_Box",
+          "settings": {
+            "main-Wy-chos-golime-box-right-box-images-content-img": "shopify://shop_images/100_Customer_Satisfaction.webp",
+            "main-Wy-chos-golime-box-right-box-title": "Customer Satisfaction",
+            "main-Wy-chos-golime-box-right-box-para-conten": "<p>Join over 18,000 satisfied customers who've rated us highly for our exceptional service and reliability.</p>"
+          }
+        },
+        "right_box_KdE8B4": {
+          "type": "Right_Box",
+          "settings": {
+            "main-Wy-chos-golime-box-right-box-images-content-img": "shopify://shop_images/9dd8f7202d0b97741c9e31495b314f2928965c3d.webp",
+            "main-Wy-chos-golime-box-right-box-title": "Completely Online",
+            "main-Wy-chos-golime-box-right-box-para-conten": "<p>As Canada's first fully online, commission-free home comfort company, Go Lime puts convenience and control directly in your hands: no sales appointments, no awkward kitchen table conversations.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "right_box_WUNz4F",
+        "right_box_iLfKeq",
+        "right_box_i3NAee",
+        "right_box_nCAdVN",
+        "right_box_bU7E8g",
+        "right_box_KdE8B4"
+      ],
+      "name": "Golime Why Choose Us Section",
+      "settings": {
+        "main-Wy-chos-golime-box-left-title": "Here’s Why Ontario Homeowners Trust Us",
+        "main-Wy-chos-golime-box-left-content-para": "<p>Ontario homeowners trust us to ease high rental costs and confusing buyouts. We prioritize transparency and satisfaction, providing reliable solutions.</p>"
+      }
+    },
+    "golime_slider_section_BAkAXK": {
+      "type": "Golime_Slider_Section",
+      "blocks": {
+        "slider_mtVzkg": {
+          "type": "Slider",
+          "settings": {
+            "main_Golime_Slider_item_block_box_img": "shopify://shop_images/Reddit_Logo_1.avif",
+            "main_Golime_Slider_item_block_box_title": "<p>evereddie</p>",
+            "main_Golime_Slider_item_block_box_para_golime": "<p>I just had Go Lime install my new hot water tank, and everything went great. No issues at all, and you can't beat the price. Some people complained about the fan on the hot water tank being super loud, but I don’t have that issue at all. In fact, it’s quieter than my old tank</p>"
+          }
+        },
+        "slider_kDf68N": {
+          "type": "Slider",
+          "settings": {
+            "main_Golime_Slider_item_block_box_img": "shopify://shop_images/HomeStars-Logo_Cyan_1_bffd3e8e-30af-47bf-b7c0-39baaf758939.avif",
+            "main_Golime_Slider_item_block_box_title": "<p>HomeOwner</p>",
+            "main_Golime_Slider_item_block_box_images_star_img": "shopify://shop_images/star_e0ccfbd2-d7b2-4469-a5d8-4ac7e30e1874.avif",
+            "main_Golime_Slider_item_block_box_para_golime": "<p>This is the third time I met Ashraf to do the services at my home, everytime the next experience waa wonderful than the previous one, he is extremely knowledgeable and imparts wonderful professionalism. He not only fixed the issues but gave me the tips & advices how to maintain and keep running the systems. He is very courteous, friendly and helpful, I will definitely will recommend him100% for the jobs and want to see him if I have the service calls.</p>"
+          }
+        },
+        "slider_4M4ryp": {
+          "type": "Slider",
+          "settings": {
+            "main_Golime_Slider_item_block_box_img": "shopify://shop_images/Review_Us_-_Sticker-squashed_1-removebg-preview_0062e4c6-2afa-435c-9b7a-c12d3d613bfa.webp",
+            "main_Golime_Slider_item_block_box_title": "<p>Adam Green</p>",
+            "main_Golime_Slider_item_block_box_images_star_img": "shopify://shop_images/star_e0ccfbd2-d7b2-4469-a5d8-4ac7e30e1874.avif",
+            "main_Golime_Slider_item_block_box_para_golime": "<p> I just replaced my hot water heater. I stumbled across this company online and read the good reviews. Price was much better than other companies, so I was skeptical. I called Saturday afternoon, confirmed online Saturday night, and the work was completed Sunday afternoon. I have been so impressed with the service from my phone conversation with Juan to the installation by Alireza. Now I can only hope that the product is as good as the price, technicians, and customer service.</p>"
+          }
+        },
+        "slider_kddRXC": {
+          "type": "Slider",
+          "settings": {
+            "main_Golime_Slider_item_block_box_img": "shopify://shop_images/Frame_11719.png",
+            "main_Golime_Slider_item_block_box_title": "<p>HockeyfanCanada</p>",
+            "main_Golime_Slider_item_block_box_para_golime": "<p>Finally, purchased today, scheduled installation over the weekend. For comparison I have checked with Home Depot and they quoted $2200 +tax. Rheeem 50 Gallon power vent $1489 is the item they will install, so roughly $700 installation fees. They won’t return the old one. Not sure about Costco pricing, they have $300 Gift Card. I don’t think anyone else would sell less than Go Lime. Thanks.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slider_mtVzkg",
+        "slider_kDf68N",
+        "slider_4M4ryp",
+        "slider_kddRXC"
+      ],
+      "name": "Golime Slider Section",
+      "settings": {
+        "sub_Golime_slider_home_pare_Title_h2": "Soft Flex, Big Proof.",
+        "Golime_slider_home_pare_desp": "<p>Join Thousands of Happy Ontario Homeowners</p>",
+        "main_Golime_slider_home_pare_links": "",
+        "Golime_slider_home_pare_links_para_text_left": "4.7 <span>★</span> out of 5 based on 5,000+ reviews"
+      }
+    },
+    "golime_footer_top_section_NVQMhx": {
+      "type": "Golime_Footer_Top_section",
+      "blocks": {
+        "text_UimyNV": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Footer_section_top_2": "shopify://shop_images/Call_Go_Lime.avif",
+            "sub_content_effrt_block_Golime_Footer_section_top_2": "Need Quick Answers?",
+            "cust_userselect": "description",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_2": "Call us at  <a href=\"tel:+1%20877-747-8292\" title=\"tel:+1 877-747-8292\">+1 877-747-8292</a>, and we'll make your home comfort journey effortless.",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "Call us at  <a href=\"tel:+1%20877-747-8292\" title=\"tel:+1 877-747-8292\">+1 877-747-8292</a>,",
+            "Link_effrt_block_Golime_Footer_us_btn": "",
+            "main_effrt_block_Golime_Footer_us_btn": ""
+          }
+        },
+        "text_qiHitU": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Footer_section_top_2": "shopify://shop_images/Go_Lime_Ontario.avif",
+            "sub_content_effrt_block_Golime_Footer_section_top_2": "We’re in Your Neighborhood",
+            "cust_userselect": "button",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_2": "",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn": "#",
+            "main_effrt_block_Golime_Footer_us_btn": "View Service Areas"
+          }
+        },
+        "text_zRn8fp": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Footer_section_top_2": "shopify://shop_images/Go_Flex_ontario.avif",
+            "sub_content_effrt_block_Golime_Footer_section_top_2": "How Much Flexibility Do You Need?",
+            "cust_userselect": "button",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_2": "",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn": "#",
+            "main_effrt_block_Golime_Footer_us_btn": "What is Go Flex?"
+          }
+        },
+        "text_RBxg3Y": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Footer_section_top_2": "shopify://shop_images/refer_a_friend.avif",
+            "sub_content_effrt_block_Golime_Footer_section_top_2": "Refer A Friend, Pass It On!",
+            "cust_userselect": "button",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_2": "",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn": "#",
+            "main_effrt_block_Golime_Footer_us_btn": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_UimyNV",
+        "text_qiHitU",
+        "text_zRn8fp",
+        "text_RBxg3Y"
+      ],
+      "name": "Golime Footer Top Section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "golime_new_section_3boxs_EeEVwn",
+    "golime_why_choose_us_section_4qGzRw",
+    "golime_slider_section_BAkAXK",
+    "golime_footer_top_section_NVQMhx"
+  ]
+} 

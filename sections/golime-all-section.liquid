@@ -1,0 +1,656 @@
+<style>
+
+  .Custom_Golime_Section_New {
+      padding-top: 10px;
+  }
+
+  .Custom_Golime_container_New {
+      max-width: 1336px;
+      margin: 0 auto;
+      padding: 0px 50px;
+  }
+
+  .Custom_Golime_img_box_flex_New {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding-bottom: 22px;
+      flex-direction: row-reverse;
+  }
+
+  .Custom_Golime_img_box {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      padding-bottom: 76%;
+  }
+
+  .Custom_Golime_img_box_flex_images_box_img_desktop {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+
+  .Custom_Golime_img_box_flex_images_box_img_mobile {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: none;
+  }
+
+  .Custom_Golime_img_box_flex_Heading_box {
+      width: 38%;
+      padding: 0;
+      border-radius: 15px;
+  }
+
+  .content-Custom_Golime_img_box_flex_Heading_box {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+  }
+
+  .Custom_Golime_img_box_flex_Heading_content_box {
+      background-color: #dbe7e7;
+      height: 100%;
+      padding: 0px 60px;
+      border-radius: 24px;
+  }
+
+  .Custom_Golime_img_box_flex_Heading_box_fanc {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+  }
+
+  .air-cndtor-txt_p_box_golime p {
+      display: block;
+      {% comment %} font-family: 'Avinar Medium'; {% endcomment %}
+      width: fit-content;
+      margin-bottom: 24px;
+      text-align: center;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      letter-spacing: 0;
+      background-color: #84adaa;
+      color: #003733;
+  }
+
+  .Custom_Golime_content_title {
+      margin: 0;
+      font-size: 28px;
+      width: 87%;
+      padding-top: 0;
+      line-height: 1.2;
+      font-weight: 500;
+      color: #454545;
+      padding-bottom: 12px;
+      letter-spacing: 0;
+  }
+
+  .Custom_Golime_content_desc p {
+      line-height: 1.3;
+      font-size: 14px;
+      color: #454545;
+      letter-spacing: 0;
+  }
+
+  .Button_golime_custom_a_link {
+      padding-top: 20px;
+  }
+
+  .btn_a_links {
+      display: inline-block;
+      transition: all 0.5s ease-in-out;
+      background: #085A54;
+      color: #fff !important;
+      font-size: 16px;
+      padding: 6px 26px !important;
+      border: #085A54 !important;
+      border-radius: 50px !important;
+      text-decoration: none;
+  }
+
+  i.fas.fa-chevron-right.mobile-nav-icon {
+      display: none;
+      margin-left: 6px;
+      font-size: 14px;
+  }
+
+  .Custom_Golime_img_box_flex_images_box {
+      width: 60.2%;
+  }
+
+  #Custom_Golime_img_box_flex_row2 {
+      flex-direction: row;
+  }
+
+  #Custom_Golime_img_box_flex_row4 {
+      flex-direction: row;
+  }
+
+  #Custom_Golime_img_box_flex_Heading_content_box_color2 {
+      background-color: #f9f7f2;
+  }
+
+  #Custom_Golime_img_box_flex_Heading_content_box_color4 {
+      background-color: #eeeeee;
+  }
+
+  #Custom_Golime_img_box_flex_Heading_content_box_color3 {
+      background-color: #e4f0e1;
+  }
+
+  #air-cndtor-txt_p_box_golime_color2 p {
+      background-color: #e0d4bc;
+      color: #454545;
+  }
+
+  div#air-cndtor-txt_p_box_golime_color3 p {
+      background-color: #70bc0e;
+      color: #ffffff;
+  }
+
+  #air-cndtor-txt_p_box_golime_color4 p {
+      background-color: #d9d9d9;
+      color: #454545;
+  }
+
+  @media screen and (max-width: 767px) {
+      .Custom_Golime_container_New {
+          padding: 0px 12px;
+      }
+
+      .Custom_Golime_Section_New {
+          padding-top: 2px;
+      }
+
+      .Custom_Golime_block_flex_New {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+
+      .Custom_Golime_img_box_flex_New {
+          display: flex;
+          background-color: #dbe7e7;
+          justify-content: space-between;
+          flex-direction: row !important;
+          padding: 12px 12px;
+          border-radius: 24px;
+          margin-bottom: 12px;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+      }
+
+      .Custom_Golime_img_box_flex_images_box {
+          width: 42%;
+      }
+
+      .Custom_Golime_img_box {
+          padding-bottom: 156%;
+      }
+
+      .Custom_Golime_img_box_flex_images_box_img_desktop {
+          display: none;
+      }
+
+      .Custom_Golime_img_box_flex_images_box_img_mobile {
+          display: block;
+      }
+
+      .Custom_Golime_img_box_flex_Heading_box {
+          width: 56%;
+      }
+
+      .Custom_Golime_img_box_flex_Heading_content_box {
+          background-color: #dbe7e7;
+          height: 100%;
+          padding: 5px 2px;
+      }
+
+      .air-cndtor-txt_p_box_golime p {
+          display: none;
+      }
+
+      .Custom_Golime_content_title {
+          width: 100%;
+          text-align: left;
+          font-size: 20px;
+          line-height: 24px;
+      }
+
+      .Custom_Golime_content_desc p {
+          font-size: 14px;
+          text-align: left;
+          line-height: 16.8px;
+      }
+
+      .Button_golime_custom_a_link {
+          padding-top: 0px;
+          text-align: left;
+      }
+
+      .btn_a_links {
+          font-size: 15px;
+          color: #085a54 !important;
+          padding: 7px 0px !important;
+          background: none;
+      }
+
+      .fas.fa-chevron-right.mobile-nav-icon {
+          display: inline-block;
+          font-size: 14px;
+      }
+
+      div#Custom_Golime_img_box_flex_row2 {
+          background: #f9f7f2;
+      }
+
+      div#Custom_Golime_img_box_flex_row3 {
+          background: #e4f0e1;
+      }
+
+      div#Custom_Golime_img_box_flex_row4 {
+          background: #eeeeee;
+      }
+
+
+  }
+</style>
+<section class="Custom_Golime_Section_New">
+  <div class="Custom_Golime_container_New">
+    <div class="Custom_Golime_block_flex_New">
+      <div class="Custom_Golime_img_box_flex_New" id="Custom_Golime_img_box_flex_row">
+        <div class="Custom_Golime_img_box_flex_images_box">
+          <div class="Custom_Golime_img_box">
+            {% if section.settings.Custom_Golime_img_box_flex_images_box_img_desktop !=blank%}
+            <img
+              src="{{ section.settings.Custom_Golime_img_box_flex_images_box_img_desktop |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_desktop"
+            >
+                {% endif %}
+                {% if section.settings.Custom_Golime_img_box_flex_images_box_img_mobile !=blank%}
+            <img
+              src="{{ section.settings.Custom_Golime_img_box_flex_images_box_img_mobile |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_mobile"
+            >
+                {% endif %}
+          </div>
+        </div>
+        <div class="Custom_Golime_img_box_flex_Heading_box">
+          <div class="content-Custom_Golime_img_box_flex_Heading_box">
+            <div
+              class="Custom_Golime_img_box_flex_Heading_content_box"
+              id="Custom_Golime_img_box_flex_Heading_content_box_color"
+            >
+              <div class="Custom_Golime_img_box_flex_Heading_box_fanc">
+                <div class="air-cndtor-txt_p_box_golime" id="air-cndtor-txt_p_box_golime_color1">
+                  <p>{{ section.settings.air-cndtor-txt_p_box_golime }}</p>
+                </div>
+                <div class="Custom_Golime_content_heading">
+                  <h3 class="Custom_Golime_content_title">{{ section.settings.Custom_Golime_content_title }}</h3>
+                </div>
+                <div class="Custom_Golime_content_desc">
+                  <p>
+                    {{ section.settings.Custom_Golime_content_desc }}
+                  </p>
+                </div>
+                <div class="Button_golime_custom_a_link">
+                  <a href="{{ section.settings.btn_a_links_link }}" class="btn_a_links">
+                    {{ section.settings.btn_a_links }}
+                    <i class="fas fa-chevron-right mobile-nav-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Custom_Golime_img_box_flex_New" id="Custom_Golime_img_box_flex_row2">
+        <div class="Custom_Golime_img_box_flex_images_box">
+          <div class="Custom_Golime_img_box">
+            {% if section.settings.main-Custom_Golime_img_box_flex_images_box_img_desktop !=blank%}
+            <img
+              src="{{ section.settings.main-Custom_Golime_img_box_flex_images_box_img_desktop |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_desktop"
+            >
+                {% endif %}
+                {% if section.settings.main-Custom_Golime_img_box_flex_images_box_img_mobile !=blank %}
+                    <img
+                        src="{{ section.settings.main-Custom_Golime_img_box_flex_images_box_img_mobile |img_url:'master' }}"
+                        alt=""
+                        class="Custom_Golime_img_box_flex_images_box_img_mobile"
+                    >
+                    {% endif %}
+          </div>
+        </div>
+        <div class="Custom_Golime_img_box_flex_Heading_box">
+          <div class="content-Custom_Golime_img_box_flex_Heading_box">
+            <div
+              class="Custom_Golime_img_box_flex_Heading_content_box"
+              id="Custom_Golime_img_box_flex_Heading_content_box_color2"
+            >
+              <div class="Custom_Golime_img_box_flex_Heading_box_fanc">
+                <div class="air-cndtor-txt_p_box_golime" id="air-cndtor-txt_p_box_golime_color2">
+                  <p>{{ section.settings.air-cndtor-txt_p_box_golime_main }}</p>
+                </div>
+                <div class="Custom_Golime_content_heading">
+                  <h3 class="Custom_Golime_content_title">{{ section.settings.Custom_Golime_content_title_main }}</h3>
+                </div>
+                <div class="Custom_Golime_content_desc">
+                  <p>
+                   {{ section.settings.Custom_Golime_content_desc_main }}
+                  </p>
+                </div>
+                <div class="Button_golime_custom_a_link">
+                  <a href="{{ section.settings.btn_a_links_main_links }}" class="btn_a_links">
+                    {{ section.settings.btn_a_links_main }}
+                    <i class="fas fa-chevron-right mobile-nav-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Custom_Golime_img_box_flex_New" id="Custom_Golime_img_box_flex_row3">
+        <div class="Custom_Golime_img_box_flex_images_box">
+          <div class="Custom_Golime_img_box">
+            {% if section.settings.sub_Custom_Golime_img_box_flex_images_box_img_desktop !=blank %}
+            <img
+              src="{{ section.settings.sub_Custom_Golime_img_box_flex_images_box_img_desktop |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_desktop"
+            >
+            {% endif %}
+                {% if section.settings.sub_Custom_Golime_img_box_flex_images_box_img_mobile !=blank %}
+            <img
+              src="{{ section.settings.sub_Custom_Golime_img_box_flex_images_box_img_mobile |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_mobile"
+            >
+            {% endif %}
+          </div>
+        </div>
+        <div class="Custom_Golime_img_box_flex_Heading_box">
+          <div class="content-Custom_Golime_img_box_flex_Heading_box">
+            <div
+              class="Custom_Golime_img_box_flex_Heading_content_box"
+              id="Custom_Golime_img_box_flex_Heading_content_box_color3"
+            >
+              <div class="Custom_Golime_img_box_flex_Heading_box_fanc">
+                <div class="air-cndtor-txt_p_box_golime" id="air-cndtor-txt_p_box_golime_color3">
+                  <p>{{ section.settings.sub_air-cndtor-txt_p_box_golime}}</p>
+                </div>
+                <div class="Custom_Golime_content_heading">
+                  <h3 class="Custom_Golime_content_title">{{ section.settings.Custom_Golime_content_title_sub }}</h3>
+                </div>
+                <div class="Custom_Golime_content_desc">
+                  <p>
+                 {{ section.settings.Custom_Golime_content_desc_sub }}
+                  </p>
+                </div>
+                <div class="Button_golime_custom_a_link">
+                  <a href="{{ section.settings.sub-btn_a_links-links }}" class="btn_a_links">
+                    {{section.settings.sub-btn_a_links}}
+                    <i class="fas fa-chevron-right mobile-nav-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Custom_Golime_img_box_flex_New" id="Custom_Golime_img_box_flex_row4">
+        <div class="Custom_Golime_img_box_flex_images_box">
+          <div class="Custom_Golime_img_box">
+            {%if section.settings.Custom_Golime_img_box_flex_images_box_img_desktop_sub2 !=blank %}
+            <img
+              src="{{ section.settings.Custom_Golime_img_box_flex_images_box_img_desktop_sub2 |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_desktop"
+            >
+                {% endif %}
+                {%if section.settings.Custom_Golime_img_box_flex_images_box_img_mobile_sub2 !=blank  %}
+            <img
+              src="{{ section.settings.Custom_Golime_img_box_flex_images_box_img_mobile_sub2 |img_url:'master' }}"
+              alt=""
+              class="Custom_Golime_img_box_flex_images_box_img_mobile"
+            >
+                {% endif %}
+          </div>
+        </div>
+        <div class="Custom_Golime_img_box_flex_Heading_box">
+          <div class="content-Custom_Golime_img_box_flex_Heading_box">
+            <div
+              class="Custom_Golime_img_box_flex_Heading_content_box"
+              id="Custom_Golime_img_box_flex_Heading_content_box_color4"
+            >
+              <div class="Custom_Golime_img_box_flex_Heading_box_fanc">
+                <div class="air-cndtor-txt_p_box_golime" id="air-cndtor-txt_p_box_golime_color4">
+                  <p>{{ section.settings.div-air-cndtor-txt_p_box_golime }}</p>
+                </div>
+                <div class="Custom_Golime_content_heading">
+                  <h3 class="Custom_Golime_content_title">{{ section.settings.div-Custom_Golime_content_title }}</h3>
+                </div>
+                <div class="Custom_Golime_content_desc">
+                  <p>
+                    {{ section.settings.div-Custom_Golime_content_desc }}
+                  </p>
+                </div>
+                <div class="Button_golime_custom_a_link">
+                  <a href="{{ section.settings.div-btn_a_links-links }}" class="btn_a_links">
+                    {{ section.settings.div-btn_a_links }}
+                    <i class="fas fa-chevron-right mobile-nav-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Images Text New",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "Custom_Golime_img_box_flex_images_box_img_desktop",
+    "label": "Image Desktop"
+    },
+    {
+    "type": "image_picker",
+    "id": "Custom_Golime_img_box_flex_images_box_img_mobile",
+    "label": "Image Mobile"
+    },
+    {
+    "type": "text",
+    "id": "air-cndtor-txt_p_box_golime",
+    "label": "Para"
+    },
+    {
+    "type": "text",
+    "id": "Custom_Golime_content_title",
+    "label": "Heading"
+    },
+    {
+    "type": "richtext",
+    "id": "Custom_Golime_content_desc",
+    "label": "Description"
+    },
+    {
+    "type": "url",
+    "id": "btn_a_links_link",
+    "label": "Url"
+    },
+    {
+    "type": "text",
+    "id": "btn_a_links",
+    "label": "Button Links"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+    "type": "image_picker",
+    "id": "main-Custom_Golime_img_box_flex_images_box_img_desktop",
+    "label": "Image Desktop"
+    },
+    {
+    "type": "image_picker",
+    "id": "main-Custom_Golime_img_box_flex_images_box_img_mobile",
+    "label": "Image Mobile"
+    },
+    {
+    "type": "text",
+    "id": "air-cndtor-txt_p_box_golime_main",
+    "label": "Para"
+    },
+    {
+    "type": "text",
+    "id": "Custom_Golime_content_title_main",
+    "label": "Heading"
+    },
+    {
+    "type": "richtext",
+    "id": "Custom_Golime_content_desc_main",
+    "label": "Description"
+    },
+    {
+    "type": "url",
+    "id": "btn_a_links_main_links",
+    "label": "Url"
+    },
+    {
+    "type": "text",
+    "id": "btn_a_links_main",
+    "label": "Button Links"
+    },
+
+
+
+
+
+
+
+
+
+
+    {
+    "type": "image_picker",
+    "id": "sub_Custom_Golime_img_box_flex_images_box_img_desktop",
+    "label": "Image Desktop"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_Custom_Golime_img_box_flex_images_box_img_mobile",
+    "label": "Image Mobile"
+    },
+    {
+    "type": "text",
+    "id": "sub_air-cndtor-txt_p_box_golime",
+    "label": "Para"
+    },
+    {
+    "type": "text",
+    "id": "Custom_Golime_content_title_sub",
+    "label": "Heading"
+    },
+    {
+    "type": "richtext",
+    "id": "Custom_Golime_content_desc_sub",
+    "label": "Description"
+    },
+    {
+    "type": "url",
+    "id": "sub-btn_a_links-links",
+    "label": "Url"
+    },
+    {
+    "type": "text",
+    "id": "sub-btn_a_links",
+    "label": "Button Links"
+    },
+
+
+
+
+
+
+
+
+
+
+    {
+    "type": "image_picker",
+    "id": "Custom_Golime_img_box_flex_images_box_img_desktop_sub2",
+    "label": "Image Desktop"
+    },
+    {
+    "type": "image_picker",
+    "id": "Custom_Golime_img_box_flex_images_box_img_mobile_sub2",
+    "label": "Image Mobile"
+    },
+    {
+    "type": "text",
+    "id": "div-air-cndtor-txt_p_box_golime",
+    "label": "Para"
+    },
+    {
+    "type": "text",
+    "id": "div-Custom_Golime_content_title",
+    "label": "Heading"
+    },
+    {
+    "type": "richtext",
+    "id": "div-Custom_Golime_content_desc",
+    "label": "Description"
+    },
+    {
+    "type": "url",
+    "id": "div-btn_a_links-links",
+    "label": "Url"
+    },
+    {
+    "type": "text",
+    "id": "div-btn_a_links",
+    "label": "Button Links"
+    },
+  ],
+  "presets": [
+    {
+    "name": "Golime Images Text New"
+    }
+  ]
+}
+{% endschema %}

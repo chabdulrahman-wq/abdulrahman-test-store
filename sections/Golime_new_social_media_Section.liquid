@@ -1,0 +1,163 @@
+<style>
+
+  .Golime_About_social_media {
+      padding-top: 30px;
+      padding-bottom: 30px;
+  }
+
+  .Golime_About_social_media_Container {
+      width: 100%;
+      max-width: 1336px;
+      padding: 0 50px;
+      margin: 0 auto;
+  }
+
+  .Golime_About_social_media_Title {
+      padding-bottom: 6px;
+  }
+
+  .Golime_About_social_media_H3_Title {
+      font-size: 40px;
+      letter-spacing: 0;
+      text-align: center;
+      color: #454545;
+      margin: 0;
+  }
+
+  .Golime_About_social_media_Text {
+      text-align: center;
+      padding-bottom: 50px;
+      font-size: 20px;
+      width: 50%;
+      margin: 0 auto;
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: #454545;
+      padding-top: 20px;
+  }
+  .Golime_About_Para_progress-icn-txt {
+      font-size: 16px;
+      letter-spacing: 0;
+      font-weight: 600;
+  }
+
+  .Golime_About_Para_progress-icn-txt p {
+      padding-top: 8px;
+      margin: 0;
+  }
+  .Golime_About_social_media_flex {
+      display: flex
+  ;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  .Golime_About_Link_box_Golime {
+      width: 15%;
+      border: 1px solid #D9D9D9;
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      color: #454545;
+  }
+
+
+  .Golime_About_Img {
+      width: 100%;
+      height: 100%;
+      max-width: 48px;
+  }
+
+  @media screen and (max-width: 767px){
+
+    .Golime_About_social_media_Container {
+      padding: 0 15px;
+  }
+
+  .Golime_About_social_media_H3_Title {
+      font-size: 24px;
+  }
+
+  .Golime_About_social_media_Text {
+
+      font-size: 18px;
+      width: 100%;
+      letter-spacing: 0;
+      color: #454545;
+  }
+
+  .Golime_About_Link_box_Golime {
+      margin-bottom: 16px;
+      width: 48%;
+  }
+  }
+</style>
+<section class="Golime_About_social_media">
+  <div class="Golime_About_social_media_Container">
+    <div class="Golime_About_social_media_Title">
+      <h2 class="Golime_About_social_media_H3_Title">{{ section.settings.main_Golime_About_social_media_H3_Title }}</h2>
+    </div>
+    <div class="Golime_About_social_media_Text">
+      <p>{{ section.settings.main_sub_para_Golime_About_social_media_Text }}</p>
+    </div>
+    <div class="Golime_About_social_media_flex">
+        {% for block in section.blocks %}
+      <a class="Golime_About_Link_box_Golime" href="{{ block.settings.main_links_Golime_About_Link_box_Golim }}" target="_blank">
+        <div class="Golime_About_ImgWrapper">
+            {% if block.settings.sub_Golime_About_Img !=blank%}
+          <img class="Golime_About_Img" src="{{ block.settings.sub_Golime_About_Img |img_url:'master' }}" alt="Facebook">
+          {% endif %}
+        </div>
+        <div class="Golime_About_Para_progress-icn-txt">
+          <p>{{ block.settings.main_sub_Golime_About_Para_progress-icn-txt }}</p>
+        </div>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Social Media",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main_Golime_About_social_media_H3_Title",
+    "label": "Golime Title Top"
+    },
+     {
+    "type": "richtext",
+    "id": "main_sub_para_Golime_About_social_media_Text",
+    "label": "Top Golime Para"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Golime_Social_Media",
+    "name": "Golime Social Media",
+    "settings": [
+        {
+        "type": "url",
+        "id": "main_links_Golime_About_Link_box_Golim",
+        "label": "Block Golime Links"
+        },
+        {
+        "type": "image_picker",
+        "id": "sub_Golime_About_Img",
+        "label": "Block Golime Images"
+        },
+        {
+        "type": "richtext",
+        "id": "main_sub_Golime_About_Para_progress-icn-txt",
+        "label": "Block Golime Para"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Social Media Section"
+    }
+  ]
+}
+{% endschema %}

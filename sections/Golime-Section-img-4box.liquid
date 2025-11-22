@@ -1,0 +1,310 @@
+<style>
+      .Images_Text_go_lime_section {
+      padding-top: 0px;
+      padding-bottom: 40px;
+  }
+
+  .Images_Text_container_go_lime_section {
+      width: 100%;
+      max-width: 1334px;
+      padding: 0 50px;
+      margin: 0 auto;
+  }
+
+  .Images_Text_Go_lime_Flex {
+      display: flex
+  ;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background: #f9f7f2;
+      border-radius: 40px;
+      flex-direction: row;
+      align-items: center;
+      padding: 24px;
+  }
+
+  .Images_Text_box_Go_lime_box_left {
+      width: 59%;
+      display: flex
+  ;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
+
+
+  .Images_Text_box_Go_lime_box_left_data_Title_images {
+      width: 70%;
+  }
+
+  .Images_Text_box_Go_lime_box_left_images_box{
+      height: 100%;
+      line-height: 100%;
+      width: fit-content;
+      margin: 0 0 30px;
+  }
+
+  .Images_Text_box_Go_lime_box_left_images_icon_img {
+      width: 100%;
+      max-width: 36px;
+  }
+
+  .Images_Text_box_Go_lime_box_left_heading {
+      margin: 0 0 20px;
+      font-size: 28px;
+      color: #333;
+      line-height: 1.2;
+      letter-spacing: 0;
+  }
+
+  .Images_Text_box_Go_lime_box_left_Para p {
+      width: 66%;
+      color: #454545;
+      font-size: 14px;
+      margin: 0;
+      letter-spacing: 0;
+      margin: 0;
+      line-height: 1.3;
+  }
+
+  .Images_Text_box_Go_lime_box_left_button {
+      margin: 20px 0 0;
+  }
+
+  .Images_Text_box_Go_lime_box_left_button_a {
+      color: #70bc0e;
+      font-size: 20px;
+      line-height: 1;
+      display: flex
+  ;
+      align-items: center;
+      gap: 10px;
+      text-decoration-color: transparent;
+      width: fit-content;
+      transition: all .3s ease-in-out;
+      text-underline-offset: 3px;
+      letter-spacing: 0;
+  }
+
+  i.fa.fa-chevron-right {
+      font-size: 14px;
+  }
+
+  .Images_Text_box_Go_lime_box_right {
+      width: 40%;
+  }
+
+  .Images_Text_box_Go_lime_box_Right_Flex {
+      display: flex
+  ;
+      gap: 10px;
+  }
+
+  .Images_Text_box_Go_lime_box_right_1box_images, .Images_Text_box_Go_lime_box_right_2box_images {
+      width: 49%;
+      display: flex
+  ;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .Images_Text_box_Go_lime_box_right_1box_1images, .Images_Text_box_Go_lime_box_right_1box_2images, .Images_Text_box_Go_lime_box_right_2box_1images {
+      line-height: 100%;
+  }
+  .Images_Text_box_Go_lime_box_right_1box_1img, .Images_Text_box_Go_lime_box_right_2box_2img {
+      width: 100%;
+      height: 250px;
+      border-radius: 24px;
+      object-fit: cover;
+  }
+
+  .Images_Text_box_Go_lime_box_right_1box_2img, .Images_Text_box_Go_lime_box_right_2box_1img {
+      height: 190px;
+       width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+  }
+
+  @media screen and (max-width: 767px) {
+   .Images_Text_container_go_lime_section {
+      padding: 0 15px;
+  }
+  .Images_Text_Go_lime_Flex {
+      flex-direction: column-reverse;
+  }
+  .Images_Text_box_Go_lime_box_left {
+      width: 100%;
+  }
+  .Images_Text_box_Go_lime_box_left_data_Title_images {
+      width: 100%;
+      text-align: center;
+  }
+  .Images_Text_box_Go_lime_box_left_images_box {
+      margin: 0 0 20px;
+      width: auto;
+  }
+  .Images_Text_box_Go_lime_box_left_heading {
+      margin: 0 0 20px;
+      font-size: 24px;
+   }
+   .Images_Text_box_Go_lime_box_left_Para p {
+      width: 100%;
+      margin: 0 auto;
+      font-size: 14px;
+  }
+
+  .Images_Text_box_Go_lime_box_left_button {
+      margin: 20px 0;
+  }
+  .Images_Text_box_Go_lime_box_left_button_a {
+      width: 100%;
+      justify-content: center;
+      font-size: 20px;
+  }
+
+  .Images_Text_box_Go_lime_box_right {
+      width: 100%;
+  }
+
+  .Images_Text_box_Go_lime_box_right_1box_1img, .Images_Text_box_Go_lime_box_right_2box_2img {
+      width: 100%;
+      height: 107px;
+  }
+  .Images_Text_box_Go_lime_box_right_1box_2img, .Images_Text_box_Go_lime_box_right_2box_1img {
+      height: 165px;
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+  }
+  }
+</style>
+
+<section class="Images_Text_go_lime_section">
+  <div class="Images_Text_container_go_lime_section">
+    <div class="Images_Text_Go_lime_Flex">
+      <div class="Images_Text_box_Go_lime_box_left">
+        <div class="Images_Text_box_Go_lime_box_left_data_Title_images">
+          <div class="Images_Text_box_Go_lime_box_left_images_box">
+            {% if section.settings.sub_Images_Text_box_Go_lime_box_left_images_box !=blank %}
+            <img
+              src="{{ section.settings.sub_Images_Text_box_Go_lime_box_left_images_box |img_url:'master' }}"
+              alt=""
+              class="Images_Text_box_Go_lime_box_left_images_icon_img"
+            >
+                {% endif %}
+          </div>
+          <div class="Images_Text_box_Go_lime_box_left_data_title_box">
+            <h3 class="Images_Text_box_Go_lime_box_left_heading">{{ section.settings.sub_Images_Text_box_Go_lime_box_left_heading }}</h3>
+            <div class="Images_Text_box_Go_lime_box_left_Para">
+              <p>
+                {{ section.settings.sub_Images_Text_box_Go_lime_box_left_Para }}
+              </p>
+            </div>
+            <div class="Images_Text_box_Go_lime_box_left_button">
+              <a
+                href="{{section.settings.url_Images_Text_box_Go_lime_box_left_button_a}}"
+                class="Images_Text_box_Go_lime_box_left_button_a"
+              >
+                <span class="Images_Text_box_Go_lime_box_left_button_span">{{ section.settings.sub_Images_Text_box_Go_lime_box_left_button_span }}</span>
+                <span class="Images_Text_box_Go_lime_box_left_button_span_icon">
+                  <i class="fa fa-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Images_Text_box_Go_lime_box_right">
+        <div class="Images_Text_box_Go_lime_box_right_main-box">
+          <div class="Images_Text_box_Go_lime_box_Right_Flex">
+            <div class="Images_Text_box_Go_lime_box_right_1box_images">
+              <div class="Images_Text_box_Go_lime_box_right_1box_1images">
+                {% if section.settings.sub_Images_Text_box_Go_lime_box_right_1box_1img !=blank%}
+                <img src="{{ section.settings.sub_Images_Text_box_Go_lime_box_right_1box_1img |img_url:'master' }}" alt="" class="Images_Text_box_Go_lime_box_right_1box_1img">
+              {% endif %}
+              </div>
+              <div class="Images_Text_box_Go_lime_box_right_1box_2images">
+                {% if section.settings.sub_Images_Text_box_Go_lime_box_right_1box_2img !=blank%}
+                <img src="{{ section.settings.sub_Images_Text_box_Go_lime_box_right_1box_2img |img_url:'master' }}" alt="" class="Images_Text_box_Go_lime_box_right_1box_2img">
+              {% endif %}
+              </div>
+            </div>
+            <div class="Images_Text_box_Go_lime_box_right_2box_images">
+              <div class="Images_Text_box_Go_lime_box_right_2box_1images">
+                {% if section.settings.sub_Images_Text_box_Go_lime_box_right_2box_1img !=blank%}
+                <img src="{{ section.settings.sub_Images_Text_box_Go_lime_box_right_2box_1img |img_url:'master' }}" alt="" class="Images_Text_box_Go_lime_box_right_2box_1img">
+              {% endif %}
+              </div>
+              <div class="Images_Text_box_Go_lime_box_right_2box_2images">
+                {% if section.settings.sub_Images_Text_box_Go_lime_box_right_2box_2img !=blank %}
+                <img src="{{ section.settings.sub_Images_Text_box_Go_lime_box_right_2box_2img |img_url:'master' }}" alt="" class="Images_Text_box_Go_lime_box_right_2box_2img">
+              {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Golime Section Img 4box",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "sub_Images_Text_box_Go_lime_box_left_images_box",
+    "label": "Top Images"
+    },
+    {
+    "type": "text",
+    "id": "sub_Images_Text_box_Go_lime_box_left_heading",
+    "label": "Heading"
+    },
+    {
+    "type": "richtext",
+    "id": "sub_Images_Text_box_Go_lime_box_left_Para",
+    "label": "Para"
+    },
+    {
+    "type": "url",
+    "id": "url_Images_Text_box_Go_lime_box_left_button_a",
+    "label": "Images Url"
+    },
+    {
+    "type": "text",
+    "id": "sub_Images_Text_box_Go_lime_box_left_button_span",
+    "label": "Images Span"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_Images_Text_box_Go_lime_box_right_1box_1img",
+    "label": "Bottom Images"
+    },
+
+    {
+    "type": "image_picker",
+    "id": "sub_Images_Text_box_Go_lime_box_right_1box_2img",
+    "label": "Bottom Images"
+    },
+
+    {
+    "type": "image_picker",
+    "id": "sub_Images_Text_box_Go_lime_box_right_2box_1img",
+    "label": "Bottom Images"
+    },
+
+    {
+    "type": "image_picker",
+    "id": "sub_Images_Text_box_Go_lime_box_right_2box_2img",
+    "label": "Bottom Images"
+    },
+  ],
+  "presets": [
+    {
+    "name": "Golime Section Img 4box"
+    }
+  ]
+}
+{% endschema %}

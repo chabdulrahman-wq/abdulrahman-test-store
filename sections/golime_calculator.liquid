@@ -1,0 +1,759 @@
+<style>
+  .golime_calculator_section {
+      padding: 30px 0;
+  }
+
+  .golime_calculator_container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .golime_calculator_content {
+      margin: 0 0 40px;
+  }
+
+  .golime_calculator_content-title {
+      color: #454545;
+      font-size: 40px;
+      text-align: center;
+      line-height: 1.2;
+  }
+
+  .golime_calculator_flex {
+      display: flex
+  ;
+      justify-content: space-between;
+      align-items: stretch;
+      padding: 0;
+      border-radius: 20px;
+  }
+
+  .golime_calculator_Right_box {
+      width: 44%;
+      display: flex
+  ;
+      justify-content: space-between;
+      flex-direction: column;
+  }
+
+  .golime_calculator_left_box {
+      width: 54%;
+      display: flex
+  ;
+      flex-direction: column;
+  }
+
+  .golime_calculator_left_box_upper {
+      border: 1px solid #454545;
+      border-radius: 16px;
+      padding: 15px 20px 30px;
+      margin-bottom: 15px;
+  }
+
+  .golime_calculator_left_box_upper-para {
+      color: #454545;
+      font-size: 18px;
+      margin-bottom: 4px;
+  }
+
+  .golime_calculator_left_box_price_input_box {
+      position: relative;
+  }
+
+  .golime_calculator_left_box_price_input_box:before{
+      content: "$";
+      position: absolute;
+      z-index: 4;
+      top: 44%;
+      left: 15px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #000;
+  }
+
+  .golime_calculator_left_box_price_input_box:after{
+     content: "$";
+      position: absolute;
+      z-index: 4;
+      top: 44%;
+      right: 15px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #000;
+  }
+
+  .golime_calculator_left_box_price_input {
+      padding: 19px 25px;
+      width: 100%;
+      font-size: 18px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: none;
+      border: 1px solid #ddd;
+  }
+
+  .golime_calculator_left_box-select {
+    {% if section.settings.main-description_golime_calculator_Right_box_Savings_img !=blank%}
+      background: rgb(8, 90, 84) url({{ section.settings.main-description_golime_calculator_Right_box_Savings_img | img_url:'master' }}) no-repeat right 10px center;
+      {% endif %}
+      width: 100%;
+      outline: none;
+      box-shadow: none;
+      background-size: 16px !important;
+      transition: background .3s
+  ease;
+      color: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding: 19px 25px;
+      font-size: 18px;
+  appearance: none;
+      border-radius: 8px;
+      margin-top: 15px;
+  }
+
+  .golime_calculator_left_box-content-description {
+      font-size: 12px;
+      line-height: 20px;
+      color: #454545;
+  }
+
+  .golime_calculator_left_box_upper {
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 15px 20px 30px;
+      margin-bottom: 15px;
+  }
+
+  .golime_calculator_left_box_bottom {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 16px;
+  }
+
+  .golime_calculator_left_box_bottom_content {
+      color: #454545;
+      font-size: 18px;
+      margin-bottom: 5px;
+  }
+
+  .golime_calculator_left_box_bottom_Time-period {
+      flex-wrap: wrap;
+      display: flex
+  ;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .golime_calculator_left_box_bottom_button {
+      padding: 21px;
+      width: 31.5%;
+      background: #f9f7f2;
+      cursor: pointer;
+      border: 0;
+      color: #000;
+      border-radius: 8px;
+  }
+
+  .golime_calculator_left_box_bottom_button:hover {
+      background-color: #eae7df;
+  }
+
+  .golime_calculator_left_box_bottom_range-container{
+      margin-top: 18px;
+  }
+
+  .golime_calculator_left_box_bottom_range-slider {
+      width: 100%;
+      margin: 0;
+      display: block;
+      accent-color: #085a54;
+  }
+
+  .golime_calculator_left_box_bottom_months_flex {
+      display: flex
+  ;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .golime_calculator_left_box_bottom_maxMonths {
+      font-size: 18px;
+  }
+  .golime_calculator_left_box_bottom_miMonths {
+      font-size: 18px;
+  }
+
+  .golime_calculator_Right_box_upper {
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 20px;
+  }
+
+  .golime_calculator_Right_box_wrapper {
+      display: flex
+  ;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      position: relative;
+  }
+
+  .golime_calculator_Right_box_wrapper-progress {
+      width: 100%;
+      height: 262px;
+      overflow: hidden;
+  }
+  .golime_calculator_Right_box_wrapper-progress svg {
+      width: 100%;
+      height: 283px;
+      transform: rotate(180deg);
+  }
+
+  .golime_calculator_Right_box_progress-content {
+      position: absolute;
+      top: -25px;
+      font-size: 16px;
+      background: #71cd32;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 5px;
+      padding: 5px 20px;
+  }
+
+  .golime_calculator_Right_box_result_text {
+      position: absolute;
+      top: 64%;
+      width: 268px;
+      text-align: center;
+      transform: translateY(-50%);
+      color: #000;
+  }
+
+  .golime_calculator_Right_box_wrapper-progress circle {
+      stroke-width: 10;
+      fill: none;
+      stroke: #f9f7f2;
+      stroke-linecap: round;
+  }
+  circle#progressCircle {
+      stroke: #085a54;
+      stroke-dasharray: 0 377;
+      transition: stroke-dasharray .3s
+  linear;
+  }
+
+  .golime_calculator_Right_box_Savings_text {
+      font-size: 18px;
+      font-weight: 700;
+  }
+
+  .golime_calculator_Right_box_total_Savings_title {
+      font-size: 55px;
+      font-weight: 700;
+      color: #f9f7f2;
+      line-height: 100%;
+      margin: 5px 0;
+  }
+  .golime_calculator_Right_box_Savings_description {
+      font-size: 12px;
+      line-height: 18px;
+  }
+
+  .golime_calculator_Right_box_bottom {
+      background: #085a54;
+      padding: 20px;
+      border-radius: 16px;
+      margin-top: 15px;
+  }
+
+  .golime_calculator_Right_box_bottom_content_para {
+      display: flex
+  ;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 9px 0;
+  }
+
+  .golime_calculator_Right_box_bottom_price1_text {
+      display: flex
+  ;
+      justify-content: space-between;
+      color: #71cd31 !important;
+      font-size: 18px;
+      padding: 9px 0;
+  }
+
+  .golime_calculator_Right_box_bottom_price_text {
+      display: flex
+  ;
+      justify-content: space-between;
+      color: #fff;
+      padding: 9px 0;
+      font-size: 18px;
+  }
+  @media screen and (max-width: 767px) {
+    .golime_calculator_flex {
+        flex-direction: column-reverse;
+    }
+
+    .golime_calculator_left_box {
+        width: 100%;
+    }
+
+    .golime_calculator_Right_box {
+        width: 100%;
+    }
+
+    .golime_calculator_content-title {
+        font-size: 24px;
+    }
+
+    .golime_calculator_container {
+        padding: 0 20px;
+    }
+
+    .golime_calculator_Right_box_upper {
+        padding: 46px 0;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+
+    .golime_calculator_Right_box_wrapper {
+        margin-top: 0;
+    }
+
+
+    .golime_calculator_Right_box_wrapper-progress {
+        height: 186px;
+    }
+
+    .golime_calculator_Right_box_wrapper-progress svg {
+        height: 200px;
+    }
+
+    .golime_calculator_Right_box_bottom_content_para {
+        font-size: 12px;
+    }
+
+    .golime_calculator_Right_box_bottom_price1_text {
+        font-size: 12px;
+    }
+
+    .golime_calculator_Right_box_bottom_price_text {
+        font-size: 12px;
+    }
+
+    .golime_calculator_left_box_upper-para {
+        font-size: 14px;
+    }
+
+    .golime_calculator_left_box_price_input {
+        font-size: 14px;
+    }
+
+
+    .golime_calculator_left_box_price_input_box:before {
+        content: "$";
+        position: absolute;
+        z-index: 4;
+        top: 46%;
+        left: 9px;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #000;
+    }
+
+    .golime_calculator_left_box-select {
+        font-size: 14px;
+    }
+
+    .golime_calculator_left_box-content-description {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 10px 0;
+    }
+
+    .golime_calculator_left_box_bottom_content {
+        font-size: 15px;
+    }
+
+    .golime_calculator_left_box_bottom_button {
+        padding: 16px 21px;
+        font-size: 14px;
+    }
+
+}
+</style>
+<section class="golime_calculator_section">
+  <div class="golime_calculator_container">
+    <div class="golime_calculator_content">
+      <h2 class="golime_calculator_content-title">{{ section.settings['main-golime_calculator_content-title'] }}</h2>
+    </div>
+    <div class="golime_calculator_flex">
+      <div class="golime_calculator_left_box">
+        <div class="golime_calculator_left_box_upper">
+          <div class="golime_calculator_left_box_upper-para">
+            {{ section.settings['Sub-golime_calculator_left_box_upper-para'] }}
+          </div>
+          <div class="golime_calculator_left_box_price_input_box">
+            <input
+              type="number"
+              class="golime_calculator_left_box_price_input"
+              value
+              placeholder="enter other provider price"
+            >
+          </div>
+          <select class="golime_calculator_left_box-select">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'select' %}
+                  <option
+                    class="golime-calculated-left-box-select-option"
+                    value=""
+                    style="background-color: rgb(8, 90, 84); color: rgb(113, 205, 50);"
+                  >
+                    {{ block.settings['main-golime-calculated-left-box-select-option'] }}
+                  </option>
+                  <option
+                    class="golime-calculated-left-box-select-option"
+                    value="19.96"
+                    style="background-color: rgb(8, 90, 84); color: rgb(113, 205, 50);"
+                  >
+                    {{ block.settings['main-golime-calculated-left-box-select-option2'] }}
+                  </option>
+                  <option
+                    class="golime-calculated-left-box-select-option"
+                    value="16.96"
+                    style="background-color: rgb(8, 90, 84); color: rgb(113, 205, 50);"
+                  >
+                    {{ block.settings['main-golime-calculated-left-box-select-option3'] }}
+                  </option>
+                  <option
+                    class="golime-calculated-left-box-select-option"
+                    value="29.95"
+                    style="background-color: rgb(8, 90, 84); color: rgb(113, 205, 50);"
+                  >
+                    {{ block.settings['main-golime-calculated-left-box-select-option4'] }}
+                  </option>
+                  <option
+                    class="golime-calculated-left-box-select-option"
+                    value="34.95"
+                    style="background-color: rgb(8, 90, 84); color: rgb(113, 205, 50);"
+                  >
+                    {{ block.settings['main-golime-calculated-left-box-select-option5'] }}
+                  </option>
+                  <option
+                    class="golime-calculated-left-box-select-option"
+                    value="34.95"
+                    style="background-color: rgb(8, 90, 84); color: rgb(113, 205, 50);"
+                  >
+                    {{ block.settings['main-golime-calculated-left-box-select-option6'] }}
+                  </option>
+              {% endcase %}
+            {% endfor %}
+          </select>
+          <div class="golime_calculator_left_box-content-description">
+            {{ section.settings['mian-golime_calculator_left_box-content-description'] }}
+          </div>
+        </div>
+        <div class="golime_calculator_left_box_bottom">
+          <div class="golime_calculator_left_box_bottom_content">
+            {{ section.settings['main-golime_calculator_left_box_bottom'] }}
+          </div>
+          <div class="golime_calculator_left_box_bottom_Time-period">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'Buttons' %}
+                  <button onclick="setYears(5)" class="golime_calculator_left_box_bottom_button">
+                    {{ block.settings['main-golime_calculator_left_box_bottom_button'] }}
+                  </button>
+                  <button onclick="setYears(10)" class="golime_calculator_left_box_bottom_button">
+                    {{ block.settings['main-golime_calculator_left_box_bottom_button2'] }}
+                  </button>
+                  <button onclick="setYears(15)" class="golime_calculator_left_box_bottom_button">
+                    {{ block.settings['main-golime_calculator_left_box_bottom_button3'] }}
+                  </button>
+              {% endcase %}
+            {% endfor %}
+          </div>
+          <div class="golime_calculator_left_box_bottom_range-container">
+            <input
+              type="range"
+              class="golime_calculator_left_box_bottom_range-slider"
+              min="0"
+              max="180"
+              step="1"
+              value="0"
+              oninput="updateYearsFromRange()"
+            >
+            <div class="golime_calculator_left_box_bottom_months_flex">
+              <span class="golime_calculator_left_box_bottom_miMonths">{{ section.settings.mian-golime_calculator_left_box_bottom_miMonths }}</span>
+              <span class="golime_calculator_left_box_bottom_maxMonths">{{ section.settings.main-golime_calculator_left_box_bottom_maxMonths }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="golime_calculator_Right_box">
+        <div class="golime_calculator_Right_box_upper">
+          <div class="golime_calculator_Right_box_wrapper">
+            <div class="golime_calculator_Right_box_wrapper-progress">
+              <svg viewBox="0 0 150 150">
+                <circle class="bg" r="117" cx="75" cy="14"></circle>
+                <circle class="fg" id="progressCircle" r="117" cx="75" cy="14" style="stroke-dasharray: 0, 376.991;"></circle>
+              </svg>
+            </div>
+            <div class="golime_calculator_Right_box_progress-content">{{ section.settings.sub_golime_calculator_Right_box_progress-content }}</div>
+            <div class="golime_calculator_Right_box_result_text">
+              <p class="golime_calculator_Right_box_Savings_text">{{ section.settings.main-sub_golime_calculator_Right_box_Savings_text }}</p>
+              <h3 class="golime_calculator_Right_box_total_Savings_title">{{ section.settings.man-title_golime_calculator_Right_box_total_Savings_title }}</h3>
+              <div class="golime_calculator_Right_box_Savings_description">
+            {{ section.settings.main-description_golime_calculator_Right_box_Savings_description }} 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="golime_calculator_Right_box_bottom">
+          <div class="golime_calculator_Right_box_bottom_content_para">{{ section.settings.main-para-golime_calculator_Right_box_bottom_content_para }}</div>
+          <div class="golime_calculator_Right_box_bottom_price1_text">
+            {{ section.settings.main-text_golime_calculator_Right_box_bottom_price1_text }}
+            <span class="golime_calculator_Right_box_bottom_price1_span"> {{ section.settings.main-price_golime_calculator_Right_box_bottom_price1_span }} </span>
+          </div>
+          <div class="golime_calculator_Right_box_bottom_price_text">
+            {{ section.settings.main-price-buttton_golime_calculator_Right_box_bottom_price_text }}
+            <span class="golime_calculator_Right_box_bottom_price_span"> {{ section.settings.main-golime_calculator_Right_box_bottom_price_span }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const otherInput = document.querySelector('.golime_calculator_left_box_price_input');
+  const planSelect = document.querySelector('.golime_calculator_left_box-select');
+  const rangeSlider = document.querySelector('.golime_calculator_left_box_bottom_range-slider');
+  const minMonthsText = document.querySelector('.golime_calculator_left_box_bottom_miMonths');
+  const maxYearsText = document.querySelector('.golime_calculator_left_box_bottom_maxMonths');
+  const totalSavingsEl = document.querySelector('.golime_calculator_Right_box_total_Savings_title');
+  const savingPercentEl = document.querySelector('.golime_calculator_Right_box_progress-content');
+  const goFlexPrice1 = document.querySelector('.golime_calculator_Right_box_bottom_price1_span');
+  const goFlexPrice2 = document.querySelector('.golime_calculator_Right_box_bottom_price_span');
+  const progressCircle = document.getElementById('progressCircle');
+
+  let years = 0;
+
+  function setYears(y) {
+    years = y;
+    rangeSlider.value = y * 12;
+    updateYearsFromRange();
+  }
+
+  function updateYearsFromRange() {
+    const months = parseInt(rangeSlider.value);
+    years = months / 12;
+
+    minMonthsText.textContent = `${months} mos`;
+    maxYearsText.textContent = `${years.toFixed(1)} yrs`;
+
+    calculateSavings();
+  }
+
+  function calculateSavings() {
+    const otherPrice = parseFloat(otherInput.value) || 0;
+    const goFlexPrice = parseFloat(planSelect.value) || 0;
+    const months = parseInt(rangeSlider.value);
+
+    if (otherPrice <= 0 || goFlexPrice <= 0 || months === 0) {
+      totalSavingsEl.textContent = '$0.00';
+      savingPercentEl.textContent = '0% Less!';
+      goFlexPrice1.textContent = '$0.00';
+      goFlexPrice2.textContent = '$0.00';
+      setProgress(0);
+      return;
+    }
+
+    // Total cost for both
+    const totalOther = otherPrice * months;
+    const totalFlex = goFlexPrice * months;
+    const savings = totalOther - totalFlex;
+    const percent = ((savings / totalOther) * 100).toFixed(1);
+
+    totalSavingsEl.textContent = `$${savings.toFixed(2)}`;
+    savingPercentEl.textContent = `${percent}% Less!`;
+    goFlexPrice1.textContent = `$${totalFlex.toFixed(2)}`;
+    goFlexPrice2.textContent = `$${totalOther.toFixed(2)}`;
+
+    setProgress(percent);
+  }
+
+  function setProgress(percent) {
+    const circleLength = 376.991; // full circle stroke length
+    const progress = Math.max(0, Math.min(100, percent)); // clamp 0–100
+    const dashArray = (progress / 100) * circleLength;
+    progressCircle.style.strokeDasharray = `${dashArray}, ${circleLength}`;
+  }
+
+  // Event listeners
+  otherInput.addEventListener('input', calculateSavings);
+  planSelect.addEventListener('change', calculateSavings);
+  rangeSlider.addEventListener('input', updateYearsFromRange);
+
+  // Initialize
+  updateYearsFromRange();
+</script>
+
+{% schema %}
+{
+  "name": "Golime Calculator Section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-golime_calculator_content-title",
+    "label": "Golime Calculator Title"
+    },
+    {
+    "type": "richtext",
+    "id": "Sub-golime_calculator_left_box_upper-para",
+    "label": "Golime Calculator Para"
+    },
+    {
+    "type": "richtext",
+    "id": "mian-golime_calculator_left_box-content-description",
+    "label": "Golime Calculator Description"
+    },
+    {
+    "type": "richtext",
+    "id": "main-golime_calculator_left_box_bottom",
+    "label": "Golime Calculator Bottom Description"
+    },
+    {
+    "type": "text",
+    "id": "mian-golime_calculator_left_box_bottom_miMonths",
+    "label": "Golime Calculator Bottom Mimonths"
+    },
+    {
+    "type": "text",
+    "id": "main-golime_calculator_left_box_bottom_maxMonths",
+    "label": "Golime Calculator Bottom Maxmonths"
+    },
+    {
+    "type": "richtext",
+    "id": "sub_golime_calculator_Right_box_progress-content",
+    "label": "Golime Calculator Right Content"
+    },
+    {
+    "type": "text",
+    "id": "main-sub_golime_calculator_Right_box_Savings_text",
+    "label": "Golime Calculator Right Text"
+    },
+    {
+    "type": "text",
+    "id": "man-title_golime_calculator_Right_box_total_Savings_title",
+    "label": "Golime Calculator Right Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-description_golime_calculator_Right_box_Savings_description",
+    "label": "Golime Calculator Right Description"
+    },
+    {
+    "type": "richtext",
+    "id": "main-para-golime_calculator_Right_box_bottom_content_para",
+    "label": "Golime Calculator Right Bottom Para"
+    },
+    {
+    "type": "text",
+    "id": "main-price_golime_calculator_Right_box_bottom_price1_span",
+    "label": "Golime Calculator Right Bottom span2"
+    },
+    {
+    "type": "richtext",
+    "id": "main-text_golime_calculator_Right_box_bottom_price1_text",
+    "label": "Golime Calculator Right Bottom Text"
+    },
+    {
+        "type": "richtext",
+        "id": "main-price-buttton_golime_calculator_Right_box_bottom_price_text",
+        "label": "Golime Calculator Right Bottom para"
+    },
+    {
+    "type": "text",
+    "id": "main-golime_calculator_Right_box_bottom_price_span",
+    "label": "Golime Calculator Right Bottom Span"
+    },
+    {
+    "type": "image_picker",
+    "id": "main-description_golime_calculator_Right_box_Savings_img",
+    "label": "Golime Calculator Right Top Span Images"
+    }
+],
+"blocks": [
+    {
+    "type": "select",
+    "name": "Select",
+    "settings": [
+        {
+        "type": "text",
+        "id": "main-golime-calculated-left-box-select-option",
+        "label": "Golime Calculated Select Option"
+        },
+        {
+        "type": "text",
+        "id": "main-golime-calculated-left-box-select-option2",
+        "label": "Golime Calculated Select Option2"
+        },
+        {
+        "type": "text",
+        "id": "main-golime-calculated-left-box-select-option3",
+        "label": "Golime Calculated Select Option3"
+        },
+        {
+        "type": "text",
+        "id": "main-golime-calculated-left-box-select-option4",
+        "label": "Golime Calculated Select Option4"
+        },
+        {
+        "type": "text",
+        "id": "main-golime-calculated-left-box-select-option5",
+        "label": "Golime Calculated Select Option"
+        },
+        {
+        "type": "text",
+        "id": "main-golime-calculated-left-box-select-option6",
+        "label": "Golime Calculated Select Option6"
+        }
+    ]
+    },
+    {
+    "type": "Buttons",
+    "name": "Buttons",
+    "settings": [
+        {
+        "type": "text",
+        "id": "main-golime_calculator_left_box_bottom_button",
+        "label": "Golime Calculator Bottom Button"
+        },
+        {
+        "type": "text",
+        "id": "main-golime_calculator_left_box_bottom_button2",
+        "label": "Golime Calculator Bottom Button2"
+        },
+        {
+        "type": "text",
+        "id": "main-golime_calculator_left_box_bottom_button3",
+        "label": "Golime Calculator Bottom Button3"
+        },
+    ]
+    }
+],
+"presets": [
+    {
+    "name": "Golime Calculator Section"
+    }
+]
+
+}
+{% endschema %}

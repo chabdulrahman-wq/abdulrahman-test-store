@@ -1,0 +1,372 @@
+<style>
+  .Golime_slider_home_pare_Secrion {
+      padding: 50px 0;
+  }
+
+  .Golime_slider_home_pare_container {
+      max-width: 1337px;
+      padding: 0 50px;
+      margin: 0 auto;
+  }
+
+  .Golime_slider_home_pare_Title_h2 {
+      text-align: center;
+      color: rgb(60, 64, 67);
+      font-size: 40px;
+      line-height: 40px;
+      letter-spacing: 0px;
+      margin: 0px;
+  }
+
+  .Golime_slider_home_pare_desp {
+      padding: 20px 0;
+      margin: 0 auto;
+  }
+  .Golime_slider_home_pare_desp p {
+
+  text-align: center;
+      margin: 0 auto;
+      color: #3C4043;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 26px;
+      display: block;
+      font-size: 20px;
+  }
+
+  .Golime_slider_home_pare_links {
+      text-decoration: none;
+      display: flex
+  ;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+  }
+
+  .Golime_slider_home_pare_links_para_text{
+      padding-right: 10px;
+  }
+
+  .Golime_slider_home_pare_links_para_text p {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: 0;
+      color: #70BC0E;
+  }
+
+  .Golime_slider_home_pare_links_para_text span {
+      color: #F6AE02;
+  }
+
+  i.fa-solid.fa-chevron-right{
+      color: #70BC0E;
+      font-size: 20px;
+      line-height: 0;
+      margin-top: 17px;
+  }
+
+  .Golime_Slider_item {
+      display: flex
+  ;
+      justify-content: center;
+  }
+
+  .Golime_Slider_item_block_box {
+      border-radius: 20px;
+      padding: 40px 38.3px;
+      border: 1px solid #949494;
+      display: flex
+  ;
+      flex-direction: column;
+      min-height: 330px;
+  }
+
+  .Golime_Slider_item_block_box_contnt {
+      display: flex
+  ;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .Golime_Slider_item_block_box_img_title {
+      display: flex
+  ;
+      align-items: center;
+  }
+
+  .Golime_Slider_item_block_box_images {
+      line-height: 0;
+      margin-right: 15px;
+      height: 44px;
+      width: fit-content;
+  }
+
+  .Golime_Slider_item_block_box_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .Golime_Slider_item_block_box_title {
+      /* width: 100%; */
+      text-align: left;
+  }
+
+  .Golime_Slider_item_block_box_title p {
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0;
+      color: #454545;
+      margin: 0 !important;
+  }
+
+  .Golime_Slider_item_block_box_images_star_img {
+      max-width: 81.98px;
+      width: 100%;
+      height: 100%;
+  }
+
+  .Golime_Slider_item_block_box_para_golime {
+      padding: 19px 0 0 0;
+  }
+
+  .Golime_Slider_item_block_box_para_golime p {
+      font-size: 16px;
+      color: #454545;
+      max-width: 505px;
+      letter-spacing: 0;
+      margin: 0 !important;
+      line-height: 22px;
+      text-align: left;
+  }
+
+   .owl-nav button{
+        background: #fff !important;
+        border: 1px solid #ddd !important;
+        width: 52px;
+        height: 52px;
+        border-radius: 50% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px !important;
+        color: #444 !important;
+        transition: 0.3s;
+        position: absolute;
+        transition: background 0.3s ease;
+        top: 40%;
+      }
+      .owl-nav button.owl-prev{
+        left: 120px;
+      }
+      .owl-nav button.owl-next{
+        right: 120px;
+      }
+      .owl-dots{
+        margin-top: 20px;
+        text-align:center;
+      }
+      .owl-dots .owl-dot span{
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        display: none;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      
+
+      .owl-dots .owl-dot.active span{
+        background: #6bc23c;
+      }
+      .owl-carousel .owl-item {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+@media screen and (max-width: 767px) {
+    .Golime_slider_home_pare_Title_h2 {
+        font-size: 24px;
+        line-height: 100%;
+    }
+    .Golime_slider_home_pare_desp p {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.Golime_slider_home_pare_links_para_text p {
+    padding-top: 0px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.Golime_Slider_item_block_box_images {
+    {% comment %} width: 48px; {% endcomment %}
+    margin-right: 9px;
+}
+
+.Golime_Slider_item_block_box_images_star_img {
+    max-width: 75.98px;
+}
+.Golime_Slider_item_block_box_para_golime p {
+    font-size: 14px;
+    line-height: 18px;
+}
+.Golime_Slider_item_block_box{
+padding: 20px !important;
+        display: flex
+;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 320px;
+        margin-bottom: 20px;
+        width: calc(100% - 20px);
+}
+  }
+</style>
+<section class="Golime_slider_home_pare_Secrion">
+  <div class="Golime_slider_home_pare_container">
+    <div class="Golime_slider_home_pare_Title">
+      <h2 class="Golime_slider_home_pare_Title_h2">{{ section.settings.sub_Golime_slider_home_pare_Title_h2 }}</h2>
+    </div>
+    <div class="Golime_slider_home_pare_desp">
+      <p>{{ section.settings.Golime_slider_home_pare_desp }}</p>
+    </div>
+    <a href="{{ section.settings.main_Golime_slider_home_pare_links }}" class="Golime_slider_home_pare_links">
+      <div class="Golime_slider_home_pare_links_para_text">
+        <p>
+          {{ section.settings.Golime_slider_home_pare_links_para_text_left }}
+        </p>
+      </div>
+      <div class="Golime_slider_home_pare_links_icon">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </a>
+    <div class="owl-carousel owl-theme golime_slider">
+      {% for block in section.blocks %}
+        <div class="Golime_Slider_item">
+          <div class="Golime_Slider_item_block_box">
+            <div class="Golime_Slider_item_block_box_contnt">
+              <div class="Golime_Slider_item_block_box_img_title">
+                <div class="Golime_Slider_item_block_box_images">
+                  {% if block.settings.main_Golime_Slider_item_block_box_img != blank %}
+                    <img
+                      src="{{ block.settings.main_Golime_Slider_item_block_box_img |img_url:'master' }}"
+                      alt=""
+                      class="Golime_Slider_item_block_box_img"
+                    >
+                  {% endif %}
+                </div>
+                <div class="Golime_Slider_item_block_box_title">
+                  <p>{{ block.settings.main_Golime_Slider_item_block_box_title }}</p>
+                </div>
+              </div>
+
+              <div class="Golime_Slider_item_block_box_images_star">
+                {% if block.settings.main_Golime_Slider_item_block_box_images_star_img != blank %}
+                  <img
+                    src="{{ block.settings.main_Golime_Slider_item_block_box_images_star_img |img_url:'master' }}"
+                    alt=""
+                    class="Golime_Slider_item_block_box_images_star_img"
+                  >
+                {% endif %}
+              </div>
+            </div>
+            <div class="Golime_Slider_item_block_box_para_golime">
+              <p>
+                {{ block.settings.main_Golime_Slider_item_block_box_para_golime }}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- jQuery + Owl Carousel JS -->
+
+<script>
+  $('.golime_slider').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots:true,
+     autoplay: true,
+     autoplayTimeout: 2000,  // 2 second per slide
+      smartSpeed: 900,  
+    navText: ["<i class='fa fa-arrow-left'></i>", "<i class='fa fa-arrow-right'></i>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Golime Slider Section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "sub_Golime_slider_home_pare_Title_h2",
+    "label": "Top Heaing"
+    },
+    {
+    "type": "richtext",
+    "id": "Golime_slider_home_pare_desp",
+    "label": "Para"
+    },
+    {
+    "type": "url",
+    "id": "main_Golime_slider_home_pare_links",
+    "label": "Url Para"
+    },
+    {
+        "type": "textarea",
+        "id": "Golime_slider_home_pare_links_para_text_left",
+        "label": "Slider Home Para Left"
+    },
+  ],
+  "blocks": [
+    {
+    "type": "Slider",
+    "name": "Slider",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "main_Golime_Slider_item_block_box_img",
+        "label": "Slider Images"
+        },
+    {
+    "type": "richtext",
+    "id": "main_Golime_Slider_item_block_box_title",
+    "label": "Slider Para"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_Golime_Slider_item_block_box_images_star_img",
+    "label": "Slider Star"
+    },
+    {
+    "type": "richtext",
+    "id": "main_Golime_Slider_item_block_box_para_golime",
+    "label": "Slider Para2"
+    }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Slider Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,203 @@
+<style>
+
+  .golime_blog_post_Block_Container {
+      max-width: 1132px;
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .golime_blog_post_Block_content_Box {
+      padding-top: 40px;
+      padding-bottom: 30px;
+  }
+
+  .golime_blog_post_Block_box_heading {
+      font-size: 40px;
+      color: #454545;
+      padding: 10px;
+  }
+
+  .golime_blog_post_Block_box_flex {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+  }
+
+  .golime_blog_post_Block_box {
+      padding: 10px;
+      width: 33.3%;
+  }
+
+  .golime_blog_post_Block_box_Main {
+      border: 1px solid #d9d9d9;
+      padding: 32px;
+      border-radius: 12px;
+  }
+
+  .golime_blog_post_Block_box_Main_flex_heading {
+      display: flex;
+      align-items: center;
+      padding-bottom: 14px;
+  }
+
+  .golime_blog_post_Block_box_Main-text-heading {
+      color: #454545;
+      padding-right: 10px;
+      display: block;
+      font-size: 16px;
+  }
+
+  .golime_blog_post_Block_box_Main-text-tag {
+      background: #f9f7f2;
+      padding: 3px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      display: block;
+      width: fit-content;
+      letter-spacing: 0;
+      color: #454545 !important;
+  }
+
+  .golime_blog_post_Block_box_Main-content-para {
+      font-size: 14px;
+      color: #454545;
+      padding-bottom: 10px;
+  }
+
+  .golime_blog_post_Block_box_Main-box-btm {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  .golime_blog_post_Block_box_Main-box-btm-button-link {
+      font-size: 16px;
+      color: #70bc0e;
+      text-decoration: none;
+  }
+
+.fa-solid.fa-chevron-right.a {
+    color: #70bc0e !important;
+    font-size: 11px !important;
+}
+
+  .golime_blog_post_Block_box_Main-box-btm-logo {
+      position: relative;
+      height: 36px;
+      max-width: 50%;
+      width: 40%;
+  }
+
+  .golime_blog_post_Block_box_Main-box-btm-logo-images {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      object-fit: contain;
+      object-position: right bottom;
+  }
+
+  .golime_blog_post_Block_box_Main-box-btm-button {
+      cursor: pointer;
+  }
+
+  .golime_blog_post_Block_box_Main-box-btm-button-link:hover .golime_blog_post_Block_box_Main-box-btm-button {
+      border-bottom: 1px solid #70BC0E;
+  }
+</style>
+<section class="golime_blog_post_Block_Section">
+  <div class="golime_blog_post_Block_Container">
+    <div class="golime_blog_post_Block_content_Box">
+      <div class="golime_blog_post_Block_box_title">
+        <h3 class="golime_blog_post_Block_box_heading">{{ section.settings.main-golime_blog_post_Block_box_heading }}</h3>
+      </div>
+      <div class="golime_blog_post_Block_flex">
+        <div class="golime_blog_post_Block_box_flex">
+            {% for block in section.blocks %}
+          <div class="golime_blog_post_Block_box">
+            <div class="golime_blog_post_Block_box_Main">
+              <div class="golime_blog_post_Block_box_Main_flex_heading">
+                <span class="golime_blog_post_Block_box_Main-text-heading"> {{ block.settings.main-golime_blog_post_Block_box_Main-text-heading }} </span>
+                <span class="golime_blog_post_Block_box_Main-text-tag"> {{ block.settings.main-sub-golime_blog_post_Block_box_Main-text-tag }} </span>
+              </div>
+              <div class="golime_blog_post_Block_box_Main-content-para">
+                {{ block.settings.mina-golime_blog_post_Block_box_Main-content-para }}
+              </div>
+              <div class="golime_blog_post_Block_box_Main-box-btm">
+                <a href="{{ block.settings.golime_blog_post_Block_box_Main-box-btm-button-link }}" class="golime_blog_post_Block_box_Main-box-btm-button-link">
+                  <span class="golime_blog_post_Block_box_Main-box-btm-button"> {{ block.settings.main-golime_blog_post_Block_box_Main-box-btm-button }} </span>
+                 <i class="fa-solid fa-chevron-right a"></i>
+                </a>
+                <div class="golime_blog_post_Block_box_Main-box-btm-logo">
+                    {% if block.settings.main-golime_blog_post_Block_box_Main-box-btm-logo-images !=blank %}
+                  <img src="{{ block.settings.main-golime_blog_post_Block_box_Main-box-btm-logo-images | img_url:'master' }}" alt="" class="golime_blog_post_Block_box_Main-box-btm-logo-images">
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Blog Block Box",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-golime_blog_post_Block_box_heading",
+    "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Blog_Box",
+    "name":"Blog Box",
+    "settings": [
+        {
+        "type": "text",
+        "id": "main-golime_blog_post_Block_box_Main-text-heading",
+        "label": "Heading"
+        },
+        {
+        "type": "text",
+        "id": "main-sub-golime_blog_post_Block_box_Main-text-tag",
+        "label": "Tect Tag"
+        },
+        {
+        "type": "richtext",
+        "id": "mina-golime_blog_post_Block_box_Main-content-para",
+        "label": "Para"
+        },
+        {
+        "type": "url",
+        "id": "golime_blog_post_Block_box_Main-box-btm-button-link",
+        "label": "Button Link"
+        },
+        {
+        "type": "text",
+        "id": "main-golime_blog_post_Block_box_Main-box-btm-button",
+        "label": "Button Text"
+        },
+        {
+        "type": "image_picker",
+        "id": "main-golime_blog_post_Block_box_Main-box-btm-logo-images",
+        "label": "Images Img"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Blog Block Box"
+    }
+  ]
+}
+{% endschema %}

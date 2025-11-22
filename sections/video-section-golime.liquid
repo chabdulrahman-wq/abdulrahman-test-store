@@ -1,0 +1,269 @@
+<style>
+  .golime_video_sc_text {
+      padding: 50px 0px;
+  }
+  .golime_video_sc_text_continer {
+      max-width: 1338px;
+      padding: 0px 50px;
+      margin: 0 auto;
+      width: 100%;
+  }
+  .golime_video_sc_text_flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .golime_video_sc_text_box {
+      width: 43%;
+  }
+  .golime_video_sc_text_video_box {
+      width: 54.3%;
+  }
+  .content_golime_sc_text_main {
+      padding: 0px 52px;
+  }
+  .content_golime_sc_text_main_images_logo {
+      width: 46px;
+      height: 39px;
+      object-fit: contain;
+      display: block;
+  }
+  .content_golime_sc_text_heading {
+      font-size: 40px;
+      line-height: normal;
+      color: rgba(69, 69, 69, 1);
+      margin: 24px 0px;
+  }
+  .content_golime_sc_text_descritpion p {
+      font-size: 14px;
+      line-height: normal;
+      color: rgba(69, 69, 69, 1);
+  }
+  .content_golime_sc_text_button_link-a {
+      display: inline-block;
+      line-height: normal;
+      margin-top: 24px;
+      text-decoration: none;
+      color: rgba(69, 69, 69, 1);
+      font-size: 20px;
+      transition: text-decoration-color 0.3s ease;
+      text-decoration-color: currentColor;
+  }
+  i.fa.fa-chevron-right {
+      font-size: 15px;
+      margin-left: 8px;
+      margin-top: 2px;
+      display: inline-block;
+  }
+  .golime_video_sc_text_video {
+      position: relative;
+      height: 469px;
+      display: block !important;
+  }
+  .vide_home_mn {
+      height: 100% !important;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      object-fit: cover;
+      border-radius: 24px;
+  }
+  .golime_video_sc_text_video_images_button {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+  }
+  .golime_video_sc_text_video_images_button_img {
+      border-radius: 50px;
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      cursor: pointer;
+      display: block;
+  }
+  @media screen and (max-width: 767px){
+  .golime_video_sc_text_flex {
+      flex-direction: column;
+      gap: 24px;
+  }
+
+  .golime_video_sc_text_continer {
+      padding: 0px 15px;
+  }
+
+  .golime_video_sc_text_box{
+      width: 100%;
+  }
+
+  .golime_video_sc_text_video_box {
+      width: 100%;
+  }
+
+  .content_golime_sc_text_main {
+      padding: 0px 20px;
+      text-align: center;
+  }
+
+  .content_golime_sc_text_main_images_logo {
+      margin: 0 auto;
+  }
+
+  .content_golime_sc_text_heading{
+      font-size: 22px;
+      margin: 18px 0px;
+  }
+
+  .content_golime_sc_text_button_link-a {
+      font-size: 16px;
+      margin-top: 18px;
+  }
+
+  .golime_video_sc_text_video {
+      position: relative;
+      height: 300px;
+  }
+
+  .golime_video_sc_text_video_images_button_img {
+      width: 40px;
+      height: 40px;
+  }
+  }
+</style>
+
+<section class="golime_video_sc_text">
+  <div class="golime_video_sc_text_continer">
+    <div class="golime_video_sc_text_flex">
+      <div class="golime_video_sc_text_box">
+        <div class="content_golime_sc_text_main">
+          <div class="content_golime_sc_text_main_images_box">
+            {% if section.settings.golime_sc_text_main_images_logo != blank %}
+              <img
+                src="{{ section.settings.golime_sc_text_main_images_logo | img_url: 'master' }}"
+                alt=""
+                class="content_golime_sc_text_main_images_logo"
+              >
+            {% endif %}
+          </div>
+          <h2 class="content_golime_sc_text_heading">
+            {{ section.settings.golime_sc_text_heading }}
+          </h2>
+          <div class="content_golime_sc_text_descritpion">
+            <p>{{ section.settings.golime_sc_text_descritpion }}</p>
+          </div>
+          <div class="content_golime_sc_text_button_link">
+            <a class="content_golime_sc_text_button_link-a" href="#">
+              {{ section.settings['content_golime_sc_text_button_link-a'] }}
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="golime_video_sc_text_video_box">
+        <div class="golime_video_sc_text_video">
+          {% if section.settings.golime_video_sc_text_video != blank %}
+            <video
+              src="{{ section.settings.golime_video_sc_text_video.sources[1].url }}"
+              autoplay
+              muted
+              loop
+              playsinline
+              class="vide_home_mn"
+              preload="auto"
+              style="width: 100%;"
+              type="video/mp4"
+            ></video>
+          {% endif %}
+          <div class="golime_video_sc_text_video_images_button" style="background: none; border: none; padding: 0;">
+            {% if section.settings.golime_video_sc_text_video_images_button_img != blank %}
+              <img
+                src="{{ section.settings.golime_video_sc_text_video_images_button_img | img_url: 'master' }}"
+                alt="Play Pause Button"
+                class="golime_video_sc_text_video_images_button_img"
+                data-play="{{ section.settings.play_icon | img_url: 'master' }}"
+                data-pause="{{ section.settings.pause_icon | img_url: 'master' }}"
+              >
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const video = document.querySelector('.vide_home_mn');
+  const toggleBtn = document.querySelector('.golime_video_sc_text_video_images_button_img');
+
+  if (video && toggleBtn) {
+    const playIcon = toggleBtn.getAttribute('data-play');
+    const pauseIcon = toggleBtn.getAttribute('data-pause');
+
+    // start with pauseIcon
+    toggleBtn.src = pauseIcon;
+
+    toggleBtn.addEventListener('click', function () {
+      if (video.paused) {
+        video.play();
+        toggleBtn.src = pauseIcon;
+      } else {
+        video.pause();
+        toggleBtn.src = playIcon;
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Golime Video",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "golime_sc_text_main_images_logo",
+      "label": "Golim Logo"
+    },
+    {
+      "type": "text",
+      "id": "golime_sc_text_heading",
+      "label": "Golime Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "golime_sc_text_descritpion",
+      "label": "Golime Description"
+    },
+    {
+      "type": "text",
+      "id": "content_golime_sc_text_button_link-a",
+      "label": "Golime Button Text"
+    },
+    {
+      "type": "video",
+      "id": "golime_video_sc_text_video",
+      "label": "Select Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime_video_sc_text_video_images_button_img",
+      "label": "Default Video Button Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "play_icon",
+      "label": "Play Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "pause_icon",
+      "label": "Pause Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Golime Video"
+    }
+  ]
+}
+{% endschema %}

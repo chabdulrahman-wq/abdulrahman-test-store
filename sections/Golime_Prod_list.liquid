@@ -1,0 +1,478 @@
+<style>
+      .prod_list_Golime_Get_Started_page {
+          padding: 30px 50px 60px;
+      }
+
+      .prod_list_Golime_Get_Started_page_content {
+          max-width: 853px;
+          padding: 0px 30px 120px;
+          margin: 0 auto;
+          text-align: center;
+      }
+
+      .prod_list_Golime_Get_Started_page_title {
+          letter-spacing: 0;
+          color: #454545;
+          font-size: 40px;
+          padding: 0 90px 24px;
+      }
+
+      .prod_list_Golime_Get_Started_page_para p {
+          color: #454545;
+          letter-spacing: 0;
+          line-height: normal;
+          font-size: 20px;
+      }
+
+      .prod_list_Golime_Get_Started_page_flex {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          row-gap: 30px;
+          column-gap: 30px;
+          justify-content: center;
+      }
+
+      .prod_list_box {
+          width: calc(25% - 22.5px);
+          min-height: 400px;
+          position: relative;
+      }
+
+      .prod_list_Golime_Get_Started_page_flex_box {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          align-items: center;
+          width: 100%;
+      }
+
+      .prod_list_Golime_Get_Started_page_para_content_flex {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 20px 50px;
+          min-height: 453px;
+          background: #f9f7f2;
+          border-radius: 24px;
+          text-align: center;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_Text_links {
+          text-decoration: none;
+          display: block;
+          color: #454545;
+      }
+
+      .prod_list_Golime_Get_Started_page_flex_content_para {
+          font-size: 20px;
+          padding: 0px 0px 10px;
+          min-height: 88px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .prod_list_Golime_Get_Started_page_flex_content_para p {
+          font-size: 20px;
+          color: #454545;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_images-box {
+          background: #f9f7f2;
+          border-radius: 24px;
+          padding: 0;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_images_links {
+          display: block;
+          position: relative;
+          height: 204px;
+          max-width: 204px;
+          width: 204px;
+          margin: 0 auto;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_images_img {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          margin: 0 auto;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          height: 100%;
+          object-fit: contain;
+          max-width: 100%;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_star_box_span {
+          padding: 0 3px 0 0 !important;
+      }
+
+      .fa-solid.fa-star {
+          color: #f6ae02 !important;
+      }
+
+    .prod_list_Golime_Get_Started_page_content_star_text_box {
+        display: flex
+    ;
+        align-items: center;
+    }
+
+      .prod_list_Golime_Get_Started_page_content_text_span_box {
+          font-size: 12px;
+          color: #00000050;
+          padding-left: 5px;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_price_shop {
+          padding-bottom: 10px;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_infromation_price_shop {
+          font-size: 14px;
+          color: #454545;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_button_By {
+          text-decoration: none;
+          background: #085a54;
+          color: #fff;
+          width: fit-content;
+          margin: 0 auto;
+          font-size: 20px;
+          height: 52px;
+          align-items: center;
+          display: flex;
+          text-align: center;
+          padding: 10px 30px;
+          border-radius: 50px;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_info_accordion_FAQs {
+          width: 100%;
+          padding-top: 15px;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_click {
+          background: #eee;
+          border-radius: 8px;
+          cursor: pointer;
+          text-align: left;
+      }
+
+      .prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_drop_FLex {
+          display: flex;
+          justify-content: space-between;
+          padding: 11px 15px;
+      }
+
+      .Golime_Get_Started_page_content_info_accordion {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+      }
+
+      .fa-solid.fa-question {
+          color: #454545;
+          font-size: 13px;
+          border: 2px solid #454545;
+          width: 22px;
+          height: 22px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50px;
+      }
+
+      .Golime_Get_Started_page_content_info_accordion_text {
+          line-height: normal;
+          color: #454545;
+          font-size: 12px;
+      }
+
+      .fa-solid.fa-chevron-down {
+          font-size: 12px;
+      }
+
+      .Golime_Get_Started_page_content_acordion_data {
+          font-size: 15px;
+          color: #454545;
+          max-height: 0;
+          overflow: hidden;
+          line-height: normal;
+          padding: 0 15px;
+          transition: max-height 0.4s ease, padding 0.3s ease;
+      }
+
+      .Golime_Get_Started_page_content_acordion_data.active {
+          max-height: 300px;
+          padding: 15px;
+      }
+
+      .Golime_Get_Started_page_content_acordion_data_para p {
+          color: #454545;
+          font-size: 12px;
+      }
+
+  .Golime_Get_Started_page_content_acordion_data_para_shop_buttons{
+  width: fit-content;
+      display: inline-block;
+      text-align: start;
+      font-size: 16px;
+      margin-top: 15px;
+      color: #70bc0e;
+      text-decoration: none;
+  }
+
+  .fa-solid.fa-chevron-right{
+  font-size: 15px;
+  color: #70bc0e !important;
+      margin-left: 0px !important;
+
+  }
+
+  /* ✅ Accordion icon rotation */
+  .Golime_Get_Started_page_content_info_accordion_icon_down i {
+      transition: transform 0.3s ease;
+  }
+
+  .prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_click.active
+  .Golime_Get_Started_page_content_info_accordion_icon_down i {
+      transform: rotate(180deg);
+  }
+</style>
+<section class="prod_list_Golime_Get_Started_page">
+  <div class="prod_list_Golime_Get_Started_page_content">
+    <h2 class="prod_list_Golime_Get_Started_page_title">
+      {{ section.settings.main_prod_list_Golime_Get_Started_page_title }}
+    </h2>
+    <div class="prod_list_Golime_Get_Started_page_para">
+      <p>
+        {{ section.settings['main-para_prod_list_Golime_Get_Started_page_para'] }}
+      </p>
+    </div>
+  </div>
+  <div class="prod_list_Golime_Get_Started_page_flex">
+    {% for block in section.blocks %}
+      <div class="prod_list_box">
+        <div class="prod_list_Golime_Get_Started_page_flex_box">
+          <div class="prod_list_Golime_Get_Started_page_para_content_flex">
+            <a
+              href="{{ block.settings.main_link_prod_list_Golime_Get_Started_page_content_Text_links }}"
+              class="prod_list_Golime_Get_Started_page_content_Text_links"
+            >
+              <div class="prod_list_Golime_Get_Started_page_flex_content_para">
+                <p>{{ block.settings['main_sub-prod_list_Golime_Get_Started_page_flex_content_para'] }}</p>
+              </div>
+            </a>
+            <div class="prod_list_Golime_Get_Started_page_content_images-box">
+              <a
+                href="{{ block.settings.prod_list_Golime_Get_Started_page_content_images_links }}"
+                class="prod_list_Golime_Get_Started_page_content_images_links"
+              >
+                {% if block.settings.main_prod_list_Golime_Get_Started_page_content_images_img != blank %}
+                  <img
+                    src="{{ block.settings.main_prod_list_Golime_Get_Started_page_content_images_img |img_url:'master' }}"
+                    alt=""
+                    class="prod_list_Golime_Get_Started_page_content_images_img"
+                  >
+                {% endif %}
+              </a>
+            </div>
+            <div class="prod_list_Golime_Get_Started_page_content_star_text_box">
+              <div class="prod_list_Golime_Get_Started_page_content_star_box">
+                <span class="prod_list_Golime_Get_Started_page_content_star_box_span">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="prod_list_Golime_Get_Started_page_content_star_box_span">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="prod_list_Golime_Get_Started_page_content_star_box_span">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="prod_list_Golime_Get_Started_page_content_star_box_span">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="prod_list_Golime_Get_Started_page_content_star_box_span">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+              </div>
+              <span class="prod_list_Golime_Get_Started_page_content_text_span_box">
+                {{ block.settings.main_Sub_prod_list_Golime_Get_Started_page_content_text_span_box }}
+              </span>
+            </div>
+            <div class="prod_list_Golime_Get_Started_page_content_price_shop">
+              <div class="prod_list_Golime_Get_Started_page_content_infromation_price_shop">
+                <span class="prod_list_Golime_Get_Started_page_content_price_span1">
+                  {{- block.settings.main_sub_prod_list_Golime_Get_Started_page_content_price_span1 -}}
+                </span>
+                <span class="prod_list_Golime_Get_Started_page_content_price_span2">
+                  {{- block.settings.main_sub_prod_list_Golime_Get_Started_page_content_price_span2 -}}
+                </span>
+              </div>
+            </div>
+            <a
+              href="{{ block.settings.mian_btn_Links-prod_list_Golime_Get_Started_page_content_button }}"
+              class="prod_list_Golime_Get_Started_page_content_button_By"
+            >
+              {{ block.settings.main_sub_prod_list_Golime_Get_Started_page_content_button_By }}
+            </a>
+          </div>
+          <div class="prod_list_Golime_Get_Started_page_content_info_accordion_FAQs">
+            <div class="prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_click">
+              <div class="prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_drop_FLex">
+                <div class="Golime_Get_Started_page_content_info_accordion">
+                  <span class="Golime_Get_Started_page_content_info_accordion_icon">
+                    <i class="fa-solid fa-question"></i>
+                  </span>
+                  <span class="Golime_Get_Started_page_content_info_accordion_text">
+                    {{ block.settings.Sub_Golime_Get_Started_page_content_info_accordion_text }}
+                  </span>
+                </div>
+                <span class="Golime_Get_Started_page_content_info_accordion_icon_down">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </span>
+              </div>
+              <div class="Golime_Get_Started_page_content_acordion_data">
+                <div class="Golime_Get_Started_page_content_acordion_data_para">
+                  <p>
+                    {{ block.settings.main_sub_Golime_Get_Started_page_content_acordion_data_para }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="Golime_Get_Started_page_content_acordion_data_para_shop_buttons"
+            href="{{ block.settings.main_sub_link_Golime_Get_Started_page_content_acordion_data_para_shop_buttons }}"
+          >
+            <span class="Golime_Get_Started_page_content_acordion_data_para_btn_learn">
+              {{- block.settings.main_sub_Golime_Get_Started_page_content_acordion_data_para_btn_learn -}}
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i
+          ></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_click').forEach((item) => {
+    item.addEventListener('click', () => {
+      // Pehle sab band karo
+      document
+        .querySelectorAll('.prod_list_Golime_Get_Started_page_content_info_accordion_FAQs_click')
+        .forEach((openItem) => {
+          if (openItem !== item) {
+            openItem.classList.remove('active');
+            openItem.querySelector('.Golime_Get_Started_page_content_acordion_data').classList.remove('active');
+          }
+        });
+
+      // Sirf clicked wale ko toggle karo
+      item.classList.toggle('active');
+      const accordion = item.querySelector('.Golime_Get_Started_page_content_acordion_data');
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product List Golime",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_prod_list_Golime_Get_Started_page_title",
+      "label": "Prod List Title"
+    },
+    {
+      "type": "richtext",
+      "id": "main-para_prod_list_Golime_Get_Started_page_para",
+      "label": "Prod List Para"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Prod_List",
+      "name": "Prod List",
+      "settings": [
+        {
+          "type": "url",
+          "id": "main_link_prod_list_Golime_Get_Started_page_content_Text_links",
+          "label": "Prod List Block Links"
+        },
+        {
+          "type": "richtext",
+          "id": "main_sub-prod_list_Golime_Get_Started_page_flex_content_para",
+          "label": "Prod List Block Para"
+        },
+        {
+          "type": "url",
+          "id": "prod_list_Golime_Get_Started_page_content_images_links",
+          "label": "Prod List Block Links Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_prod_list_Golime_Get_Started_page_content_images_img",
+          "label": "Prod List Block Images"
+        },
+        {
+          "type": "text",
+          "id": "main_Sub_prod_list_Golime_Get_Started_page_content_text_span_box",
+          "label": "Prod List Block Span"
+        },
+        {
+          "type": "text",
+          "id": "main_sub_prod_list_Golime_Get_Started_page_content_price_span1",
+          "label": "Prod List Block Price"
+        },
+        {
+          "type": "text",
+          "id": "main_sub_prod_list_Golime_Get_Started_page_content_price_span2",
+          "label": "Prod List Block Price2"
+        },
+        {
+          "type": "url",
+          "id": "mian_btn_Links-prod_list_Golime_Get_Started_page_content_button",
+          "label": "Prod List Block Links Button"
+        },
+        {
+          "type": "text",
+          "id": "main_sub_prod_list_Golime_Get_Started_page_content_button_By",
+          "label": "Prod List Block Button"
+        },
+        {
+          "type": "text",
+          "id": "Sub_Golime_Get_Started_page_content_info_accordion_text",
+          "label": "Prod List Block FAQs"
+        },
+        {
+          "type": "richtext",
+          "id": "main_sub_Golime_Get_Started_page_content_acordion_data_para",
+          "label": "Prod List Block FAQs Para"
+        },
+        {
+          "type": "url",
+          "id": "main_sub_link_Golime_Get_Started_page_content_acordion_data_para_shop_buttons",
+          "label": "Prod List Block Links"
+        },
+        {
+          "type": "text",
+          "id": "main_sub_Golime_Get_Started_page_content_acordion_data_para_btn_learn",
+          "label": "Prod List Block Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product List Golime"
+    }
+  ]
+}
+{% endschema %}

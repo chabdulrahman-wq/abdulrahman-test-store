@@ -1,0 +1,336 @@
+<style>
+      .About_Go_Lime_video_sc_text {
+      padding: 40px 0px;
+  }
+
+  .About_Go_Lime_video_sc_text_continer {
+      max-width: 1337px;
+      padding: 0 50px;
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .About_Go_Lime_video_sc_text_flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+  }
+
+  .About_Go_Lime_video_sc_text_box {
+      width: 48%;
+  }
+
+  .About_Go_Lime_video_sc_text_video_box {
+      width: 48%;
+  }
+
+  .About_Go_Lime_content_golime_sc_text_main {
+      padding: 0px 52px;
+  }
+
+  i.fa.fa-chevron-right {
+      font-size: 15px;
+      margin-left: 8px;
+      margin-top: 2px;
+      display: inline-block;
+  }
+
+  .About_Go_Lime_video_sc_text_video {
+      position: relative;
+      height: 469px;
+      display: block !important;
+  }
+
+  .About_Go_Lime_vide_home_mn {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      height: 490px;
+  }
+
+  .About_Go_Lime_video_sc_text_video_images_button {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+  }
+
+  .About_Go_Lime_video_sc_text_video_images_button_img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+  }
+
+  .About_Go_Lime_accordion_header_text_title{
+          margin: 0 0 20px;
+  }
+
+  .About_Go_Lime_accordion_header_title {
+      margin: 0;
+      font-size: 22px;
+      color: #454545;
+      line-height: 100%;
+      letter-spacing: 0;
+  }
+
+  .About_Go_Lime_accordion_body p {
+      font-size: 16px;
+      letter-spacing: 0;
+      color: #454545;
+      line-height: 1.4;
+      margin: 0;
+  }
+
+  .About_Go_Lime_content_title {
+          font-size: 30px;
+      color: #454545;
+      margin: 0;
+      letter-spacing: 0;
+      font-weight: 700;
+  }
+
+  .About_Go_Lime_accordion_item {
+      /* border-bottom: 1px solid #ddd; */
+      margin: 30px 0;
+  }
+
+  .About_Go_Lime_accordion_header {
+      display: flex
+  ;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      cursor: pointer;
+  }
+
+  .About_Go_Lime_accordion_body {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  .About_Go_Lime_accordion_item.active .About_Go_Lime_accordion_body {
+      max-height: 500px;
+      padding: 0 0 16px 0;
+  }
+
+  .About_Go_Lime_icon {
+      transition: transform 0.3s ease;
+  }
+  .About_Go_Lime_accordion_item.active .About_Go_Lime_icon {
+      transform: rotate(180deg);
+  }
+
+
+  .About_Go_Lime_video_sc_text_video_images_img {
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+      border-radius: 24px;
+      height: 500px;
+  }
+</style>
+<section class="About_Go_Lime_video_sc_text">
+  <div class="About_Go_Lime_video_sc_text_continer">
+    <div class="About_Go_Lime_video_sc_text_flex">
+      <div class="About_Go_Lime_video_sc_text_video_box">
+        <div class="About_Go_Lime_video_sc_text_video">
+            {% if section.settings.main_About_Go_Lime_video_sc_text_video_img !=blank%}
+          <video
+            src="{{ section.settings.main_About_Go_Lime_video_sc_text_video_img.sources[1].url }}"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="About_Go_Lime_vide_home_mn"
+            preload="auto"
+            style="width: 100%;"
+          ></video>
+          {% endif %}
+          {% if section.settings.main_Sub_About_Go_Lime_video_sc_text_video_images_img !=blank%}
+          <img
+            src="{{ section.settings.main_Sub_About_Go_Lime_video_sc_text_video_images_img |img_url:'master' }}"
+            alt=""
+            class="About_Go_Lime_video_sc_text_video_images_img"
+          >
+            {% endif %}
+          <div
+            class="About_Go_Lime_video_sc_text_video_images_button"
+            style="background: none; border: none; padding: 0;">
+            {% if section.settings.main_sub_About_Go_Lime_video_sc_text_video_images_button_img !=blank%}
+            <img
+              src="{{ section.settings.main_sub_About_Go_Lime_video_sc_text_video_images_button_img |img_url:'master' }}"
+              alt=""
+              class="About_Go_Lime_video_sc_text_video_images_button_img"
+            >
+                {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="About_Go_Lime_video_sc_text_box">
+        <div class="About_Go_Lime_content_golime_sc_text_main">
+          <div class="About_Go_Lime_accordion_header_text_title">
+            <h2 class="About_Go_Lime_content_title">{{ section.settings.main_sub_title_About_Go_Lime_content_title }}</h2>
+          </div>
+          <div class="About_Go_Lime_accordion">
+            {% for block in section.blocks %}
+            <div class="About_Go_Lime_accordion_item">
+              <div class="About_Go_Lime_accordion_header">
+                <h3 class="About_Go_Lime_accordion_header_title">{{ block.settings.main_sub_block_About_Go_Lime_accordion_header_title }}</h3>
+                <div class="About_Go_Lime_icon">
+                  <i class="fa fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="About_Go_Lime_accordion_body">
+                <p>
+                 {{ block.settings.main_sub_block_para_About_Go_Lime_accordion_body }}
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const accordionItems = document.querySelectorAll('.About_Go_Lime_accordion_item');
+  const video = document.querySelector('.About_Go_Lime_vide_home_mn');
+  const toggleBtn = document.querySelector('.About_Go_Lime_video_sc_text_video_images_button_img'); // ✅ ab img ko select kar rahe hain
+  const img = document.querySelector('.About_Go_Lime_video_sc_text_video_images_img');
+
+  // 🔹 Play aur Pause icons ke path
+  {% if section.settings.main_About_Go_Lime_video_sc_text_video_img2 %}
+  const playIcon = '{{ section.settings.main_About_Go_Lime_video_sc_text_video_img2 |img_url:'master' }}';
+  {% endif %}
+  {% if section.settings.main_About_Go_Lime_video_sc_text_video_img1 %}
+  const pauseIcon = '{{ section.settings.main_About_Go_Lime_video_sc_text_video_img1 |img_url:'master' }}';
+  {% endif %}
+
+  // 🔹 Default: Pehla tab open + video visible + img hide
+  if (accordionItems.length > 0) {
+    accordionItems[0].classList.add('active');
+    if (video) video.style.display = 'block';
+    if (toggleBtn) toggleBtn.style.display = 'block';
+    if (img) img.style.display = 'none';
+  }
+
+  accordionItems.forEach((item, index) => {
+    const header = item.querySelector('.About_Go_Lime_accordion_header');
+
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      // sab band karo
+      accordionItems.forEach((i) => i.classList.remove('active'));
+
+      if (!isActive) {
+        item.classList.add('active');
+
+        if (index === 0) {
+          // Tab 1 → video dikhao + button visible + img hide
+          if (video) video.style.display = 'block';
+          if (toggleBtn) toggleBtn.style.display = 'block';
+          if (img) img.style.display = 'none';
+        } else if (index === 1) {
+          // Tab 2 → img dikhao + button hide + video hide
+          if (video) video.style.display = 'none';
+          if (toggleBtn) toggleBtn.style.display = 'none';
+          if (img) img.style.display = 'block';
+        }
+      } else {
+        // Agar band kar diya
+        if (index === 0) {
+          // Tab 1 band → video hi chalti rahe + button visible + img hide
+          if (video) video.style.display = 'block';
+          if (toggleBtn) toggleBtn.style.display = 'block';
+          if (img) img.style.display = 'none';
+        } else if (index === 1) {
+          // Tab 2 band → image hi dikhni chahiye + button hide + video hide
+          if (video) video.style.display = 'none';
+          if (toggleBtn) toggleBtn.style.display = 'none';
+          if (img) img.style.display = 'block';
+        }
+      }
+    });
+  });
+
+  // 🔹 Video play/pause toggle button
+  toggleBtn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      toggleBtn.src = playIcon; // play icon lagao
+    } else {
+      video.pause();
+      toggleBtn.src = pauseIcon; // pause icon lagao
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Golime Video FAQs Section",
+  "settings": [
+    {
+    "type": "video",
+    "id": "main_About_Go_Lime_video_sc_text_video_img",
+    "label": "Main Golime Video"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_Sub_About_Go_Lime_video_sc_text_video_images_img",
+    "label": "Main Golime Images"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_sub_About_Go_Lime_video_sc_text_video_images_button_img",
+    "label": "Golime Icon Button Images"
+    },
+    {
+    "type": "text",
+    "id": "main_sub_title_About_Go_Lime_content_title",
+    "label": "Golime Title Text"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_About_Go_Lime_video_sc_text_video_img1",
+    "label": "Pause Icon"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_About_Go_Lime_video_sc_text_video_img2",
+    "label": "play Icon"
+    },
+  ],
+  "blocks": [
+    {
+    "type": "FAQs",
+    "name": "FAQs",
+    "settings": [
+        {
+        "type": "text",
+        "id": "main_sub_block_About_Go_Lime_accordion_header_title",
+        "label": "Golime FAQs Video Block Text"
+        },
+        {
+        "type": "richtext",
+        "id": "main_sub_block_para_About_Go_Lime_accordion_body",
+        "label": "Golime FAQs Video Block Para"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Video FAQs Section"
+    }
+  ]
+}
+{% endschema %}

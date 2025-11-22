@@ -1,0 +1,398 @@
+<style>
+  .golime-new-section-banner {
+      padding-bottom: 40px;
+  }
+
+  .flex-golime-new-section-banner {
+      display: flex
+  ;
+      position: relative;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+  .box-golime-new-section-banner-left-box {
+      width: 50%;
+      position: relative;
+    {% if section.settings.background_image != blank %}
+      background-image: url('{{ section.settings.background_image | img_url: 'master' }}');
+    {% endif %}
+          height: 85vh;
+      transition: 0.5s all ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+     background-position: bottom right;
+  }
+
+  .box-golime-new-section-banner-right {
+      width: 50%;
+           height: 85vh;
+      background-image: url('{{ section.settings.golime-background_image | img_url: 'master' }}');
+      transition: 0.3s all ease-in-out;
+      background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+
+  .golime-new-section-banner-data-left-heading {
+      font-size: 22px;
+      color: #454545;
+      padding: 0 30px;
+      max-width: 308px;
+      font-weight: 700;
+      margin: 0 auto;
+  }
+
+  .golime-new-section-banner-data-com-price-box-left-price-span {
+      display: block;
+      color: #454545;
+      font-size: 20px;
+      text-decoration: line-through;
+      line-height: normal;
+      padding: 6px 0;
+  }
+
+  .golime-new-section-banner-data-org-price-box-left-price-span {
+      font-size: 33px;
+      color: #454545;
+          font-weight: 700;
+      line-height: normal;
+  }
+
+  .golime-new-section-banner-box-main-data-left {
+      margin: 0 auto 0 7%;
+      max-width: 350px;
+      text-align: center;
+      position: relative;
+      top: 35%;
+  }
+
+  .golime-new-section-banner-box-main-data-right {
+      margin: 0 7% 0 auto ;
+      max-width: 350px;
+      text-align: center;
+      position: relative;
+      top: 35%;
+  }
+
+  .golime-new-section-banner-btn-a-left {
+      text-decoration: none;
+      color: white;
+          font-weight: 700;
+      padding: 0 26px;
+      height: 40px;
+      display: flex
+  ;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      background: #085A54;
+      border-radius: 100px;
+      font-size: 20px;
+      transition: 0.8s all ease-in-out;
+      width: 230px;
+      margin-top: 10px;
+  }
+
+  .golime-new-section-banner-flex-icon-text {
+      display: flex
+  ;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 24px;
+  }
+
+  .golime-new-section-banner-flex-icon-text-box1 {
+      text-align: center;
+      width: 33.3%;
+  }
+  .golime-new-section-banner-flex-icon-text-box2 {
+      text-align: center;
+      width: 33.3%;
+  }
+  .golime-new-section-banner-flex-icon-text-box3 {
+      text-align: center;
+      width: 33.3%;
+  }
+
+  .icon-images-golime-new-section-banner {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+  }
+
+  .text-box-golime-new-section-banner {
+      font-size: 12px;
+      display: block;
+      line-height: normal;
+      color: #454545;
+  }
+
+  .box-golime-new-section-banner-left-box:hover {
+      background: url({{ section.settings.background_image_hover | img_url: 'master' }});
+      background-size: cover;
+    background-repeat: no-repeat;
+        width: 50%;
+                background-position: bottom left;
+  }
+
+  .box-golime-new-section-banner-right:hover {
+      background: url({{ section.settings.golime-background_image-hover | img_url: 'master' }});
+       background-size: cover;
+    background-repeat: no-repeat;
+        width: 50%;
+                background-position: bottom right;
+  }
+</style>
+<section class="golime-new-section-banner">
+  <div class="container-golime-new-section-banner">
+    <div class="flex-golime-new-section-banner">
+      <div class="box-golime-new-section-banner-left-box">
+        <div class="golime-new-section-banner-box-main-data-left">
+          <h2 class="golime-new-section-banner-data-left-heading">
+            {{ section.settings['golime-banner-data-left-heading'] }}
+          </h2>
+          <div class="golime-new-section-banner-data-price-box-left">
+            <span class="golime-new-section-banner-data-com-price-box-left-price-span">
+              {{ section.settings['golime-banner-box-left-price-span'] }}
+            </span>
+            <span class="golime-new-section-banner-data-org-price-box-left-price-span">
+              {{ section.settings['golime-banner-box-left-price-span-2'] }}
+            </span>
+          </div>
+          <a href="#" class="golime-new-section-banner-btn-a-left">
+            {{ section.settings['section-banner-btn-a-left'] }}
+          </a>
+          <div class="golime-new-section-banner-flex-icon-text">
+            <div class="golime-new-section-banner-flex-icon-text-box1">
+              {% if section.settings['golime-banner-icon-images-1'] != blank %}
+                <img
+                  src=" {{ section.settings.golime-banner-icon-images-1 | img_url:'master' }}"
+                  alt=""
+                  class="icon-images-golime-new-section-banner"
+                >
+              {% endif %}
+              <span class="text-box-golime-new-section-banner">
+                {{- section.settings['golime-new-section-banner-icon-text'] -}}
+              </span>
+            </div>
+            <div class="golime-new-section-banner-flex-icon-text-box2">
+              {% if section.settings['golime-banner-icon-images-2'] != blank %}
+                <img
+                  src=" {{ section.settings.golime-banner-icon-images-2 | img_url:'master' }}"
+                  alt=""
+                  class="icon-images-golime-new-section-banner"
+                >
+              {% endif %}
+              <span class="text-box-golime-new-section-banner">
+                {{- section.settings['golime-new-section-banner-icon-text2'] -}}
+              </span>
+            </div>
+            <div class="golime-new-section-banner-flex-icon-text-box3">
+              {% if section.settings['golime-banner-icon-images-3'] != blank %}
+                <img
+                  src=" {{ section.settings.golime-banner-icon-images-3 | img_url:'master' }}"
+                  alt=""
+                  class="icon-images-golime-new-section-banner"
+                >
+              {% endif %}
+              <span class="text-box-golime-new-section-banner">
+                {{- section.settings['golime-new-section-banner-icon-text3'] -}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-golime-new-section-banner-right">
+        <div class="golime-new-section-banner-box-main-data-right">
+          <h2 class="golime-new-section-banner-data-left-heading">
+            {{ section.settings['golime-banner-data-left-heading-2'] }}
+          </h2>
+          <div class="golime-new-section-banner-data-price-box-left">
+            <span class="golime-new-section-banner-data-com-price-box-left-price-span">
+              {{ section.settings['golime-banner-box-left-price-span-4'] }}
+            </span>
+            <span class="golime-new-section-banner-data-org-price-box-left-price-span">
+              {{ section.settings['golime-banner-box-left-price-span-3'] }}
+            </span>
+          </div>
+          <a href="#" class="golime-new-section-banner-btn-a-left">
+            {{ section.settings['section-banner-btn-a-left-2'] }}
+          </a>
+          <div class="golime-new-section-banner-flex-icon-text">
+            <div class="golime-new-section-banner-flex-icon-text-box1">
+              {% if section.settings['golime-banner-icon-images-4'] != blank %}
+                <img
+                  src=" {{ section.settings.golime-banner-icon-images-4 | img_url:'master' }}"
+                  alt=""
+                  class="icon-images-golime-new-section-banner"
+                >
+              {% endif %}
+              <span class="text-box-golime-new-section-banner">
+                {{- section.settings['golime-new-section-banner-icon-text-2'] -}}
+              </span>
+            </div>
+            <div class="golime-new-section-banner-flex-icon-text-box2">
+              {% if section.settings['golime-banner-icon-images-5'] != blank %}
+                <img
+                  src=" {{ section.settings.golime-banner-icon-images-5 | img_url:'master' }}"
+                  alt=""
+                  class="icon-images-golime-new-section-banner"
+                >
+              {% endif %}
+              <span class="text-box-golime-new-section-banner">
+                {{- section.settings['golime-new-section-banner-icon-text-3'] -}}
+              </span>
+            </div>
+            <div class="golime-new-section-banner-flex-icon-text-box3">
+              {% if section.settings['golime-banner-icon-images-6'] != blank %}
+                <img
+                  src=" {{ section.settings.golime-banner-icon-images-6 | img_url:'master' }}"
+                  alt=""
+                  class="icon-images-golime-new-section-banner"
+                >
+              {% endif %}
+              <span class="text-box-golime-new-section-banner">
+                {{- section.settings['golime-new-section-banner-icon-text-4'] -}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-background_image",
+      "label": "Golime Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_hover",
+      "label": "Background Image Hover"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-background_image-hover",
+      "label": "Golime Background Image Hover"
+    },
+
+    {
+      "type": "text",
+      "id": "golime-banner-data-left-heading",
+      "label": "Heading Golime Banner"
+    },
+    {
+      "type": "text",
+      "id": "golime-banner-box-left-price-span",
+      "label": "Price"
+    },
+    {
+      "type": "text",
+      "id": "golime-banner-box-left-price-span-2",
+      "label": "Price 2"
+    },
+    {
+      "type": "text",
+      "id": "section-banner-btn-a-left",
+      "label": "Golime Banner Button"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-banner-icon-images-1",
+      "label": "Golime Banner Images 1"
+    },
+    {
+      "type": "text",
+      "id": "golime-new-section-banner-icon-text",
+      "label": "Golime Banner Images Span"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-banner-icon-images-2",
+      "label": "Golime Banner Images 2"
+    },
+    {
+      "type": "text",
+      "id": "golime-new-section-banner-icon-text2",
+      "label": "Golime Banner Images Span"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-banner-icon-images-3",
+      "label": "Golime Banner Images 3"
+    },
+    {
+      "type": "text",
+      "id": "golime-new-section-banner-icon-text3",
+      "label": "Golime Banner Images Span"
+    },
+    {
+      "type": "text",
+      "id": "golime-banner-data-left-heading-2",
+      "label": "Heading Golime Banner"
+    },
+    {
+      "type": "text",
+      "id": "golime-banner-box-left-price-span-4",
+      "label": "Price"
+    },
+    {
+      "type": "text",
+      "id": "golime-banner-box-left-price-span-3",
+      "label": "Price 2"
+    },
+    {
+      "type": "text",
+      "id": "section-banner-btn-a-left-2",
+      "label": "Golime Banner Button"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-banner-icon-images-4",
+      "label": "Golime Banner Images 1"
+    },
+    {
+      "type": "text",
+      "id": "golime-new-section-banner-icon-text-2",
+      "label": "Golime Banner Images Span"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-banner-icon-images-5",
+      "label": "Golime Banner Images 2"
+    },
+    {
+      "type": "text",
+      "id": "golime-new-section-banner-icon-text-3",
+      "label": "Golime Banner Images Span"
+    },
+    {
+      "type": "image_picker",
+      "id": "golime-banner-icon-images-6",
+      "label": "Golime Banner Images 3"
+    },
+    {
+      "type": "text",
+      "id": "golime-new-section-banner-icon-text-4",
+      "label": "Golime Banner Images Span"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Golime Banner"
+    }
+  ]
+}
+{% endschema %}

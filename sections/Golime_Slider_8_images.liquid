@@ -1,0 +1,224 @@
+<style>
+      golime_slider_section {
+    text-align: center;
+    position: relative;
+    padding: 40px 20px;
+    background: #fff;
+  }
+
+  .golime_slider_heading {
+    font-size: 26px;
+    margin-bottom: 28px;
+    color: #333;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .golime_city_slider .golime_item {
+    text-align: center;
+    transition: 0.3s ease;
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  .golime_city_slider .owl-item.center .golime_item {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .golime_slider_img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .golime_item p {
+    font-weight: 700;
+    color: #555;
+    margin-top: 6px;
+    font-size: 16px;
+  }
+
+  /* === Controls Container for Arrows + Dots === */
+  .golime_controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 20px;
+  }
+
+  /* Arrows Styling */
+  .golime_controls button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+  .golime_controls button:hover {
+    transform: translateY(-2px);
+    background: #f7f7f7;
+  }
+
+  /* Dots Styling */
+  .golime_custom_dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .golime_custom_dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #cfcfcf;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .golime_custom_dots button.active {
+    transform: scale(1.3);
+    background: #4CAF50;
+  }
+
+  .owl-stage-outer {
+    padding-bottom: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    .golime_slider_img {
+      height: 220px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .golime_slider_img {
+      height: 180px;
+      border-radius: 12px;
+    }
+  }
+</style>
+<section class="golime_slider_section">
+  <h2 class="golime_slider_heading">{{ section.settings.main_Sub_Golime_slider_heading }}</h2>
+
+  <div class="golime_city_slider owl-carousel">
+    {% for block in section.blocks %}
+    <div class="golime_item">
+        {% if block.settings.main_Images_Golime_New_Slider !=blank %}
+      <img class="golime_slider_img" src="{{ block.settings.main_Images_Golime_New_Slider |img_url:'master' }}" alt="Windsor">
+      {% endif %}
+      <p>{{ block.settings.main_golime_item }}</p>
+    </div>
+{% endfor %}
+  </div>
+
+  <!-- arrows + dots in one container -->
+  <div class="golime_controls">
+    <button class="golime_prev" aria-label="Previous"><i class="fa fa-arrow-left"></i></button>
+    <div class="golime_custom_dots"></div>
+    <button class="golime_next" aria-label="Next"><i class="fa fa-arrow-right"></i></button>
+  </div>
+</section>
+<script>
+  $(function () {
+    var $slider = $('.golime_city_slider');
+    var $dotsContainer = $('.golime_custom_dots');
+    var totalItems = $slider.find('.golime_item').length;
+
+    $slider.owlCarousel({
+      loop: true,
+      center: true,
+      items: 3,
+      margin: 20,
+      dots: true,
+      nav: false,
+      autoplay: false,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 3 },
+        1200: { items: 5 },
+      },
+      onInitialized: initCustomDots,
+      onTranslated: syncCustomDots,
+    });
+
+    function initCustomDots(event) {
+      $dotsContainer.empty();
+      for (var i = 0; i < totalItems; i++) {
+        var $btn = $('<button type="button" data-index="' + i + '"></button>');
+        $dotsContainer.append($btn);
+      }
+
+      $dotsContainer.on('click', 'button', function () {
+        var idx = $(this).data('index');
+        $slider.trigger('to.owl.carousel', [idx, 300, true]);
+      });
+
+      syncCustomDots(event);
+    }
+
+    function syncCustomDots(event) {
+      var rawIndex = event.item.index;
+      var clones = event.relatedTarget._clones.length || 0;
+      var offset = Math.floor(clones / 2);
+      var originalIndex = rawIndex - offset;
+      originalIndex = ((originalIndex % totalItems) + totalItems) % totalItems;
+      $dotsContainer.find('button').removeClass('active').eq(originalIndex).addClass('active');
+    }
+
+    $('.golime_next').on('click', function () {
+      $slider.trigger('next.owl.carousel');
+    });
+    $('.golime_prev').on('click', function () {
+      $slider.trigger('prev.owl.carousel');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Golime Slider Info & FAQs",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main_Sub_Golime_slider_heading",
+    "label": "Golime Slider Heading"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Slider_Golime",
+    "name": "Slider Golime",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "main_Images_Golime_New_Slider",
+        "label": "Golime 8 Images Slider"
+        },
+        {
+        "type": "richtext",
+        "id": "main_golime_item",
+        "label": "Golime Title Para"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Slider Info & FAQs"
+    }
+  ]
+  
+}
+{% endschema %}

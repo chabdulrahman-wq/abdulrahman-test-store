@@ -1,0 +1,471 @@
+<style>
+  .Golime_New_Section_Images_text_Golime_ideas {
+      padding-top: 50px;
+  }
+
+  .container_Images_text_Golime_ideas {
+      width: 100%;
+      max-width: 1347px;
+      margin: 0 auto;
+      padding: 0 50px;
+  }
+
+  .Images_text_Golime_ideas_Top_images {
+      max-width: 46px;
+      margin: 0 auto;
+  }
+
+  .Images_text_Golime_ideas_Top_images_img {
+      width: 100%;
+      height: 100%;
+      max-width: 46px;
+  }
+
+  .Images_text_Golime_ideas_Top_Title {
+      margin: 22px auto 15px;
+  }
+
+  .Images_text_Golime_ideas_Top_Text {
+      margin: 0;
+      color: #454545;
+      text-align: center;
+      font-size: 40px;
+      letter-spacing: 0;
+      line-height: 48px;
+  }
+
+  .Images_text_Golime_ideas_Top_button_link {
+      text-decoration: none;
+      display: flex
+  ;
+      justify-content: center;
+      align-items: center;
+      /* padding-top: 10px; */
+      /* width: fit-content; */
+      margin: 0 auto;
+  }
+  .Images_text_Golime_ideas_Top_sub_button_title p:hover {
+     text-decoration: underline;
+  }
+
+  .Images_text_Golime_ideas_Top_sub_button_title {
+      padding-right: 12px;
+  }
+
+  .Images_text_Golime_ideas_Top_sub_button_title p {
+      margin: 0;
+      font-size: 20px;
+      color: #70BC0E;
+      letter-spacing: 0;
+      line-height: 0px;
+      transition: all .5s ease-in-out;
+  }
+
+  .Images_text_Golime_ideas_Top_sub_button_Images {
+      line-height: 0;
+      max-width: 7px;
+      margin-top: 1px;
+  }
+
+  .Images_text_Golime_ideas_Top_sub_button_Images_img {
+      width: 100%;
+      height: 100%;
+  }
+
+  .row_Images_text_Golime_ideas {
+      padding: 50px 0px;
+      display: flex
+  ;
+      justify-content: space-between;
+  }
+
+  .box_Images_text_Golime_ideas {
+      width: 32%;
+      display: flex
+  ;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .box_Images_text_Golime_ideas_links {
+      text-decoration: none;
+      display: inline-block;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_images {
+      width: 100%;
+      position: relative;
+      padding-bottom: 85%;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_images_img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      object-fit: cover;
+      border-radius: 24px;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_title_h4 {
+      font-size: 20px;
+      letter-spacing: 0;
+      text-align: left;
+      line-height: 1.1;
+      color: #454545;
+      margin: 0;
+      padding-top: 16px;
+      padding-bottom: 14px;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_bottom_content_decrption p {
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-align: left;
+      color: #454545;
+      display: block;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_bottom_content_links{
+      text-decoration: none;
+      display: inline-block;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_bottom_content_info_btn {
+      text-align: left;
+      padding-top: 15px;
+  }
+
+  .Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a {
+      display: inline-block;
+      font-size: 16px;
+      letter-spacing: 0;
+      text-decoration: none;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+      color: #70BC0E;
+  }
+
+  i.fa-solid.fa-chevron-right{
+      font-size: 12px;
+  }
+
+  .row_Images_text_Golime_ideas_main_box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  /* Dots center me */
+  .owl-dots {
+      text-align: center;
+      margin-top: 15px;
+  }
+  .owl-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 5px;
+      background: #ccc !important;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+  }
+  .owl-dot.active {
+      background: #70BC0E !important; /* Green for active */
+  }
+
+  /* Navigation arrows */
+  .owl-nav {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 10px;
+  }
+  .owl-nav button {
+      background: transparent;
+      border: 2px solid #ccc !important;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 18px;
+      color: #666;
+      transition: all 0.3s ease;
+  }
+  .owl-nav button:hover {
+      border-color: #70BC0E;
+      color: #70BC0E;
+  }
+  .owl-nav button span {
+      font-size: 20px;
+      line-height: 0;
+  }
+
+  .main_box_Images_text_Golime_ideas_main_box{
+      display: none;
+  }
+
+
+  @media screen and (max-width: 767px) {
+
+  .main_box_Images_text_Golime_ideas_main_box{
+      display: block;
+      overflow: hidden;
+  }
+
+  .row_Images_text_Golime_ideas_main_box {
+      display: none;
+  }
+
+  .box_Images_text_Golime_ideas_slider{
+      display: block;
+      width: 100%;
+      display: flex
+  ;
+      flex-direction: column;
+      /* justify-content: space-between; */
+      /* min-height: 415px !important; */
+  }
+
+  .container_Images_text_Golime_ideas {
+      padding: 0 0px 0 15px;
+  }
+
+  .Images_text_Golime_ideas_Top_Text {
+      font-size: 24px;
+      line-height: 28px;
+  }
+
+  .Images_text_Golime_ideas_Top_sub_button_title p {
+      font-size: 16px;
+  }
+
+  }
+</style>
+<section class="Golime_New_Section_Images_text_Golime_ideas">
+  <div class="container_Images_text_Golime_ideas">
+    <div class="Images_text_Golime_ideas_Top_images">
+      {% if section.settings.mian_sub_Images_text_Golime_ideas_Top_images_img != blank %}
+        <img
+          src="{{ section.settings.mian_sub_Images_text_Golime_ideas_Top_images_img |img_url:'master' }}"
+          alt=""
+          class="Images_text_Golime_ideas_Top_images_img"
+        >
+      {% endif %}
+    </div>
+    <div class="Images_text_Golime_ideas_Top_content">
+      <div class="Images_text_Golime_ideas_Top_Title">
+        <h2 class="Images_text_Golime_ideas_Top_Text">{{ section.settings.main_Images_text_Golime_ideas_Top_Text }}</h2>
+      </div>
+    </div>
+    <div class="Images_text_Golime_ideas_Top_button">
+      <a
+        href="{{ section.settings.main_url_Images_text_Golime_ideas_Top_button_link }}"
+        class="Images_text_Golime_ideas_Top_button_link"
+      >
+        <div class="Images_text_Golime_ideas_Top_sub_button_title">
+          <p>{{ section.settings.sub_Images_text_Golime_ideas_Top_sub_button_title }}</p>
+        </div>
+        <div class="Images_text_Golime_ideas_Top_sub_button_Images">
+          {% if section.settings.main_Images_text_Golime_ideas_Top_sub_button_Images_img != blank %}
+            <img
+              src="{{ section.settings.main_Images_text_Golime_ideas_Top_sub_button_Images_img |img_url:'master'}}"
+              alt=""
+              class="Images_text_Golime_ideas_Top_sub_button_Images_img"
+            >
+          {% endif %}
+        </div>
+      </a>
+    </div>
+    <div class="row_Images_text_Golime_ideas">
+      <div class="row_Images_text_Golime_ideas_main_box">
+        {% for block in section.blocks %}
+          <div class="box_Images_text_Golime_ideas">
+            <a href="{{ block.settings.main_box_Images_text_Golime_ideas_link }}" class="box_Images_text_Golime_ideas_links">
+              <div class="content_Images_text_Golime_ideas_box">
+                <div class="Golime_Images_text_Golime_ideas_box_images">
+                  {% if block.settings.sub_Golime_Images_text_Golime_ideas_box_images_img !=blank %}
+                  <img
+                    src="{{ block.settings.sub_Golime_Images_text_Golime_ideas_box_images_img |img_url:'master' }}"
+                    alt=""
+                    class="Golime_Images_text_Golime_ideas_box_images_img"
+                  >
+                    {% endif %}
+                </div>
+                <div class="Golime_Images_text_Golime_ideas_box_title">
+                  <h4 class="Golime_Images_text_Golime_ideas_box_title_h4">
+                    {{ block.settings.main_sub_Golime_Images_text_Golime_ideas_box_title_h4 }}
+                  </h4>
+                </div>
+              </div>
+            </a>
+            <div class="Golime_Images_text_Golime_ideas_box_bottom_content">
+              <a href="{{ block.settings.main_Golime_Images_text_Golime_ideas_box_bottom_content_link }}" class="Golime_Images_text_Golime_ideas_box_bottom_content_links">
+                <div class="Golime_Images_text_Golime_ideas_box_bottom_content_decrption">
+                  <p>
+                   {{ block.settings.main_sub_Golime_Images_text_Golime_ideas_box_bottom_content_decrption }}
+                  </p>
+                </div>
+              </a>
+              <div class="Golime_Images_text_Golime_ideas_box_bottom_content_info_btn">
+                <a href="{{ block.settings.Sub_Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a_link }}" class="Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a">
+                  {{ block.settings.Sub_Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a }}
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="main_box_Images_text_Golime_ideas_main_box">
+        <div class="owl-carousel owl-theme Slider_Images_text_Golime_ideas">
+          {% for block in section.blocks %}
+            <div class="item">
+              <div class="box_Images_text_Golime_ideas">
+                <a href="{{ block.settings.main_box_Images_text_Golime_ideas_link }}" class="box_Images_text_Golime_ideas_links">
+                  <div class="content_Images_text_Golime_ideas_box">
+                    <div class="Golime_Images_text_Golime_ideas_box_images">
+                      {% if block.settings.sub_Golime_Images_text_Golime_ideas_box_images_img !=blank %}
+                  <img
+                    src="{{ block.settings.sub_Golime_Images_text_Golime_ideas_box_images_img |img_url:'master' }}"
+                    alt=""
+                    class="Golime_Images_text_Golime_ideas_box_images_img"
+                  >
+                    {% endif %}
+                    </div>
+                    <div class="Golime_Images_text_Golime_ideas_box_title">
+                      <h4 class="Golime_Images_text_Golime_ideas_box_title_h4">
+                        {{ block.settings.main_sub_Golime_Images_text_Golime_ideas_box_title_h4 }}
+                      </h4>
+                    </div>
+                  </div>
+                </a>
+                <div class="Golime_Images_text_Golime_ideas_box_bottom_content">
+                  <div class="Golime_Images_text_Golime_ideas_box_bottom_content_info_btn">
+                    <a
+                      href="{{ block.settings.Sub_Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a_link }}"
+                      class="Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a"
+                    >
+                      {{ block.settings.Sub_Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a }}
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('.Slider_Images_text_Golime_idea').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsiveClass: true,
+    nav: true,
+    dote: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true,
+        loop: false,
+      },
+      600: {
+        items: 1,
+        nav: false,
+        loop: false,
+      },
+      1000: {
+        items: 1,
+        nav: true,
+        loop: false,
+      },
+    },
+  });
+</script>
+{% schema %}
+{
+  "name": "Slider Images Text Golime",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "mian_sub_Images_text_Golime_ideas_Top_images_img",
+      "label": "Top Images"
+    },
+    {
+      "type": "text",
+      "id": "main_Images_text_Golime_ideas_Top_Text",
+      "label": "Top Title"
+    },
+    {
+      "type": "url",
+      "id": "main_url_Images_text_Golime_ideas_Top_button_link",
+      "label": "Top Url"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_Images_text_Golime_ideas_Top_sub_button_title",
+      "label": "Top Para"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_Images_text_Golime_ideas_Top_sub_button_Images_img",
+      "label": "Top Icon Images"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Slider_Images_text",
+    "name": "Slider Images Text",
+    "settings": [
+    {
+    "type": "url",
+    "id": "main_box_Images_text_Golime_ideas_link",
+    "label": "Block Url"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_Golime_Images_text_Golime_ideas_box_images_img",
+    "label": "Block Top Images"
+    },
+    {
+    "type": "text",
+    "id": "main_sub_Golime_Images_text_Golime_ideas_box_title_h4",
+    "label": "Block Top Title"
+    },
+    {
+    "type": "url",
+    "id": "main_Golime_Images_text_Golime_ideas_box_bottom_content_link",
+    "label": "Block Para Url"
+    },
+    {
+    "type": "richtext",
+    "id": "main_sub_Golime_Images_text_Golime_ideas_box_bottom_content_decrption",
+    "label": "Block Para"
+    },
+    {
+    "type": "url",
+    "id": "Sub_Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a_link",
+    "label": "Block Btn Url"
+    },
+    {
+    "type": "text",
+    "id": "Sub_Golime_Images_text_Golime_ideas_box_bottom_content_info_btn_a",
+    "label": "Block Btn Text"
+    }
+    ]
+    
+    }
+  ],
+  "presets": [
+    {
+    "name": "Slider Images Text Golime"
+    }
+  ]
+}
+{% endschema %}

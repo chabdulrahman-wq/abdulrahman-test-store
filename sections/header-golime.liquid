@@ -1,0 +1,1897 @@
+<link
+  rel="stylesheet"
+  href="{{ 'component-cart-notification.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+
+<div class="menu-overlay"><span style="display:none;"></span></div>
+<div class="header-main-top-banner-text-golime-new-top-banner">
+  <div class="header-main-top-banner-text-golime-new-top-banner-content">
+    <div class="header-main-top-banner-text-golime-new-top-banner-heading">
+      <span class="header-main-top-banner-text-golime-new-top-banner-heading-span">
+        {{- section.settings['main-header-main-top-banner-text-golime-new-top-banner-heading-span'] -}}
+      </span>
+    </div>
+  </div>
+</div>
+<header class="Golime-header-new-section">
+  <div class="Section-golime-new-header">
+    <div class="Section-golime-new-header_black">
+      <div class="container-header-golime">
+        <div class="flex-header-Golime-section">
+          <div class="main-nav-logo-header-golime">
+            <a href="/" class="main-logo-images-box-header">
+              <span class="main-images-box-header-section">
+                {% if section.settings['header-logo-images'] != blank %}
+                  <img
+                    src="{{ section.settings.header-logo-images |img_url:'master' }}"
+                    alt=""
+                    class="header-logo-images"
+                  >
+                {% endif %}
+              </span>
+              <span class="main-none-logo-header">
+                {% if section.settings['main-logo-img-none-header'] != blank %}
+                  <img
+                    src="{{ section.settings.main-logo-img-none-header |img_url:'master' }}"
+                    alt=""
+                    class="main-logo-img-none-header"
+                  >
+                {% endif %}
+              </span>
+            </a>
+            <div class="navs-links-header-ul-golime-section">
+              <ul class="desktop-menu-list-header-golime">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'GetStarted' %}
+                      <li class="desktop-menu-list-header-golime-li-hover">
+                        <div class="desktop-menu-list-header-golime-li-a-hover">
+                          <span class="desktop-menu-list-header-golime-li-a-title">
+                            {{- block.settings['Get-Started'] -}}
+                          </span>
+                          <div class="main-icon-down-section-header">
+                            <i class="fa-solid fa-chevron-down"></i>
+                          </div>
+                        </div>
+                      </li>
+                    {% when 'infofaqs' %}
+                      <li class="desktop-menu-list-header-golime-li">
+                        <div class="desktop-menu-list-header-golime-li-a">
+                          <span class="desktop-menu-list-header-golime-li-a-title">
+                            {{- block.settings['info-faqs'] -}}
+                          </span>
+                        </div>
+                      </li>
+                    {% when 'About' %}
+                      <li class="desktop-menu-list-header-golime-li">
+                        <div class="desktop-menu-list-header-golime-li-about">
+                          <span class="desktop-menu-list-header-golime-li-a-title">
+                            {{- block.settings['About-text'] -}}
+                          </span>
+                        </div>
+                      </li>
+                    {% when 'Retail' %}
+                      <li class="desktop-menu-list-header-golime-li">
+                        <div class="desktop-menu-list-header-golime-li-Retail">
+                          <span class="desktop-menu-list-header-golime-li-a-title">
+                            {{- block.settings['Retail-text'] -}}
+                          </span>
+                        </div>
+                      </li>
+                    {% when 'Commercial' %}
+                      <li class="desktop-menu-list-header-golime-li">
+                        <div class="desktop-menu-list-header-golime-li-Commercial">
+                          <span class="desktop-menu-list-header-golime-li-a-title">
+                            {{- block.settings['Commercial-text'] -}}
+                          </span>
+                        </div>
+                      </li>
+                  {% endcase %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="main-all-icon-box-header-seciton">
+            <div class="golime-search-icon">
+              <div class="main-icon-search-header-box">
+                <div class="mian-images-icon-search-box-header">
+                  {% if section.settings['main-search-img'] != blank %}
+                    <img
+                      src="{{ section.settings.main-search-img |img_url:'master' }}"
+                      alt=""
+                      class="sub-images-icon-search-box-header-img"
+                    >
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="{{ routes.cart_url }}"
+              class="header__icon sub-golime-cart-icon header__icon--cart link focus-inset"
+              id="cart-icon-bubble"
+            >
+              {% if cart == empty %}
+                {% if section.settings['cart-icon'] != blank %}
+                  <img
+                    src="{{ section.settings.cart-icon |img_url:'master' }}"
+                    alt="{{ section.settings.cart-icon.alt | escape }}"
+                    class="main-sub-icon-golime-cart-icon-images-img"
+                  >
+                {% endif %}
+              {% else %}
+                {% if section.settings['cart-icon'] != blank %}
+                  <img
+                    src="{{ section.settings.cart-icon |img_url:'master' }}"
+                    alt="{{ section.settings.cart-icon.alt | escape }}"
+                    class="main-sub-icon-golime-cart-icon-images-img"
+                  >
+                {% endif %}
+              {% endif %}
+              <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+              {%- if cart != empty -%}
+                <div class="cart-count-bubble">
+                  {%- if cart.item_count < 100 -%}
+                    <span aria-hidden="true">{{ cart.item_count }}</span>
+                  {%- endif -%}
+                  <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                </div>
+              {%- endif -%}
+            </a>
+
+            {% comment %}
+              <span class="sub-golime-cart-icon">
+                <a href="{{ section.settings.cart-icon-link }}" class="sub-icon-golime-cart-icon-box-a">
+                  {% if section.settings['cart-icon'] != blank %}
+                    <img
+                      src="{{ section.settings.cart-icon |img_url:'master' }}"
+                      alt="{{ section.settings.cart-icon.alt | escape }}"
+                      class="main-sub-icon-golime-cart-icon-images-img"
+                    >
+                  {% endif %}
+                </a>
+              </span>
+            {% endcomment %}
+            <a href="{{ section.settings['call-number-text-link'] }}" class="sub-phone-number-tel-box">
+              <span class="call-icon-phones-nember-section-header">
+                <span class="main-call-number-golime-header">{{ section.settings['call-number-text'] }}</span>
+                <span class="call-icon-phones-nember-section-header-images-box">
+                  {% if section.settings['phones-nember-img'] != blank %}
+                    <img
+                      src="{{ section.settings.phones-nember-img |img_url:'master' }}"
+                      alt=""
+                      class="call-icon-phones-nember-section-header-images-img"
+                    >
+                  {% endif %}
+                </span>
+              </span>
+            </a>
+            <span class="main-bar-number-golime-header">
+              <i class="fa-solid fa-bars menu-toggle-icon"></i>
+              <i class="fa-solid fa-xmark menu-close-icon" style="display: none;"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="navs-links-header-ul-golime-section-bot">
+        <ul class="desktop-menu-list-header-golime-bot">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'GetStarted' %}
+                <li class="desktop-menu-list-header-golime-li-hover">
+                  <div class="desktop-menu-list-header-golime-li-a-hover">
+                    <span class="desktop-menu-list-header-golime-li-a-title">
+                      {{- block.settings['Get-Started'] -}}
+                    </span>
+                    <div class="main-icon-down-section-header">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                  </div>
+                </li>
+              {% when 'infofaqs' %}
+                <li class="desktop-menu-list-header-golime-li">
+                  <div class="desktop-menu-list-header-golime-li-a">
+                    <span class="desktop-menu-list-header-golime-li-a-title">
+                      {{- block.settings['info-faqs'] -}}
+                    </span>
+                  </div>
+                </li>
+              {% when 'About' %}
+                <li class="desktop-menu-list-header-golime-li">
+                  <div class="desktop-menu-list-header-golime-li-about">
+                    <span class="desktop-menu-list-header-golime-li-a-title">
+                      {{- block.settings['About-text'] -}}
+                    </span>
+                  </div>
+                </li>
+              {% when 'Retail' %}
+                <li class="desktop-menu-list-header-golime-li">
+                  <div class="desktop-menu-list-header-golime-li-Retail">
+                    <span class="desktop-menu-list-header-golime-li-a-title">
+                      {{- block.settings['Retail-text'] -}}
+                    </span>
+                  </div>
+                </li>
+              {% when 'Commercial' %}
+                <li class="desktop-menu-list-header-golime-li">
+                  <div class="desktop-menu-list-header-golime-li-Commercial">
+                    <span class="desktop-menu-list-header-golime-li-a-title">
+                      {{- block.settings['Commercial-text'] -}}
+                    </span>
+                  </div>
+                </li>
+            {% endcase %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'GetStarted' %}
+            <div class="main-golime-new-header-11-boxs-section">
+              <div class="main-golime-new-header-11-boxs-flex">
+                <div class="main-box-sub-golime-header-box-flex-golime-left-box">
+                  <div class="main-golime-tab-navtabdiv-flex-box">
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['get-images-box-img'] != blank %}
+                            <img
+                              src="{{ block.settings.get-images-box-img |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">{{ block.settings['navtab-title-para'] }}</h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['navtab-title-para-heading'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a2 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['main-get-images-box-tab-main-header-img'] != blank %}
+                            <img
+                              src="{{ block.settings.main-get-images-box-tab-main-header-img |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">{{ block.settings['main-navtab-title-para'] }}</h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['main-navtab-title-para-heading'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a3 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-tab-main-header-box-img'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-tab-main-header-box-img |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-navtab-title-para-main-text'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-navtab-title-para-heading'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a4 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-tab-main-header-box-img-box'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-tab-main-header-box-img-box |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-navtab-title-para-main-text-id'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-navtab-title-para-heading-id'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a5 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-tab-main-header-box-img-id'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-tab-main-header-box-img-id |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-navtab-title-para-main-text-p'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-navtab-title-para-heading-p'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a6 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-tab-main-header-box-img-id-box'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-tab-main-header-box-img-id-box |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-navtab-title-para-main-text-p-box'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-navtab-title-para-heading-p-box'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a7 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-tab-main-header-box-img-id-images'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-tab-main-header-box-img-id-images |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-navtab-title-para-main-text-p-content'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-navtab-title-para-heading-p-content'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a8 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-tab-main-header-box-img-id-images-tab'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-tab-main-header-box-img-id-images-tab |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-para-main-text-p-content-sub'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-para-heading-p-content-sub'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="{{ block.settings.Main_golime_tab_tn_main_header_a9 }}"
+                      class="Main_golime_tab_tn_main_header_a"
+                    >
+                      <div class="main-golime-tab-tn-main-header">
+                        <div class="main-get-images-box-tab-main-header-box">
+                          {% if block.settings['images-box-main-header-box-img-id-images-sub'] != blank %}
+                            <img
+                              src="{{ block.settings.images-box-main-header-box-img-id-images-sub |img_url:'master' }}"
+                              alt=""
+                              class="golime-img-tab-header-box-images"
+                            >
+                          {% endif %}
+                        </div>
+                        <div class="main-golime-header-box-tab-title-flex">
+                          <div class="main-golime-hading-content-title-tab-box">
+                            <h4 class="get-navtab-title-para">
+                              {{ block.settings['get-navtab-title-para-main-text-p-content-tab'] }}
+                            </h4>
+                            <p class="get-navtab-title-para-heading">
+                              {{ block.settings['get-navtab-title-para-heading-p-content-tab'] }}
+                            </p>
+                          </div>
+                          <div class="main-golime-title-tan-nav-icons">
+                            <i class="fa-solid fa-chevron-right Icon"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="main-box-sub-golime-header-box-flex-golime-right-box">
+                  <div class="main-rightcbflex-box">
+                    <div class="main-golime-header-rightcbflex-box">
+                      <div class="main-golime-header-golime-right-box-logo-goflex">
+                        {% if block.settings['golime-header-golime-right-box-logo'] != blank %}
+                          <img
+                            src="{{ block.settings.golime-header-golime-right-box-logo |img_url:'master' }}"
+                            alt=""
+                            class="main-golime-header-golime-right-box-logo-goflex-img"
+                          >
+                        {% endif %}
+                      </div>
+                      <div class="main-golime-header-main-heading-main-text-righe-box">
+                        <h4 class="main-golime-header-main-heading-main-text-h4">
+                          {{ block.settings['golime-header-box-1-text'] }}
+                        </h4>
+                        <p class="main-golime-header-main-heading-main-text-para">
+                          {{ block.settings['golime-header-box-1-para'] }}
+                        </p>
+                      </div>
+                      <div class="main-golime-header-right-flex-col-images-box">
+                        {% if block.settings['golime-header-box-1-img'] != blank %}
+                          <img
+                            src="{{ block.settings.golime-header-box-1-img |img_url:'master' }}"
+                            alt=""
+                            class="main-golime-header-right-flex-col-images-box-img"
+                          >
+                        {% endif %}
+                      </div>
+                      <div class="main-golime-right-box-tab-icon-box">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                    <div class="main-golime-header-rightcbflex-box">
+                      <div class="main-golime-header-main-heading-main-text-righe-box">
+                        <h4 class="main-golime-header-main-heading-main-text-h4">
+                          {{ block.settings['golime-header-main-heading'] }}
+                        </h4>
+                        <p class="main-golime-header-main-heading-main-text-para">
+                          {{ block.settings['golime-header-main-para'] }}
+                        </p>
+                      </div>
+                      <div class="main-golime-header-right-flex-col-images-box">
+                        {% if block.settings['golime-header-right-flex-col-img'] != blank %}
+                          <img
+                            src="{{ block.settings.golime-header-right-flex-col-img |img_url:'master' }}"
+                            alt=""
+                            class="main-golime-header-right-flex-col-images-box-img1"
+                          >
+                        {% endif %}
+                      </div>
+                      <div class="main-golime-right-box-tab-icon-box">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% when 'infofaqs' %}
+            <div class="main-golime-header-banner-info-faqs-box-tab">
+              <div class="main-golime-header-banner-info-faqs-box-tab-flex">
+                <div class="main-golime-header-info-faq-box-left-col">
+                  <div class="main-left-Alldata-text-heading-images-box-infofaqs">
+                    <div class="FAQ-main-text-para-box-col-tab">
+                      <h4 class="FAQ-main-text-para-box-col-tab-h4text">
+                        {{ block.settings['text-para-box-col-tab-h4text'] }}
+                      </h4>
+                      <p class="FAQ-main-text-para-box-col-tab-p-para">
+                        {{ block.settings['text-para-box-col-tab-p-para'] }}
+                      </p>
+                    </div>
+                    <div class="main-golime-header-blog-left-tab-flex-sdiv">
+                      <a
+                        href="{{ block.settings.Links_Golime_main-golime-header-blog-left-tab-sdiv-abox }}"
+                        class="main-golime-header-blog-left-tab-sdiv-abox"
+                      >
+                        {{- block.settings['golime-header-blog-left-tab-sdiv-abox-text'] -}}
+                      </a>
+                      <a
+                        href="{{ block.settings.Links_Golime_main-golime-header-blog-left-tab-sdiv-abox2 }}"
+                        class="main-golime-header-blog-left-tab-sdiv-abox"
+                      >
+                        {{- block.settings['golime-header-blog-left-tab-sdiv-abox'] -}}
+                      </a>
+                      <a
+                        href="{{ block.settings.Links_Golime_main-golime-header-blog-left-tab-sdiv-abox3 }}"
+                        class="main-golime-header-blog-left-tab-sdiv-abox"
+                      >
+                        {{ block.settings['blog-left-tab-sdiv-abox'] }}
+                      </a>
+                      <a
+                        href="{{ block.settings.Links_Golime_main-golime-header-blog-left-tab-sdiv-abox4 }}"
+                        class="main-golime-header-blog-left-tab-sdiv-abox"
+                      >
+                        {{- block.settings['left-tab-sdiv-abox'] -}}
+                      </a>
+                    </div>
+                    <div class="main-golime-main-box-lefcol-tab-view-all-box">
+                      <div class="main-golime-main-box-lefcol-tab-view-all-box-flex">
+                        <span class="main-golime-main-box-lefcol-tab-view-all-box-span-text">
+                          {{ block.settings['main-box-lefcol-tab-view-all-box-span-text'] }}
+                        </span>
+                        <span class="main-golime-main-box-lefcol-tab-view-all-box-span-icon">
+                          <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-fq-nav-images-box-flex-left-box">
+                    {% if block.settings['nav-images-box-flex-left-box-img'] != blank %}
+                      <img
+                        class="main-fq-nav-images-box-flex-left-box-img"
+                        src="{{ block.settings.nav-images-box-flex-left-box-img |img_url:'master' }}"
+                        alt="{{ block.settings.nav-images-box-flex-left-box-img.alt | escape  }}"
+                      >
+                    {% endif %}
+                  </div>
+                  <div class="get-nav-box-content-icpon-box-flex">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </div>
+                <div class="main-golime-header-info-faq-box-right-col">
+                  <div class="main-box-golime-header-infofaqs-right-images-text-icon-allbox">
+                    <div class="main-box-golime-header-infofaqs-right-box-flex">
+                      <a
+                        href="{{ block.settings.main-box-golime-header-infofaqs-right-text-box_link }}"
+                        class="main-box-golime-header-infofaqs-right-text-box_links"
+                      >
+                        <div class="main-box-golime-header-infofaqs-right-text-box">
+                          <div class="main-box-golime-header-infofaqs-right-data-text-box-para-box">
+                            <h4 class="main-box-golime-header-infofaqs-right-data-text-box">
+                              {{ block.settings['main-box-golime-header-infofaqs-right-data-text-box'] }}
+                            </h4>
+                            <p class="main-box-golime-header-infofaqs-right-data-para-box">
+                              {{ block.settings['main-box-golime-header-infofaqs-right-data-para-box'] }}
+                            </p>
+                          </div>
+                          <div class="main-box-golime-header-infofaqs-right-data-images-box">
+                            {% if block.settings['infofaqs-right-data-images-box-img'] != blank %}
+                              <img
+                                src="{{ block.settings.infofaqs-right-data-images-box-img |img_url:'master' }}"
+                                alt=""
+                                class="main-box-golime-header-infofaqs-right-data-images-box-img"
+                              >
+                            {% endif %}
+                          </div>
+                          <div class="main-box-golime-header-infofaqs-right-data-icon-box">
+                            <i class="fa-solid fa-chevron-right"></i>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="main-faq-and-images-video-box-bottom-flex">
+                    <div class="main-faq-text-box-rigle-col-tab-golime-header-flex">
+                      <div class="faqs-main-box-nav-flex-rightcolbotbox">
+                        <div class="faqs-main-box-nav-flex-rightcolbotbox-txte-databox">
+                          <h4 class="faqs-main-box-nav-flex-rightcolbotbox-text-h4">
+                            {{ block.settings['flex-rightcolbotbox-text-h4'] }}
+                          </h4>
+                          <p class="faqs-main-box-nav-flex-rightcolbotbox-text-para-p">
+                            {{ block.settings['flex-rightcolbotbox-text-para-p'] }}
+                          </p>
+                        </div>
+                        <div class="faq-nav-main-flex-right-bot-div-left-faqs-main">
+                          <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-1">
+                            <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex">
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-data">
+                                <p class="faq-nav-main-flex-right-bot-div-left-faqs-box-data-para">
+                                  {{ block.settings['bot-div-left-faqs-box-data-para'] }}
+                                </p>
+                              </div>
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-icon">
+                                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+                              </div>
+                            </div>
+                            <div class="faqs-main-box-nav-flex-right-col-bot-box-data-para-none">
+                              <p class="faqs-main-box-nav-flex-right-col-bot-box-data-para">
+                                {{ block.settings['nav-flex-right-col-bot-box-data-para'] }}
+                              </p>
+                            </div>
+                          </div>
+                          <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-1">
+                            <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex">
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-data">
+                                <p class="faq-nav-main-flex-right-bot-div-left-faqs-box-data-para">
+                                  {{ block.settings['right-bot-div-left-faqs-box-data-para'] }}
+                                </p>
+                              </div>
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-icon">
+                                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+                              </div>
+                            </div>
+                            <div class="faqs-main-box-nav-flex-right-col-bot-box-data-para-none">
+                              <p class="faqs-main-box-nav-flex-right-col-bot-box-data-para">
+                                {{ block.settings['box-nav-flex-right-col-bot-box-data-para'] }}
+                              </p>
+                            </div>
+                          </div>
+                          <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-1">
+                            <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex">
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-data">
+                                <p class="faq-nav-main-flex-right-bot-div-left-faqs-box-data-para">
+                                  {{ block.settings['flex-right-bot-div-left-faqs-box-data-para'] }}
+                                </p>
+                              </div>
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-icon">
+                                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+                              </div>
+                            </div>
+                            <div class="faqs-main-box-nav-flex-right-col-bot-box-data-para-none">
+                              <p class="faqs-main-box-nav-flex-right-col-bot-box-data-para">
+                                {{ block.settings['main-box-nav-flex-right-col-bot-box-data-para'] }}
+                              </p>
+                            </div>
+                          </div>
+                          <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-1">
+                            <div class="faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex">
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-data">
+                                <p class="faq-nav-main-flex-right-bot-div-left-faqs-box-data-para">
+                                  {{ block.settings['flex-right-bot-div-left-box-data-para-p'] }}
+                                </p>
+                              </div>
+                              <div class="faq-nav-main-flex-right-bot-div-left-faqs-box-icon">
+                                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+                              </div>
+                            </div>
+                            <div class="faqs-main-box-nav-flex-right-col-bot-box-data-para-none">
+                              <p class="faqs-main-box-nav-flex-right-col-bot-box-data-para">
+                                {{ block.settings['flex-right-box-data-para'] }}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="faqs-main-box-nav-flex-right-col-bot-box-data">
+                        <a href="#" class="faqs-main-box-nav-flex-right-col-bot-box-data-span-text">
+                          <span class="faqs-main-box-nav-flex-right-col-bot-box-data-span">
+                            {{ block.settings['faqs-main-box-nav-flex-right-col-bot-box-data-span'] }}
+                          </span>
+                          <span class="faqs-main-box-nav-flex-right-col-bot-box-data-span-icon">
+                            <i class="fa-solid fa-chevron-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                      <div class="main-golime-title-tan-nav-icons-about">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                    {% comment %} no {% endcomment %}
+                    <div class="main-faq-and-images-flex-2boxs-slider-images">
+                      <div class="main-faq-and-images-flex-2boxs-slider-images-flex">
+                        <div class="main-faq-and-images-slider owl-carousel">
+                          <div class="faq-slide-item_images_golime">
+                            {% if block.settings.main_Faq_Slider_Item_images1 != blank %}
+                              <img
+                                class="faq-slide-item_images_img"
+                                src=" {{ block.settings.main_Faq_Slider_Item_images1 |img_url:'master' }} "
+                                alt="Slide 1"
+                              >
+                            {% endif %}
+                          </div>
+                          <div class="faq-slide-item_images_golime">
+                            {% if block.settings.main_Faq_Slider_Item_images2 != blank %}
+                              <img
+                                class="faq-slide-item_images_img"
+                                src=" {{ block.settings.main_Faq_Slider_Item_images2 |img_url:'master' }} "
+                                alt="Slide 2"
+                              >
+                            {% endif %}
+                          </div>
+                          <div class="faq-slide-item_images_golime">
+                            {% if block.settings.main_Faq_Slider_Item_images3 != blank %}
+                              <img
+                                class="faq-slide-item_images_img"
+                                src=" {{ block.settings.main_Faq_Slider_Item_images3 |img_url:'master' }} "
+                                alt="Slide 3"
+                              >
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% comment %} no {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% when 'About' %}
+            <div class="main-golime-header-banner-About-Go-Lime-box-tab">
+              <div class="main-about-flex-header-golime">
+                <a
+                  href="{{ block.settings.Main_links_main-main-about-box-header-golime }}"
+                  class="About_main-main-about-box-header-golime"
+                >
+                  <div class="main-main-about-box-header-golime">
+                    <div class="main-about-box-main-text-box-header-golime">
+                      <div class="main-about-main-data-textandpara-header-golime">
+                        <div class="main-about-main-data-textandpara-header-golime-text">
+                          <h4 class="main-about-main-data-text-box-h4">
+                            {{ block.settings['about-main-data-text-box-h4'] }}
+                          </h4>
+                          <p class="main-about-main-data-para-box-p">
+                            {{ block.settings['about-main-data-para-box-p'] }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="main-box-about-go-lime-video-box">
+                        {% if block.settings['about-go-lime-video-box-img'] != blank %}
+                          <img
+                            src="{{ block.settings.about-go-lime-video-box-img |img_url:'master' }}"
+                            alt=""
+                            class="main-box-about-go-lime-video-box-img"
+                          >
+                        {% endif %}
+                      </div>
+                      <div class="main-golime-title-tan-nav-icons-about">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="{{ block.settings.main-main-about-box-header-golime_link }}"
+                  class="main-main-about-box-header-golime_links"
+                >
+                  <div class="main-main-about-box-header-golime-2">
+                    <div class="main-about-main-data-textandpara-header-golime-text-box2">
+                      <h4 class="main-about-main-data-text-box2-h4">
+                        {{ block.settings['main-about-main-data-text-box2-h4'] }}
+                      </h4>
+                      <p class="main-about-main-data-para-box2-p">
+                        {{ block.settings['main-about-main-data-para-box2-p'] }}
+                      </p>
+                    </div>
+                    <div class="main-box-about-go-lime-video-box2">
+                      {% if block.settings['about-go-lime-video-box2-img'] != blank %}
+                        <img
+                          src="{{ block.settings.about-go-lime-video-box2-img |img_url:'master' }}"
+                          alt=""
+                          class="main-box-about-go-lime-video-box2-img"
+                        >
+                      {% endif %}
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </a>
+
+                <div class="main-aboutgolime-header-main-2-box">
+                  <a
+                    class="main-main-about-box-header-golime-3top-link"
+                    href="{{ block.settings.main-aboutgolime-header-main-2-box-link }}"
+                  >
+                    <div class="main-main-about-box-header-golime-3top">
+                      <div class="main-golime-about-box-3-header-golime">
+                        <div class="main-about-main-data-textandpara-header-golime-text-box3">
+                          <h4 class="main-about-main-data-text-box3-h4">
+                            {{ block.settings['main-about-main-data-text-box3-h4'] }}
+                          </h4>
+                          <p class="main-about-main-data-para-box3-p">
+                            {{ block.settings['main-about-main-data-para-box3-p'] }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="main-golime-title-tan-nav-icons-about">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </div>
+                  </a>
+                   <a
+                    class="main-main-about-box-header-golime-3bot-link"
+                    href="{{ block.settings.main-aboutgolime-header-main-2-bot-link }}"
+                  >
+                  <div class="main-main-about-box-header-golime-3bot" style="
+                    background-image: url(//golime.com/cdn/shop/files/Newsroom.png?v=1752608933)
+                    ;main-main-about-box-header-golime-3bot  background-size: cover;    background-position: center;">
+                    <div class="main-golime-about-box-3-header-golime">
+                      <div class="main-about-main-data-textandpara-header-golime-text-box3">
+                        <h4 class="main-about-main-data-text-box3-h4">
+                          {{ block.settings['main-about-main-data-box3-h4-text'] }}
+                        </h4>
+                        <p class="main-about-main-data-para-box3-p">
+                          {{ block.settings['main-about-main-data-para-box3-p-para'] }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </a>
+                </div>
+              </div>
+            </div>
+          {% when 'Retail' %}
+            <div class="main-golime-header-banner-Retail-Go-Lime-box-tab">
+              <div class="main-golime-header-banner-Retail-Go-Lime-box-flex">
+                <div class="main-golime-header-banner-Retail-Go-Lime-box1">
+                  <div class="main-golime-header-banner-Retail-Go-Lime-box-alldata">
+                    <div class="main-golime-header-banner-Retail-Go-Lime-box-data-text">
+                      <div class="main-golime-header-banner-Retail-Go-Lime-box-data-text-heading">
+                        <h4 class="main-golime-header-banner-Retail-Go-Lime-box-data-text-h4">
+                          {{ block.settings['Retail-Go-Lime-box-data-text-h4'] }}
+                        </h4>
+                        <p class="main-golime-header-banner-Retail-Go-Lime-box-data-text-para">
+                          {{ block.settings['Retail-Go-Lime-box-data-text-para'] }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-golime-header-banner-Retail-Go-Lime-box2">
+                  <div class="main-golime-header-banner-Retail-Go-Lime-box-alldata">
+                    <div class="main-golime-header-banner-Retail-Go-Lime-box-data-text">
+                      <div class="main-golime-header-banner-Retail-Go-Lime-box-data-text-heading">
+                        <h4 class="main-golime-header-banner-Retail-Go-Lime-box-data-text-h4">
+                          {{ block.settings['banner-Retail-Go-Lime-box-data-text-h4'] }}
+                        </h4>
+                        <p class="main-golime-header-banner-Retail-Go-Lime-box-data-text-para">
+                          {{ block.settings['banner-Retail-Go-Lime-box-data-text-para'] }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% when 'Commercial' %}
+            <div class="main-golime-header-banner-Commercial-Go-Lime-box-tab">
+              <div class="main-golime-header-banner-Commercial-Go-Lime-box-flex">
+                <div class="main-golime-header-banner-Commercial-Go-Lime-box1-tab">
+                  <div class="main-golime-header-banner-Commercial-Go-Lime-free-box1-tab">
+                    <div class="main-golime-header-banner-Commercial-Go-Lime-box1-data">
+                      <div class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text">
+                        <h4 class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text-h4">
+                          {{ block.settings['Commercial-Go-Lime-box1-data-text-h4'] }}
+                        </h4>
+                        <p class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text-para">
+                          {{ block.settings['Commercial-Go-Lime-box1-data-text-para'] }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-golime-header-banner-Commercial-Go-Lime-box2-tab">
+                  <div class="main-golime-header-banner-Commercial-Go-Lime-free-box1-tab">
+                    <div class="main-golime-header-banner-Commercial-Go-Lime-box1-data">
+                      <div class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text">
+                        <h4 class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text-h4">
+                          {{ block.settings['banner-Commercial-Go-Lime-box1-data-text-h4'] }}
+                        </h4>
+                        <p class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text-para">
+                          {{ block.settings['banner-Commercial-Go-Lime-box1-data-text-para'] }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-golime-header-banner-Commercial-Go-Lime-box2-tab">
+                  <div class="main-golime-header-banner-Commercial-Go-Lime-free-box1-tab">
+                    <div class="main-golime-header-banner-Commercial-Go-Lime-box1-data">
+                      <div class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text">
+                        <h4 class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text-h4">
+                          {{ block.settings['header-banner-Commercial-Go-Lime-box1-data-text-h4'] }}
+                        </h4>
+                        <p class="main-golime-header-banner-Commercial-Go-Lime-box1-data-text-para">
+                          {{ block.settings['header-banner-Commercial-Go-Lime-box1-data-text-para'] }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="main-golime-title-tan-nav-icons-about">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="golime-search-bar-wrapper" style="display:none;">
+    <div class="search-bar-container">
+      <!-- Shopify search form -->
+      {%- if settings.predictive_search_enabled -%}
+        <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+      {%- else -%}
+        <search-form class="search-modal__form">
+      {%- endif -%}
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+        <div class="field">
+          <input
+            class="search__input field__input"
+            id="{{ input_id }}"
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ 'general.search.search' | t }}"
+            {%- if settings.predictive_search_enabled -%}
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results"
+              aria-controls="predictive-search-results"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            {%- endif -%}
+          >
+          <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+          <input type="hidden" name="options[prefix]" value="last">
+          <button
+            type="reset"
+            class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+            aria-label="{{ 'general.search.reset' | t }}"
+          >
+            <span class="svg-wrapper">
+              {{- 'icon-reset.svg' | inline_asset_content -}}
+            </span>
+          </button>
+          <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+            <span class="svg-wrapper">
+              {{- 'icon-search.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </div>
+
+        {%- if settings.predictive_search_enabled -%}
+          <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+            {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+          </div>
+
+          <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+        {%- endif -%}
+      </form>
+      {%- if settings.predictive_search_enabled -%}
+        </predictive-search>
+      {%- else -%}
+        </search-form>
+      {%- endif -%}
+    </div>
+
+    <!-- Popular Search Tags -->
+    <div class="search-tags">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'search' %}
+            <button type="button" class="search-tags-button">{{ block.settings['search-tags-button'] }}</button>
+            <button type="button" class="search-tags-button">{{ block.settings['search-tags-button2'] }}</button>
+            <button type="button" class="search-tags-button">{{ block.settings['search-tags-button3'] }}</button>
+            <button type="button" class="search-tags-button">{{ block.settings['search-tags-button4'] }}</button>
+            <button type="button" class="search-tags-button">{{ block.settings['search-tags-button5'] }}</button>
+            <button type="button" class="search-tags-button">{{ block.settings['search-tags-button6'] }}</button>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</header>
+
+{%- if settings.cart_type == 'notification' -%}
+  {%- render 'cart-notification',
+    color_scheme: section.settings.color_scheme,
+    desktop_menu_type: section.settings.menu_type_desktop
+  -%}
+{%- endif -%}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Reference to header section
+  const headerSection = document.querySelector('.Golime-header-new-section');
+
+  // 🔍 Toggle search bar
+  $('.mian-images-icon-search-box-header').on('click', function () {
+    $('.golime-search-bar-wrapper').slideToggle(300);
+    headerSection.classList.toggle('active-blur');
+  });
+
+  // ❌ Close search bar if clicked outside
+  $(document).on('click', function (e) {
+    const isInsideSearch = $(e.target).closest(
+      '.golime-search-bar-wrapper, .mian-images-icon-search-box-header'
+    ).length;
+    if (!isInsideSearch) {
+      $('.golime-search-bar-wrapper').slideUp(300);
+      headerSection.classList.remove('active-blur');
+    }
+  });
+
+  // 🟤 Overlay functions
+  function showOverlay() {
+    $('.menu-overlay').fadeIn(200);
+    $('body').css('overflow', 'hidden');
+  }
+
+  function hideOverlay() {
+    $('.menu-overlay').fadeOut(200);
+    $('body').css('overflow', 'auto');
+  }
+
+  // 🔁 Toggle menu section and active style
+  function toggleSection(trigger, sectionSelector) {
+    const $section = $(sectionSelector);
+    const isOpen = $section.is(':visible');
+
+    // Close all
+    $(
+      '.main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+    ).slideUp(300);
+    $('.fa-chevron-down').removeClass('rotate-icon');
+
+    if (!isOpen) {
+      $section.slideDown(300);
+      $(trigger).find('.fa-chevron-down').addClass('rotate-icon');
+      $('.Section-golime-new-header_black').addClass('active-style');
+      showOverlay();
+    } else {
+      $('.Section-golime-new-header_black').removeClass('active-style');
+      hideOverlay();
+    }
+  }
+
+  // 📌 Menu button handlers
+  $('.desktop-menu-list-header-golime-li-a-hover').on('click', function (e) {
+    e.preventDefault();
+    toggleSection(this, '.main-golime-new-header-11-boxs-section');
+  });
+
+  $('.desktop-menu-list-header-golime-li-a').on('click', function (e) {
+    e.preventDefault();
+    toggleSection(this, '.main-golime-header-banner-info-faqs-box-tab');
+  });
+
+  $('.desktop-menu-list-header-golime-li-about').on('click', function (e) {
+    e.preventDefault();
+    toggleSection(this, '.main-golime-header-banner-About-Go-Lime-box-tab');
+  });
+
+  $('.desktop-menu-list-header-golime-li-Retail').on('click', function (e) {
+    e.preventDefault();
+    toggleSection(this, '.main-golime-header-banner-Retail-Go-Lime-box-tab');
+  });
+
+  $('.desktop-menu-list-header-golime-li-Commercial').on('click', function (e) {
+    e.preventDefault();
+    toggleSection(this, '.main-golime-header-banner-Commercial-Go-Lime-box-tab');
+  });
+
+  // ❌ Click outside: close all and remove overlay
+  $(document).on('click', function (e) {
+    const isInside = $(e.target).closest(
+      '.desktop-menu-list-header-golime-li-a-hover, mian-images-icon-search-box-header, .desktop-menu-list-header-golime-li-a, .desktop-menu-list-header-golime-li-about, .desktop-menu-list-header-golime-li-Retail, .desktop-menu-list-header-golime-li-Commercial, .main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+    ).length;
+
+    if (!isInside) {
+      $(
+        '.main-golime-new-header-11-boxs-section, golime-search-bar-wrapper, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+      ).slideUp(300);
+      $('.fa-chevron-down').removeClass('rotate-icon');
+      $('.Section-golime-new-header_black').removeClass('active-style');
+      hideOverlay();
+    }
+  });
+
+  // ❓ FAQ toggle
+  $('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex').on('click', function () {
+    const $faqBox = $(this).closest('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-1');
+    const $answer = $faqBox.find('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none');
+    const $icon = $faqBox.find('.faq-toggle-icon');
+
+    $('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none').not($answer).slideUp(300);
+    $('.faq-toggle-icon').not($icon).removeClass('rotate-cross');
+
+    $answer.slideToggle(300);
+    $icon.toggleClass('rotate-cross');
+  });
+
+  // (Baaki aapka header ka pura JS same as before...)
+  // 🔎 Search Tags button → Shopify search results open
+  $(document).on('click', '.search-tags-button', function () {
+    const query = $(this).text().trim(); // Button text
+    if (query) {
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    }
+  });
+  $('.main-bar-number-golime-header').on('click', function () {
+    $('.navs-links-header-ul-golime-section-bot').slideToggle(300);
+
+    // Toggle icons
+    $('.menu-toggle-icon').toggle();
+    $('.menu-close-icon').toggle();
+  });
+  let lastScrollTop = 0;
+  const header = document.querySelector('.Golime-header-new-section');
+  const topBanner = document.querySelector('.header-main-top-banner-text-golime-new-top-banner');
+
+  window.addEventListener('load', function () {
+    header.classList.add('show', 'at-top'); // reload par top:50px
+    topBanner.classList.add('show');
+  });
+
+  window.addEventListener('scroll', function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop === 0) {
+      // 🔝 page bilkul top par
+      header.classList.remove('hide');
+      header.classList.add('show', 'at-top');
+
+      topBanner.classList.add('show');
+    } else if (scrollTop > lastScrollTop) {
+      // 👇 scrolling down
+      header.classList.add('hide');
+      header.classList.remove('show', 'at-top');
+
+      topBanner.classList.add('show');
+    } else {
+      // 👆 scrolling up
+      header.classList.remove('hide', 'at-top');
+      header.classList.add('show');
+
+      topBanner.classList.remove('show');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+  $(document).ready(function () {
+    $('.main-faq-and-images-slider').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      smartSpeed: 700,
+      dots: true,
+      nav: false,
+      //   navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Header Golime",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "header-logo-images",
+      "label": "Logo Img"
+    },
+    {
+      "type": "image_picker",
+      "id": "main-logo-img-none-header",
+      "label": "Logo Img Hover"
+    },
+    {
+      "type": "image_picker",
+      "id": "main-search-img",
+      "label": "Search Img"
+    },
+    {
+      "type": "image_picker",
+      "id": "cart-icon",
+      "label": "Cart Img"
+    },
+    {
+      "type": "text",
+      "id": "call-number-text",
+      "label": "Call Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "phones-nember-img",
+      "label": "Phones Nember Img"
+    },
+    {
+      "type": "text",
+      "id": "search-button",
+      "label": "Search Button"
+    },
+    {
+      "type": "url",
+      "id": "call-number-text-link",
+      "label": "Links"
+    },
+    {
+      "type": "text",
+      "id": "main-header-main-top-banner-text-golime-new-top-banner-heading-span",
+      "label": "Banner Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "GetStarted",
+      "name": "GetStarted",
+      "settings": [
+        {
+          "type": "text",
+          "id": "Get-Started",
+          "label": "Get Started"
+        },
+        {
+          "type": "image_picker",
+          "id": "get-images-box-img",
+          "label": "Get Started Box Img"
+        },
+        {
+          "type": "text",
+          "id": "navtab-title-para",
+          "label": "Get Started Box Para"
+        },
+        {
+          "type": "textarea",
+          "id": "navtab-title-para-heading",
+          "label": "Get Started Box Para Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "main-get-images-box-tab-main-header-img",
+          "label": "Get Started Box Img2"
+        },
+        {
+          "type": "text",
+          "id": "main-navtab-title-para",
+          "label": "Get Started Box Para2"
+        },
+        {
+          "type": "textarea",
+          "id": "main-navtab-title-para-heading",
+          "label": "Get Started Box Para Heading2"
+        },
+        {
+          "type": "image_picker",
+          "id": "images-box-tab-main-header-box-img",
+          "label": "Get Started Box Img3"
+        },
+        {
+          "type": "text",
+          "id": "get-navtab-title-para-main-text",
+          "label": "Get Started Box Para3"
+        },
+        {
+          "type": "textarea",
+          "id": "get-navtab-title-para-heading",
+          "label": "Get Started Box Para Heading3"
+        },
+        {
+          "type": "image_picker",
+          "id": "images-box-tab-main-header-box-img-box",
+          "label": "Get Started Box Img4"
+        },
+        {
+          "type": "text",
+          "id": "get-navtab-title-para-main-text-id",
+          "label": "Get Started Box Para4"
+        },
+        {
+          "type": "textarea",
+          "id": "get-navtab-title-para-heading-id",
+          "label": "Get Started Box Para Heading4"
+        },
+        {
+          "type": "image_picker",
+          "id": "images-box-tab-main-header-box-img-id",
+          "label": "Get Started Box Img5"
+        },
+        {
+          "type": "text",
+          "id": "get-navtab-title-para-main-text-p",
+          "label": "Get Started Box Para5"
+        },
+        {
+          "type": "textarea",
+          "id": "get-navtab-title-para-heading-p",
+          "label": "Get Started Box Para Heading5"
+        },
+        {
+          "type": "image_picker",
+          "id": "images-box-tab-main-header-box-img-id-box",
+          "label": "Get Started Box Img6"
+        },
+        {
+          "type": "text",
+          "id": "get-navtab-title-para-main-text-p-box",
+          "label": "Get Started Box Para6"
+        },
+        {
+          "type": "textarea",
+          "id": "get-navtab-title-para-heading-p-box",
+          "label": "Get Started Box Para Heading6"
+        },
+        {
+          "type": "image_picker",
+          "id": "images-box-tab-main-header-box-img-id-images",
+          "label": "Get Started Box Img7"
+        },
+        {
+          "type": "text",
+          "id": "get-navtab-title-para-main-text-p-content",
+          "label": "Get Started Box Para7"
+        },
+        {
+          "type": "textarea",
+          "id": "get-navtab-title-para-heading-p-content",
+          "label": "Get Started Box Para Heading7"
+        },
+        {
+          "type": "image_picker",
+          "id": "images-box-tab-main-header-box-img-id-images-tab",
+          "label": "Get Started Box Img8"
+        },
+        {
+          "type": "text",
+          "id": "get-para-main-text-p-content-sub",
+          "label": "Get Started Box Para8"
+        },
+        {
+          "type": "textarea",
+          "id": "get-para-heading-p-content-sub",
+          "label": "Get Started Box Para Heading8"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "images-box-main-header-box-img-id-images-sub",
+          "label": "Get Started Box Img9"
+        },
+        {
+          "type": "text",
+          "id": "get-navtab-title-para-main-text-p-content-tab",
+          "label": "Get Started Box Para9"
+        },
+        {
+          "type": "textarea",
+          "id": "get-navtab-title-para-heading-p-content-tab",
+          "label": "Get Started Box Para Heading9"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "golime-header-golime-right-box-logo",
+          "label": "Get Started Box Logo"
+        },
+
+        {
+          "type": "text",
+          "id": "golime-header-box-1-text",
+          "label": "Get Started Box 1 Text"
+        },
+
+        {
+          "type": "textarea",
+          "id": "golime-header-box-1-para",
+          "label": "Get Started Box 1 Para"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "golime-header-box-1-img",
+          "label": "Get Started Box 1 Img"
+        },
+
+        {
+          "type": "text",
+          "id": "golime-header-main-heading",
+          "label": "Get Started Box Heading"
+        },
+
+        {
+          "type": "textarea",
+          "id": "golime-header-main-para",
+          "label": "Get Started Box para"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "golime-header-right-flex-col-img",
+          "label": "Get Started Box 2 Img"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a2",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a3",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a4",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a5",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a6",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a7",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a8",
+          "label": "Url"
+        },
+        {
+          "type": "url",
+          "id": "Main_golime_tab_tn_main_header_a9",
+          "label": "Url"
+        }
+      ]
+    },
+    {
+      "type": "infofaqs",
+      "name": "Infofaqs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "info-faqs",
+          "label": "Info Faqs Text"
+        },
+        {
+          "type": "text",
+          "id": "text-para-box-col-tab-h4text",
+          "label": "Info Faqs Box Text"
+        },
+        {
+          "type": "textarea",
+          "id": "text-para-box-col-tab-p-para",
+          "label": "Info Faqs Box Para"
+        },
+        {
+          "type": "url",
+          "id": "Links_Golime_main-golime-header-blog-left-tab-sdiv-abox",
+          "label": "Golime Text Links"
+        },
+        {
+          "type": "url",
+          "id": "Links_Golime_main-golime-header-blog-left-tab-sdiv-abox2",
+          "label": "Golime Text Links"
+        },
+        {
+          "type": "url",
+          "id": "Links_Golime_main-golime-header-blog-left-tab-sdiv-abox3",
+          "label": "Golime Text Links"
+        },
+        {
+          "type": "url",
+          "id": "Links_Golime_main-golime-header-blog-left-tab-sdiv-abox4",
+          "label": "Golime Text Links"
+        },
+        {
+          "type": "text",
+          "id": "golime-header-blog-left-tab-sdiv-abox-text",
+          "label": "Info Faqs Box A"
+        },
+        {
+          "type": "text",
+          "id": "golime-header-blog-left-tab-sdiv-abox",
+          "label": "Info Faqs Box A2"
+        },
+        {
+          "type": "text",
+          "id": "blog-left-tab-sdiv-abox",
+          "label": "Info Faqs Box A3"
+        },
+        {
+          "type": "text",
+          "id": "left-tab-sdiv-abox",
+          "label": "Info Faqs Box A4"
+        },
+        {
+          "type": "text",
+          "id": "main-box-lefcol-tab-view-all-box-span-text",
+          "label": "Info Faqs Box Span"
+        },
+        {
+          "type": "image_picker",
+          "id": "nav-images-box-flex-left-box-img",
+          "label": "Info Faqs Box Img"
+        },
+        {
+          "type": "url",
+          "id": "main-box-golime-header-infofaqs-right-text-box_link",
+          "label": "Info Faqs Box Links"
+        },
+        {
+          "type": "text",
+          "id": "main-box-golime-header-infofaqs-right-data-text-box",
+          "label": "Info Faqs Box Right Text"
+        },
+        {
+          "type": "textarea",
+          "id": "main-box-golime-header-infofaqs-right-data-para-box",
+          "label": "Info Faqs Box Right Para"
+        },
+        {
+          "type": "image_picker",
+          "id": "infofaqs-right-data-images-box-img",
+          "label": "Info Faqs Box Right Img"
+        },
+        {
+          "type": "text",
+          "id": "flex-rightcolbotbox-text-h4",
+          "label": "Info Faqs Box Right Faq Text"
+        },
+        {
+          "type": "textarea",
+          "id": "flex-rightcolbotbox-text-para-p",
+          "label": "Info Faqs Box Right Faq Para"
+        },
+        {
+          "type": "text",
+          "id": "bot-div-left-faqs-box-data-para",
+          "label": "Info Faqs Box Right Faq Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "nav-flex-right-col-bot-box-data-para",
+          "label": "Info Faqs Box Right Faq Title"
+        },
+        {
+          "type": "text",
+          "id": "right-bot-div-left-faqs-box-data-para",
+          "label": "Info Faqs Box Right Faq Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "box-nav-flex-right-col-bot-box-data-para",
+          "label": "Info Faqs Box Right Faq Title"
+        },
+        {
+          "type": "text",
+          "id": "flex-right-bot-div-left-faqs-box-data-para",
+          "label": "Info Faqs Box Right Faq Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "main-box-nav-flex-right-col-bot-box-data-para",
+          "label": "Info Faqs Box Right Faq Title"
+        },
+        {
+          "type": "text",
+          "id": "flex-right-bot-div-left-box-data-para-p",
+          "label": "Info Faqs Box Right Faq Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "flex-right-box-data-para",
+          "label": "Info Faqs Box Right Faq Title"
+        },
+        {
+          "type": "text",
+          "id": "faqs-main-box-nav-flex-right-col-bot-box-data-span",
+          "label": "Info Faqs Box Right Faq Span"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_Faq_Slider_Item_images1",
+          "label": "Info Faqs Slider"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_Faq_Slider_Item_images2",
+          "label": "Info Faqs Slider"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_Faq_Slider_Item_images3",
+          "label": "Info Faqs Slider"
+        }
+      ]
+    },
+    {
+      "type": "About",
+      "name": "About",
+      "settings": [
+        {
+          "type": "text",
+          "id": "About-text",
+          "label": "About Text"
+        },
+        {
+          "type": "url",
+          "id": "Main_links_main-main-about-box-header-golime",
+          "label": "About Links Box1"
+        },
+        {
+          "type": "text",
+          "id": "about-main-data-text-box-h4",
+          "label": "About Box Text"
+        },
+        {
+          "type": "textarea",
+          "id": "about-main-data-para-box-p",
+          "label": "About Box Para"
+        },
+        {
+          "type": "image_picker",
+          "id": "about-go-lime-video-box-img",
+          "label": "About Box Img"
+        },
+        {
+          "type": "url",
+          "id": "main-main-about-box-header-golime_link",
+          "label": "Golime How It Work Link"
+        },
+        {
+          "type": "text",
+          "id": "main-about-main-data-text-box2-h4",
+          "label": "About Box2 Text"
+        },
+        {
+          "type": "textarea",
+          "id": "main-about-main-data-para-box2-p",
+          "label": "About Box2 Para"
+        },
+        {
+          "type": "image_picker",
+          "id": "about-go-lime-video-box2-img",
+          "label": "About Box2 Img"
+        },
+        {
+          "type": "url",
+          "id": "main-aboutgolime-header-main-2-box-link",
+          "label": "About Box3 Url"
+        },
+        {
+          "type": "text",
+          "id": "main-about-main-data-text-box3-h4",
+          "label": "About Box3 Text"
+        },
+        {
+          "type": "textarea",
+          "id": "main-about-main-data-para-box3-p",
+          "label": "About Box3 Para"
+        },
+        {
+          "type": "url",
+          "id": "main-aboutgolime-header-main-2-bot-link",
+          "label": "About Box4 Lnk"
+        },
+        {
+          "type": "text",
+          "id": "main-about-main-data-box3-h4-text",
+          "label": "About Box4 Text"
+        },
+        {
+          "type": "textarea",
+          "id": "main-about-main-data-para-box3-p-para",
+          "label": "About Box4 Para"
+        }
+      ]
+    },
+    {
+      "type": "Retail",
+      "name": "Retail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "Retail-text",
+          "label": "Retail Text"
+        },
+        {
+          "type": "text",
+          "id": "Retail-Go-Lime-box-data-text-h4",
+          "label": "Retail Box Text"
+        },
+        {
+          "type": "textarea",
+          "id": "Retail-Go-Lime-box-data-text-para",
+          "label": "Retail Box Para"
+        },
+        {
+          "type": "text",
+          "id": "banner-Retail-Go-Lime-box-data-text-h4",
+          "label": "Retail Box2 Text"
+        },
+        {
+          "type": "textarea",
+          "id": "banner-Retail-Go-Lime-box-data-text-para",
+          "label": "Retail Box2 Para"
+        }
+      ]
+    },
+    {
+      "type": "Commercial",
+      "name": "Commercial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "Commercial-text",
+          "label": "Commercial Text"
+        },
+        {
+          "type": "text",
+          "id": "Commercial-Go-Lime-box1-data-text-h4",
+          "label": "Commercial Box Text"
+        },
+        {
+          "type": "textarea",
+          "id": "Commercial-Go-Lime-box1-data-text-para",
+          "label": "Commercial Box Para"
+        },
+        {
+          "type": "text",
+          "id": "banner-Commercial-Go-Lime-box1-data-text-h4",
+          "label": "Commercial Box2 Text"
+        },
+        {
+          "type": "textarea",
+          "id": "banner-Commercial-Go-Lime-box1-data-text-para",
+          "label": "Commercial Box2 Para"
+        },
+        {
+          "type": "text",
+          "id": "header-banner-Commercial-Go-Lime-box1-data-text-h4",
+          "label": "Commercial Box3 Text"
+        },
+        {
+          "type": "textarea",
+          "id": "header-banner-Commercial-Go-Lime-box1-data-text-para",
+          "label": "Commercial Box3 Para"
+        }
+      ]
+    },
+    {
+      "type": "search",
+      "name": "Search",
+      "settings": [
+        {
+          "type": "text",
+          "id": "search-tags-button",
+          "label": "Search Button"
+        },
+        {
+          "type": "text",
+          "id": "search-tags-button2",
+          "label": "Search Button2"
+        },
+        {
+          "type": "text",
+          "id": "search-tags-button3",
+          "label": "Search Button3"
+        },
+        {
+          "type": "text",
+          "id": "search-tags-button4",
+          "label": "Search Button4"
+        },
+        {
+          "type": "text",
+          "id": "search-tags-button5",
+          "label": "Search Button5"
+        },
+        {
+          "type": "text",
+          "id": "search-tags-button6",
+          "label": "Search Button6"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header Golime"
+    }
+  ]
+}
+{% endschema %}

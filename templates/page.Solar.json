@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "golime_banner_golime_new_page_W74GyL": {
+      "type": "Golime_banner_golime_new_page",
+      "name": "Golime Banner New2",
+      "settings": {
+        "banner_golime_img_desktop_img": "shopify://shop_images/download_082e6695-05cc-49fe-a5f3-b01e8525ed28.webp",
+        "banner_golime_img_mobile_img": "shopify://shop_images/download_a3cae36c-a9bd-4498-90c3-87a441e2d726.webp",
+        "main_golime_banner_title_heading_new": "Energy Solutions for\nOntario Homes",
+        "golime_new_Banner_section_position_bar_Description_Para": "<p>Cut your energy bills and reduce your carbon footprint with smart solar solutions designed for Ontario’s climate.<br/><br/><br/></p>",
+        "main_golime_banner_new_section_position_button": "BUY NOW",
+        "golime_banner_new_section_position_text_span": "Speak With An Expert",
+        "main_golime_new_banner_section_position_text_btm_images_sub": "shopify://shop_images/solar_products_Ontario.webp"
+      }
+    },
+    "water_heater_slider_Djq4ar": {
+      "type": "Water-Heater-slider",
+      "blocks": {
+        "slider_a8Qm4w": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        },
+        "slider_UqPhAe": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Enbridge_logo1.png"
+          }
+        },
+        "slider_AbBVzz": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Homestars_-_Go_Lime_Partners.avif"
+          }
+        },
+        "slider_QJHWwm": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/CLA_and_Go_Lime3.png"
+          }
+        },
+        "slider_FE3KWT": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_3bt8nr": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/TSSA_-_Go_Lime_Partners6.webp"
+          }
+        },
+        "slider_B7MJAa": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Home_Depot_-_Go_Lime_Partners4.png"
+          }
+        },
+        "slider_HFnHLG": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Lennox_-_Go_Lime_Partners5.jpg"
+          }
+        },
+        "slider_tzywPx": {
+          "type": "Slider",
+          "settings": {
+            "golime-item-images-golime-slider": "shopify://shop_images/Walmart2_and_Go_Lime.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slider_a8Qm4w",
+        "slider_UqPhAe",
+        "slider_AbBVzz",
+        "slider_QJHWwm",
+        "slider_FE3KWT",
+        "slider_3bt8nr",
+        "slider_B7MJAa",
+        "slider_HFnHLG",
+        "slider_tzywPx"
+      ],
+      "name": "Images Slider Golime",
+      "settings": {
+        "main-golime-slider-heading-h3": "We Are Proud to Partner With"
+      }
+    }
+  },
+  "order": [
+    "golime_banner_golime_new_page_W74GyL",
+    "water_heater_slider_Djq4ar"
+  ]
+}

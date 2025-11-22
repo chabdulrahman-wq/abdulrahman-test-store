@@ -1,0 +1,212 @@
+<style>
+      .golime_scc_new_images_text {
+      padding-top: 65px;
+      padding-bottom: 40px;
+  }
+
+  .container_golime_scc_new_images_text {
+      max-width: 1336px;
+      padding: 0 50px;
+      margin: 0 auto;
+  }
+
+  .bg_style_images_boxess_new_images_text {
+      position: relative;
+      background: url({{ section.settings.sub_bg_style_images_boxess_new_images_text | img_url: 'master' }});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 66px;
+      border-radius: 24px;
+      overflow: hidden;
+  }
+
+  .overlay_images_tril_new_images_text {
+      position: absolute;
+          display: block !important;
+      right: 0;
+      background: linear-gradient(to left, rgba(40, 40, 40, 1) 0%, rgba(40, 40, 40, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+      top: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+
+  .sub_images_all_heading_flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+      position: relative;
+  }
+
+  .sub_Title_mages_all_content {
+      max-width: 405px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .images_sub_main_box_new_img {
+      width: 56px;
+      height: 64px;
+  }
+
+  .mages_all_content_title_back {
+      width: 100%;
+      text-align: center;
+      padding-top: 22px;
+  }
+
+  .mages_all_content_title_back_span {
+      font-size: 20px;
+      padding-top: 6px;
+      display: inline-block;
+      letter-spacing: 0;
+      color: #FFFFFF;
+  }
+
+  .mages_all_content_title_back_h2 {
+      font-size: 40px;
+      color: #CEF34E;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 5px 0;
+      line-height: 50px;
+      padding-bottom: 5px;
+      letter-spacing: 0;
+  }
+
+  .mages_all_content_title_back_description p {
+      font-size: 20px;
+      letter-spacing: 0;
+      color: #FFFFFF;
+      margin: 0;
+      padding-top: 10px;
+      line-height: 28px;
+  }
+
+  @media screen and (max-width: 767px) {
+
+      .golime_scc_new_images_text {
+          padding-top: 40px;
+          padding-bottom: 20px;
+      }
+
+      .container_golime_scc_new_images_text {
+          max-width: 1336px;
+          padding: 0 15px;
+          margin: 0 auto;
+      }
+
+      .sub_Title_mages_all_content {
+          max-width: 370px;
+          text-align: end;
+      }
+
+      .overlay_images_tril_new_images_text {
+          background: linear-gradient(to top, rgba(40, 40, 40, 1) 0%,
+                  /* Right edge fully dark */
+                  rgba(40, 40, 40, 0.9) 30%,
+                  /* Middle semi-dark */
+                  rgba(255, 255, 255, 0) 100%
+                  /* Left edge lightly white/transparent */
+              );
+      }
+
+      .bg_style_images_boxess_new_images_text {
+          position: relative;
+          background-repeat: no-repeat;
+          background: url(/img/db50be97ebb52eec396b100d7b494aa0dd209a96.webp);
+          background-size: cover;
+          padding: 18px;
+          border-radius: 24px;
+          overflow: hidden;
+          height: 300px;
+          margin: 0 auto;
+      }
+
+      .mages_all_content_title_back {
+          padding: 10px;
+      }
+
+      .mages_all_content_title_back_span {
+          font-size: 18px;
+          padding-bottom: 6px;
+      }
+
+      .mages_all_content_title_back_h2 {
+          font-size: 24px;
+          max-width: 100%;
+          line-height: 24px;
+      }
+
+      .mages_all_content_title_back_description p {
+          font-size: 18px;
+          line-height: 24px;
+      }
+  }
+</style>
+<section class="golime_scc_new_images_text">
+  <div class="container_golime_scc_new_images_text">
+    <div class="desktop_show_boxess_new_images_text">
+      <div class="bg_style_images_boxess_new_images_text">
+        <div class="overlay_images_tril_new_images_text"></div>
+        <div class="sub_images_all_heading_flex">
+          <div class="sub_Title_mages_all_content">
+            <div class="images_sub_main_box_new">
+                {% if section.settings.main-images_sub_main_box_new_img !=blank%}
+              <img src="{{ section.settings.main-images_sub_main_box_new_img |img_url:'master' }}" alt="" class="images_sub_main_box_new_img">
+            {% endif %}
+            </div>
+            <div class="mages_all_content_title_back">
+              <span class="mages_all_content_title_back_span">{{ section.settings.main_mages_all_content_title_back_span }}</span>
+              <h2 class="mages_all_content_title_back_h2">{{ section.settings.main_mages_all_content_title_back_h2 }}</h2>
+              <div class="mages_all_content_title_back_description">
+                <p>{{ section.settings.main_mages_all_content_title_back_description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime New Img Text",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main-images_sub_main_box_new_img",
+    "label": "Images"
+    },
+    {
+    "type": "text",
+    "id": "main_mages_all_content_title_back_span",
+    "label": "Span"
+    },
+    {
+    "type": "text",
+    "id": "main_mages_all_content_title_back_h2",
+    "label": "Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main_mages_all_content_title_back_description",
+    "label": "Description"
+    },
+    {
+    "type": "image_picker",
+    "id": "sub_bg_style_images_boxess_new_images_text",
+    "label": "Background Images"
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime New Img Text"
+    }
+  ]
+}
+{% endschema %}

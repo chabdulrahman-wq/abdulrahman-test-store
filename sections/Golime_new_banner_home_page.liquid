@@ -1,0 +1,509 @@
+<style>
+      .Golime_New_Banner_hppb_row {
+      padding: 120px 0 60px;
+      width: 100%;
+      background-size: cover;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center center;
+      {% if section.settings.main_Golime_New_Banner_hppb_row !=blank %}
+      background-image: url({{ section.settings.main_Golime_New_Banner_hppb_row |img_url:'master' }});
+      {% endif %}
+      transition: 0.5s all ease-in-out;
+  }
+
+  .Golime_New_Banner_hppb_flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1426px;
+      margin: 0 auto;
+      padding: 24px 30px;
+  }
+
+  .Golime_New_Banner_hppb_box_title {
+      width: 37%;
+  }
+
+  .Golime_New_Banner_hppb_box_images {
+      display: flex;
+      justify-content: space-between;
+      width: 61%;
+  }
+
+  .Golime_New_Banner_hppb_box_title_text {
+      font-size: 47px;
+      width: 86%;
+      margin: 0 ;
+      color: #fff;
+      letter-spacing: 0;
+      font-weight: 700;
+      line-height: 1.2;
+  }
+
+  .Golime_New_Banner_hppb_box_title_para p {
+      color: #fff;
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: 0px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_box {
+      width: 49%;
+      height: 100%;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .Golime_New_Banner_hppb_box_images_data {
+      line-height: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+
+  .Golime_New_Banner_hppb_box_images_img {
+      width: 100%;
+      height: 100%;
+  }
+
+  .Golime_New_Banner_hppb_box_images_sub_title {
+      position: absolute;
+      top: 0;
+      padding: 36.59px;
+      height: 100%;
+  }
+
+  .Golime_New_Banner_hppb_box_images_sub_title_flex {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .Golime_New_Banner_hppb_box_images_title_h2 {
+      font-size: 33px;
+      color: #fff;
+      letter-spacing: 0;
+      line-height: 1;
+      width: 65%;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_img_text_flex {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FF0015;
+      width: fit-content;
+      padding: 4px 13px;
+      border-radius: 50px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_text_box {
+      color: #fff;
+      font-size: 11.05px;
+      letter-spacing: 0;
+      line-height: 100%;
+      text-transform: uppercase;
+  }
+
+  .Golime_New_Banner_hppb_box_images_sub_img {
+      width: 14.47px;
+      height: 13.51px;
+  }
+
+
+  .Golime_New_Banner_hppb_box_images_icon_text_flex {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 10px 0 0;
+  }
+
+  .Golime_New_Banner_hppb_box_images_icon_img {
+      width: 14.32px;
+      height: 14.32px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_text_sub_box {
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 1.2;
+      color: #ffffff;
+  }
+
+  .Golime_New_Banner_hppb_box_images_box2_sub_bot_text {
+      font-size: 36.59px;
+      color: #fff;
+      
+      letter-spacing: 0;
+      line-height: 100%;
+  }
+
+  .Golime_New_Banner_hppb_box_images_box2_sub_bot_button {
+      margin: 10px 0 24px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_box2_sub_bot_button_link {
+      display: inline-block;
+      color: #454545;
+      text-decoration: none;
+      letter-spacing: 0;
+      line-height: 100%;
+      padding: 10px 20px;
+      border-radius: 50px;
+      background: #fff;
+      transition: all 0.3s ease-in-out;
+      font-size: 16px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_box_bto_sub_para p {
+      font-size: 10.98px;
+      letter-spacing: 0;
+      line-height: 1.2;
+      color: #fff;
+      padding: 0 10px;
+  }
+
+  .Golime_New_Banner_hppb_box_images_box:hover {
+      transform: scale(1.05);
+  }
+
+  .Golime_New_Banner_hppb_box_images_box:hover .Golime_New_Banner_hppb_box_images_box2_sub_bot_button_link {
+      background: #CEF34E;
+      color: #2F7400;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1426px;
+      margin: 0 auto;
+      gap: 24px;
+      padding: 12px 30px;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_left {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 12px 30px;
+      background: #F1FBCC;
+      justify-content: space-between;
+      border-radius: 16px;
+      height: 60px;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_left_logo {
+      height: 45px;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_left_logo_img {
+      width: 90px;
+      height: 45px;
+      object-fit: contain;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_text_flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 87%;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_main_review_text {
+      color: #454545;
+      font-size: 16px;
+      width: 67%;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_main_review_btn {
+      font-size: 20px;
+      color: #70BC0E;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      width: 35%;
+      text-decoration: none;
+  }
+
+  .Golime_New_Banner_hppb_btm_content_review_text_btn_text {
+      display: block;
+      width: fit-content;
+      transition: 0.8s all ease-in-out;
+      font-size: 16px;
+  }
+
+  .fa.fa-chevron-right {
+      font-size: 14px;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_right {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      border: 1px solid #949494;
+      border-radius: 16px;
+      width: 19%;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_right_images {
+      width: 271px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_right_img {
+      height: 34px;
+      width: 34px;
+      object-fit: contain;
+  }
+
+  .Golime_New_Banner_hppb_box_btm_content_right_title {
+      color: #454545;
+      display: block;
+      width: auto;
+      font-size: 16px;
+  }
+</style>
+<section class="Golime_New_Banner_hppb_section">
+  <div class="Golime_New_Banner_hppb_container">
+    <div class="Golime_New_Banner_hppb_row">
+      <div class="Golime_New_Banner_hppb_flex">
+        <div class="Golime_New_Banner_hppb_box_title">
+          <div class="Golime_New_Banner_hppb_box_title_data">
+            <h1 class="Golime_New_Banner_hppb_box_title_text">
+                {{ section.settings.main_Golime_New_Banner_hppb_box_title_text }}
+            </h1>
+            <div class="Golime_New_Banner_hppb_box_title_para">
+              <p>
+                {{ section.settings.sub_Golime_New_Banner_hppb_box_title_para }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="Golime_New_Banner_hppb_box_images">
+            {% for block in section.blocks %}
+          <div class="Golime_New_Banner_hppb_box_images_box">
+            <div class="Golime_New_Banner_hppb_box_images_data">
+              <div class="Golime_New_Banner_hppb_box_images_img_box">
+                {% if block.settings.main_Golime_New_Banner_hppb_box_images_img !=blank %}
+                <img
+                  src="{{ block.settings.main_Golime_New_Banner_hppb_box_images_img |img_url:'master' }}"
+                  alt=""
+                  class="Golime_New_Banner_hppb_box_images_img"
+                >
+                    {% endif %}
+                <div class="Golime_New_Banner_hppb_box_images_sub_title">
+                  <div class="Golime_New_Banner_hppb_box_images_sub_title_flex">
+                    <div class="Golime_New_Banner_hppb_box_images_box1">
+                      <h2 class="Golime_New_Banner_hppb_box_images_title_h2">{{ block.settings.main_Golime_New_Banner_hppb_box_images_title_h2 }}</h2>
+                      <div class="Golime_New_Banner_hppb_box_images_img_text_flex">
+                        <div class="Golime_New_Banner_hppb_box_images_text_images_box">
+                            {% if block.settings.main_sub_Golime_New_Banner_hppb_box_images_sub_img !=blank %}
+                          <img
+                            src="{{ block.settings.main_sub_Golime_New_Banner_hppb_box_images_sub_img |img_url:'master' }}"
+                            alt=""
+                            class="Golime_New_Banner_hppb_box_images_sub_img"
+                          >
+                            {% endif %}
+                        </div>
+                        <div class="Golime_New_Banner_hppb_box_images_text_box">{{ block.settings.main_Golime_New_Banner_hppb_box_images_text_box }}</div>
+                      </div>
+                      <div class="Golime_New_Banner_hppb_box_images_icon_text_flex">
+                        <div class="Golime_New_Banner_hppb_box_images_icon_img_box">
+                            {% if block.settings.main_Golime_New_Banner_hppb_box_images_icon_img !=blank%}
+                          <img
+                            src="{{ block.settings.main_Golime_New_Banner_hppb_box_images_icon_img |img_url:'master' }}"
+                            alt=""
+                            class="Golime_New_Banner_hppb_box_images_icon_img"
+                          >
+                            {% endif %}
+                        </div>
+                        <div class="Golime_New_Banner_hppb_box_images_text_sub_box">{{ block.settings.main_sub_Golime_New_Banner_hppb_box_images_text_sub_box }}</div>
+                      </div>
+                    </div>
+                    <div class="Golime_New_Banner_hppb_box_images_box_2">
+                      <div class="Golime_New_Banner_hppb_box_images_box2_sub_bot_text">{{ block.settings.main_Golime_New_Banner_hppb_box_images_box2_sub_bot_text }}</div>
+                      <div class="Golime_New_Banner_hppb_box_images_box2_sub_bot_button">
+                        <a
+                          href="{{ block.settings.links_Golime_New_Banner_hppb_box_images_box2_sub_bot_button_link }}"
+                          class="Golime_New_Banner_hppb_box_images_box2_sub_bot_button_link"
+                        >
+                          {{ block.settings.main_Golime_New_Banner_hppb_box_images_box2_sub_bot_button }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Golime_New_Banner_hppb_box_images_box_bto_sub_para">
+              <p>
+                {{ block.settings.Sub_Golime_New_Banner_hppb_box_images_box_bto_sub_para }}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Golime_New_Banner_hppb_box_btm_content">
+    <div class="Golime_New_Banner_hppb_box_btm_content_left">
+      <div class="Golime_New_Banner_hppb_box_btm_content_left_logo">
+        {% if section.settings.main_sub_Golime_New_Banner_hppb_box_btm_content_left_logo_img !=blank%}
+        <img
+          src="{{ section.settings.main_sub_Golime_New_Banner_hppb_box_btm_content_left_logo_img |img_url:'master' }}"
+          alt=""
+          class="Golime_New_Banner_hppb_box_btm_content_left_logo_img"
+        >
+            {% endif %}
+      </div>
+      <div class="Golime_New_Banner_hppb_box_btm_content_text_flex">
+        <div class="Golime_New_Banner_hppb_box_btm_content_main_review_text">
+          <p>{{ section.settings.main_Golime_New_Banner_hppb_box_btm_content_main_review_text }}</p>
+        </div>
+        <a class="Golime_New_Banner_hppb_box_btm_content_main_review_btn" href="{{ section.settings.main_links_Golime_New_Banner_hppb_box_btm_content_main_review_btn }}"
+          ><span
+            class="Golime_New_Banner_hppb_btm_content_review_text_btn_text"
+            >{{ section.settings.main_sub_Golime_New_Banner_hppb_btm_content_review_text_btn_text }}</span
+          ><i class="fa fa-chevron-right"></i
+        ></a>
+      </div>
+    </div>
+    <div class="Golime_New_Banner_hppb_box_btm_content_right">
+      <div class="Golime_New_Banner_hppb_box_btm_content_right_images">
+        {% if section.settings.main_sub_Golime_New_Banner_hppb_box_btm_content_right_img !=blank%}
+        <img
+          src="{{ section.settings.main_sub_Golime_New_Banner_hppb_box_btm_content_right_img |img_url:'master' }}"
+          alt=""
+          class="Golime_New_Banner_hppb_box_btm_content_right_img"
+        >
+            {% endif %}
+        <span class="Golime_New_Banner_hppb_box_btm_content_right_title">{{ section.settings.main_Golime_New_Banner_hppb_box_btm_content_right_title }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime New Banner Home",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main_Golime_New_Banner_hppb_row",
+    "label": "Banner Images"
+    },
+    {
+    "type": "text",
+    "id": "main_Golime_New_Banner_hppb_box_title_text",
+    "label": "New Banner Golime Title"
+    },
+    {
+    "type": "textarea",
+    "id": "sub_Golime_New_Banner_hppb_box_title_para",
+    "label": "Golime Banner Para New"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_sub_Golime_New_Banner_hppb_box_btm_content_left_logo_img",
+    "label": "Golime Banner Btm Images"
+    },
+    {
+    "type": "richtext",
+    "id": "main_Golime_New_Banner_hppb_box_btm_content_main_review_text",
+    "label": "Golime Banner Btm Para"
+    },
+    {
+    "type": "url",
+    "id": "main_links_Golime_New_Banner_hppb_box_btm_content_main_review_btn",
+    "label": "Golime Banner Btm Link"
+    },
+    {
+    "type": "text",
+    "id": "main_sub_Golime_New_Banner_hppb_btm_content_review_text_btn_text",
+    "label": "Golime Banner Btm Text"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_sub_Golime_New_Banner_hppb_box_btm_content_right_img",
+    "label": "Golime Banner Btm Box2 Images"
+    },
+    {
+    "type": "text",
+    "id": "main_Golime_New_Banner_hppb_box_btm_content_right_title",
+    "label": "Golime Banner Btm Box2 Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Banner_Box",
+    "name": "Banner Box",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "main_Golime_New_Banner_hppb_box_images_img",
+        "label": "Golime New Banner Block Images"
+        },
+        {
+        "type": "text",
+        "id": "main_Golime_New_Banner_hppb_box_images_title_h2",
+        "label": "Golime New Banner Block Title"
+        },
+        {
+        "type": "image_picker",
+        "id": "main_sub_Golime_New_Banner_hppb_box_images_sub_img",
+        "label": "Golime New Banner Block Img"
+        },
+        {
+        "type": "richtext",
+        "id": "main_Golime_New_Banner_hppb_box_images_text_box",
+        "label": "Golime New Banner Block Para"
+        },
+        {
+        "type": "image_picker",
+        "id": "main_Golime_New_Banner_hppb_box_images_icon_img",
+        "label": "Golime New Banner Block Img2"
+        },
+        {
+        "type": "richtext",
+        "id": "main_sub_Golime_New_Banner_hppb_box_images_text_sub_box",
+        "label": "Golime New Banner Block Para2"
+        },
+        {
+        "type": "richtext",
+        "id": "main_Golime_New_Banner_hppb_box_images_box2_sub_bot_text",
+        "label": "Golime New Banner Block Para3"
+        },
+        {
+        "type": "url",
+        "id": "links_Golime_New_Banner_hppb_box_images_box2_sub_bot_button_link",
+        "label": "Golime New Banner Block Btn Links"
+        },
+        {
+        "type": "text",
+        "id": "main_Golime_New_Banner_hppb_box_images_box2_sub_bot_button",
+        "label": "Golime New Banner Block Btn"
+        },
+        {
+        "type": "richtext",
+        "id": "Sub_Golime_New_Banner_hppb_box_images_box_bto_sub_para",
+        "label": "Golime New Banner Block Para4"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime New Banner Home Page"
+    }
+  ]
+}
+{% endschema %}

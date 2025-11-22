@@ -1,0 +1,81 @@
+{% schema %}
+{
+  "name": "Go Lime Slider",
+  "settings": [
+    { "type": "header", "content": "Upload 3 images, titles & descriptions" },
+    { "type": "image_picker", "id": "img_1", "label": "Slide 1 Image" },
+    { "type": "text", "id": "title_1", "label": "Slide 1 Title" },
+    { "type": "textarea", "id": "desc_1", "label": "Slide 1 Description" },
+    { "type": "image_picker", "id": "img_2", "label": "Slide 2 Image" },
+    { "type": "text", "id": "title_2", "label": "Slide 2 Title" },
+    { "type": "textarea", "id": "desc_2", "label": "Slide 2 Description" },
+    { "type": "image_picker", "id": "img_3", "label": "Slide 3 Image" },
+    { "type": "text", "id": "title_3", "label": "Slide 3 Title" },
+    { "type": "textarea", "id": "desc_3", "label": "Slide 3 Description" }
+  ],
+  "presets": [ { "name": "Go Lime Slider" } ]
+}
+{% endschema %}
+
+<div class="gl-slider">
+  <div class="gl-left">
+    <img id="glMain" src="{{ section.settings.img_1 | image_url }}" alt="Slide Image">
+    <div class="gl-dots">
+      {% for i in (1..3) %}
+        {% capture ik %}img_{{ i }}{% endcapture %}
+        {% capture tk %}title_{{ i }}{% endcapture %}
+        {% capture dk %}desc_{{ i }}{% endcapture %}
+        {% assign im = section.settings[ik] %}
+        {% assign ti = section.settings[tk] %}
+        {% assign de = section.settings[dk] %}
+        {% if im %}
+          <span class="dot {% if forloop.first %}active{% endif %}"
+                data-img="{{ im | image_url }}"
+                data-title="{{ ti }}"
+                data-desc="{{ de }}"></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="gl-right">
+    <div class="gl-content">
+      <h3 id="glTitle">{{ section.settings.title_1 }}</h3>
+      <p id="glDesc">{{ section.settings.desc_1 }}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.gl-slider {
+  display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; margin:50px 0;
+}
+.gl-left { flex:1 1 55%; max-width:600px; }
+.gl-left img { width:100%; border-radius:10px; }
+.gl-dots { display:flex; gap:10px; margin-top:15px; }
+.dot {
+  width:14px; height:14px; background:#ccc; border-radius:50%;
+  cursor:pointer; transition: background .3s;
+}
+.dot.active { background:#000; }
+.gl-right { flex:1 1 40%; }
+.gl-content {
+  background:#f8f8f8; padding:25px; border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.08);
+}
+.gl-content h3 { margin:0 0 10px; font-size:20px; font-weight:600; }
+.gl-content p { margin:0; color:#444; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".gl-dots .dot").forEach(dot => {
+    dot.addEventListener("click", () => {
+      document.querySelectorAll(".gl-dots .dot").forEach(d => d.classList.remove("active"));
+      dot.classList.add("active");
+      document.getElementById("glMain").src = dot.dataset.img;
+      document.getElementById("glTitle").textContent = dot.dataset.title;
+      document.getElementById("glDesc").textContent = dot.dataset.desc;
+    });
+  });
+});
+</script>
