@@ -74,8 +74,7 @@
           </span>
         </button>
       </div>
-      {% comment %}
-      {%- assign free_shipping_threshold = 500000 -%}
+     
       {%- assign cart_total = 0 -%}
 
       {%- for item in cart.items -%}
@@ -88,18 +87,55 @@
 
       {%- endfor -%}
 
-
+ {% comment %}
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
+{% endcomment %}
 
+ {% style %}
+    .free_shipping_bar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #e9e9e9;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .free_shipping_bar h4 {
+      margin: 0;
+    }
+    .free_shipping_progress_bar {
+      width: 100%;
+      height: 5px;
+      background-color: #e0c1c1;
+      border-radius: 100px;
+      display: block !important;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .free_shipping_progress_bar::before{
+      content: "";
+      width: 0%;
+      height: 100%;
+      background: green;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: width 1s ease-out;
+    }
 
+    /* Add the active class with the calculated percentage width */
+    .free_shipping_progress_bar.active::before {
+      width: {{ percentage_remaining }}%;
+    }
+  {% endstyle %}
 
-{% endstyle %}
 <div class="free_shipping_bar">
 <h4> You need <strong>{{ cart_total | money_with_currency }}</strong> to get free shipping </h4>
 <div class="free_shipping_progress_bar"</div>
 </div>
-{% endcomment %}
+
       {% comment %} Free shipping bra 
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
 <div class="drawer-free-shipping">
