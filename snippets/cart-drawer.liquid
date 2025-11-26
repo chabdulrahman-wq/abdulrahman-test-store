@@ -74,6 +74,7 @@
           </span>
         </button>
       </div>
+      {%- assign free_shipping_threshold = 500000 -%}
       {%- assign cart_total = 0 -%}
 
       {%- for item in cart.items -%}
@@ -82,7 +83,7 @@
 {%- assign cart_total = cart_total | plus: item.final_line_price -%}
     {%- endif -%}
       {%- endfor -%}
-
+  {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
       <div>
       FREE SHIPPING BAR USING {{ cart_total }}
       </div>
