@@ -99,7 +99,7 @@
     .free_shipping_bar h4 {
       margin: 0;
     }
-    .free_shipping_progress_bar_10 {
+    .free_shipping_progress_bar {
       width: 100%;
       height: 5px;
       background-color: #e0c1c1;
@@ -109,7 +109,7 @@
       overflow: hidden;
     }
 
-    .free_shipping_progress_bar_10::before{
+    .free_shipping_progress_bar::before{
       content: "";
       width: 0%;
       height: 100%;
@@ -121,12 +121,13 @@
     }
 
     /* Add the active class with the calculated percentage width */
-    .free_shipping_progress_bar_10.active::before {
+    .free_shipping_progress_bar.active::before {
       width: {{ percentage_remaining }}%;
     }
   {% endstyle %}
 <div class="free_shipping_bar">
 <h4> You need <strong>{{ cart_total | money_with_currency }}</strong> to get free shipping </h4>
+<div class="free_shipping_progress_bar"></div>
 </div>
 
       {% comment %} Free shipping bra 
