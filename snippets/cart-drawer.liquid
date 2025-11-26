@@ -86,6 +86,21 @@
     {%- endif -%}
 
       {%- endfor -%}
+
+        {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
+  {%- capture free_shipping_message -%}
+    You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
+  {%- endcapture -%}
+
+  {%- if amount_remaining <= 0 -%}
+    {%- assign amount_remaining = 0 -%}
+    {%- capture free_shipping_message -%}
+      Congratulations!!! you have unlocked free shipping
+    {%- endcapture -%}
+  {%- endif -%}
+
+  {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
+  {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
       {% style %}
     .free_shipping_bar {
       display: flex;
@@ -112,18 +127,13 @@
 
     .free_shipping_progress_bar::before{
       content: "";
-      width: 50%;
+      width: {{ percentage_remaining }}%;
       height: 100%;
       background: green;
       position: absolute;
       left: 0;
       top: 0;
       transition: width 1s ease-out;
-    }
-
-    /* Add the active class with the calculated percentage width */
-    .free_shipping_progress_bar.active::before {
-      width: {{ percentage_remaining }}%;
     }
   {% endstyle %}
 <div class="free_shipping_bar">
