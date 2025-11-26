@@ -86,6 +86,7 @@
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
       <div>
       FREE SHIPPING BAR USING {{ cart_total }}
+      amount_remaining: {{ amount_remaining }}
       </div>
 
       {% comment %} Free shipping bra 
