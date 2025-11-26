@@ -128,8 +128,15 @@
   {% endstyle %}
 <div class="free_shipping_bar">
 <h4> You need <strong>{{ cart_total | money_with_currency }}</strong> to get free shipping </h4>
-<div class="free_shipping_progress_bar.active"></div>
+<div class="free_shipping_progress_bar"></div>
 </div>
+<script defer>
+  (() => {
+    var progressBar = document.querySelector(".free_shipping_progress_bar");
+    // Add the active class after the page loads to trigger the animation
+    progressBar.classList.add("active");
+  })()
+</script>
 
       {% comment %} Free shipping bra 
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
