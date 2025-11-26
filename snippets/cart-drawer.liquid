@@ -80,13 +80,21 @@
       {%- for item in cart.items -%}
       
     {%- if item.requires_shipping -%}
+
 {%- assign cart_total = cart_total | plus: item.final_line_price -%}
+
     {%- endif -%}
+
       {%- endfor -%}
+
+
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
+
+
+
       <div>
-      FREE SHIPPING BAR USING {{ cart_total }}
-      amount_remaining: {{ amount_remaining }}
+ 
+      You need {{ amount_remaining | money_with_currency }} to get free shipping
       </div>
 
       {% comment %} Free shipping bra 
