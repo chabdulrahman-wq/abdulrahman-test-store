@@ -74,7 +74,8 @@
           </span>
         </button>
       </div>
-     {%- if cart.requires_shipping -%}
+     
+{%- if cart.requires_shipping -%}
   {%- assign free_shipping_threshold = 5000 -%}
   {%- assign cart_total = 0 -%}
 
@@ -99,9 +100,9 @@
 
   {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
   {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
-
-  {% style %}
-    .free_shipping {
+      
+      {% style %}
+    .free_shipping_bar {
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -110,8 +111,9 @@
       border-radius: 5px;
       margin: 10px 0;
     }
-    .free_shipping h4 {
+    .free_shipping_bar h4 {
       margin: 0;
+      font-size: 14.9px;
     }
     .free_shipping_progress_bar {
       width: 100%;
@@ -125,7 +127,7 @@
 
     .free_shipping_progress_bar::before{
       content: "";
-      width: 0%;
+      width: 50%;
       height: 100%;
       background: green;
       position: absolute;
@@ -139,20 +141,10 @@
       width: {{ percentage_remaining }}%;
     }
   {% endstyle %}
-
-  <div class="free_shipping">
-    <h4>{{ free_shipping_message }}</h4>
-    <div class="free_shipping_progress_bar"></div>
-  </div>
-{%- endif -%}
-
-<script defer>
-  (() => {
-    var progressBar = document.querySelector(".free_shipping_progress_bar");
-    // Add the active class after the page loads to trigger the animation
-    progressBar.classList.add("active");
-  })()
-</script>
+<div class="free_shipping_bar">
+<h4> You need <strong>{{ cart_total | money_with_currency }}</strong> to get free shipping </h4>
+<div class="free_shipping_progress_bar"></div>
+</div>
 
       {% comment %} Free shipping bra 
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
