@@ -87,14 +87,14 @@
 
       {%- endfor -%}
 
-
+{% comment %}
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
-
+{% endcomment %}
 
 
       <div>
  
-      You need {{ amount_remaining | money_with_currency }} to get free shipping
+      You need <strong>{{ cart_total | money_with_currency }}</strong> to get free shipping
       </div>
 
       {% comment %} Free shipping bra 
