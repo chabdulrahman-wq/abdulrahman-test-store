@@ -74,6 +74,19 @@
           </span>
         </button>
       </div>
+      {%- assign cart_total = 0 -%}
+
+      {%- for item in cart.item -%}
+      
+    {%- if item.requires_shipping -%}
+{%- assign cart_total = cart_total | plus: item.final_line_price -%}
+    {%- endif -%}
+      {%- endfor -%}
+
+      <div>
+      FREE SHIPPING BAR USING {{ cart_total }}
+      </div>
+
       {% comment %} Free shipping bra 
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
 <div class="drawer-free-shipping">
