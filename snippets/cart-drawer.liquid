@@ -74,20 +74,18 @@
           </span>
         </button>
       </div>
-     
-      {%- assign cart_total = 0 -%}
+     {%- if cart.requires_shipping -%}
+  {%- assign free_shipping_threshold = 5000 -%}
+  {%- assign cart_total = 0 -%}
 
-      {%- for item in cart.items -%}
-      
+  {%- for item in cart.items -%}
     {%- if item.requires_shipping -%}
-
-{%- assign cart_total = cart_total | plus: item.final_line_price -%}
-
+      {%- assign item_price = item.final_line_price | divided_by: 100 -%}
+      {%- assign cart_total = cart_total | plus: item_price -%}
     {%- endif -%}
+  {%- endfor -%}
 
-      {%- endfor -%}
-
-        {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
+  {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
   {%- capture free_shipping_message -%}
     You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
   {%- endcapture -%}
@@ -101,8 +99,9 @@
 
   {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
   {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
-      {% style %}
-    .free_shipping_bar {
+
+  {% style %}
+    .free_shipping {
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -111,9 +110,8 @@
       border-radius: 5px;
       margin: 10px 0;
     }
-    .free_shipping_bar h4 {
+    .free_shipping h4 {
       margin: 0;
-      font-size: 14.9px;
     }
     .free_shipping_progress_bar {
       width: 100%;
@@ -141,10 +139,20 @@
       width: {{ percentage_remaining }}%;
     }
   {% endstyle %}
-<div class="free_shipping_bar">
-<h4> You need <strong>{{ cart_total | money_with_currency }}</strong> to get free shipping </h4>
-<div class="free_shipping_progress_bar.active"></div>
-</div>
+
+  <div class="free_shipping">
+    <h4>{{ free_shipping_message }}</h4>
+    <div class="free_shipping_progress_bar"></div>
+  </div>
+{%- endif -%}
+
+<script defer>
+  (() => {
+    var progressBar = document.querySelector(".free_shipping_progress_bar");
+    // Add the active class after the page loads to trigger the animation
+    progressBar.classList.add("active");
+  })()
+</script>
 
       {% comment %} Free shipping bra 
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
