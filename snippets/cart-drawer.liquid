@@ -75,32 +75,17 @@
         </button>
       </div>
      
-{%- if cart.requires_shipping -%}
-  {%- assign free_shipping_threshold = 5000 -%}
-  {%- assign cart_total = 0 -%}
+      {%- assign cart_total = 0 -%}
 
-  {%- for item in cart.items -%}
-    {%- if item.requires_shipping -%}
-      {%- assign item_price = item.final_line_price | divided_by: 100 -%}
-      {%- assign cart_total = cart_total | plus: item_price -%}
-    {%- endif -%}
-  {%- endfor -%}
-
-  {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
-  {%- capture free_shipping_message -%}
-    You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
-  {%- endcapture -%}
-
-  {%- if amount_remaining <= 0 -%}
-    {%- assign amount_remaining = 0 -%}
-    {%- capture free_shipping_message -%}
-      Congratulations!!! you have unlocked free shipping
-    {%- endcapture -%}
-  {%- endif -%}
-
-  {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
-  {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
+      {%- for item in cart.items -%}
       
+    {%- if item.requires_shipping -%}
+
+{%- assign cart_total = cart_total | plus: item.final_line_price -%}
+
+    {%- endif -%}
+
+      {%- endfor -%}
       {% style %}
     .free_shipping_bar {
       display: flex;
