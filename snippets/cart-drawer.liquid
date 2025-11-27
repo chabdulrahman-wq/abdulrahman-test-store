@@ -75,17 +75,13 @@
         </button>
       </div>
      
-      {%- assign cart_total = 0 -%}
-
-      {%- for item in cart.items -%}
-      
+    
+  {%- for item in cart.items -%}
     {%- if item.requires_shipping -%}
-
-{%- assign cart_total = cart_total | plus: item.final_line_price -%}
-
+      {%- assign item_price = item.final_line_price | divided_by: 100 -%}
+      {%- assign cart_total = cart_total | plus: item_price -%}
     {%- endif -%}
-
-      {%- endfor -%}
+  {%- endfor -%}
       {% style %}
     .free_shipping_bar {
       display: flex;
