@@ -83,7 +83,7 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- assign free_shipping_goal = 5000 -%}   {# apna target amount yahan set karo #}
+{%- assign free_shipping_goal = 10000 -%}   {# apna target amount yahan set karo #}
 
 {%- assign percentage_remaining = cart_total | times: 100 | divided_by: free_shipping_goal -%}
 {%- if percentage_remaining > 100 -%}
