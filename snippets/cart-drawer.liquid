@@ -75,20 +75,31 @@
         </button>
       </div>
      
-{%- assign cart_total = 0 -%}
+{%- if cart.requires_shipping -%}
+  {%- assign free_shipping_threshold = 100 -%}  {# $100 free shipping #}
+  {%- assign cart_total = 0 -%}
 
-{%- for item in cart.items -%}
-  {%- if item.requires_shipping -%}
-    {%- assign cart_total = cart_total | plus: item.final_line_price -%}
+  {%- for item in cart.items -%}
+    {%- if item.requires_shipping -%}
+      {%- assign item_price = item.final_line_price | divided_by: 100 -%}
+      {%- assign cart_total = cart_total | plus: item_price -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
+  {%- capture free_shipping_message -%}
+    You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
+  {%- endcapture -%}
+
+  {%- if amount_remaining <= 0 -%}
+    {%- assign amount_remaining = 0 -%}
+    {%- capture free_shipping_message -%}
+      Congratulations!!! you have unlocked free shipping
+    {%- endcapture -%}
   {%- endif -%}
-{%- endfor -%}
 
-{%- assign free_shipping_goal = 10000 -%}   
-
-{%- assign percentage_remaining = cart_total | times: 100 | divided_by: free_shipping_goal -%}
-{%- if percentage_remaining > 100 -%}
-  {%- assign percentage_remaining = 100 -%}
-{%- endif -%}
+  {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
+  {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
 
 {% style %}
 .free_shipping_bar {
@@ -113,7 +124,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .free_shipping_progress_bar::before{
   content: "";
   width: 0%;
@@ -124,7 +134,6 @@
   top: 0;
   transition: width 1s ease-out;
 }
-
 .free_shipping_progress_bar.active::before {
   width: {{ percentage_remaining }}%;
 }
@@ -140,7 +149,7 @@ document.addEventListener("cart-drawer:updated", () => {
   document.querySelector(".free_shipping_progress_bar")?.classList.add("active");
 });
 </script>
-
+{%- endif -%}
 
       {% comment %} Free shipping bra 
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
