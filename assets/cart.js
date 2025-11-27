@@ -188,6 +188,7 @@ class CartItems extends HTMLElement {
               section.selector
             );
           });
+          document.dispatchEvent(new CustomEvent("cart-drawer:updated"))
           const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
           let message = '';
           if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
