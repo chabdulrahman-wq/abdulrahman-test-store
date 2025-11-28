@@ -76,7 +76,7 @@
       </div>
      
 {%- if cart.requires_shipping -%}
-  {%- assign free_shipping_threshold = 5000 -%} 
+  {%- assign free_shipping_threshold = 10000 -%}  
   {%- assign cart_total = 0 -%}
 
   {%- for item in cart.items -%}
