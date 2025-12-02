@@ -74,7 +74,7 @@
           </span>
         </button>
       </div>
-     
+{% comment %}      
 {%- if cart.requires_shipping -%}
   {%- assign free_shipping_threshold = 10000 -%}  
   {%- assign cart_total = 0 -%}
@@ -143,9 +143,9 @@
 </div>
 
 
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 
-      {% comment %} Free shipping bra 
+      {% comment %} Free shipping bra {% endcomment %}
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
 <div class="drawer-free-shipping">
   {% assign free_shipping_goal = 10000 %} <!-- $100 -->
@@ -183,7 +183,7 @@
   </div>
 </div>
 <!-- ✅ END FREE SHIPPING BAR -->
-{% endcomment %}
+
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"
