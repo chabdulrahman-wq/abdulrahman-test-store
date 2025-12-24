@@ -1,3 +1,73 @@
+
+<style>
+    .christmas_products_section {
+    padding: 88px 0px;
+    background: #6da06d;
+}
+
+.christmas_products_continer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+.christmas_products_Title {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    padding-bottom: 36px;
+}
+
+.christmas_products_Flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.christmas_products_box {
+    width: 33.33333%;
+    padding: 12px;
+}
+
+.christmas_products_box_flex:before {
+    content: "";
+    position: absolute;
+    top: -27px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgb(196 255 86 / 69%) 0%, rgba(196, 255, 86, 0) 60%);
+    filter: blur(10px);
+    z-index: 0;
+    transition: all 0.4s 
+ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.christmas_products_box_flex {
+    background: #fff;
+    padding: 16px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.christmas_products_box_Logo {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-width: 97px;
+    object-fit: contain;
+    right: 13px;
+    top: 35px;
+    display: block;
+}
+</style>
 <section class="christmas_products_section">
   <div class="christmas_products_continer">
     <h2 class="christmas_products_Title">
