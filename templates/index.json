@@ -551,6 +551,17 @@
       ],
       "name": "Golime Footer Top Section",
       "settings": {}
+    },
+    "christmas_holiday_7bPdqm": {
+      "type": "christmas-holiday",
+      "name": "Christmas Holiday products",
+      "settings": {
+        "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!",
+        "main-christmas_products_box_Logo": "shopify://shop_images/badge_2.webp",
+        "main-christmas_products_box_stars_text": "235 reviews",
+        "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+        "christmas_products": "products"
+      }
     }
   },
   "order": [
@@ -567,6 +578,7 @@
     "featured_collection_iM8mnf",
     "golime_slider_images_text_UtwcNB",
     "golime_calculator_7Upq6r",
-    "golime_footer_top_section_NVQMhx"
+    "golime_footer_top_section_NVQMhx",
+    "christmas_holiday_7bPdqm"
   ]
 }
