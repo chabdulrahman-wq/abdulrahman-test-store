@@ -5,7 +5,7 @@
     </h2>
     <div class="christmas_products_Flex">
       {%- assign product_form_id = 'product-form' | append: section.id -%}
-      {% assign collection = collections[settings.christmas_products] %}
+      {% assign collection = collections[section.settings.christmas_products] %}
       {% for prod in collection.products %}
         <div class="christmas_products_box">
           <div class="christmas_products_box_flex">
