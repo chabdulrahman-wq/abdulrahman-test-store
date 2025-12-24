@@ -554,13 +554,42 @@
     },
     "christmas_holiday_7bPdqm": {
       "type": "christmas-holiday",
+      "blocks": {
+        "products_box_6d6kTM": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_stars_text": "",
+            "main-main-christmas_products_box_Button_ASk": "",
+            "prod_list": [
+              "bradford-white-pv50-water-heater"
+            ]
+          }
+        },
+        "products_box_pnaXDC": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_stars_text": "",
+            "main-main-christmas_products_box_Button_ASk": "",
+            "prod_list": []
+          }
+        },
+        "products_box_YUrp7W": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_stars_text": "",
+            "main-main-christmas_products_box_Button_ASk": "",
+            "prod_list": []
+          }
+        }
+      },
+      "block_order": [
+        "products_box_6d6kTM",
+        "products_box_pnaXDC",
+        "products_box_YUrp7W"
+      ],
       "name": "Christmas Holiday products",
       "settings": {
-        "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!",
-        "main-christmas_products_box_Logo": "shopify://shop_images/badge_2.webp",
-        "main-christmas_products_box_stars_text": "235 reviews",
-        "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-        "christmas_products": "products"
+        "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!"
       }
     }
   },
