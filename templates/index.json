@@ -558,8 +558,9 @@
         "products_box_6d6kTM": {
           "type": "products_Box",
           "settings": {
-            "main-christmas_products_box_stars_text": "",
-            "main-main-christmas_products_box_Button_ASk": "",
+            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2.webp",
+            "main-christmas_products_box_stars_text": "235 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
             "prod_list": [
               "bradford-white-pv50-water-heater"
             ]
@@ -568,17 +569,23 @@
         "products_box_pnaXDC": {
           "type": "products_Box",
           "settings": {
-            "main-christmas_products_box_stars_text": "",
-            "main-main-christmas_products_box_Button_ASk": "",
-            "prod_list": []
+            "main-christmas_products_box_Logo": "shopify://shop_images/Badge_2_3.webp",
+            "main-christmas_products_box_stars_text": "86 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "navien-npe-180s2-tankless-water-heater"
+            ]
           }
         },
         "products_box_YUrp7W": {
           "type": "products_Box",
           "settings": {
-            "main-christmas_products_box_stars_text": "",
-            "main-main-christmas_products_box_Button_ASk": "",
-            "prod_list": []
+            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "main-christmas_products_box_stars_text": "14 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "lennox-el297-45-000-btu-furnace"
+            ]
           }
         }
       },
