@@ -220,18 +220,19 @@ ease-in-out;
       {{ section.settings['maim-christmas_products_Title'] }}
     </h2>
     <div class="christmas_products_Flex">
-      {%- assign product_form_id = 'product-form' | append: section.id -%}
-      {% assign collection = collections[section.settings.christmas_products] %}
-      {% for prod in collection.products %}
+        {% for block in section.blocks %}
+      {% assign rprod_product = block.settings.prod_list | limit: 3 %}
+        {% if rprod_product != blank %}
+          {% for rprod in rprod_product %}
         <div class="christmas_products_box">
           <div class="christmas_products_box_flex">
-            {% if section.settings['main-christmas_products_box_Logo'] != blank %}
+            {% if block.settings['main-christmas_products_box_Logo'] != blank %}
               <img
                 class="christmas_products_box_Logo"
-                src="{{ section.settings.main-christmas_products_box_Logo |img_url:'master' }}"
+                src="{{ block.settings.main-christmas_products_box_Logo |img_url:'master' }}"
               >
             {% endif %}
-            <a href="{{ prod.url }}" class="main-christmas_products_box_Link">
+            <a href="{{ rprod.url }}" class="main-christmas_products_box_Link">
               <img
                 class="main-christmas_products_box_Img"
                 src="{{ prod.featured_image | img_url: 'master' }}"
@@ -248,23 +249,23 @@ ease-in-out;
                   <span class="main-christmas_products_box_stars_span"></span>
                 </span>
                 <span class="main-christmas_products_box_stars_text">
-                  {{ section.settings['main-christmas_products_box_stars_text'] }}
+                  {{ block.settings['main-christmas_products_box_stars_text'] }}
                 </span>
               </div>
             </div>
             <div class="main-christmas_products_box_Title_price">
               <h4 class="main-christmas_products_box_Title_text">
-                <a href="{{ prod.url }}" class="main-christmas_products_box_Title_link">
-                  {{ prod.title }}
+                <a href="{{ rprod.url }}" class="main-christmas_products_box_Title_link">
+                  {{ rprod.title }}
                 </a>
               </h4>
               <div class="main-christmas_products_box_price">
                 <span class="main-christmas_products_box_price_span">
-                  {{ prod.price | money }}
+                  {{ rprod.price | money }}
                 </span>
-                {% if prod.compare_at_price > prod.price %}
+                {% if rprod.compare_at_price > rprod.price %}
                   <span class="main-christmas_products_box_compare_price_span">
-                    {{ prod.compare_at_price | money }}
+                    {{ rprod.compare_at_price | money }}
                   </span>
                 {% endif %}
               </div>
@@ -272,18 +273,20 @@ ease-in-out;
             <div class="main-christmas_products_box_Button">
               <div class="main-christmas_products_box_Button_Add_to">
                 {% render 'new-buy-buttons',
-                  product: prod,
+                  product: rprod,
                   product_form_id: product_form_id,
                   section_id: section.id,
                   show_pickup_availability: true
                 %}
               </div>
               <a class="main-christmas_products_box_Button_ASk" href="#">
-                {{- section.settings['main-main-christmas_products_box_Button_ASk'] -}}
+                {{- block.settings['main-main-christmas_products_box_Button_ASk'] -}}
               </a>
             </div>
           </div>
         </div>
+      {% endfor %}
+      {% endif %}
       {% endfor %}
     </div>
   </div>
