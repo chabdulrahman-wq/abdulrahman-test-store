@@ -5,17 +5,38 @@
     </h2>
     <div class="christmas_products_Flex">
       {%- assign product_form_id = 'product-form' | append: section.id -%}
-              {% assign collection = collections[settings.upsell_coll] %}
-              {% for p in collection.products %}
-          <div class="christmas_products_box">
-            <div class="christmas_products_box_flex">
-                {% if section.settings.main-christmas_products_box_Logo !=blank %}
-                <img class="christmas_products_box_Logo" src="{{ section.settings.main-christmas_products_box_Logo |img_url:'master' }}">
-                {% endif %}
+      {% assign collection = collections[settings.christmas_products] %}
+      {% for prod in collection.products %}
+        <div class="christmas_products_box">
+          <div class="christmas_products_box_flex">
+            {% if section.settings['main-christmas_products_box_Logo'] != blank %}
+              <img
+                class="christmas_products_box_Logo"
+                src="{{ section.settings.main-christmas_products_box_Logo |img_url:'master' }}"
+              >
+            {% endif %}
+            <a href="{{ prod.url }}" class="upsell-slider-card-images">
+              <img
+                class="main-christmas_products_box_Img"
+                src="{{ prod.featured_image | img_url: 'master' }}"
+                alt="{{ prod.title }}"
+              >
+            </a>
 
+            <div class="main-christmas_products_box_badge">
+              <div class="main-christmas_products_stars">
+                <span class="main-christmas_products_box_stars">
+                  <span class="main-christmas_products_box_stars_span"></span>
+                  <span class="main-christmas_products_box_stars_span"></span>
+                  <span class="main-christmas_products_box_stars_span"></span>
+                  <span class="main-christmas_products_box_stars_span"></span>
+                </span>
+                <span class="main-christmas_products_box_stars_text"> {{ section.settings.main-main-christmas_products_box_stars_text }} </span>
+              </div>
             </div>
           </div>
-        {% endfor %}
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>
