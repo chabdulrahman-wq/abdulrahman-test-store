@@ -15,7 +15,7 @@
                 src="{{ section.settings.main-christmas_products_box_Logo |img_url:'master' }}"
               >
             {% endif %}
-            <a href="{{ prod.url }}" class="upsell-slider-card-images">
+            <a href="{{ prod.url }}" class="main-christmas_products_box_Link">
               <img
                 class="main-christmas_products_box_Img"
                 src="{{ prod.featured_image | img_url: 'master' }}"
@@ -31,7 +31,26 @@
                   <span class="main-christmas_products_box_stars_span"></span>
                   <span class="main-christmas_products_box_stars_span"></span>
                 </span>
-                <span class="main-christmas_products_box_stars_text"> {{ section.settings.main-main-christmas_products_box_stars_text }} </span>
+                <span class="main-christmas_products_box_stars_text">
+                  {{ section.settings['main-main-christmas_products_box_stars_text'] }}
+                </span>
+              </div>
+            </div>
+            <div class="main-christmas_products_box_Title_price">
+              <h4 class="main-christmas_products_box_Title_text">
+                <a href="{{ prod.url }}" class="main-christmas_products_box_Title_link">
+                  {{ prod.title }}
+                </a>
+              </h4>
+              <div class="main-christmas_products_box_price">
+                <span class="main-christmas_products_box_price_span">
+                  {{ prod.price | money }}
+                </span>
+                {% if prod.price > prod.compare_at_price %}
+                  <span class="main-christmas_products_box_compare_price_span">
+                    {{ prod.compare_at_price | money }}
+                  </span>
+                {% endif %}
               </div>
             </div>
           </div>
