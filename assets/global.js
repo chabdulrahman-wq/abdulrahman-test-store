@@ -1331,3 +1331,51 @@ class CartPerformance {
     );
   }
 }
+<script>
+document.addEventListener("submit", function (e) {
+  const form = e.target;
+
+  if (!form.classList.contains("product-form")) return;
+
+  e.preventDefault(); // ❌ cart page redirect stop
+
+  const formData = new FormData(form);
+
+  fetch("/cart/add.js", {
+    method: "POST",
+    body: formData,
+    headers: {
+      "Accept": "application/json"
+    }
+  })
+  .then(res => res.json())
+  .then(() => {
+
+    /* -----------------------
+       DAWN CART DRAWER FORCE
+    ------------------------ */
+
+    // 1️⃣ Shopify cart refresh event
+    document.dispatchEvent(new CustomEvent("cart:refresh"));
+
+    // 2️⃣ Dawn internal publish event
+    document.dispatchEvent(new CustomEvent("cart:update"));
+
+    // 3️⃣ Force open drawer
+    const drawer = document.querySelector("cart-drawer");
+    if (drawer) {
+      drawer.classList.add("active");
+      drawer.open?.();
+    }
+
+    // 4️⃣ Absolute fallback (click cart icon)
+    const cartBtn =
+      document.querySelector('a[href="/cart"]') ||
+      document.querySelector('[aria-controls="CartDrawer"]');
+
+    if (cartBtn) cartBtn.click();
+
+  })
+  .catch(err => console.error("Add to cart failed", err));
+});
+</script>
