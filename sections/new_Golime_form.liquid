@@ -1,8 +1,106 @@
-
-
+<section class="custom_Golime_form_section">
+  <div class="custom_Golime_form_container">
+    <div class="custom_Golime_form_Flex">
+      <div class="custom_Golime_form_Heading_box">
+        <h2 class="custom_Golime_form_Heading_title" style="color: #fff;">
+          {{ section.settings['main-custom_Golime_form_Heading_title'] }}
+        </h2>
+        <div class="custom_Golime_form_Heading_description">
+          <p>{{ section.settings['main-custom_Golime_form_Heading_description'] }}</p>
+        </div>
+      </div>
+      <div class="custom_Golime_form_box">
+        {%- form 'contact', id: 'ContactForm', class: custom_Golime_form; -%}
+          <div class="custom_Golime_form_input_main_box">
+            <div class="custom_Golime_form_input_box">
+              <input
+                class="custom_Golime_form_input"
+                type="text"
+                id="frname"
+                placeholder="First Name*"
+                name="contact[first name]"
+                required=""
+              >
+            </div>
+            <div class="custom_Golime_form_input_box">
+              <input
+                class="custom_Golime_form_input"
+                type="text"
+                id="frname"
+                placeholder="Last name*"
+                name="contact[last name]"
+                required=""
+              >
+            </div>
+            <div class="custom_Golime_form_input_box">
+              <input
+                class="custom_Golime_form_input"
+                type="email"
+                id="frname"
+                placeholder="Email Address*"
+                name="contact[email]"
+                required=""
+              >
+            </div>
+            <div class="custom_Golime_form_input_box">
+              <input
+                class="custom_Golime_form_input"
+                type="number"
+                id="frname"
+                placeholder="Phone Number*"
+                name="contact[Phone Number]"
+                required=""
+              >
+            </div>
+            <div class="custom_Golime_form_question_message">
+              <textarea
+                class="custom_Golime_form_cust-input-"
+                id="mnname"
+                name="contact[message]"
+                placeholder="Leave a comment"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="custom_Golime_form_Bottom_descrtion_box">
+              <div class="custom_Golime_form_Bottom_descrtion" style="color:#ffffff;">
+                <p>{{ section.settings.main-custom_Golime_form_Bottom_descrtion }}</p>
+              </div>
+              <div class="main-custom_Golime_form_Bottom_Button_box">
+                <button class="main-custom_Golime_form_Bottom_Button" type="submit" style="color:#2f7400; background:#cef34e;">
+                  {{ section.settings.Sub-main-custom_Golime_form_Bottom_Button }}
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
 {% schema %}
 {
   "name": "Secton name",
-  "settings": []
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-custom_Golime_form_Heading_title",
+    "label": "Custom Form Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-custom_Golime_form_Heading_description",
+    "label": "Custom Form Description"
+    },
+    {
+    "type": "richtext",
+    "id": "main-custom_Golime_form_Bottom_descrtion",
+    "label": "Custom Form Bottom Descrtion"
+    },
+    {
+    "type": "text",
+    "id": "Sub-main-custom_Golime_form_Bottom_Button",
+    "label": "Custom Form Bottom Button"
+    }
+  ]
 }
 {% endschema %}
