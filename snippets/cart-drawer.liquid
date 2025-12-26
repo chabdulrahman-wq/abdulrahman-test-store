@@ -569,16 +569,11 @@
         {% for item in cart.items %}
           {% for upsull in item.product.metafields.custom.upsells.value %}
             {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    skip_styles: skip_card_product_styles,
-                    quick_add: section.settings.quick_add,
-                    section_id: section.id
+                    card_product: upsull,
+                    show_vendor: false,
+                    show_rating: false,
+                    quick_add: "standard",
+                    section_id: "line_item"
                   %}
             {% endfor %}
           {% endfor %}
