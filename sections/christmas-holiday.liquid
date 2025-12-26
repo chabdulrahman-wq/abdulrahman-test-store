@@ -272,12 +272,13 @@ ease-in-out;
             </div>
             <div class="main-christmas_products_box_Button">
               <div class="main-christmas_products_box_Button_Add_to">
-                {% render 'new-buy-buttons',
+                 {%- render 'buy-buttons',
+                  block: block,
                   product: rprod,
                   product_form_id: product_form_id,
                   section_id: section.id,
                   show_pickup_availability: true
-                %}
+                -%}
               </div>
               <a class="main-christmas_products_box_Button_ASk" href="#Custom_Golime_Form">
                 {{- block.settings['main-main-christmas_products_box_Button_ASk'] -}}
