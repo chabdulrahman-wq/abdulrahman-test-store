@@ -1,149 +1,161 @@
 <style>
-    .custom_Golime_form_section {
-      background-image: url({{ section.settings.main-custom_Golime_form_section_images |img_url:'master' }});
-      background-size: cover;
-      background-position: top;
-      padding-top: 70px !important;
-  }
-  .custom_Golime_form_container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 50px;
-  }
+      .custom_Golime_form_section {
+        background-image: url({{ section.settings.main-custom_Golime_form_section_images |img_url:'master' }});
+        background-size: cover;
+        background-position: top;
+        padding-top: 70px !important;
+    }
+    .custom_Golime_form_container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
 
-  .custom_Golime_form_Flex {
+    .custom_Golime_form_Flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+            padding-bottom: 60px;
+    }
+
+    .custom_Golime_form_Heading_box {
+        width: 41.2%;
+    }
+
+    .custom_Golime_form_box {
+        width: 49.2%;
+    }
+
+    .custom_Golime_form_Heading_title {
+        font-size: 40px;
+        margin: 0;
+        line-height: 44px;
+    }
+
+    .custom_Golime_form_Heading_description {
+        margin-top: 20px;
+        color: #ffffff;
+    }
+
+    .custom_Golime_form_Heading_description p {
+        letter-spacing: 0;
+        line-height: 20px;
+        font-size: 14px;
+    }
+
+    .custom_Golime_form_input {
+        width: 100%;
+        padding: 16px 15px;
+        margin-bottom: 12px;
+        border-radius: 16px;
+        border: 1px solid #d9d9d9;
+    }
+
+    .custom_Golime_form_cust-input {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 12px;
+        border-radius: 16px;
+        border: 1px solid #d9d9d9;
+    }
+
+    .custom_Golime_form_Bottom_descrtion p {
+        line-height: 19px;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    .main-custom_Golime_form_Bottom_Button_box {
+        margin-top: 19px;
+    }
+
+    .main-custom_Golime_form_Bottom_Button {
+        color: #2f7400 !important;
+        padding: 10px 25px;
+        border: 0;
+        display: block;
+        width: fit-content;
+        font-size: 16px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+
+    .Flex_Golime_Custom_Form {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-          padding-bottom: 60px;
   }
 
-  .custom_Golime_form_Heading_box {
-      width: 41.2%;
+
+
+  .effrt_block_Golime_Custom_Form {
+      border-radius: 24px;
+      background: #265640;
+      padding: 40px 20px;
+      width: 24%;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: space-between;
   }
 
-  .custom_Golime_form_box {
-      width: 49.2%;
+  .imgaes_top_content_effrt_block_Golime_Custom_Form {
+      margin: 0 auto;
+      max-width: 58px;
   }
 
-  .custom_Golime_form_Heading_title {
-      font-size: 40px;
+  .img_top_content_effrt_block_Golime_Custom_Form {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+  }
+
+  .content_effrt_block_Golime_Custom_Form_title {
+      padding: 16px 0;
+  }
+
+  .content_effrt_block_Golime_Custom_Form {
       margin: 0;
-      line-height: 44px;
-  }
-
-  .custom_Golime_form_Heading_description {
-      margin-top: 20px;
-      color: #ffffff;
-  }
-
-  .custom_Golime_form_Heading_description p {
-      letter-spacing: 0;
-      line-height: 20px;
-      font-size: 14px;
-  }
-
-  .custom_Golime_form_input {
-      width: 100%;
-      padding: 16px 15px;
-      margin-bottom: 12px;
-      border-radius: 16px;
-      border: 1px solid #d9d9d9;
-  }
-
-  .custom_Golime_form_cust-input {
-      width: 100%;
-      padding: 12px 15px;
-      margin-bottom: 12px;
-      border-radius: 16px;
-      border: 1px solid #d9d9d9;
-  }
-
-  .custom_Golime_form_Bottom_descrtion p {
-      line-height: 19px;
-      font-size: 14px;
-      letter-spacing: 0;
-  }
-
-  .main-custom_Golime_form_Bottom_Button_box {
-      margin-top: 19px;
-  }
-
-  .main-custom_Golime_form_Bottom_Button {
-      color: #2f7400 !important;
-      padding: 10px 25px;
-      border: 0;
-      display: block;
-      width: fit-content;
+      text-align: center;
       font-size: 16px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: .3s ease-in-out;
+      letter-spacing: 0;
+      line-height: 22px;
+      color: white;
   }
-    
-  .Flex_Golime_Custom_Form {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 
+  .bottm_content_effrt_block_Golime_Custom_Form p {
+      margin: 0;
+      text-align: center;
+      line-height: 21px;
+      font-size: 16px;
+      display: block;
+      letter-spacing: 0;
+      color: white;
+  }
 
+  .bottm_content_effrt_block_Golime_Custom_Form a {
+      color: white;
+      text-decoration: none;
+  }
 
-.effrt_block_Golime_Custom_Form {
-    border-radius: 24px;
-    background: #265640;
-    padding: 40px 20px;
-    width: 24%;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    flex-direction: column;
-    justify-content: space-between;
-}
+  .bottm_content_effrt_block_Golime_Custom_Form_botton{
+      text-align: center;
+  }
 
-.imgaes_top_content_effrt_block_Golime_Custom_Form {
-    margin: 0 auto;
-    max-width: 58px;
-}
-
-.img_top_content_effrt_block_Golime_Custom_Form {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.content_effrt_block_Golime_Custom_Form_title {
-    padding: 16px 0;
-}
-
-.content_effrt_block_Golime_Custom_Form {
-    margin: 0;
-    text-align: center;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: 22px;
-    color: white;
-}
-
-.bottm_content_effrt_block_Golime_Custom_Form p {
-    margin: 0;
-    text-align: center;
-    line-height: 21px;
-    font-size: 16px;
-    display: block;
-    letter-spacing: 0;
-    color: white;
-}
-
-.bottm_content_effrt_block_Golime_Custom_Form a {
-    color: white;
-    text-decoration: none;
-}
-
-.bottm_content_effrt_block_Golime_Custom_Form_botton{
-    text-align: center;
-}
+  .effrt_block_Golime_Footer_us_btn_golime_form {
+      text-decoration: none;
+      border-radius: 100px;
+      padding: 4px 20px;
+      font-size: 16px;
+      transition: all .5s ease-in-out;
+      display: inline-block;
+      letter-spacing: 0;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+  }
 </style>
 <section class="custom_Golime_form_section">
   <div class="custom_Golime_form_container" id="Custom_Golime_Form">
@@ -246,10 +258,10 @@
           {% elsif block.settings.cust_userselect == 'button' %}
             <div class="bottm_content_effrt_block_Golime_Custom_Form_botton">
               <a
-                href="{{ block.settings.Link_effrt_block_Golime_Footer_us_btn }}"
-                class="effrt_block_Golime_Footer_us_btn"
+                href="{{ block.settings.Link_effrt_block_Golime_Footer_us_btn_golime_form }}"
+                class="effrt_block_Golime_Footer_us_btn_golime_form"
               >
-                {{ block.settings.main_effrt_block_Golime_Footer_us_btn }}
+                {{ block.settings.main_effrt_block_Golime_Footer_us_btn_golime_form }}
               </a>
             </div>
           {% else %}
@@ -334,12 +346,12 @@
         },
         {
           "type": "url",
-          "id": "Link_effrt_block_Golime_Footer_us_btn",
+          "id": "Link_effrt_block_Golime_Footer_us_btn_golime_form",
           "label": "Button Links Section"
         },
         {
           "type": "text",
-          "id": "main_effrt_block_Golime_Footer_us_btn",
+          "id": "main_effrt_block_Golime_Footer_us_btn_golime_form",
           "label": "Button Text Golime"
         }
       ]
