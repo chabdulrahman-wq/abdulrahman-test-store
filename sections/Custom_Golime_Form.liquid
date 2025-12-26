@@ -1,3 +1,11 @@
+<style>
+  .custom_Golime_form_section {
+    background-image: url({{ section.settings.main-custom_Golime_form_section_images |img_url:'master' }});
+    background-size: cover;
+    background-position: top;
+    padding-top: 70px !important;
+}
+</style>
 <section class="custom_Golime_form_section">
   <div class="custom_Golime_form_container">
     <div class="custom_Golime_form_Flex">
@@ -81,6 +89,11 @@
 {
   "name": "Custom Golime Form",
   "settings": [
+    {
+    "type": "image_picker",
+    "id": "main-custom_Golime_form_section_images",
+    "label": "Custom Form Images"
+    },
     {
     "type": "text",
     "id": "main-custom_Golime_form_Heading_title",
