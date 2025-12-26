@@ -294,32 +294,44 @@ ease-in-out;
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  document
-    .querySelectorAll('.christmas_products_section form[action="/cart/add"]')
-    .forEach(function (form) {
+  document.addEventListener("click", function (e) {
+    const button = e.target.closest('.product-form__submit');
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    if (!button) return;
 
-        fetch("/cart/add.js", {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-            "X-Requested-With": "XMLHttpRequest"
-          }
-        })
-        .then(response => response.json())
-        .then(() => {
+    const form = button.closest('form[action="/cart/add"]');
+    if (!form) return;
 
-          /* 🔥 Dawn / OS 2.0 drawer trigger */
-          document.dispatchEvent(new CustomEvent("cart:refresh"));
-          document.dispatchEvent(new CustomEvent("cart:open"));
+    /* 🔴 STOP cart page redirect */
+    e.preventDefault();
+    e.stopImmediatePropagation();
 
-        })
-        .catch(err => console.error(err));
-      });
+    const formData = new FormData(form);
 
-    });
+    fetch("/cart/add.js", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    })
+    .then(r => r.json())
+    .then(() => {
+
+      /* ✅ Dawn cart refresh */
+      fetch('/?sections=cart-drawer')
+        .then(res => res.json())
+        .then(sections => {
+          const drawer = document.querySelector('cart-drawer');
+          if (!drawer) return;
+
+          drawer.innerHTML = sections['cart-drawer'];
+          drawer.open();
+        });
+
+    })
+    .catch(err => console.error(err));
+  });
 
 });
 </script>
