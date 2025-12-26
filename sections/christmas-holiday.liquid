@@ -295,37 +295,36 @@ ease-in-out;
 document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("click", function (e) {
-    const button = e.target.closest('.product-form__submit');
+    const btn = e.target.closest('.product-form__submit');
+    if (!btn) return;
 
-    if (!button) return;
-
-    const form = button.closest('form[action="/cart/add"]');
+    const form = btn.closest('form[action="/cart/add"]');
     if (!form) return;
 
-    /* 🔴 STOP cart page redirect */
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    const formData = new FormData(form);
-
-    fetch("/cart/add.js", {
-      method: "POST",
-      body: formData,
+    fetch('/cart/add.js', {
+      method: 'POST',
+      body: new FormData(form),
       headers: {
-        "X-Requested-With": "XMLHttpRequest"
+        'X-Requested-With': 'XMLHttpRequest'
       }
     })
-    .then(r => r.json())
     .then(() => {
 
-      /* ✅ Dawn cart refresh */
+      /* 🔥 Reload drawer content */
       fetch('/?sections=cart-drawer')
         .then(res => res.json())
-        .then(sections => {
+        .then(data => {
           const drawer = document.querySelector('cart-drawer');
           if (!drawer) return;
 
-          drawer.innerHTML = sections['cart-drawer'];
+          drawer.innerHTML = data['cart-drawer'];
+
+          /* ✅ FORCE OPEN DRAWER */
+          drawer.classList.add('active');
+          drawer.setAttribute('open', '');
           drawer.open();
         });
 
