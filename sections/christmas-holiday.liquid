@@ -291,6 +291,38 @@ ease-in-out;
     </div>
   </div>
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document
+    .querySelectorAll('.christmas_products_section form[action="/cart/add"]')
+    .forEach(function (form) {
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        fetch("/cart/add.js", {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "X-Requested-With": "XMLHttpRequest"
+          }
+        })
+        .then(response => response.json())
+        .then(() => {
+
+          /* 🔥 Dawn / OS 2.0 drawer trigger */
+          document.dispatchEvent(new CustomEvent("cart:refresh"));
+          document.dispatchEvent(new CustomEvent("cart:open"));
+
+        })
+        .catch(err => console.error(err));
+      });
+
+    });
+
+});
+</script>
 
 {% schema %}
 {
