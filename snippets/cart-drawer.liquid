@@ -564,6 +564,16 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
+
+      <div>
+        {% for item in cart.items %}
+          {% for upsull in item.product.metafields.custom.upsells.value %}
+            <pre>
+              {{ upsull.title }}
+            </pre>
+            {% endfor %}
+          {% endfor %}
+      </div>
       {% comment %}
         <div class="cart-upsell-slider">
           <h3 class="upsell-heading">{{ settings.main_title }}</h3>
@@ -627,6 +637,9 @@
           </div>
         </div>
       {% endcomment %}
+       
+
+      {% comment %}
       <div class="main_cart_drawer_upsall">
         <div class="main_cart_drawer_upsall_prod_list">
           <div class="main_cart_drawer_upsall_logo_div">
@@ -663,6 +676,7 @@
           </div>
         </div>
       </div>
+      {% endcomment %}
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
