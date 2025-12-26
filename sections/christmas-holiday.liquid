@@ -292,33 +292,112 @@ ease-in-out;
   </div>
 </section>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.dispatchEvent(new CustomEvent("cart-drawer:updated"))
+          const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
+          let message = '';
+          if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
+            if (typeof updatedValue === 'undefined') {
+              message = window.cartStrings.error;
+            } else {
+              message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
+            }
+          }
+          this.updateLiveRegions(line, message);
 
-  document.addEventListener('submit', function (e) {
-    const form = e.target;
+          const lineItem =
+            document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
+          if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
+            cartDrawerWrapper
+              ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`))
+              : lineItem.querySelector(`[name="${name}"]`).focus();
+          } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
+            trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'));
+          } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
+            trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'));
+          }
+        });
 
-    if (!form.matches('form[action="/cart/add"]')) return;
+        CartPerformance.measureFromEvent(`${eventTarget}:user-action`, event);
 
-    /* 🔒 STOP redirect to cart page */
-    if (form.hasAttribute('data-no-redirect')) return;
-    form.setAttribute('data-no-redirect', 'true');
+        publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
+      })
+      .catch(() => {
+        this.querySelectorAll('.loading__spinner').forEach((overlay) => overlay.classList.add('hidden'));
+        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
+        errors.textContent = window.cartStrings.error;
+      })
+      .finally(() => {
+        this.disableLoading(line);
+      });
+  }
 
-    e.preventDefault();
+  updateLiveRegions(line, message) {
+    const lineItemError =
+      document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
+    if (lineItemError) lineItemError.querySelector('.cart-item__error-text').textContent = message;
 
-    /* 👌 Let Dawn handle AJAX internally */
-    form.dispatchEvent(new Event('submit', { bubbles: true }));
+    this.lineItemStatusElement.setAttribute('aria-hidden', true);
 
-    /* 🛒 Force drawer open */
+    const cartStatus =
+      document.getElementById('cart-live-region-text') || document.getElementById('CartDrawer-LiveRegionText');
+    cartStatus.setAttribute('aria-hidden', false);
+
     setTimeout(() => {
-      const drawer = document.querySelector('cart-drawer');
-      if (drawer) drawer.open();
-    }, 200);
+      cartStatus.setAttribute('aria-hidden', true);
+    }, 1000);
+  }
 
-  }, true);
+  getSectionInnerHTML(html, selector) {
+    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+  }
 
-});
+  enableLoading(line) {
+    const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
+    mainCartItems.classList.add('cart__items--disabled');
+
+    const cartItemElements = this.querySelectorAll(`#CartItem-${line} .loading__spinner`);
+    const cartDrawerItemElements = this.querySelectorAll(`#CartDrawer-Item-${line} .loading__spinner`);
+
+    [...cartItemElements, ...cartDrawerItemElements].forEach((overlay) => overlay.classList.remove('hidden'));
+
+    document.activeElement.blur();
+    this.lineItemStatusElement.setAttribute('aria-hidden', false);
+  }
+
+  disableLoading(line) {
+    const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
+    mainCartItems.classList.remove('cart__items--disabled');
+
+    const cartItemElements = this.querySelectorAll(`#CartItem-${line} .loading__spinner`);
+    const cartDrawerItemElements = this.querySelectorAll(`#CartDrawer-Item-${line} .loading__spinner`);
+
+    cartItemElements.forEach((overlay) => overlay.classList.add('hidden'));
+    cartDrawerItemElements.forEach((overlay) => overlay.classList.add('hidden'));
+  }
+}
+
+customElements.define('cart-items', CartItems);
+
+if (!customElements.get('cart-note')) {
+  customElements.define(
+    'cart-note',
+    class CartNote extends HTMLElement {
+      constructor() {
+        super();
+
+        this.addEventListener(
+          'input',
+          debounce((event) => {
+            const body = JSON.stringify({ note: event.target.value });
+            fetch(`${routes.cart_update_url}`, { ...fetchConfig(), ...{ body } })
+              .then(() => CartPerformance.measureFromEvent('note-update:user-action', event));
+          }, ON_CHANGE_DEBOUNCE_TIMER)
+        );
+      }
+    }
+  );
+}
 </script>
-
 {% schema %}
 {
   "name": "Christmas Holiday",
