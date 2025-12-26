@@ -294,21 +294,27 @@ ease-in-out;
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  document.addEventListener('submit', (e) => {
+  document.addEventListener('submit', function (e) {
     const form = e.target;
 
     if (!form.matches('form[action="/cart/add"]')) return;
 
-    /* ❗ Let Dawn handle add-to-cart */
+    /* 🔒 STOP redirect to cart page */
+    if (form.hasAttribute('data-no-redirect')) return;
+    form.setAttribute('data-no-redirect', 'true');
+
+    e.preventDefault();
+
+    /* 👌 Let Dawn handle AJAX internally */
+    form.dispatchEvent(new Event('submit', { bubbles: true }));
+
+    /* 🛒 Force drawer open */
     setTimeout(() => {
       const drawer = document.querySelector('cart-drawer');
+      if (drawer) drawer.open();
+    }, 200);
 
-      if (drawer) {
-        drawer.open();
-      }
-    }, 300);
-
-  });
+  }, true);
 
 });
 </script>
