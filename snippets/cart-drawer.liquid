@@ -564,7 +564,7 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-
+{% comment %} 
       <div>
         {% for item in cart.items %}
           {% for upsull in item.product.metafields.custom.upsells.value %}
@@ -574,12 +574,11 @@
                     show_rating: false,
                     quick_add: "standard",
                     section_id: "line_item",
-                    horizontal_class: true,
+                    horizontal_class: true, 
                   %}
             {% endfor %}
           {% endfor %}
-      </div>
-      {% comment %}
+      </div> {% endcomment %}
         <div class="cart-upsell-slider">
           <h3 class="upsell-heading">{{ settings.main_title }}</h3>
 
@@ -641,7 +640,6 @@
             <button class="upsell-slider-arrow-right"></button>
           </div>
         </div>
-      {% endcomment %}
        
 
       {% comment %}
