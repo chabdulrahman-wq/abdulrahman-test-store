@@ -91,6 +91,47 @@
         "golime-new-section-banner-icon-text-4": "Lower energy bills"
       }
     },
+    "christmas_holiday_banner_QmU3Yn": {
+      "type": "Christmas_holiday_banner",
+      "blocks": {
+        "product_QHHbdk": {
+          "type": "Product",
+          "settings": {
+            "products_list": []
+          }
+        },
+        "product_emjdWC": {
+          "type": "Product",
+          "settings": {
+            "products_list": []
+          }
+        },
+        "product_NNFdGx": {
+          "type": "Product",
+          "settings": {
+            "products_list": []
+          }
+        },
+        "product_yCyeXr": {
+          "type": "Product",
+          "settings": {
+            "products_list": []
+          }
+        }
+      },
+      "block_order": [
+        "product_QHHbdk",
+        "product_emjdWC",
+        "product_NNFdGx",
+        "product_yCyeXr"
+      ],
+      "name": "Christmas Holiday Banner",
+      "settings": {
+        "main-Christmas_hoilday_banner_desktop_img": "shopify://shop_images/download_17e631b6-9c5d-4f93-a306-fc94913148cc.webp",
+        "mian-Christmas_hoilday_banner_main_Slider_title_desktop": "Holiday Comfort, Smarter Savings!✨",
+        "mian-Christmas_hoilday_banner_main_Slider_title_mobile": "Holiday Comfort,<br> Smarter Savings!✨"
+      }
+    },
     "christmas_holiday_7bPdqm": {
       "type": "christmas-holiday",
       "blocks": {
@@ -706,6 +747,7 @@
   "order": [
     "golime_new_banner_home_page_Pkq7RX",
     "golime_banner_pmWTAg",
+    "christmas_holiday_banner_QmU3Yn",
     "christmas_holiday_7bPdqm",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
