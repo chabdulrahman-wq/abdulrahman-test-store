@@ -97,25 +97,46 @@
         "product_QHHbdk": {
           "type": "Product",
           "settings": {
-            "products_list": []
+            "main-Christmas_hoilday_banner_main_Slider_badge_image": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "products_list": [
+              "bradford-white-50-gallon-power-vent-water-heater"
+            ]
           }
         },
         "product_emjdWC": {
           "type": "Product",
           "settings": {
-            "products_list": []
+            "main-Christmas_hoilday_banner_main_Slider_badge_image": "shopify://shop_images/Badge_2_3.webp",
+            "products_list": [
+              "navien-npe-180s2-tankless-water-heater"
+            ]
           }
         },
         "product_NNFdGx": {
           "type": "Product",
           "settings": {
-            "products_list": []
+            "main-Christmas_hoilday_banner_main_Slider_badge_image": "shopify://shop_images/download_d59e83b6-b8e7-4ead-b447-4c5c2234af7e.png",
+            "products_list": [
+              "lennox-ml196-furnace"
+            ]
           }
         },
         "product_yCyeXr": {
           "type": "Product",
           "settings": {
-            "products_list": []
+            "main-Christmas_hoilday_banner_main_Slider_badge_image": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "products_list": [
+              "lennox-el297-45-000-btu-furnace-1"
+            ]
+          }
+        },
+        "product_HYEage": {
+          "type": "Product",
+          "settings": {
+            "main-Christmas_hoilday_banner_main_Slider_badge_image": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "products_list": [
+              "kinghome-2-3-ton-ku-heat-pump-includes-free-smart-thermostat"
+            ]
           }
         }
       },
@@ -123,7 +144,8 @@
         "product_QHHbdk",
         "product_emjdWC",
         "product_NNFdGx",
-        "product_yCyeXr"
+        "product_yCyeXr",
+        "product_HYEage"
       ],
       "name": "Christmas Holiday Banner",
       "settings": {
