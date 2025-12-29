@@ -3660,6 +3660,7 @@ details-disclosure > details {
   .sticky-add-to-cart.active {
     bottom: 0;
     opacity: 1;
+    z-index: 1;
   }
 
   .sticky-add-inner {
