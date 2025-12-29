@@ -136,6 +136,7 @@
     },
     "golime_banner_pmWTAg": {
       "type": "Golime-banner",
+      "disabled": true,
       "name": "Golime Banner",
       "settings": {
         "background_image": "shopify://shop_images/left-image.webp",
