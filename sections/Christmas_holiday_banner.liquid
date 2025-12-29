@@ -1,0 +1,94 @@
+<section class="Christmas_hoilday_banner_section">
+  <div class="Christmas_hoilday_banner_Images">
+    {% if section.settings['main-Christmas_hoilday_banner_desktop_img'] != blank %}
+      <img
+        class="Christmas_hoilday_banner_desktop_img"
+        src="{{ section.settings.main-Christmas_hoilday_banner_desktop_img |img_url:'master' }}"
+      >
+    {% endif %}
+  </div>
+  <div class="Christmas_hoilday_banner_Slider_flex">
+    <div class="Christmas_hoilday_banner_main_Slider_box">
+      <h1 class="Christmas_hoilday_banner_main_Slider_title_desktop">
+        {{ section.settings['mian-Christmas_hoilday_banner_main_Slider_title_desktop'] }}
+      </h1>
+      <h1 class="Christmas_hoilday_banner_main_Slider_title_mobile">
+        {{ section.settings['mian-Christmas_hoilday_banner_main_Slider_title_mobile'] }}
+      </h1>
+      <div class="Christmas_hoilday_banner_main_Slider_inner">
+        <div class="Christmas_hoilday_banner_main_Slider_wrapper">
+          <div class="Christmas_hoilday_banner_main_Slider_Slick">
+            {% for block in section.blocks %}
+              {% assign products_product = block.settings.products_list %}
+              {% if products_product != blank %}
+                {% for products in products_product %}
+                  <div class="Christmas_hoilday_banner_main_Slider_Slick_item">
+                    <div class="Christmas_hoilday_banner_main_Slider_product_flex">
+                      <div class="Christmas_hoilday_banner_main_Slider_product_box">
+                        <div class="Christmas_hoilday_banner_main_Slider_product_images">
+                          {% if block.settings['main-Christmas_hoilday_banner_main_Slider_badge_image'] != blank %}
+                            <img
+                              class="Christmas_hoilday_banner_main_Slider_badge_image"
+                              src="{{ block.settings.main-Christmas_hoilday_banner_main_Slider_badge_image |img_url:'master' }}"
+                            >
+                          {% endif %}
+                          <a href="{{ products.url }}" class="Christmas_hoilday_banner_main_Slider_product_images_Link">
+                            <img
+                              class="Christmas_hoilday_banner_main_Slider_product_images_Img"
+                              src="{{ products.featured_image | img_url: 'master' }}"
+                              alt="{{ products.title }}"
+                            >
+                          </a>
+                          <div class="Christmas_hoilday_banner_main_Slider_product_Title">
+                            <h4 class="Christmas_hoilday_banner_main_Slider_product_Title_text">
+                              <a
+                                href="{{ products.url }}"
+                                class="Christmas_hoilday_banner_main_Slider_product_Title_link"
+                              >
+                                {{ products.title }}
+                              </a>
+                            </h4>
+                          </div>
+                          <div class="Christmas_hoilday_banner_main_Slider_product_price">
+                            <span class="Christmas_hoilday_banner_main_Slider_product_price_span">
+                              {{ products.price | money }}
+                            </span>
+                            {% if products.compare_at_price > products.price %}
+                              <span class="Christmas_hoilday_banner_main_Slider_product_compare_price_span">
+                                {{ products.compare_at_price | money }}
+                              </span>
+                            {% endif %}
+                          </div>
+                          <div class="Christmas_hoilday_banner_main_Slider_product_Button_Add_to">
+                            {%- render 'new-buy-buttons',
+                              block: block,
+                              product: products,
+                              product_form_id: product_form_id,
+                              section_id: section.id,
+                              show_pickup_availability: true
+                            -%}
+                          </div>
+                          <div class="Christmas_hoilday_banner_main_Slider_product_description">
+                            <p>
+                                {{ products.description | strip_html }}
+                            </p>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
