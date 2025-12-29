@@ -138,6 +138,15 @@
               "kinghome-2-3-ton-ku-heat-pump-includes-free-smart-thermostat"
             ]
           }
+        },
+        "product_raAQLF": {
+          "type": "Product",
+          "settings": {
+            "main-Christmas_hoilday_banner_main_Slider_badge_image": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "products_list": [
+              "reverse-osmosis-filter"
+            ]
+          }
         }
       },
       "block_order": [
@@ -145,7 +154,8 @@
         "product_emjdWC",
         "product_NNFdGx",
         "product_yCyeXr",
-        "product_HYEage"
+        "product_HYEage",
+        "product_raAQLF"
       ],
       "name": "Christmas Holiday Banner",
       "settings": {
