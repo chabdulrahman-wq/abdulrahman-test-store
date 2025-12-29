@@ -147,67 +147,69 @@
   }
 
   /* Slick Dots */
- .Christmas_hoilday_banner_main_Slider_Slick .slick-dots {
-    bottom: 10px !important; /* adjust vertical position */
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots {
+    bottom: 20px;
     display: flex !important;
     justify-content: center;
-    gap: 10px;
-    padding: 0;
+    gap: 12px;
+    bottom: -4px;
+    left: 40%;
 }
 
-.Christmas_hoilday_banner_main_Slider_Slick .slick-dots li {
-    width: 12px;
-    height: 12px;
-    margin: 0;
-}
 
-.Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: white !important; /* all inactive dots white */
-    opacity: 1 !important;
-    padding: 0;
-}
 
-.Christmas_hoilday_banner_main_Slider_Slick .slick-dots li.slick-active button {
-    background: #a0ff00 !important; /* active dot green */
-}
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li {
+      width: 12px;
+      height: 12px;
+      margin: 0;
+  }
 
-/* Remove Slick default black pseudo-element */
-.Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button:before {
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: white;
+      opacity: 1;
+      padding: 0;
+  }
+
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li.slick-active button {
+      background: #a0ff00; /* green active dot */
+  }
+
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button:before {
     content: none !important;
 }
 
-/* Slick Arrows */
-.Christmas_hoilday_banner_main_Slider_Slick .slick-prev,
-.Christmas_hoilday_banner_main_Slider_Slick .slick-next {
-    width: 40px;
-    height: 40px;
-    z-index: 2;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+  /* Slick Arrows */
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-prev,
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-next {
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+      top: 100%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-prev:before,
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-next:before {
+      font-size: 20px;
+      color: white;
+      opacity: 1;
+  }
+
+ .Christmas_hoilday_banner_main_Slider_Slick .slick-prev {
+    left: 82%;
 }
 
-.Christmas_hoilday_banner_main_Slider_Slick .slick-prev:before,
-.Christmas_hoilday_banner_main_Slider_Slick .slick-next:before {
-    font-size: 20px;
-    color: white;
-    opacity: 1;
-}
-
-.Christmas_hoilday_banner_main_Slider_Slick .slick-prev {
-    left: 10px;
-}
-
-.Christmas_hoilday_banner_main_Slider_Slick .slick-next {
-    right: 10px;
-}
+  .Christmas_hoilday_banner_main_Slider_Slick .slick-next {
+      right: 10px;
+  }
 </style>
 
 <section class="Christmas_hoilday_banner_section">
