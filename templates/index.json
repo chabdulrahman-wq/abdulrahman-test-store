@@ -61,36 +61,6 @@
         "main_Golime_New_Banner_hppb_box_btm_content_right_title": "Proudly Canadian"
       }
     },
-    "golime_banner_pmWTAg": {
-      "type": "Golime-banner",
-      "name": "Golime Banner",
-      "settings": {
-        "background_image": "shopify://shop_images/left-image.webp",
-        "golime-background_image": "shopify://shop_images/download_6a2351b5-ba3a-4962-87ff-393c54d8a499.webp",
-        "background_image_hover": "shopify://shop_images/3b631de2e3c41672815e442d1f20ea4cd9e3a1e8_lefthover.webp",
-        "golime-background_image-hover": "shopify://shop_images/download_f1f3d2f1-b2cd-4590-86b8-a08787787362.webp",
-        "golime-banner-data-left-heading": "Switch to Affordable Hot Water!",
-        "golime-banner-box-left-price-span": "$24.95/mo",
-        "golime-banner-box-left-price-span-2": "$19.96/mo",
-        "section-banner-btn-a-left": "Upgrade Today",
-        "golime-banner-icon-images-1": "shopify://shop_images/Pocket_friendly_leftbox1.png",
-        "golime-new-section-banner-icon-text": "Pocket Friendly",
-        "golime-banner-icon-images-2": "shopify://shop_images/Reliable_leftbox2.png",
-        "golime-new-section-banner-icon-text2": "Reliable",
-        "golime-banner-icon-images-3": "shopify://shop_images/Energy_efficient_leftbox3.avif",
-        "golime-new-section-banner-icon-text3": "Energy Efficient",
-        "golime-banner-data-left-heading-2": "Switch to Unlimited Hot Water!",
-        "golime-banner-box-left-price-span-4": "$49.95/mo",
-        "golime-banner-box-left-price-span-3": "$39.95/mo",
-        "section-banner-btn-a-left-2": "Upgrade Today",
-        "golime-banner-icon-images-4": "shopify://shop_images/Pocket_friendly_leftbox1.png",
-        "golime-new-section-banner-icon-text-2": "Endless hot water on demand",
-        "golime-banner-icon-images-5": "shopify://shop_images/Reliable_leftbox2.png",
-        "golime-new-section-banner-icon-text-3": "Compact, space-saving design",
-        "golime-banner-icon-images-6": "shopify://shop_images/Energy_efficient_leftbox3.avif",
-        "golime-new-section-banner-icon-text-4": "Lower energy bills"
-      }
-    },
     "christmas_holiday_banner_QmU3Yn": {
       "type": "Christmas_holiday_banner",
       "blocks": {
@@ -162,6 +132,36 @@
         "main-Christmas_hoilday_banner_desktop_img": "shopify://shop_images/download_17e631b6-9c5d-4f93-a306-fc94913148cc.webp",
         "mian-Christmas_hoilday_banner_main_Slider_title_desktop": "Holiday Comfort, Smarter Savings!✨",
         "mian-Christmas_hoilday_banner_main_Slider_title_mobile": "Holiday Comfort,<br> Smarter Savings!✨"
+      }
+    },
+    "golime_banner_pmWTAg": {
+      "type": "Golime-banner",
+      "name": "Golime Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/left-image.webp",
+        "golime-background_image": "shopify://shop_images/download_6a2351b5-ba3a-4962-87ff-393c54d8a499.webp",
+        "background_image_hover": "shopify://shop_images/3b631de2e3c41672815e442d1f20ea4cd9e3a1e8_lefthover.webp",
+        "golime-background_image-hover": "shopify://shop_images/download_f1f3d2f1-b2cd-4590-86b8-a08787787362.webp",
+        "golime-banner-data-left-heading": "Switch to Affordable Hot Water!",
+        "golime-banner-box-left-price-span": "$24.95/mo",
+        "golime-banner-box-left-price-span-2": "$19.96/mo",
+        "section-banner-btn-a-left": "Upgrade Today",
+        "golime-banner-icon-images-1": "shopify://shop_images/Pocket_friendly_leftbox1.png",
+        "golime-new-section-banner-icon-text": "Pocket Friendly",
+        "golime-banner-icon-images-2": "shopify://shop_images/Reliable_leftbox2.png",
+        "golime-new-section-banner-icon-text2": "Reliable",
+        "golime-banner-icon-images-3": "shopify://shop_images/Energy_efficient_leftbox3.avif",
+        "golime-new-section-banner-icon-text3": "Energy Efficient",
+        "golime-banner-data-left-heading-2": "Switch to Unlimited Hot Water!",
+        "golime-banner-box-left-price-span-4": "$49.95/mo",
+        "golime-banner-box-left-price-span-3": "$39.95/mo",
+        "section-banner-btn-a-left-2": "Upgrade Today",
+        "golime-banner-icon-images-4": "shopify://shop_images/Pocket_friendly_leftbox1.png",
+        "golime-new-section-banner-icon-text-2": "Endless hot water on demand",
+        "golime-banner-icon-images-5": "shopify://shop_images/Reliable_leftbox2.png",
+        "golime-new-section-banner-icon-text-3": "Compact, space-saving design",
+        "golime-banner-icon-images-6": "shopify://shop_images/Energy_efficient_leftbox3.avif",
+        "golime-new-section-banner-icon-text-4": "Lower energy bills"
       }
     },
     "christmas_holiday_7bPdqm": {
@@ -778,8 +778,8 @@
   },
   "order": [
     "golime_new_banner_home_page_Pkq7RX",
-    "golime_banner_pmWTAg",
     "christmas_holiday_banner_QmU3Yn",
+    "golime_banner_pmWTAg",
     "christmas_holiday_7bPdqm",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
