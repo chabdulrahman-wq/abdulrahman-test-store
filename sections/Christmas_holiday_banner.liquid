@@ -236,21 +236,22 @@
   </div>
 </section>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener('DOMContentLoaded', function () {
     $('.Christmas_hoilday_banner_main_Slider_Slick').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
       arrows: true,
       dots: true,
       infinite: true,
-      speed: 600,
       autoplay: true,
       autoplaySpeed: 4000,
+      speed: 600,
+      adaptiveHeight: true,
       prevArrow: '<button class="slick-prev">‹</button>',
       nextArrow: '<button class="slick-next">›</button>',
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 1200,
           settings: {
             slidesToShow: 2
           }
@@ -258,13 +259,15 @@
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 1
+            slidesToShow: 1,
+            arrows: false
           }
         }
       ]
     });
   });
 </script>
+
 {% schema %}
 {
   "name": "Christmas Holiday Banner",
