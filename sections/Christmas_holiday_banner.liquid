@@ -1,314 +1,204 @@
 <style>
-    .Christmas_hoilday_banner_section {
-    position: relative;
-    height: 945px;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+.Christmas_hoilday_banner_section {
+  position: relative;
+  width: 100%;
+  height: 945px;
+  overflow: hidden;
 }
 
 .Christmas_hoilday_banner_desktop_img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    object-fit: cover;
-    object-position: left top;
-}
-
-.Christmas_hoilday_banner_Slider_flex {
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    overflow-y: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .Christmas_hoilday_banner_main_Slider_box {
-    overflow-x: hidden;
-    margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .Christmas_hoilday_banner_main_Slider_title_desktop {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 130px;
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 130px;
 }
+
 .Christmas_hoilday_banner_main_Slider_title_mobile {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    position: absolute;
-    display: none;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 130px;
+  display: none;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .Christmas_hoilday_banner_main_Slider_inner {
-    padding-bottom: 70px;
-    padding-top: 0px;
-    padding-left: 380px;
-}
-
-.Christmas_hoilday_banner_main_Slider_wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.Christmas_hoilday_banner_main_Slider_Slick{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px 0;
 }
 
 .Christmas_hoilday_banner_main_Slider_Slick_item {
-    margin: 0 20px;
-    box-sizing: border-box;
+  padding: 0 12px;
 }
 
 .Christmas_hoilday_banner_main_Slider_product_flex {
-    padding: 16px !important;
-    border-radius: 20px;
-    transition: all 350ms ease-in-out;
-    margin-right: 15px;
-}
-
-.Christmas_hoilday_banner_main_Slider_badge_image {
-    position: absolute;
-    width: 70px;
-    right: 15px;
-    max-width: 70px;
-    height: 70px;
-    top: 31px;
-    object-fit: contain;
+  background: rgba(0,0,0,0.25);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
 .Christmas_hoilday_banner_main_Slider_product_images_Img {
-    max-width: 260px;
-    width: 341px;
-    height: 241px;
-    object-fit: contain;
-    margin: 0 auto;
+  max-width: 220px;
+  height: 220px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
-.Christmas_hoilday_banner_main_Slider_product_Title_text {
-    color: white;
-    font-size: 17px;
-    text-align: center;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    padding: 25px 10px 0;
-    padding-top: 15px;
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.Christmas_hoilday_banner_main_Slider_product_Title_link {
-    color: white;
-    text-decoration: none;
-}
-
-.Christmas_hoilday_banner_main_Slider_product_price {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0 8px;
+.Christmas_hoilday_banner_main_Slider_product_Title_text a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .Christmas_hoilday_banner_main_Slider_product_price_span {
-    color: white;
-    font-size: 16px;
+  color: #fff;
 }
 
-.Christmas_hoilday_banner_main_Slider_product_compare_price_span {
-    color: white;
-    font-size: 14px;
-    text-decoration: line-through;
+.slick-prev,
+.slick-next {
+  z-index: 5;
 }
 
-.Christmas_hoilday_banner_main_Slider_product_description p {
-    color: white;
-    font-size: 12px;
-    line-height: normal !important;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 15px;
+@media (max-width: 768px) {
+  .Christmas_hoilday_banner_section {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .Christmas_hoilday_banner_main_Slider_title_desktop {
+    display: none;
+  }
+
+  .Christmas_hoilday_banner_main_Slider_title_mobile {
+    display: block;
+  }
+
+  .Christmas_hoilday_banner_main_Slider_inner {
+    padding: 0 20px;
+  }
 }
 </style>
 
 <section class="Christmas_hoilday_banner_section">
-  <div class="Christmas_hoilday_banner_Images">
-    {% if section.settings['main-Christmas_hoilday_banner_desktop_img'] != blank %}
-      <img
-        class="Christmas_hoilday_banner_desktop_img"
-        src="{{ section.settings.main-Christmas_hoilday_banner_desktop_img |img_url:'master' }}"
-      >
-    {% endif %}
-  </div>
-  <div class="Christmas_hoilday_banner_Slider_flex">
-    <div class="Christmas_hoilday_banner_main_Slider_box">
-      <h1 class="Christmas_hoilday_banner_main_Slider_title_desktop">
-        {{ section.settings['mian-Christmas_hoilday_banner_main_Slider_title_desktop'] }}
-      </h1>
-      <h1 class="Christmas_hoilday_banner_main_Slider_title_mobile">
-        {{ section.settings['mian-Christmas_hoilday_banner_main_Slider_title_mobile'] }}
-      </h1>
-      <div class="Christmas_hoilday_banner_main_Slider_inner">
-        <div class="Christmas_hoilday_banner_main_Slider_wrapper">
-          <div class="Christmas_hoilday_banner_main_Slider_Slick">
-            {% for block in section.blocks %}
-              {% assign products_product = block.settings.products_list %}
-              {% if products_product != blank %}
-                {% for products in products_product %}
-                  <div class="Christmas_hoilday_banner_main_Slider_Slick_item">
-                    <div class="Christmas_hoilday_banner_main_Slider_product_flex">
-                      <div class="Christmas_hoilday_banner_main_Slider_product_box">
-                        <div class="Christmas_hoilday_banner_main_Slider_product_images">
-                          {% if block.settings['main-Christmas_hoilday_banner_main_Slider_badge_image'] != blank %}
-                            <img
-                              class="Christmas_hoilday_banner_main_Slider_badge_image"
-                              src="{{ block.settings.main-Christmas_hoilday_banner_main_Slider_badge_image |img_url:'master' }}"
-                            >
-                          {% endif %}
-                          <a href="{{ products.url }}" class="Christmas_hoilday_banner_main_Slider_product_images_Link">
-                            <img
-                              class="Christmas_hoilday_banner_main_Slider_product_images_Img"
-                              src="{{ products.featured_image | img_url: 'master' }}"
-                              alt="{{ products.title }}"
-                            >
-                          </a>
-                          <div class="Christmas_hoilday_banner_main_Slider_product_Title">
-                            <h4 class="Christmas_hoilday_banner_main_Slider_product_Title_text">
-                              <a
-                                href="{{ products.url }}"
-                                class="Christmas_hoilday_banner_main_Slider_product_Title_link"
-                              >
-                                {{ products.title }}
-                              </a>
-                            </h4>
-                          </div>
-                          <div class="Christmas_hoilday_banner_main_Slider_product_price">
-                            <span class="Christmas_hoilday_banner_main_Slider_product_price_span">
-                              {{ products.price | money }}
-                            </span>
-                            {% if products.compare_at_price > products.price %}
-                              <span class="Christmas_hoilday_banner_main_Slider_product_compare_price_span">
-                                {{ products.compare_at_price | money }}
-                              </span>
-                            {% endif %}
-                          </div>
-                          <div class="Christmas_hoilday_banner_main_Slider_product_Button_Add_to">
-                            {%- render 'new-buy-buttons',
-                              block: block,
-                              product: products,
-                              product_form_id: product_form_id,
-                              section_id: section.id,
-                              show_pickup_availability: true
-                            -%}
-                          </div>
-                          <div class="Christmas_hoilday_banner_main_Slider_product_description">
-                            <p>
-                                {{ products.description | strip_html }}
-                            </p>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          </div>
-        </div>
+  {% if section.settings.main-Christmas_hoilday_banner_desktop_img != blank %}
+    <img class="Christmas_hoilday_banner_desktop_img"
+      src="{{ section.settings.main-Christmas_hoilday_banner_desktop_img | img_url: 'master' }}">
+  {% endif %}
+
+  <div class="Christmas_hoilday_banner_main_Slider_box">
+    <h1 class="Christmas_hoilday_banner_main_Slider_title_desktop">
+      {{ section.settings.mian-Christmas_hoilday_banner_main_Slider_title_desktop }}
+    </h1>
+
+    <h1 class="Christmas_hoilday_banner_main_Slider_title_mobile">
+      {{ section.settings.mian-Christmas_hoilday_banner_main_Slider_title_mobile }}
+    </h1>
+
+    <div class="Christmas_hoilday_banner_main_Slider_inner">
+      <div class="Christmas_hoilday_banner_main_Slider_Slick">
+        {% for block in section.blocks %}
+          {% for product in block.settings.products_list %}
+            <div class="Christmas_hoilday_banner_main_Slider_Slick_item">
+              <div class="Christmas_hoilday_banner_main_Slider_product_flex">
+
+                <a href="{{ product.url }}">
+                  <img class="Christmas_hoilday_banner_main_Slider_product_images_Img"
+                    src="{{ product.featured_image | img_url: 'medium' }}">
+                </a>
+
+                <h4 class="Christmas_hoilday_banner_main_Slider_product_Title_text">
+                  <a href="{{ product.url }}">{{ product.title }}</a>
+                </h4>
+
+                <div class="Christmas_hoilday_banner_main_Slider_product_price">
+                  <span class="Christmas_hoilday_banner_main_Slider_product_price_span">
+                    {{ product.price | money }}
+                  </span>
+                </div>
+
+                {% render 'new-buy-buttons',
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id
+                %}
+
+              </div>
+            </div>
+          {% endfor %}
+        {% endfor %}
       </div>
     </div>
   </div>
 </section>
+
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    $('.Christmas_hoilday_banner_main_Slider_Slick').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 4000,
-      speed: 600,
-      adaptiveHeight: true,
-      prevArrow: '<button class="slick-prev">‹</button>',
-      nextArrow: '<button class="slick-next">›</button>',
-      responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            arrows: false
-          }
-        }
-      ]
-    });
+document.addEventListener('DOMContentLoaded', function () {
+  $('.Christmas_hoilday_banner_main_Slider_Slick').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 }},
+      { breakpoint: 768, settings: { slidesToShow: 1, arrows: false }}
+    ]
   });
+});
 </script>
 
 {% schema %}
 {
-  "name": "Christmas Holiday Banner",
+  "name": "Christmas Holiday Slick",
   "settings": [
     {
-    "type": "image_picker",
-    "id": "main-Christmas_hoilday_banner_desktop_img",
-    "label": "Main Desktop Images"
+      "type": "image_picker",
+      "id": "main-Christmas_hoilday_banner_desktop_img",
+      "label": "Background Image"
     },
     {
-    "type": "text",
-    "id": "mian-Christmas_hoilday_banner_main_Slider_title_desktop",
-    "label": "Main Title Desktop"
+      "type": "text",
+      "id": "mian-Christmas_hoilday_banner_main_Slider_title_desktop",
+      "label": "Desktop Title"
     },
     {
-    "type": "textarea",
-    "id": "mian-Christmas_hoilday_banner_main_Slider_title_mobile",
-    "label": "Main Title Mobile"
+      "type": "text",
+      "id": "mian-Christmas_hoilday_banner_main_Slider_title_mobile",
+      "label": "Mobile Title"
     }
   ],
   "blocks": [
     {
-    "type": "Product",
-    "name": "Product",
-    "settings": [
+      "type": "products",
+      "name": "Products",
+      "settings": [
         {
-        "type": "image_picker",
-        "id": "main-Christmas_hoilday_banner_main_Slider_badge_image",
-        "label": "Product Top images"
-        },
-        {
-        "type": "product_list",
-        "id": "products_list",
-        "label": "Products List"
+          "type": "product_list",
+          "id": "products_list",
+          "label": "Select Products"
         }
-    ]
+      ]
     }
   ],
   "presets": [
     {
-    "name": "Christmas Holiday Banner"
+      "name": "Christmas Holiday Slick Slider"
     }
   ]
 }
