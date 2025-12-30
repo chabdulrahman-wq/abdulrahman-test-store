@@ -1,0 +1,67 @@
+<section class="Unlock_even_More_Savings_section">
+  <div class="Unlock_even_More_Savings_container">
+    <h2 class="Unlock_even_More_Savings_Title">{{ section.settings['main-Unlock_even_More_Savings_Title'] }}</h2>
+    <div class="Unlock_even_More_Savings_Flex">
+      {% for block in section.blocks %}
+        <div class="Unlock_even_More_Savings_Box">
+          <div class="Unlock_even_More_Savings_content">
+            <h3 class="Unlock_even_More_Savings_box_title">
+              {{ block.settings['main-Unlock_even_More_Savings_box-title'] }}
+            </h3>
+            <p>
+              {{ block.settings['main-main-Unlock_even_More_Savings_box-description'] }}
+            </p>
+          </div>
+          <div class="Unlock_even_More_Savings_Box_right_sides_images">
+            {% if block.settings['main-Unlock_even_More_Savings_Box_right_sides_images_img'] != blank %}
+              <img
+                class="Unlock_even_More_Savings_Box_right_sides_images_img"
+                src="{{ block.settings.main-Unlock_even_More_Savings_Box_right_sides_images_img |img_url:'master' }}"
+              >
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Christmas Holiday Box",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main-Unlock_even_More_Savings_Title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Box",
+    "name": "Box",
+    "settings": [
+        {
+        "type": "text",
+        "id": "main-Unlock_even_More_Savings_box-title",
+        "label": "Box Title"
+        },
+        {
+        "type": "richtext",
+        "id": "main-main-Unlock_even_More_Savings_box-description",
+        "label": "Box Description"
+        },
+        {
+        "type": "image_picker",
+        "id": "main-Unlock_even_More_Savings_Box_right_sides_images_img",
+        "label": "Box Right Sides Images"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Christmas Holiday Box"
+    }
+  ]
+}
+{% endschema %}
