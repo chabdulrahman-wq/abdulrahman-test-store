@@ -248,6 +248,35 @@
         "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!"
       }
     },
+    "christmas_holiday_boxs_H77Mb3": {
+      "type": "christmas-holiday-boxs",
+      "blocks": {
+        "box_GHKecL": {
+          "type": "Box",
+          "settings": {
+            "main-Unlock_even_More_Savings_box-title": "Government Rebate",
+            "main-main-Unlock_even_More_Savings_box-description": "<p>Up to<strong>$1,500 in rebates,</strong>we file all the paperwork and handle the process; you simply book the installation, enjoy heat-pump comfort, and let the cheque arrive.</p>",
+            "main-Unlock_even_More_Savings_Box_right_sides_images_img": "shopify://shop_images/c08cc1b8854746a5114a3a9dc27c12d0d561feda.webp"
+          }
+        },
+        "box_7YF3kJ": {
+          "type": "Box",
+          "settings": {
+            "main-Unlock_even_More_Savings_box-title": "Claim Your Free Thermostat + Up to $1,500 in Rebates",
+            "main-main-Unlock_even_More_Savings_box-description": "",
+            "main-Unlock_even_More_Savings_Box_right_sides_images_img": "shopify://shop_images/Component_758_1_59b0a0b2-c145-400c-962e-4e94357c3b32.webp"
+          }
+        }
+      },
+      "block_order": [
+        "box_GHKecL",
+        "box_7YF3kJ"
+      ],
+      "name": "Christmas Holiday Box",
+      "settings": {
+        "main-Unlock_even_More_Savings_Title": "Unlock even More Savings 🎁"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -782,6 +811,7 @@
     "christmas_holiday_banner_QmU3Yn",
     "golime_banner_pmWTAg",
     "christmas_holiday_7bPdqm",
+    "christmas_holiday_boxs_H77Mb3",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
