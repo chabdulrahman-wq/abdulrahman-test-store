@@ -287,7 +287,9 @@
         "main-christmas-holiday-timer-right_timer-heading-day": "DAYS",
         "main-christmas-holiday-timer-right_timer-heading-hours": "HOURS",
         "main-christmas-holiday-timer-right_timer-heading-mins": "MINS",
-        "main-christmas-holiday-timer-right_timer-heading-secs": "SECS"
+        "main-christmas-holiday-timer-right_timer-heading-secs": "SECS",
+        "main-christmas-holiday-timer-right-box-img": "shopify://shop_images/Right.webp",
+        "main-christmas-holiday-timer-right-box-img-moblie": "shopify://shop_images/AdobeStock_743896327_2.avif"
       }
     },
     "water_heater_slider_mVy9je": {
