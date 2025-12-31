@@ -277,6 +277,19 @@
         "main-Unlock_even_More_Savings_Title": "Unlock even More Savings 🎁"
       }
     },
+    "christmas_holiday_timer_xgT6dm": {
+      "type": "christmas-holiday-timer",
+      "name": "Christmasa Holiday Timer",
+      "settings": {
+        "main-christmas-holiday-timer-left-box-img": "shopify://shop_images/Mask_group_1_509289e3-0808-4dda-85a2-9b1c387c3476.webp",
+        "main-christmas-holiday-timer-left-box-img-moblie": "shopify://shop_images/download_532877b5-fad4-4d8a-9714-3bdf79bafc66.webp",
+        "main-christmas-holiday-timer-right_timer-heading": "Sale ending soon:",
+        "main-christmas-holiday-timer-right_timer-heading-day": "DAYS",
+        "main-christmas-holiday-timer-right_timer-heading-hours": "HOURS",
+        "main-christmas-holiday-timer-right_timer-heading-mins": "MINS",
+        "main-christmas-holiday-timer-right_timer-heading-secs": "SECS"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -812,6 +825,7 @@
     "golime_banner_pmWTAg",
     "christmas_holiday_7bPdqm",
     "christmas_holiday_boxs_H77Mb3",
+    "christmas_holiday_timer_xgT6dm",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
