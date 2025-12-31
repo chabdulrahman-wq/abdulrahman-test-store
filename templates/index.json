@@ -292,6 +292,73 @@
         "main-christmas-holiday-timer-right-box-img-moblie": "shopify://shop_images/AdobeStock_743896327_2.avif"
       }
     },
+    "custom_golime_form_qXReUq": {
+      "type": "Custom_Golime_Form",
+      "blocks": {
+        "text_EnHtb8": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1.avif",
+            "sub_content_effrt_block_Golime_Custom_Form": "Need Quick Answers?",
+            "cust_userselect": "description",
+            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "Call us at  <a href=\"tel:+1%20877-747-8292\" title=\"tel:+1 877-747-8292\">+1 877-747-8292</a>, and we'll make your home comfort journey effortless.",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
+            "main_effrt_block_Golime_Footer_us_btn_golime_form": ""
+          }
+        },
+        "text_nWG8Nt": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1_1.avif",
+            "sub_content_effrt_block_Golime_Custom_Form": "We’re in Your Neighborhood",
+            "cust_userselect": "button",
+            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
+            "main_effrt_block_Golime_Footer_us_btn_golime_form": "View Service Areas"
+          }
+        },
+        "text_7GnVdp": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1_2.avif",
+            "sub_content_effrt_block_Golime_Custom_Form": "How Much Flexibility Do You Need?",
+            "cust_userselect": "button",
+            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
+            "main_effrt_block_Golime_Footer_us_btn_golime_form": "What is Go Flex?"
+          }
+        },
+        "text_riiAgQ": {
+          "type": "text",
+          "settings": {
+            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1_3.avif",
+            "sub_content_effrt_block_Golime_Custom_Form": "We’re in Your Neighborhood",
+            "cust_userselect": "button",
+            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "",
+            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
+            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
+            "main_effrt_block_Golime_Footer_us_btn_golime_form": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_EnHtb8",
+        "text_nWG8Nt",
+        "text_7GnVdp",
+        "text_riiAgQ"
+      ],
+      "name": "Custom Golime Form",
+      "settings": {
+        "main-custom_Golime_form_section_images": "shopify://shop_images/download_bbfd1c79-92b5-42c1-a8a1-430a39b89a5f.webp",
+        "main-custom_Golime_form_Heading_title": "Need a hand? We’re here to help.",
+        "main-custom_Golime_form_Heading_description": "<p>To receive assistance, please complete the form below. Our dedicated team is here to help you every step of the way.</p>",
+        "main-custom_Golime_form_Bottom_descrtion": "<p>By submitting this form, you agree to receive communications from us regarding your inquiry. Our dedicated team is here to assist you at every step.</p>",
+        "Sub-main-custom_Golime_form_Bottom_Button": "Submit"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -752,73 +819,6 @@
       ],
       "name": "Golime Footer Top Section",
       "settings": {}
-    },
-    "custom_golime_form_qXReUq": {
-      "type": "Custom_Golime_Form",
-      "blocks": {
-        "text_EnHtb8": {
-          "type": "text",
-          "settings": {
-            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1.avif",
-            "sub_content_effrt_block_Golime_Custom_Form": "Need Quick Answers?",
-            "cust_userselect": "description",
-            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "Call us at  <a href=\"tel:+1%20877-747-8292\" title=\"tel:+1 877-747-8292\">+1 877-747-8292</a>, and we'll make your home comfort journey effortless.",
-            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
-            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
-            "main_effrt_block_Golime_Footer_us_btn_golime_form": ""
-          }
-        },
-        "text_nWG8Nt": {
-          "type": "text",
-          "settings": {
-            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1_1.avif",
-            "sub_content_effrt_block_Golime_Custom_Form": "We’re in Your Neighborhood",
-            "cust_userselect": "button",
-            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "",
-            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
-            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
-            "main_effrt_block_Golime_Footer_us_btn_golime_form": "View Service Areas"
-          }
-        },
-        "text_7GnVdp": {
-          "type": "text",
-          "settings": {
-            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1_2.avif",
-            "sub_content_effrt_block_Golime_Custom_Form": "How Much Flexibility Do You Need?",
-            "cust_userselect": "button",
-            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "",
-            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
-            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
-            "main_effrt_block_Golime_Footer_us_btn_golime_form": "What is Go Flex?"
-          }
-        },
-        "text_riiAgQ": {
-          "type": "text",
-          "settings": {
-            "main_img_top_content_effrt_block_Golime_Custom_Form": "shopify://shop_images/Gemini_Generated_Image_e7iloe7iloe7iloe_1_3.avif",
-            "sub_content_effrt_block_Golime_Custom_Form": "We’re in Your Neighborhood",
-            "cust_userselect": "button",
-            "Sub_bottm_content_effrt_block_Golime_Custom_Form": "",
-            "Sub_bottm_content_effrt_block_Golime_Footer_section_top_3": "",
-            "Link_effrt_block_Golime_Footer_us_btn_golime_form": "",
-            "main_effrt_block_Golime_Footer_us_btn_golime_form": "Learn More"
-          }
-        }
-      },
-      "block_order": [
-        "text_EnHtb8",
-        "text_nWG8Nt",
-        "text_7GnVdp",
-        "text_riiAgQ"
-      ],
-      "name": "Custom Golime Form",
-      "settings": {
-        "main-custom_Golime_form_section_images": "shopify://shop_images/download_bbfd1c79-92b5-42c1-a8a1-430a39b89a5f.webp",
-        "main-custom_Golime_form_Heading_title": "Need a hand? We’re here to help.",
-        "main-custom_Golime_form_Heading_description": "<p>To receive assistance, please complete the form below. Our dedicated team is here to help you every step of the way.</p>",
-        "main-custom_Golime_form_Bottom_descrtion": "<p>By submitting this form, you agree to receive communications from us regarding your inquiry. Our dedicated team is here to assist you at every step.</p>",
-        "Sub-main-custom_Golime_form_Bottom_Button": "Submit"
-      }
     }
   },
   "order": [
@@ -828,6 +828,7 @@
     "christmas_holiday_7bPdqm",
     "christmas_holiday_boxs_H77Mb3",
     "christmas_holiday_timer_xgT6dm",
+    "custom_golime_form_qXReUq",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
@@ -839,7 +840,6 @@
     "featured_collection_iM8mnf",
     "golime_slider_images_text_UtwcNB",
     "golime_calculator_7Upq6r",
-    "golime_footer_top_section_NVQMhx",
-    "custom_golime_form_qXReUq"
+    "golime_footer_top_section_NVQMhx"
   ]
 }
