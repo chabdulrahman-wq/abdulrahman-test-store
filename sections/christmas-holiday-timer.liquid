@@ -99,24 +99,24 @@
 
       <!-- TIMER -->
       <div class="christmas-holiday-timer-right">
-        <h2 class="timer-heading">Sale ending soon:</h2>
+        <h2 class="timer-heading">{{ section.settings.main-christmas-holiday-timer-right_timer-heading }}</h2>
 
         <div class="timer-boxes">
           <div class="time-box">
             <span id="ch-days">00</span>
-            <small>DAYS</small>
+            <small>{{ section.settings.main-christmas-holiday-timer-right_timer-heading-day }}</small>
           </div>
           <div class="time-box">
             <span id="ch-hours">00</span>
-            <small>HOURS</small>
+            <small>{{ section.settings.main-christmas-holiday-timer-right_timer-heading-hours }}</small>
           </div>
           <div class="time-box">
             <span id="ch-mins">00</span>
-            <small>MINS</small>
+            <small>{{ section.settings.main-christmas-holiday-timer-right_timer-heading-mins }}</small>
           </div>
           <div class="time-box">
             <span id="ch-secs">00</span>
-            <small>SECS</small>
+            <small>{{ section.settings.main-christmas-holiday-timer-right_timer-heading-secs }}</small>
           </div>
         </div>
       </div>
@@ -152,7 +152,48 @@
 
 {% schema %}
 {
-  "name": "Section name",
-  "settings": []
+  "name": "Christmasa Holiday Timer",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main-christmas-holiday-timer-left-box-img",
+    "label": "Main Holidat Timer Images"
+    },
+    {
+    "type": "image_picker",
+    "id": "main-christmas-holiday-timer-left-box-img-moblie",
+    "label": "Main Holidat Timer Images Moblie"
+    },
+    {
+    "type": "text",
+    "id": "main-christmas-holiday-timer-right_timer-heading",
+    "label": "Main TiTle"
+    },
+    {
+    "type": "text",
+    "id": "main-christmas-holiday-timer-right_timer-heading-day",
+    "label": "Main TiTle Day"
+    },
+    {
+    "type": "text",
+    "id": "main-christmas-holiday-timer-right_timer-heading-hours",
+    "label": "Main TiTle Hours"
+    },
+    {
+    "type": "text",
+    "id": "main-christmas-holiday-timer-right_timer-heading-mins",
+    "label": "Main TiTle Mins"
+    },
+    {
+    "type": "text",
+    "id": "main-christmas-holiday-timer-right_timer-heading-secs",
+    "label": "Main TiTle Secs"
+    }
+  ],
+  "presets": [
+    {
+    "name": "Christmasa Holiday Timer"
+    }
+  ]
 }
 {% endschema %}
