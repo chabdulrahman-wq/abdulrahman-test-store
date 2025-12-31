@@ -69,7 +69,7 @@
     height: 61px;
     align-items: center;
     justify-content: center;
-    background-image: url(https://cdn.shopify.com/s/files/1/0649/7271/8230/files/timerbg.png?v=1766151384);
+    background-image: url({{ section.settings.main-christmas-holiday-timer-box-number-images-img |img_url:'master' }});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -250,6 +250,11 @@
     "type": "image_picker",
     "id": "main-christmas-holiday-timer-right-box-img-moblie",
     "label": "Main Holidat Timer Images Moblie"
+    },
+    {
+    "type": "image_picker",
+    "id": "main-christmas-holiday-timer-box-number-images-img",
+    "label": "Main Holidat Timer Images"
     },
   ],
   "presets": [
