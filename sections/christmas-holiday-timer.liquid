@@ -1,0 +1,158 @@
+
+<style>
+    .christmas-holiday-timer-section {
+  background: radial-gradient(circle at center, #163d2f 0%, #0d2a1f 100%);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.christmas-holiday-timer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.christmas-holiday-timer-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* TIMER */
+.timer-heading {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.timer-boxes {
+  display: flex;
+  gap: 14px;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 18px 16px;
+  min-width: 80px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.time-box span {
+  display: block;
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.time-box small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .christmas-holiday-timer-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timer-boxes {
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+</style>
+<section class="christmas-holiday-timer-section">
+  <div class="christmas-holiday-timer-container">
+    <div class="christmas-holiday-timer-flex">
+
+      <!-- LEFT IMAGES -->
+      <div class="christmas-holiday-timer-left-box-images">
+        <div class="christmas-holiday-timer-left-img">
+          {% if section.settings.main-christmas-holiday-timer-left-box-img != blank %}
+            <img
+              class="christmas-holiday-timer-left-box-img"
+              src="{{ section.settings.main-christmas-holiday-timer-left-box-img | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+
+          {% if section.settings.main-christmas-holiday-timer-left-box-img-moblie != blank %}
+            <img
+              class="christmas-holiday-timer-left-box-img-moblie"
+              src="{{ section.settings.main-christmas-holiday-timer-left-box-img-moblie | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- TIMER -->
+      <div class="christmas-holiday-timer-right">
+        <h2 class="timer-heading">Sale ending soon:</h2>
+
+        <div class="timer-boxes">
+          <div class="time-box">
+            <span id="ch-days">00</span>
+            <small>DAYS</small>
+          </div>
+          <div class="time-box">
+            <span id="ch-hours">00</span>
+            <small>HOURS</small>
+          </div>
+          <div class="time-box">
+            <span id="ch-mins">00</span>
+            <small>MINS</small>
+          </div>
+          <div class="time-box">
+            <span id="ch-secs">00</span>
+            <small>SECS</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  function christmasHolidayTimer() {
+    // END DATE (change if needed)
+    var endDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+    setInterval(function () {
+      var now = new Date().getTime();
+      var distance = endDate - now;
+
+      if (distance < 0) return;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("ch-days").innerHTML = String(days).padStart(2, '0');
+      document.getElementById("ch-hours").innerHTML = String(hours).padStart(2, '0');
+      document.getElementById("ch-mins").innerHTML = String(mins).padStart(2, '0');
+      document.getElementById("ch-secs").innerHTML = String(secs).padStart(2, '0');
+    }, 1000);
+  }
+
+  christmasHolidayTimer();
+</script>
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
