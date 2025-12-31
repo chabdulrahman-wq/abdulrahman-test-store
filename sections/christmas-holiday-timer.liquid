@@ -51,6 +51,26 @@
         </div>
       </div>
 
+      <div class="christmas-holiday-timer-right-box-images">
+        <div class="christmas-holiday-timer-right-img">
+          {% if section.settings.main-christmas-holiday-timer-right-box-img != blank %}
+            <img
+              class="christmas-holiday-timer-right-box-img"
+              src="{{ section.settings.main-christmas-holiday-timer-right-box-img | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+
+          {% if section.settings.main-christmas-holiday-timer-right-box-img-moblie != blank %}
+            <img
+              class="christmas-holiday-timer-right-box-img-moblie"
+              src="{{ section.settings.main-christmas-holiday-timer-right-box-img-moblie | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -118,7 +138,17 @@
     "type": "text",
     "id": "main-christmas-holiday-timer-right_timer-heading-secs",
     "label": "Main TiTle Secs"
-    }
+    },
+    {
+    "type": "image_picker",
+    "id": "main-christmas-holiday-timer-right-box-img",
+    "label": "Main Holidat Timer Images"
+    },
+    {
+    "type": "image_picker",
+    "id": "main-christmas-holiday-timer-right-box-img-moblie",
+    "label": "Main Holidat Timer Images Moblie"
+    },
   ],
   "presets": [
     {
