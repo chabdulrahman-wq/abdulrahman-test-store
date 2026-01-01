@@ -308,7 +308,8 @@ ease-in-out;
     </h2>
     <div class="christmas_products_Flex">
         {% for block in section.blocks %}
-      {% assign rprod_product = block.settings.prod_list %}
+          {% assign rprod_product = block.settings.prod_list %}
+          {% assign product_form_id = 'product-form-' | append: rprod.id %}
         {% if rprod_product != blank %}
           {% for rprod in rprod_product %}
         <div class="christmas_products_box">
