@@ -383,31 +383,27 @@ ease-in-out;
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Function to open cart drawer
+  // Open cart drawer function (theme dependent)
   function openCartDrawer() {
     if (typeof CartDrawer !== 'undefined' && typeof CartDrawer.open === 'function') {
       CartDrawer.open();
     } else if (typeof window.cartDrawer !== 'undefined' && typeof window.cartDrawer.open === 'function') {
       window.cartDrawer.open();
     } else {
-      // fallback: redirect to cart page
+      // fallback
       window.location.href = '/cart';
     }
   }
 
-  // Target all Add to Cart buttons in Christmas section
-  const addToCartButtons = document.querySelectorAll('.christmas_products_section .product-form__submit');
+  // Intercept all Add to Cart forms in Christmas section
+  const forms = document.querySelectorAll('.christmas_products_section form');
 
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-      event.preventDefault(); // prevent page reload
-
-      const form = button.closest('form'); // get the product form
-      if (!form) return;
+  forms.forEach(form => {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default page reload
 
       const formData = new FormData(form);
 
-      // Send AJAX request to Shopify
       fetch('/cart/add.js', {
         method: 'POST',
         body: formData,
@@ -416,14 +412,11 @@ document.addEventListener('DOMContentLoaded', function() {
           'Accept': 'application/json'
         }
       })
-      .then(response => {
-        if (!response.ok) throw new Error('Failed to add product');
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
         console.log('Product added to cart:', data);
 
-        // Optional: show a mini toast/notification
+        // Optional toast
         const toast = document.createElement('div');
         toast.innerText = `${data.title} added to cart`;
         toast.style.position = 'fixed';
@@ -437,14 +430,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 3000);
 
-        // Open cart drawer
+        // Open Cart Drawer
         openCartDrawer();
       })
       .catch(error => {
         console.error('Error adding product:', error);
         alert('Failed to add product. Please try again.');
       });
-
     });
   });
 
