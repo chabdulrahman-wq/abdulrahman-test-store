@@ -380,68 +380,6 @@ ease-in-out;
     </div>
   </div>
 </section>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  // Open cart drawer function (theme dependent)
-  function openCartDrawer() {
-    if (typeof CartDrawer !== 'undefined' && typeof CartDrawer.open === 'function') {
-      CartDrawer.open();
-    } else if (typeof window.cartDrawer !== 'undefined' && typeof window.cartDrawer.open === 'function') {
-      window.cartDrawer.open();
-    } else {
-      // fallback
-      window.location.href = '/cart';
-    }
-  }
-
-  // Intercept all Add to Cart forms in Christmas section
-  const forms = document.querySelectorAll('.christmas_products_section form');
-
-  forms.forEach(form => {
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent default page reload
-
-      const formData = new FormData(form);
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Product added to cart:', data);
-
-        // Optional toast
-        const toast = document.createElement('div');
-        toast.innerText = `${data.title} added to cart`;
-        toast.style.position = 'fixed';
-        toast.style.bottom = '20px';
-        toast.style.right = '20px';
-        toast.style.background = '#00824c';
-        toast.style.color = '#fff';
-        toast.style.padding = '10px 15px';
-        toast.style.borderRadius = '8px';
-        toast.style.zIndex = 9999;
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 3000);
-
-        // Open Cart Drawer
-        openCartDrawer();
-      })
-      .catch(error => {
-        console.error('Error adding product:', error);
-        alert('Failed to add product. Please try again.');
-      });
-    });
-  });
-
-});
-</script>
 
 {% schema %}
 {
