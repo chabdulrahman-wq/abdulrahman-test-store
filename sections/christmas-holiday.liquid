@@ -382,17 +382,16 @@ ease-in-out;
 </section>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Target all add-to-cart buttons inside Christmas section
+  // Target all add-to-cart buttons in Christmas section
   const addToCartButtons = document.querySelectorAll('.christmas_products_section .product-form__submit');
 
-  addToCartButtons.forEach(function(button) {
+  addToCartButtons.forEach(button => {
     button.addEventListener('click', function(event) {
-      event.preventDefault(); // Stop default page reload
+      event.preventDefault(); // Stop page reload
 
       const form = button.closest('form'); // Get the product form
       const formData = new FormData(form);
 
-      // AJAX request to Shopify cart add
       fetch('/cart/add.js', {
         method: 'POST',
         body: formData,
@@ -405,13 +404,15 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         console.log('Product added:', data);
 
-        // Trigger your cart drawer here
-        // Shopify stores usually have a function to open the cart drawer, e.g.:
-        if (typeof window.openCartDrawer === 'function') {
-          window.openCartDrawer();
+        // Open Shopify cart drawer
+        // Most themes use: window.cartDrawer or CartDrawer.open()
+        if (typeof CartDrawer !== 'undefined' && typeof CartDrawer.open === 'function') {
+          CartDrawer.open();
+        } else if (typeof window.cartDrawer !== 'undefined' && typeof window.cartDrawer.open === 'function') {
+          window.cartDrawer.open();
         } else {
-          // Fallback: just show an alert
-          alert('Product added to cart!');
+          // Fallback: redirect to cart page if drawer function not found
+          window.location.href = '/cart';
         }
       })
       .catch(error => {
