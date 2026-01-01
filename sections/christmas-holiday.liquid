@@ -309,7 +309,7 @@ ease-in-out;
     <div class="christmas_products_Flex">
         {% for block in section.blocks %}
           {% assign rprod_product = block.settings.prod_list %}
-          {% assign product_form_id = 'product-form' | append: rprod.id %}
+          {% assign product_form_id = 'product_form_id' | append: rprod.id %}
         {% if rprod_product != blank %}
           {% for rprod in rprod_product %}
         <div class="christmas_products_box">
@@ -363,7 +363,7 @@ ease-in-out;
                  {%- render 'new-buy-buttons',
                   block: block,
                   product: rprod,
-                  product_form_id: product-form,
+                  product_form_id: product_form_id,
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
