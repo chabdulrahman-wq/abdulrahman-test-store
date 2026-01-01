@@ -382,16 +382,32 @@ ease-in-out;
 </section>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Target all add-to-cart buttons in Christmas section
+
+  // Function to open cart drawer
+  function openCartDrawer() {
+    if (typeof CartDrawer !== 'undefined' && typeof CartDrawer.open === 'function') {
+      CartDrawer.open();
+    } else if (typeof window.cartDrawer !== 'undefined' && typeof window.cartDrawer.open === 'function') {
+      window.cartDrawer.open();
+    } else {
+      // fallback: redirect to cart page
+      window.location.href = '/cart';
+    }
+  }
+
+  // Target all Add to Cart buttons in Christmas section
   const addToCartButtons = document.querySelectorAll('.christmas_products_section .product-form__submit');
 
   addToCartButtons.forEach(button => {
     button.addEventListener('click', function(event) {
-      event.preventDefault(); // Stop page reload
+      event.preventDefault(); // prevent page reload
 
-      const form = button.closest('form'); // Get the product form
+      const form = button.closest('form'); // get the product form
+      if (!form) return;
+
       const formData = new FormData(form);
 
+      // Send AJAX request to Shopify
       fetch('/cart/add.js', {
         method: 'POST',
         body: formData,
@@ -400,27 +416,38 @@ document.addEventListener('DOMContentLoaded', function() {
           'Accept': 'application/json'
         }
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to add product');
+        return response.json();
+      })
       .then(data => {
-        console.log('Product added:', data);
+        console.log('Product added to cart:', data);
 
-        // Open Shopify cart drawer
-        // Most themes use: window.cartDrawer or CartDrawer.open()
-        if (typeof CartDrawer !== 'undefined' && typeof CartDrawer.open === 'function') {
-          CartDrawer.open();
-        } else if (typeof window.cartDrawer !== 'undefined' && typeof window.cartDrawer.open === 'function') {
-          window.cartDrawer.open();
-        } else {
-          // Fallback: redirect to cart page if drawer function not found
-          window.location.href = '/cart';
-        }
+        // Optional: show a mini toast/notification
+        const toast = document.createElement('div');
+        toast.innerText = `${data.title} added to cart`;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.right = '20px';
+        toast.style.background = '#00824c';
+        toast.style.color = '#fff';
+        toast.style.padding = '10px 15px';
+        toast.style.borderRadius = '8px';
+        toast.style.zIndex = 9999;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+
+        // Open cart drawer
+        openCartDrawer();
       })
       .catch(error => {
         console.error('Error adding product:', error);
         alert('Failed to add product. Please try again.');
       });
+
     });
   });
+
 });
 </script>
 
