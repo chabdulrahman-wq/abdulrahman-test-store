@@ -1,0 +1,48 @@
+<section class="Watchs_images_section">
+  <div class="Watchs_images_container">
+    <div class="Watchs_images_content">
+      <div class="Watchs_images_img_box">
+        {% if section.settings['main-Watchs_images_img'] != blank %}
+          <img
+            class="Watchs_images_img"
+            src="{{ section.settings.main-Watchs_images_img | img_url: 'master' }}"
+            alt=""
+          >
+        {% endif %}
+      </div>
+
+    </div>
+    <div class="Watchs_images_text_content">
+    <div class="Watchs_images_text_content-sub-text">
+        <p> {{ section.settings.mian-Watchs_images_text_content-sub-text }} </p>
+    </div>
+    <div class="Watchs_images_text_content-sub-title">
+        <h2 class="Watchs_images_text_content-title">
+            {{ section.settings.main-Watchs_images_text_content-title }}
+        </h2>
+    </div>
+    <div class="Watchs_images_text_content-sub-desp">
+        <p> {{ section.settings.main-Watchs_images_text_content-sub-desp }} </p>
+    </div>
+    <div class="Watchs_images_text_content-sub-button">
+      <a href="{{ section.settings.main-Watchs_images_text_content-sub-button-link }}" class="Watchs_images_text_content-button"> 
+    {{ section.settings.mian-Watchs_images_text_content-sub-button }}
+    <div class="Watchs_images_text_content-button-icon-images"></div> 
+    {% if section.settings['Watchs_images_text_content-button-icon-images-img'] != blank %}
+          <img
+            class="Watchs_images_img"
+            src="{{ section.settings.Watchs_images_text_content-button-icon-images-img | img_url: 'master' }}"
+            alt=""
+          >
+        {% endif %}   
+    </a>
+    </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
