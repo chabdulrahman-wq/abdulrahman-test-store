@@ -43,17 +43,51 @@
     </div>
     <div class="Watchs_images_img_content">
       <div class="Watchs_images_img_content-logo">
-        {% for block in section.blocks %}
-          <div class="Watchs_images_img_content-logo-box">
-             {% if section.settings['main-Watchs_images_img_content-logo-box_img'] != blank %}
-          <img
-            class="Watchs_images_img_content-logo-box"
-            src="{{ block.settings.main-Watchs_images_img_content-logo-box_img | img_url: 'master' }}"
-            alt=""
-          >
-        {% endif %}
-          </div>
-          {% endfor %}
+        <div class="Watchs_images_img_content-logo-box1">
+          {% if section.settings['main-Watchs_images_img_content-logo-box_img1'] != blank %}
+            <img
+              class="Watchs_images_img_content-logo-box"
+              src="{{ section.settings.main-Watchs_images_img_content-logo-box_img1 | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+        <div class="Watchs_images_img_content-logo-box2">
+          {% if section.settings['main-Watchs_images_img_content-logo-box_img2'] != blank %}
+            <img
+              class="Watchs_images_img_content-logo-box"
+              src="{{ section.settings.main-Watchs_images_img_content-logo-box_img2 | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+        <div class="Watchs_images_img_content-logo-box3">
+          {% if section.settings['main-Watchs_images_img_content-logo-box_img3'] != blank %}
+            <img
+              class="Watchs_images_img_content-logo-box"
+              src="{{ section.settings.main-Watchs_images_img_content-logo-box_img3 | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+        <div class="Watchs_images_img_content-logo-box4">
+          {% if section.settings['main-Watchs_images_img_content-logo-box_img4'] != blank %}
+            <img
+              class="Watchs_images_img_content-logo-box"
+              src="{{ section.settings.main-Watchs_images_img_content-logo-box_img4 | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
+        <div class="Watchs_images_img_content-logo-box5">
+          {% if section.settings['main-Watchs_images_img_content-logo-box_img5'] != blank %}
+            <img
+              class="Watchs_images_img_content-logo-box"
+              src="{{ section.settings.main-Watchs_images_img_content-logo-box_img5 | img_url: 'master' }}"
+              alt=""
+            >
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -61,6 +95,43 @@
 {% schema %}
 {
   "name": "Section name",
-  "settings": []
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main-Watchs_images_img",
+      "label": "Watchs Main Images Box"
+    },
+    {
+    "type": "richtext",
+    "id": "mian-Watchs_images_text_content-sub-text",
+    "label": "Watchs Main Text Box"
+    },
+    {
+    "type": "text",
+    "id": "main-Watchs_images_text_content-title",
+    "label": "Watchs Main Title Box"
+    },
+    {
+    "type": "richtext",
+    "id": "main-Watchs_images_text_content-sub-desp",
+    "label": "Watchs Main Para Box"
+    },
+    {
+    "type": "url",
+    "id": "main-Watchs_images_text_content-sub-button-link",
+    "label": "Watchs Main Button Link Box"
+    },
+    {
+    "type": "text",
+    "id": "mian-Watchs_images_text_content-sub-button",
+    "label": "Watchs Main Button Box"
+    },
+    {
+    "type": "image_picker",
+    "id": "Watchs_images_text_content-button-icon-images-img",
+    "label": "Watchs Main Button Link Box"
+    }
+  ],
+  
 }
 {% endschema %}
