@@ -380,6 +380,48 @@ ease-in-out;
     </div>
   </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Target all add-to-cart buttons inside Christmas section
+  const addToCartButtons = document.querySelectorAll('.christmas_products_section .product-form__submit');
+
+  addToCartButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault(); // Stop default page reload
+
+      const form = button.closest('form'); // Get the product form
+      const formData = new FormData(form);
+
+      // AJAX request to Shopify cart add
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Product added:', data);
+
+        // Trigger your cart drawer here
+        // Shopify stores usually have a function to open the cart drawer, e.g.:
+        if (typeof window.openCartDrawer === 'function') {
+          window.openCartDrawer();
+        } else {
+          // Fallback: just show an alert
+          alert('Product added to cart!');
+        }
+      })
+      .catch(error => {
+        console.error('Error adding product:', error);
+        alert('Failed to add product. Please try again.');
+      });
+    });
+  });
+});
+</script>
 
 {% schema %}
 {
