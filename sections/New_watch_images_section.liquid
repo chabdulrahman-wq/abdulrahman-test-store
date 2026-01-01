@@ -10,33 +10,51 @@
           >
         {% endif %}
       </div>
-
     </div>
     <div class="Watchs_images_text_content">
-    <div class="Watchs_images_text_content-sub-text">
-        <p> {{ section.settings.mian-Watchs_images_text_content-sub-text }} </p>
-    </div>
-    <div class="Watchs_images_text_content-sub-title">
+      <div class="Watchs_images_text_content-sub-text">
+        <p>{{ section.settings['mian-Watchs_images_text_content-sub-text'] }}</p>
+      </div>
+      <div class="Watchs_images_text_content-sub-title">
         <h2 class="Watchs_images_text_content-title">
-            {{ section.settings.main-Watchs_images_text_content-title }}
+          {{ section.settings['main-Watchs_images_text_content-title'] }}
         </h2>
+      </div>
+      <div class="Watchs_images_text_content-sub-desp">
+        <p>{{ section.settings['main-Watchs_images_text_content-sub-desp'] }}</p>
+      </div>
+      <div class="Watchs_images_text_content-sub-button">
+        <a
+          href="{{ section.settings.main-Watchs_images_text_content-sub-button-link }}"
+          class="Watchs_images_text_content-button"
+        >
+          {{ section.settings['mian-Watchs_images_text_content-sub-button'] }}
+          <div class="Watchs_images_text_content-button-icon-images">
+            {% if section.settings['Watchs_images_text_content-button-icon-images-img'] != blank %}
+              <img
+                class="Watchs_images_img"
+                src="{{ section.settings.Watchs_images_text_content-button-icon-images-img | img_url: 'master' }}"
+                alt=""
+              >
+            {% endif %}
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="Watchs_images_text_content-sub-desp">
-        <p> {{ section.settings.main-Watchs_images_text_content-sub-desp }} </p>
-    </div>
-    <div class="Watchs_images_text_content-sub-button">
-      <a href="{{ section.settings.main-Watchs_images_text_content-sub-button-link }}" class="Watchs_images_text_content-button"> 
-    {{ section.settings.mian-Watchs_images_text_content-sub-button }}
-    <div class="Watchs_images_text_content-button-icon-images"></div> 
-    {% if section.settings['Watchs_images_text_content-button-icon-images-img'] != blank %}
+    <div class="Watchs_images_img_content">
+      <div class="Watchs_images_img_content-logo">
+        {% for block in section.blocks %}
+          <div class="Watchs_images_img_content-logo-box">
+             {% if section.settings['main-Watchs_images_img_content-logo-box_img'] != blank %}
           <img
-            class="Watchs_images_img"
-            src="{{ section.settings.Watchs_images_text_content-button-icon-images-img | img_url: 'master' }}"
+            class="Watchs_images_img_content-logo-box"
+            src="{{ block.settings.main-Watchs_images_img_content-logo-box_img | img_url: 'master' }}"
             alt=""
           >
-        {% endif %}   
-    </a>
-    </div>
+        {% endif %}
+          </div>
+          {% endfor %}
+      </div>
     </div>
   </div>
 </section>
