@@ -1,0 +1,130 @@
+<section class="Diamond_watch_video_section">
+  <div class="Diamond_watch_video_container">
+    <div class="Diamond_watch_video_top_text_box">
+      <div class="Diamond_watch_video_top_title_box">
+        <div class="Diamond_watch_video_top_box_img-text">
+          {% if section.settings.main_Diamond_watch_video_top_box_img != blank %}
+            <img
+              src="{{ section.settings.main_Diamond_watch_video_top_box_img |img_url:'master'}}"
+              alt=""
+              class="Diamond_watch_video_top_box_img"
+            >
+          {% endif %}
+          <h4 class="Diamond_watch_video_top_box_text">
+            {{ section.settings['main-Diamond_watch_video_top_box_text'] }}
+          </h4>
+          {% if section.settings.main_Diamond_watch_video_top_box_img2 != blank %}
+            <img
+              src="{{ section.settings.main_Diamond_watch_video_top_box_img2 |img_url:'master'}}"
+              alt=""
+              class="Diamond_watch_video_top_box_img"
+            >
+          {% endif %}
+        </div>
+        <h2 class="Diamond_watch_video_top_title">
+          {{ section.settings['mian-Diamond_watch_video_top_title'] }}
+        </h2>
+      </div>
+    </div>
+    <div class="Diamond_watch_video_flex_content">
+      <div class="Diamond_watch_video_flex_content_first_box">
+        <h2 class="Diamond_watch_video_flex_content_first_box_title">
+          {{ section.settings['main-Diamond_watch_video_flex_content_first_box_title'] }}
+        </h2>
+        <div class="Diamond_watch_video_flex_content_first_box_description">
+          <p>{{ section.settings['main-Diamond_watch_video_flex_content_first_box_description'] }}</p>
+        </div>
+        <a
+          href="{{ section.settings.main-Diamond_watch_video_flex_content_first_box_button-link }}"
+          class="Diamond_watch_video_flex_content_first_box_button"
+        >
+          {{ section.settings['main-Diamond_watch_video_flex_content_first_box_button'] }}
+        </a>
+      </div>
+      <div class="Diamond_watch_video_flex_content_video-main-box">
+        <div class="Diamond_watch_video_flex_content_video-box">
+          {% if section.settings.main_Diamond_watch_video_flex_content_video-box != blank %}
+            <video
+              src="{{ section.settings.main_Diamond_watch_video_flex_content_video-box.sources[1].url }}"
+              autoplay=""
+              muted=""
+              class="main_Diamond_watch_video_flex_content_video"
+              loop=""
+              playsinline=""
+              data-autoplay-applied="true"
+            ></video>
+          {% endif %}
+        </div>
+      </div>
+      <div class="Diamond_watch_video_flex_content_Images-main-box">
+        <div class="Diamond_watch_video_flex_content_Images-box">
+            {% if section.settings.main-Diamond_watch_video_flex_content_img !=blank %}
+            <img src="{{ section.settings.main-Diamond_watch_video_flex_content_img |img_url:'master' }} " alt="" class="Diamond_watch_video_flex_content_img">
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Diamond Watches Section",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main_Diamond_watch_video_top_box_img",
+    "label": "Diamond Watch Top Box Images"
+    },
+    {
+    "type": "text",
+    "id": "main-Diamond_watch_video_top_box_text",
+    "label": "Diamond Watch Top Box Text"
+    },
+    {
+    "type": "image_picker",
+    "id": "main_Diamond_watch_video_top_box_img2",
+    "label": "Diamond Watch Top Box Images2"
+    },
+    {
+    "type": "text",
+    "id": "mian-Diamond_watch_video_top_title",
+    "label": "Diamond Watch Top Box Title"
+    },
+    {
+    "type": "text",
+    "id": "main-Diamond_watch_video_flex_content_first_box_title",
+    "label": "Diamond Watch Content First Box Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-Diamond_watch_video_flex_content_first_box_description",
+    "label": "Diamond Watch Content First Box Description"
+    },
+    {
+    "type": "url",
+    "id": "main-Diamond_watch_video_flex_content_first_box_button-link",
+    "label": "Diamond Watch Content First Box Button Link"
+    },
+    {
+    "type": "text",
+    "id": "main-Diamond_watch_video_flex_content_first_box_button",
+    "label": "Diamond Watch Content First Box Button"
+    },
+    {
+    "type": "video",
+    "id": "main_Diamond_watch_video_flex_content_video-box",
+    "label": "Diamond Watch Content Video Box Video"
+    },
+    {
+   "type": "image_picker", 
+   "id": "main-Diamond_watch_video_flex_content_img",
+   "label": "Diamond Watch Content Images Box Img"
+    }
+  ],
+  "presets": [
+    {
+    "name": "Diamond Watches Section"
+    }
+  ]
+}
+{% endschema %}
