@@ -44,15 +44,10 @@
       <div class="Diamond_watch_video_flex_content_video-main-box">
         <div class="Diamond_watch_video_flex_content_video-box">
           {% if section.settings.main_Diamond_watch_video_flex_content_video-box != blank %}
-            <video
-              src="{{ section.settings.main_Diamond_watch_video_flex_content_video-box.sources[1].url }}"
-              autoplay=""
-              muted=""
-              class="main_Diamond_watch_video_flex_content_video"
-              loop=""
-              playsinline=""
-              data-autoplay-applied="true"
-            ></video>
+            <img
+              src="{{ section.settings.main_Diamond_watch_video_flex_content_video-box |img_url:'master' }}"
+              class="main_Diamond_watch_video_flex_content_video" alt=""
+            >
           {% endif %}
         </div>
       </div>
@@ -111,7 +106,7 @@
     "label": "Diamond Watch Content First Box Button"
     },
     {
-    "type": "video",
+    "type": "image_picker",
     "id": "main_Diamond_watch_video_flex_content_video-box",
     "label": "Diamond Watch Content Video Box Video"
     },
