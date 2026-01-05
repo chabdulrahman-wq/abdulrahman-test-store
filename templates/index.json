@@ -360,22 +360,18 @@
         "Sub-main-custom_Golime_form_Bottom_Button": "Submit"
       }
     },
-    "new_watch_images_section_EN7hnF": {
-      "type": "New_watch_images_section",
-      "name": "Watchs Images Section",
+    "watches_diamond_video_images_EPhppD": {
+      "type": "watches_diamond_video_images",
+      "name": "Diamond Watches Section",
       "settings": {
-        "main-Watchs_images_img": "shopify://shop_images/download_d9ca01a1-18c3-402a-a998-a73d900ab614.webp",
-        "mian-Watchs_images_text_content-sub-text": "<p>The Rolex Collection</p>",
-        "main-Watchs_images_text_content-title": "THE DAYTONA",
-        "main-Watchs_images_text_content-sub-desp": "<p>From pit lane legend to modern icon</p>",
-        "main-Watchs_images_text_content-sub-button-link": "shopify://collections/all",
-        "mian-Watchs_images_text_content-sub-button": "SHOP ALL",
-        "Watchs_images_text_content-button-icon-images-img": "shopify://shop_images/icon-park_arrow-up_b003b252-77ff-41e8-95b9-9eaf4f136fde.png",
-        "main-Watchs_images_img_content-logo-box_img1": "shopify://shop_images/download_a80ca75a-f79d-44a9-aab8-a2def00a9e2f.webp",
-        "main-Watchs_images_img_content-logo-box_img2": "shopify://shop_images/download_24bbc624-3d37-4867-9ea1-b804ff28e317.webp",
-        "main-Watchs_images_img_content-logo-box_img3": "shopify://shop_images/download_366e63f5-6a54-431a-8801-4ad8b86dc541.webp",
-        "main-Watchs_images_img_content-logo-box_img4": "shopify://shop_images/download_d48430f8-3555-46f1-885e-df78f75690e1.webp",
-        "main-Watchs_images_img_content-logo-box_img5": "shopify://shop_images/download_6f39533a-3e97-4ce6-8014-f35f33f137df.webp"
+        "main_Diamond_watch_video_top_box_img": "shopify://shop_images/Vector.png",
+        "main-Diamond_watch_video_top_box_text": "Luxury Made Honest",
+        "main_Diamond_watch_video_top_box_img2": "shopify://shop_images/Vector.png",
+        "mian-Diamond_watch_video_top_title": "New York Precision.",
+        "main-Diamond_watch_video_flex_content_first_box_title": "EXPLORE OUR WORLD OF LUXURY",
+        "main-Diamond_watch_video_flex_content_first_box_description": "<p>At Sea Wave Diamonds, we bring over 30 years of expertise from New York’s renowned Diamond District. Our heritage is built on trust, precision, and unparalleled quality.</p>",
+        "main-Diamond_watch_video_flex_content_first_box_button-link": "/",
+        "main-Diamond_watch_video_flex_content_first_box_button": "Uncover Your Perfect Piece"
       }
     },
     "water_heater_slider_mVy9je": {
@@ -848,7 +844,7 @@
     "christmas_holiday_boxs_H77Mb3",
     "christmas_holiday_timer_xgT6dm",
     "custom_golime_form_qXReUq",
-    "new_watch_images_section_EN7hnF",
+    "watches_diamond_video_images_EPhppD",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
