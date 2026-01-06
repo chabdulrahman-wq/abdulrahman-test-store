@@ -1,0 +1,101 @@
+<section class="Watch_coll_Section">
+  <div class="Watch_coll_container">
+    <div class="Watch_coll_content_block_main_box">
+      <div class="Watch_coll_content_block_box_flex">
+        {% for block in section.blocks %}
+          <div class="Watch_coll_content_block_box">
+            <a href="{{ block.settings.mian-Watch_coll_content_block_box }}" class="Watch_coll_content_block_box_a">
+              <div class="Watch_coll_content_block_box_Images">
+                {% if block.settings.main_Watch_coll_content_block_box_Images-IMG !=blank %}
+                <img
+                  src="{{ block.settings.main_Watch_coll_content_block_box_Images-IMG |img_url:'master' }}"
+                  class="Watch_coll_content_block_box_Images-img"
+                  alt=""
+                >
+                    {% endif %}
+                {% if block.settings.main_Watch_coll_content_block_box_Images-IMG2 !=blank %}
+                <img
+                  src="{{ block.settings.main_Watch_coll_content_block_box_Images-IMG2 |img_url:'master' }}"
+                  class="Watch_coll_content_block_box_Images-img2"
+                  alt=""
+                >
+                    {% endif %}
+              </div>
+              <div class="Watch_coll_content_block_box_btn_flex">
+                <h2 class="Watch_coll_content_block_box_btn_text">{{ block.settings.main-Watch_coll_content_block_box_button_text }}</h2> 
+                <div class="Watch_coll_content_block_box_btn_arrow">
+                  {% if block.settings.main_Watch_coll_content_block_box_btn_arrow-IMG !=blank %}
+                <img
+                  src="{{ block.settings.main_Watch_coll_content_block_box_btn_arrow-IMG |img_url:'master' }}"
+                  class="Watch_coll_content_block_box_btn_arrow-img"
+                  alt=""
+                >
+                    {% endif %}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="Watch_coll_content_View_ALL_title_box">
+      <a href="{{ section.settings.main-Watch_coll_content_View_ALL_title-link }}" class="Watch_coll_content_View_ALL_title">{{ section.settings.main_Watch_coll_content_View_ALL_title }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Watch Coll images Section",
+  "settings": [
+    {
+    "type": "url",
+    "id": "main-Watch_coll_content_View_ALL_title-link",
+    "label": "Url End Title View All"
+    },
+    {
+    "type": "text",
+    "id": "main_Watch_coll_content_View_ALL_title",
+    "label": "End Title View All"
+    }
+    
+  ],
+  "blocks": [
+    {
+    "type": "Boxs",
+    "name": "Boxs",
+    "settings": [
+      {
+      "type": "url",
+      "id": "mian-Watch_coll_content_block_box",
+      "label": "Url Content block box"
+      },
+      {
+      "type": "image_picker",
+      "id": "main_Watch_coll_content_block_box_Images-IMG",
+      "label": "Content block box Images Img"
+      },
+      {
+      "type": "image_picker",
+      "id": "main_Watch_coll_content_block_box_Images-IMG2",
+      "label": "Content block box Images Img2"
+      },
+      {
+      "type": "text",
+      "id": "main-Watch_coll_content_block_box_button_text",
+      "label": "Content block box Button Text"
+      },
+      {
+      "type": "image_picker",
+      "id": "main_Watch_coll_content_block_box_btn_arrow-IMG",
+      "label": "Content block box Button Images Arrow"
+      }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Watch Coll images Section"
+    }
+  ]
+}
+{% endschema %}
