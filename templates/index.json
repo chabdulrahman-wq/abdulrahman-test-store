@@ -376,6 +376,14 @@
         "main-Diamond_watch_video_flex_content_img": "shopify://shop_images/1dff26869ddedd22d39963d10bdd2d9f57680cc4.webp"
       }
     },
+    "watch_coll_images_section_VwVgGU": {
+      "type": "watch_coll-images-section",
+      "name": "Watch Coll images Section",
+      "settings": {
+        "main-Watch_coll_content_View_ALL_title-link": "",
+        "main_Watch_coll_content_View_ALL_title": ""
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -847,6 +855,7 @@
     "christmas_holiday_timer_xgT6dm",
     "custom_golime_form_qXReUq",
     "watches_diamond_video_images_EPhppD",
+    "watch_coll_images_section_VwVgGU",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
