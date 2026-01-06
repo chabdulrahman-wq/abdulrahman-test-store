@@ -22,6 +22,99 @@ a.Watch_coll_content_block_box_a
  {
     text-decoration: none;
 }
+
+.Watch_coll_content_block_box_Images {
+    position: relative;
+    height: 0;
+    padding-bottom: 153%;
+}
+
+.Watch_coll_content_block_box_Images-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+    opacity: 1;
+}
+
+.Watch_coll_content_block_box_Images-img2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+.Watch_coll_content_block_box_btn_flex {
+    border-top: 1px solid #CACACA;
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.Watch_coll_content_block_box_btn_text {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #181818;
+    text-transform: uppercase;
+    margin: 0;
+    transition: all .3s ease-in-out;
+}
+
+
+
+.Watch_coll_content_block_box_btn_arrow {
+    height: 24px;
+    width: 0;
+}
+
+.Watch_coll_content_block_box_btn_arrow-img {
+    width: 24px;
+    opacity: 0;
+    transform: translate(-5px);
+    transition: all .3s ease-in-out;
+}
+
+.Watch_coll_content_View_ALL_title {
+    display: inline-block;
+    padding: 4px 15px;
+    background: #e8e8e8;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    color: #181818;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.Watch_coll_content_View_ALL_title_box {
+    text-align: center;
+}
+
+.Watch_coll_content_block_box:hover .Watch_coll_content_block_box_Images-img2 {
+    opacity: 1;
+}
+
+.Watch_coll_content_block_box:hover:hover .Watch_coll_content_block_box_btn_arrow-img {
+    opacity: 1;
+    transform: translate(10px);
+}
+
+
 </style>
 <section class="Watch_coll_Section">
   <div class="Watch_coll_container">
