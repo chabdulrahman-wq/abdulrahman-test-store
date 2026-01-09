@@ -301,6 +301,9 @@ ease-in-out;
 }
   }
 </style>
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+ 
 <section class="christmas_products_section">
   <div class="christmas_products_continer">
     <h2 class="christmas_products_Title">
@@ -309,7 +312,8 @@ ease-in-out;
     <div class="christmas_products_Flex">
         {% for block in section.blocks %}
           {% assign rprod_product = block.settings.prod_list %}
-          {% assign product_form_id = 'product_form_id' | append: rprod.id %}
+          {% assign product_form_id ='quick-add-' | append: section_id | append: product.id
+  %}
         {% if rprod_product != blank %}
           {% for rprod in rprod_product %}
         <div class="christmas_products_box">
