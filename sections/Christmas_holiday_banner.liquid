@@ -1,226 +1,226 @@
 <style>
-      .Christmas_hoilday_banner_section {
-      position: relative;
-      height: 945px;
-      width: 100%;
-      overflow-x: hidden;
-      overflow-y: hidden;
-  }
+        .Christmas_hoilday_banner_section {
+        position: relative;
+        height: 945px;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
 
-  .Christmas_hoilday_banner_desktop_img {
-      width: 100%;
-      height: 100%;
+    .Christmas_hoilday_banner_desktop_img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-fit: cover;
+        object-position: left top;
+    }
+
+    .Christmas_hoilday_banner_Slider_flex {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_box {
+        overflow-x: hidden;
+        margin-bottom: 100px;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_title_desktop {
+        color: white;
+        text-align: center;
+        font-size: 40px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 130px;
+    }
+    .Christmas_hoilday_banner_main_Slider_title_mobile {
+        color: white;
+        text-align: center;
+        font-size: 40px;
+        position: absolute;
+        display: none;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 130px;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_inner {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 380px;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_Slick{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_Slick_item {
+        margin: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_product_flex {
+        padding: 16px !important;
+        border-radius: 20px;
+        transition: all 350ms ease-in-out;
+        margin-right: 15px;
+            cursor: pointer;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_badge_image {
       position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      object-fit: cover;
-      object-position: left top;
-  }
-
-  .Christmas_hoilday_banner_Slider_flex {
-      display: flex;
-      align-items: flex-end;
-      height: 100%;
-      overflow-y: hidden;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_box {
-      overflow-x: hidden;
-      margin-bottom: 100px;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_title_desktop {
-      color: white;
-      text-align: center;
-      font-size: 40px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 130px;
-  }
-  .Christmas_hoilday_banner_main_Slider_title_mobile {
-      color: white;
-      text-align: center;
-      font-size: 40px;
-      position: absolute;
-      display: none;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 130px;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_inner {
-      padding-bottom: 0px;
-      padding-top: 0px;
-      padding-left: 380px;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_wrapper {
-      position: relative;
-      overflow: hidden;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_Slick{
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      margin-bottom: 30px;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_Slick_item {
-      margin: 0 20px;
-      box-sizing: border-box;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_product_flex {
-      padding: 16px !important;
-      border-radius: 20px;
-      transition: all 350ms ease-in-out;
-      margin-right: 15px;
-          cursor: pointer;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_badge_image {
-    position: absolute;
-    width: 70px;
-    right: 15px;
-    max-width: 70px;
-    height: 70px;
-    top: 31px;
-    object-fit: contain;
-}
-
-.Christmas_hoilday_banner_main_Slider_product_images {
-    position: relative;
-}
-
-
-  .Christmas_hoilday_banner_main_Slider_product_images_Img {
-      max-width: 260px;
-      width: 341px;
-      height: 241px;
+      width: 70px;
+      right: 15px;
+      max-width: 70px;
+      height: 70px;
+      top: 31px;
       object-fit: contain;
-      margin: 0 auto;
   }
 
-  .Christmas_hoilday_banner_main_Slider_product_Title_text {
-      color: white;
-      font-size: 17px;
-      text-align: center;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      padding: 25px 10px 0;
-      padding-top: 15px;
-      max-width: 90%;
-      margin: 0 auto;
+  .Christmas_hoilday_banner_main_Slider_product_images {
+      position: relative;
   }
 
-  .Christmas_hoilday_banner_main_Slider_product_Title_link {
-      color: white;
-      text-decoration: none;
-  }
 
-  .Christmas_hoilday_banner_main_Slider_product_price {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0 8px;
-  }
+    .Christmas_hoilday_banner_main_Slider_product_images_Img {
+        max-width: 260px;
+        width: 341px;
+        height: 241px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
 
-  .Christmas_hoilday_banner_main_Slider_product_price_span {
-      color: white;
-      font-size: 16px;
-  }
+    .Christmas_hoilday_banner_main_Slider_product_Title_text {
+        color: white;
+        font-size: 17px;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        padding: 25px 10px 0;
+        padding-top: 15px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
 
-  .Christmas_hoilday_banner_main_Slider_product_compare_price_span {
-      color: white;
-      font-size: 14px;
-      text-decoration: line-through;
-  }
+    .Christmas_hoilday_banner_main_Slider_product_Title_link {
+        color: white;
+        text-decoration: none;
+    }
 
-  .Christmas_hoilday_banner_main_Slider_product_description p {
-      color: white;
-      font-size: 12px;
-      line-height: normal !important;
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 15px;
-  }
+    .Christmas_hoilday_banner_main_Slider_product_price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0 8px;
+    }
 
-  /* Slick Dots */
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots {
-    bottom: 20px;
-    display: flex !important;
-    justify-content: center;
-    gap: 12px;
-    bottom: -4px;
-    left: 40%;
-}
+    .Christmas_hoilday_banner_main_Slider_product_price_span {
+        color: white;
+        font-size: 16px;
+    }
 
+    .Christmas_hoilday_banner_main_Slider_product_compare_price_span {
+        color: white;
+        font-size: 14px;
+        text-decoration: line-through;
+    }
 
+    .Christmas_hoilday_banner_main_Slider_product_description p {
+        color: white;
+        font-size: 12px;
+        line-height: normal !important;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
 
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li {
-      width: 12px;
-      height: 12px;
-      margin: 0;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: white;
-      opacity: 1;
-      padding: 0;
-  }
-
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li.slick-active button {
-      background: #a0ff00; /* green active dot */
-  }
-
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button:before {
-    content: none !important;
-}
-
-  /* Slick Arrows */
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-prev,
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-next {
-      width: 40px;
-      height: 40px;
-      z-index: 2;
-      top: 100%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      border-radius: 50%;
+    /* Slick Dots */
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-dots {
+      bottom: 20px;
       display: flex !important;
       justify-content: center;
-      align-items: center;
+      gap: 12px;
+      bottom: -4px;
+      left: 40%;
   }
 
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-prev:before,
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-next:before {
-      font-size: 20px;
-      color: white;
-      opacity: 1;
+
+
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li {
+        width: 12px;
+        height: 12px;
+        margin: 0;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: white;
+        opacity: 1;
+        padding: 0;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li.slick-active button {
+        background: #a0ff00; /* green active dot */
+    }
+
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-dots li button:before {
+      content: none !important;
   }
 
- .Christmas_hoilday_banner_main_Slider_Slick .slick-prev {
-    left: 82%;
-}
+    /* Slick Arrows */
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-prev,
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-next {
+        width: 40px;
+        height: 40px;
+        z-index: 2;
+        top: 100%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .Christmas_hoilday_banner_main_Slider_Slick .slick-next {
-      right: 10px;
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-prev:before,
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-next:before {
+        font-size: 20px;
+        color: white;
+        opacity: 1;
+    }
+
+   .Christmas_hoilday_banner_main_Slider_Slick .slick-prev {
+      left: 82%;
   }
 
-  .Christmas_hoilday_banner_main_Slider_product_flex:hover {
-    background: #cacaca20;
-    box-shadow: 0px 0px 29.8px 0px #C4FF5670 inset;
-}
+    .Christmas_hoilday_banner_main_Slider_Slick .slick-next {
+        right: 10px;
+    }
+
+    .Christmas_hoilday_banner_main_Slider_product_flex:hover {
+      background: #cacaca20;
+      box-shadow: 0px 0px 29.8px 0px #C4FF5670 inset;
+  }
 </style>
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -246,8 +246,7 @@
           <div class="Christmas_hoilday_banner_main_Slider_Slick">
             {% for block in section.blocks %}
               {% assign products_product = block.settings.products_list %}
-                   {% assign product_form_id ='quick-add-' | append: section_id | append: product.id
-  %}
+              {% assign product_form_id = 'quick-add-' | append: section_id | append: product.id %}
               {% if products_product != blank %}
                 {% for products in products_product %}
                   <div class="Christmas_hoilday_banner_main_Slider_Slick_item">
@@ -321,42 +320,42 @@
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
-$('.Christmas_hoilday_banner_main_Slider_Slick').slick({
-  dots: true,
-  arrows: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 3.5,     
-  slidesToScroll: 1,     
-  customPaging: function(slider, i) {
-    return '<button></button>';
-  },
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3.5,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false
-      }
+  $('.Christmas_hoilday_banner_main_Slider_Slick').slick({
+    dots: true,
+    arrows: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3.5,
+    slidesToScroll: 1,
+    customPaging: function (slider, i) {
+      return '<button></button>';
     },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-});
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3.5,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
 </script>
 
 {% schema %}
