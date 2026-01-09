@@ -1,453 +1,385 @@
 <style>
-        .christmas_products_section {
-        padding: 88px 0px;
-        background: linear-gradient(358deg, #1E4432 0%, #12281D 100%);
-    }
-
-    .christmas_products_continer {
-        max-width: 1080px;
-        margin: 0 auto;
-        padding: 0px 50px;
-    }
-
-    .christmas_products_Title {
-        text-align: center;
-        color: #fff;
-        font-size: 40px;
-        padding-bottom: 36px;
-    }
-
-    .christmas_products_Flex {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .christmas_products_box {
-        width: 33.33333%;
-        padding: 12px;
-    }
-
-    .christmas_products_box_flex:before {
-        content: "";
-        position: absolute;
-        top: -27px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgb(196 255 86 / 69%) 0%, rgba(196, 255, 86, 0) 60%);
-        filter: blur(10px);
-        z-index: 0;
-        transition: all 0.4s
-    ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .christmas_products_box_flex {
-        background: #fff;
-        padding: 16px;
-        border-radius: 24px;
-        position: relative;
-        overflow: hidden;
-            cursor: pointer;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .christmas_products_box_Logo {
-        position: absolute;
-        z-index: 1;
-        width: 100%;
-        max-width: 97px;
-        object-fit: contain;
-        right: 13px;
-        top: 35px;
-        display: block;
-    }
-
-    .main-christmas_products_box_Link {
-        display: block;
-        position: relative;
-        min-height: 204px;
-    }
-
-    .main-christmas_products_box_Img {
-        width: 100%;
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        height: 100%;
-        object-fit: contain;
-        max-width: 204px;
-        margin: 0 auto;
-    }
-
-    .main-christmas_products_box_Img {
-        width: 100%;
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        height: 100%;
-        object-fit: contain;
-        max-width: 204px;
-        margin: 0 auto;
-    }
-
-    .main-christmas_products_box_badge {
-        text-align: center;
-        padding-bottom: 24px;
-        padding-top: 20px;
-
-    }
-
-    .main-christmas_products_box_stars_span:before {
-        content: "\e000";
-    }
-
-    .main-christmas_products_box_stars_span {
-        font-family: 'JudgemeStar' !important;
-        color: rgba(246, 174, 2, 1) !important;
-    }
-
-    .main-christmas_products_box_stars_text {
-        visibility: visible;
-        color: rgba(0, 0, 0, 1);
-        font-size: 12px;
-    }
-
-    .main-christmas_products_box_Title_text {
-        font-size: 20px;
-        text-align: center;
-        line-height: normal;
-        padding: 0px 21px;
-            margin: 0;
-    }
-
-    .main-christmas_products_box_Title_link {
-        text-decoration: none;
-        color: rgba(45, 40, 40, 1);
-        font-weight: 700;
-    }
-
-    .main-christmas_products_box_price {
-        line-height: normal;
-        font-size: 20px;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .main-christmas_products_box_price_span {
-        color: rgba(0, 130, 76, 1);
-        letter-spacing: 0;
-        font-weight: 700;
-    }
-
-    .main-christmas_products_box_compare_price_span {
-        color: rgba(45, 40, 40, 1);
-        letter-spacing: 0;
-        margin-left: 4px;
-        font-size: 12px;
-        text-decoration: line-through;
-    }
-
-    .main-christmas_products_box_Button {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        margin-top: 24px;
-        align-items: center;
-    }
-
-    .product-form__submit.button.button--full-width.button--primary {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-        width: 100%;
-        background: rgba(0, 130, 76, 1);
-        border: 1px solid rgba(0, 130, 76, 1);
-        padding: 10px 14px;
-        border-radius: 50px;
-        transition: 0.3s all
-    ease-in-out;
-        text-align: center;
-        line-height: 22px;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .main-christmas_products_box_Button_ASk {
-        color: rgba(255, 75, 90, 1);
-        border: 1px solid rgba(255, 75, 90, 1);
-        border-radius: 50px;
-        width: 50%;
-        background: transparent;
-        padding: 9px 9px;
-        font-weight: normal !important;
-        letter-spacing: 0;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-        transition: 0.3s all
-    ease-in-out;
-        text-align: center;
-        line-height: 22px;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .christmas_products_box_flex:hover .christmas_products_box_Logo {
-      transform: rotate(9deg);
-      transition: 0.5s all
-  ease-in-out;
-  }
-
-  .christmas_products_box_flex:hover:before {
-      opacity: 1;
-      visibility: visible;
-  }
-  @media screen and (max-width: 767px){
-
-    .christmas_products_section {
-      padding: 0px 0px 37px;
+      .christmas_products_section {
+      padding: 88px 0px;
+      background: linear-gradient(358deg, #1E4432 0%, #12281D 100%); 
   }
 
   .christmas_products_continer {
-      padding: 0px 16px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0px 50px;
   }
 
   .christmas_products_Title {
-      font-size: 24px;
-      padding-bottom: 25px;
-      padding-top: 25px;
-      margin: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 40px;
+      padding-bottom: 36px;
   }
 
   .christmas_products_Flex {
-      gap: 13px;
-      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
   }
 
   .christmas_products_box {
-      width: 47.7%;
-      padding: 0;
+      width: 33.33333%;
+      padding: 12px;
+  }
+
+  .christmas_products_box_flex:before {
+      content: "";
+      position: absolute;
+      top: -27px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgb(196 255 86 / 69%) 0%, rgba(196, 255, 86, 0) 60%);
+      filter: blur(10px);
+      z-index: 0;
+      transition: all 0.4s
+  ease;
+      opacity: 0;
+      visibility: hidden;
   }
 
   .christmas_products_box_flex {
-      padding: 7.94px;
-      border-radius: 13px;
+      background: #fff;
+      padding: 16px;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+          cursor: pointer;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
   }
 
   .christmas_products_box_Logo {
-      top: 22px;
-      right: 3px;
-      max-width: 65px;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      max-width: 97px;
+      object-fit: contain;
+      right: 13px;
+      top: 35px;
+      display: block;
   }
 
   .main-christmas_products_box_Link {
-      min-height: 112px;
+      display: block;
+      position: relative;
+      min-height: 204px;
   }
 
   .main-christmas_products_box_Img {
-      max-width: 114px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      height: 100%;
+      object-fit: contain;
+      max-width: 204px;
+      margin: 0 auto;
+  }
+
+  .main-christmas_products_box_Img {
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      height: 100%;
+      object-fit: contain;
+      max-width: 204px;
+      margin: 0 auto;
   }
 
   .main-christmas_products_box_badge {
-      padding-top: 8px;
-      padding-bottom: 8px;
+      text-align: center;
+      padding-bottom: 24px;
+      padding-top: 20px;
+      
+  }
+
+  .main-christmas_products_box_stars_span:before {
+      content: "\e000";
   }
 
   .main-christmas_products_box_stars_span {
-      padding: 0px 2px 0px 0px !important;
+      font-family: 'JudgemeStar' !important;
+      color: rgba(246, 174, 2, 1) !important;
   }
 
   .main-christmas_products_box_stars_text {
-      font-size: 10px;
+      visibility: visible;
+      color: rgba(0, 0, 0, 1);
+      font-size: 12px;
   }
 
   .main-christmas_products_box_Title_text {
-      font-size: 12px;
-      padding: 0;
+      font-size: 20px;
+      text-align: center;
+      line-height: normal;
+      padding: 0px 21px;
+          margin: 0;
   }
 
+  .main-christmas_products_box_Title_link {
+      text-decoration: none;
+      color: rgba(45, 40, 40, 1);
+      font-weight: 700;
+  }
 
   .main-christmas_products_box_price {
+      line-height: normal;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 10px;
+  }
+
+  .main-christmas_products_box_price_span {
+      color: rgba(0, 130, 76, 1);
+      letter-spacing: 0;
+      font-weight: 700;
+  }
+
+  .main-christmas_products_box_compare_price_span {
+      color: rgba(45, 40, 40, 1);
+      letter-spacing: 0;
+      margin-left: 4px;
       font-size: 12px;
-      margin-top: 7px;
+      text-decoration: line-through;
   }
 
   .main-christmas_products_box_Button {
-      gap: 8px;
-      margin-top: 10px;
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 24px;
+      align-items: center;
+  }
+
+  .product-form__submit.button.button--full-width.button--primary {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      width: 100%;
+      background: rgba(0, 130, 76, 1);
+      border: 1px solid rgba(0, 130, 76, 1);
+      padding: 10px 14px;
+      border-radius: 50px;
+      transition: 0.3s all
+  ease-in-out;
+      text-align: center;
+      line-height: 22px;
+      cursor: pointer;
+      position: relative;
   }
 
   .main-christmas_products_box_Button_ASk {
-      color: rgba(69, 69, 69, 1);
-      padding: 0;
-      font-size: 12px;
+      color: rgba(255, 75, 90, 1);
+      border: 1px solid rgba(255, 75, 90, 1);
+      border-radius: 50px;
+      width: 50%;
+      background: transparent;
+      padding: 9px 9px;
+      font-weight: normal !important;
       letter-spacing: 0;
-      width: 100%;
-      border: 0;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      transition: 0.3s all
+  ease-in-out;
+      text-align: center;
+      line-height: 22px;
+      cursor: pointer;
+      position: relative;
   }
-    }
+
+  .christmas_products_box_flex:hover .christmas_products_box_Logo {
+    transform: rotate(9deg);
+    transition: 0.5s all 
+ease-in-out;
+}
+
+.christmas_products_box_flex:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+@media screen and (max-width: 767px){
+
+  .christmas_products_section {
+    padding: 0px 0px 37px;
+}
+
+.christmas_products_continer {
+    padding: 0px 16px;
+}
+
+.christmas_products_Title {
+    font-size: 24px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    margin: 0;
+}
+
+.christmas_products_Flex {
+    gap: 13px;
+    justify-content: center;
+}
+
+.christmas_products_box {
+    width: 47.7%;
+    padding: 0;
+}
+
+.christmas_products_box_flex {
+    padding: 7.94px;
+    border-radius: 13px;
+}
+
+.christmas_products_box_Logo {
+    top: 22px;
+    right: 3px;
+    max-width: 65px;
+}
+
+.main-christmas_products_box_Link {
+    min-height: 112px;
+}
+
+.main-christmas_products_box_Img {
+    max-width: 114px;
+}
+
+.main-christmas_products_box_badge {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.main-christmas_products_box_stars_span {
+    padding: 0px 2px 0px 0px !important;
+}
+
+.main-christmas_products_box_stars_text {
+    font-size: 10px;
+}
+
+.main-christmas_products_box_Title_text {
+    font-size: 12px;
+    padding: 0;
+}
+
+
+.main-christmas_products_box_price {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.main-christmas_products_box_Button {
+    gap: 8px;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.main-christmas_products_box_Button_ASk {
+    color: rgba(69, 69, 69, 1);
+    padding: 0;
+    font-size: 12px;
+    letter-spacing: 0;
+    width: 100%;
+    border: 0;
+}
+  }
 </style>
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-
+ 
 <section class="christmas_products_section">
   <div class="christmas_products_continer">
     <h2 class="christmas_products_Title">
       {{ section.settings['maim-christmas_products_Title'] }}
     </h2>
     <div class="christmas_products_Flex">
-      {% for block in section.blocks %}
-        {% assign rprod_product = block.settings.prod_list %}
-        {% assign product_form_id = 'quick-add-' | append: section_id | append: product.id %}
+        {% for block in section.blocks %}
+          {% assign rprod_product = block.settings.prod_list %}
+          {% assign product_form_id ='quick-add-' | append: section_id | append: product.id
+  %}
         {% if rprod_product != blank %}
           {% for rprod in rprod_product %}
-            <div class="christmas_products_box">
-              <div class="christmas_products_box_flex">
-                {% if block.settings['main-christmas_products_box_Logo'] != blank %}
-                  <img
-                    class="christmas_products_box_Logo"
-                    src="{{ block.settings.main-christmas_products_box_Logo |img_url:'master' }}"
-                  >
-                {% endif %}
-                <a href="{{ rprod.url }}" class="main-christmas_products_box_Link">
-                  <img
-                    class="main-christmas_products_box_Img"
-                    src="{{ rprod.featured_image | img_url: 'master' }}"
-                    alt="{{ rprod.title }}"
-                  >
-                </a>
-
-                <div class="main-christmas_products_box_badge">
-                  <div class="main-christmas_products_stars">
-                    <span class="main-christmas_products_box_stars">
-                      <span class="main-christmas_products_box_stars_span"></span>
-                      <span class="main-christmas_products_box_stars_span"></span>
-                      <span class="main-christmas_products_box_stars_span"></span>
-                      <span class="main-christmas_products_box_stars_span"></span>
-                    </span>
-                    <span class="main-christmas_products_box_stars_text">
-                      {{ block.settings['main-christmas_products_box_stars_text'] }}
-                    </span>
-                  </div>
-                </div>
-                <div class="main-christmas_products_box_Title_price">
-                  <h4 class="main-christmas_products_box_Title_text">
-                    <a href="{{ rprod.url }}" class="main-christmas_products_box_Title_link">
-                      {{ rprod.title }}
-                    </a>
-                  </h4>
-                  <div class="main-christmas_products_box_price">
-                    <span class="main-christmas_products_box_price_span">
-                      {{ rprod.price | money }}
-                    </span>
-                    {% if rprod.compare_at_price > rprod.price %}
-                      <span class="main-christmas_products_box_compare_price_span">
-                        {{ rprod.compare_at_price | money }}
-                      </span>
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="main-christmas_products_box_Button">
-                  <div class="main-christmas_products_box_Button_Add_to">
-                   <product-form
-      class="product-form"
-      data-hide-errors="{{ gift_card_recipient_feature_active }}"
-      data-section-id="{{ section.id }}"
-    >
-      <div class="product-form__error-message-wrapper" role="alert" hidden>
-        <span class="svg-wrapper">
-          {{- 'icon-error.svg' | inline_asset_content -}}
-        </span>
-        <span class="product-form__error-message"></span>
-      </div>
-
-      {%- form 'product',
-        product,
-        id: product_form_id,
-        class: 'form',
-        novalidate: 'novalidate',
-        data-type: 'add-to-cart-form'
-      -%}
-        <input
-          type="hidden"
-          name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-          {% if product.selected_or_first_available_variant.available == false
-            or quantity_rule_soldout
-            or product.selected_or_first_available_variant == null
-          %}
-            disabled
-          {% endif %}
-          class="product-variant-id"
-        >
-
-        {%- if gift_card_recipient_feature_active -%}
-          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
-        {%- endif -%}
-
-        <div class="product-form__buttons">
-          {%- liquid
-            assign check_against_inventory = true
-            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
-              assign check_against_inventory = false
-            endif
-            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
-              assign quantity_rule_soldout = true
-            endif
-          -%}
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
+        <div class="christmas_products_box">
+          <div class="christmas_products_box_flex">
+            {% if block.settings['main-christmas_products_box_Logo'] != blank %}
+              <img
+                class="christmas_products_box_Logo"
+                src="{{ block.settings.main-christmas_products_box_Logo |img_url:'master' }}"
+              >
             {% endif %}
-          >
-            <span>
-              {%- if product.selected_or_first_available_variant == null -%}
-                {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                Add
-                {% comment %} {{ 'products.product.add_to_cart' | t }} {% endcomment %}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
-          {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
-          {%- endif -%}
-        </div>
-      {%- endform -%}
-    </product-form>
-                  </div>
-                  <a class="main-christmas_products_box_Button_ASk" href="#Custom_Golime_Form">
-                    {{- block.settings['main-main-christmas_products_box_Button_ASk'] -}}
-                  </a>
-                </div>
+            <a href="{{ rprod.url }}" class="main-christmas_products_box_Link">
+              <img
+                class="main-christmas_products_box_Img"
+                src="{{ rprod.featured_image | img_url: 'master' }}"
+                alt="{{ rprod.title }}"
+              >
+            </a>
+
+            <div class="main-christmas_products_box_badge">
+              <div class="main-christmas_products_stars">
+                <span class="main-christmas_products_box_stars">
+                  <span class="main-christmas_products_box_stars_span"></span>
+                  <span class="main-christmas_products_box_stars_span"></span>
+                  <span class="main-christmas_products_box_stars_span"></span>
+                  <span class="main-christmas_products_box_stars_span"></span>
+                </span>
+                <span class="main-christmas_products_box_stars_text">
+                  {{ block.settings['main-christmas_products_box_stars_text'] }}
+                </span>
               </div>
             </div>
-          {% endfor %}
-        {% endif %}
+            <div class="main-christmas_products_box_Title_price">
+              <h4 class="main-christmas_products_box_Title_text">
+                <a href="{{ rprod.url }}" class="main-christmas_products_box_Title_link">
+                  {{ rprod.title }}
+                </a>
+              </h4>
+              <div class="main-christmas_products_box_price">
+                <span class="main-christmas_products_box_price_span">
+                  {{ rprod.price | money }}
+                </span>
+                {% if rprod.compare_at_price > rprod.price %}
+                  <span class="main-christmas_products_box_compare_price_span">
+                    {{ rprod.compare_at_price | money }}
+                  </span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="main-christmas_products_box_Button">
+              <div class="main-christmas_products_box_Button_Add_to">
+                 {%- render 'new-buy-buttons',
+                  block: block,
+                  product: rprod,
+                  product_form_id: product_form_id,
+                  section_id: section.id,
+                  show_pickup_availability: true
+                -%}
+              </div>
+              <a class="main-christmas_products_box_Button_ASk" href="#Custom_Golime_Form">
+                {{- block.settings['main-main-christmas_products_box_Button_ASk'] -}}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -461,34 +393,35 @@
       "type": "text",
       "id": "maim-christmas_products_Title",
       "label": "Products Box Title"
-    }
+    },
+    
   ],
   "blocks": [
     {
-      "type": "products_Box",
-      "name": "Products Box",
-      "settings": [
+    "type": "products_Box",
+    "name": "Products Box",
+    "settings": [
         {
-          "type": "image_picker",
-          "id": "main-christmas_products_box_Logo",
-          "label": "Porducts Box Logo"
-        },
-        {
-          "type": "text",
-          "id": "main-christmas_products_box_stars_text",
-          "label": "Products Box Stars Text"
-        },
-        {
-          "type": "text",
-          "id": "main-main-christmas_products_box_Button_ASk",
-          "label": "Products Box Button"
-        },
-        {
-          "type": "product_list",
-          "id": "prod_list",
-          "label": "Select Products"
-        }
-      ]
+      "type": "image_picker",
+      "id": "main-christmas_products_box_Logo",
+      "label": "Porducts Box Logo"
+    },
+    {
+      "type": "text",
+      "id": "main-christmas_products_box_stars_text",
+      "label": "Products Box Stars Text"
+    },
+    {
+      "type": "text",
+      "id": "main-main-christmas_products_box_Button_ASk",
+      "label": "Products Box Button"
+    },
+    {
+      "type": "product_list",
+      "id": "prod_list",
+      "label": "Select Products"
+    }
+    ]
     }
   ],
   "presets": [
