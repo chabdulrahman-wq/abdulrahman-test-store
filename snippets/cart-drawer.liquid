@@ -643,7 +643,8 @@
         </div>
       {% endcomment %}
        
-
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
       <div class="main_cart_drawer_upsall">
         <div class="main_cart_drawer_upsall_prod_list">
           <div class="main_cart_drawer_upsall_logo_div">
@@ -655,7 +656,7 @@
           </div>
           <h3 class="main_cart_drawer_upsall_heading">{{ settings['cart-drawer-heading'] }}</h3>
           <div class="main_cart_drawer_upsall-list">
-            {% assign product_form_id = 'product_form' | append: section.id %}
+            {% assign product_form_id = 'quick-add-' | append: section_id | append: product.id%}
             {% assign collection = collections[settings['cart-upsall-list']] %}
             {% for a in collection.products %}
               <div class="cart-drawer-product-flex">
