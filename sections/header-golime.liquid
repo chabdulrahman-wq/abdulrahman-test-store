@@ -1095,14 +1095,28 @@
 
     /* 🟤 Overlay */
    function showOverlay() {
-  $('.menu-overlay').stop(true, true).fadeIn(200);
-  $('body').css('overflow', 'hidden'); .addClass('no-scroll');
+  const overlay = document.querySelector('.menu-overlay');
+  if (!overlay) return;
+
+  // stop running animations (jQuery safe)
+  $(overlay).stop(true, true).fadeIn(200);
+
+  // JS based scroll lock
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
 }
 
 function hideOverlay() {
-  $('.menu-overlay').stop(true, true).fadeOut(200);
-  $('body').css('overflow', 'auto');.removeClass('scroll');
+  const overlay = document.querySelector('.menu-overlay');
+  if (!overlay) return;
+
+  $(overlay).stop(true, true).fadeOut(200);
+
+  // restore scroll
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
 }
+
 
     /* 🔁 Menu Toggle Function */
     function toggleSection(trigger, section) {
