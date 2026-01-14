@@ -1094,15 +1094,15 @@
     });
 
     /* 🟤 Overlay */
-    function showOverlay() {
-      $('.menu-overlay').fadeIn(200);
-      $('body').css('overflow', 'hidden');
-    }
+   function showOverlay() {
+  $('.menu-overlay').stop(true, true).fadeIn(200);
+  $('body').addClass('no-scroll');
+}
 
-    function hideOverlay() {
-      $('.menu-overlay').fadeOut(200);
-      $('body').css('overflow', 'auto');
-    }
+function hideOverlay() {
+  $('.menu-overlay').stop(true, true).fadeOut(200);
+  $('body').removeClass('no-scroll');
+}
 
     /* 🔁 Menu Toggle Function */
     function toggleSection(trigger, section) {
