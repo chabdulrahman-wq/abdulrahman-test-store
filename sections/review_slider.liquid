@@ -10,31 +10,100 @@
               alt=""
             >
           {% endif %}
-          <div class="Review_slider_content_title">
-            <h2 class="Review_slider_content_heading">
-              {{ section.settings['main-Review_slider_content_heading'] }}
-            </h2>
-            <div class="Review_slider_content_slider_icon_box">
-              <div class="Review_slider_swiper_icon_prev">
-                <i class="fa-solid fa-arrow-left"></i>
-              </div>
-              <div class="Review_slider_swiper_icon_Next">
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
-              <div class="Review_slider_swiper_scrollbar">
-                <span
-                  class="Review_slider_swiper_scrollbar_progressbar"
-                  style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 600ms;"
-                ></span>
-              </div>
+        </div>
+        <div class="Review_slider_content_title">
+          <h2 class="Review_slider_content_heading">
+            {{ section.settings['main-Review_slider_content_heading'] }}
+          </h2>
+          </div>
+          <div class="Review_slider_content_slider_icon_box">
+            <div class="Review_slider_swiper_icon_prev">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="Review_slider_swiper_icon_Next">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="Review_slider_swiper_scrollbar">
+              <span
+                class="Review_slider_swiper_scrollbar_progressbar"
+                style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 600ms;"
+              ></span>
             </div>
           </div>
+        
+      </div>
+      <div class="Review_sliders_box">
+        <div class="Review_sliders_box_main_slider owl-carousel">
+            {% for block in section.blocks %}
+            <div class="Review_sliders_box_item">
+                <div class="Review_sliders_content_Images_text_box">
+                    <div class="Review_sliders_content_Images_text_flex">
+                        <div class="Review_sliders_content_Images_box">
+                            {% if block.settings.main-Review_sliders_content_Images_box_img !=blank %}
+                                <img src="{{ block.settings.main-Review_sliders_content_Images_box_img |img_url:'master' }}" class="Review_sliders_content_Images_box_img" alt="">
+                                {% endif %}
+                        </div>
+                        <div class="Review_sliders_content_Text_box">
+                            <div class="Review_sliders_content_Text_review_img_flex">
+                                <div class="Review_sliders_content_Text_desp">
+                                        <h2 class="Review_sliders_content_Text_title"> {{ block.settings.main-Review_sliders_content_Text_Title }} </h2>
+                                        <div class="Review_sliders_content_desp">
+                                            <p>
+                                                {{ block.settings.main-Review_sliders_content_desp }}
+                                            </p>
+                                        </div>
+                                </div>
+                                <div class="Review_sliders_content_review_images">
+                                    {% if block.settings.mian-Review_sliders_content_Text_review_img !=blank %}
+                                        <img src="{{ block.settings.mian-Review_sliders_content_Text_review_img_|img_url:'master' }}" class="Review_sliders_content_Text_review_img" alt="">
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        {% endfor %}
         </div>
       </div>
-      <div class="Review_sliders_box"></div>
     </div>
   </div>
 </section>
+<script>
+  $(document).ready(function () {
+    $('.Review_sliders_box_main_slider').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      smartSpeed: 800,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1024: {
+          items: 2
+        }
+      }
+    });
+
+    // Custom arrows
+    $('.Review_slider_swiper_icon_prev').click(function () {
+      $('.Review_sliders_box_main_slider').trigger('prev.owl.carousel');
+    });
+
+    $('.Review_slider_swiper_icon_Next').click(function () {
+      $('.Review_sliders_box_main_slider').trigger('next.owl.carousel');
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "Section name",
