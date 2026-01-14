@@ -1,0 +1,43 @@
+<section class="Review_slider_section">
+  <div class="Review_slider_container">
+    <div class="Review_slider_Flex">
+      <div class="Review_slider_content_box">
+        <div class="Review_slider_content_Logo">
+          {% if section.settings['main-Review_slider_content_logo_images'] != blank %}
+            <img
+              src="{{ section.settings.main-Review_slider_content_logo_images |img_url:'master' }}"
+              class="Review_slider_content_logo_images"
+              alt=""
+            >
+          {% endif %}
+          <div class="Review_slider_content_title">
+            <h2 class="Review_slider_content_heading">
+              {{ section.settings['main-Review_slider_content_heading'] }}
+            </h2>
+            <div class="Review_slider_content_slider_icon_box">
+              <div class="Review_slider_swiper_icon_prev">
+                <i class="fa-solid fa-arrow-left"></i>
+              </div>
+              <div class="Review_slider_swiper_icon_Next">
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+              <div class="Review_slider_swiper_scrollbar">
+                <span
+                  class="Review_slider_swiper_scrollbar_progressbar"
+                  style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 600ms;"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Review_sliders_box"></div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
