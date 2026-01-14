@@ -15,55 +15,82 @@
           <h2 class="Review_slider_content_heading">
             {{ section.settings['main-Review_slider_content_heading'] }}
           </h2>
+        </div>
+        <div class="Review_slider_content_slider_icon_box">
+          <div class="Review_slider_swiper_icon_prev">
+            <i class="fa-solid fa-arrow-left"></i>
           </div>
-          <div class="Review_slider_content_slider_icon_box">
-            <div class="Review_slider_swiper_icon_prev">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="Review_slider_swiper_icon_Next">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
-            <div class="Review_slider_swiper_scrollbar">
-              <span
-                class="Review_slider_swiper_scrollbar_progressbar"
-                style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 600ms;"
-              ></span>
-            </div>
+          <div class="Review_slider_swiper_icon_Next">
+            <i class="fa-solid fa-arrow-right"></i>
           </div>
-        
+          <div class="Review_slider_swiper_scrollbar">
+            <span
+              class="Review_slider_swiper_scrollbar_progressbar"
+              style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 600ms;"
+            ></span>
+          </div>
+        </div>
       </div>
       <div class="Review_sliders_box">
         <div class="Review_sliders_box_main_slider owl-carousel">
-            {% for block in section.blocks %}
+          {% for block in section.blocks %}
             <div class="Review_sliders_box_item">
-                <div class="Review_sliders_content_Images_text_box">
-                    <div class="Review_sliders_content_Images_text_flex">
-                        <div class="Review_sliders_content_Images_box">
-                            {% if block.settings.main-Review_sliders_content_Images_box_img !=blank %}
-                                <img src="{{ block.settings.main-Review_sliders_content_Images_box_img |img_url:'master' }}" class="Review_sliders_content_Images_box_img" alt="">
-                                {% endif %}
+              <div class="Review_sliders_content_Images_text_box">
+                <div class="Review_sliders_content_Images_text_flex">
+                  <div class="Review_sliders_content_Images_box">
+                    {% if block.settings['main-Review_sliders_content_Images_box_img'] != blank %}
+                      <img
+                        src="{{ block.settings.main-Review_sliders_content_Images_box_img |img_url:'master' }}"
+                        class="Review_sliders_content_Images_box_img"
+                        alt=""
+                      >
+                    {% endif %}
+                  </div>
+                  <div class="Review_sliders_content_Text_box">
+                    <div class="Review_sliders_content_Text_review_img_flex">
+                      <div class="Review_sliders_content_Text_desp">
+                        <h2 class="Review_sliders_content_Text_title">
+                          {{ block.settings['main-Review_sliders_content_Text_Title'] }}
+                        </h2>
+                        <div class="Review_sliders_content_desp">
+                          <p>
+                            {{ block.settings['main-Review_sliders_content_desp'] }}
+                          </p>
                         </div>
-                        <div class="Review_sliders_content_Text_box">
-                            <div class="Review_sliders_content_Text_review_img_flex">
-                                <div class="Review_sliders_content_Text_desp">
-                                        <h2 class="Review_sliders_content_Text_title"> {{ block.settings.main-Review_sliders_content_Text_Title }} </h2>
-                                        <div class="Review_sliders_content_desp">
-                                            <p>
-                                                {{ block.settings.main-Review_sliders_content_desp }}
-                                            </p>
-                                        </div>
-                                </div>
-                                <div class="Review_sliders_content_review_images">
-                                    {% if block.settings.mian-Review_sliders_content_Text_review_img !=blank %}
-                                        <img src="{{ block.settings.mian-Review_sliders_content_Text_review_img_|img_url:'master' }}" class="Review_sliders_content_Text_review_img" alt="">
-                                        {% endif %}
-                                </div>
-                            </div>
-                        </div>
+                      </div>
+                      <div class="Review_sliders_content_review_images">
+                        {% if block.settings['mian-Review_sliders_content_Text_review_img'] != blank %}
+                          <img
+                            src="{{ block.settings.mian-Review_sliders_content_Text_review_img_|img_url:'master' }}"
+                            class="Review_sliders_content_Text_review_img"
+                            alt=""
+                          >
+                        {% endif %}
+                      </div>
                     </div>
-                </div>  
+                  </div>
+                </div>
+                <div class="Review_sliders_content_logo_bottom_img_text">
+                  <div class="Review_sliders_content_logo_bottom_images">
+                    {% if block.settings['main-Review_sliders_content_logo_bottom_img'] != blank %}
+                      <img
+                        src="{{ block.settings.main-Review_sliders_content_logo_bottom_img |img_url:'master' }}"
+                        class="Review_sliders_content_logo_bottom_img"
+                        alt=""
+                      >
+                    {% endif %}
+                  </div>
+
+                  <div class="Review_sliders_content_logo_bottom_text_para">
+                    <p>{{ block.settings['main-Review_sliders_content_logo_bottom_text_para'] }}</p>
+                    <span class="Review_sliders_content_logo_bottom_sub_text">
+                      {{- block.settings.main_Review_sliders_content_logo_bottom_sub_text -}}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-        {% endfor %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -82,15 +109,15 @@
       smartSpeed: 800,
       responsive: {
         0: {
-          items: 1
+          items: 1,
         },
         768: {
-          items: 1
+          items: 1,
         },
         1024: {
-          items: 2
-        }
-      }
+          items: 2,
+        },
+      },
     });
 
     // Custom arrows
@@ -107,6 +134,60 @@
 {% schema %}
 {
   "name": "Section name",
-  "settings": []
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main-Review_slider_content_logo_images",
+    "label": "Review Slider Logo"
+    },
+    {
+    "type": "text",
+    "id": "main-Review_slider_content_heading",
+    "label": "Review Slider Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Slider_item",
+    "name": "Slider Item",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "main-Review_sliders_content_Images_box_img",
+        "label": "Review Slider Block Images Box"
+        },
+        {
+        "type": "text",
+        "id": "main-Review_sliders_content_Text_Title",
+        "label": "Review Slider Block Item Title"
+        },
+        {
+        "type": "richtext",
+        "id": "main-Review_sliders_content_desp",
+        "label": "Review Slider Block Item Desp"
+        },
+        {
+        "type": "image_picker",
+        "id": "mian-Review_sliders_content_Text_review_img",
+        "label": "Review Slider Block Item Review Images"
+        },
+        {
+        "type": "image_picker",
+        "id": "main-Review_sliders_content_logo_bottom_img",
+        "label": "Review Slider Block Item Logo Bottom Images"
+        },
+        {
+        "type": "richtext",
+        "id": "main-Review_sliders_content_logo_bottom_text_para",
+        "label": "Review Slider Block Item Logo Bottom Para"
+        },
+        {
+        "type": "text",
+        "id": "main_Review_sliders_content_logo_bottom_sub_text",
+        "label": "Review Slider Block Item Logo Bottom Text"
+        }
+    ]
+    }
+  ]
 }
 {% endschema %}
