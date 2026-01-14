@@ -1102,15 +1102,15 @@
   });
 
   // 🟤 Overlay functions
-  {% comment %} function showOverlay() {
-    $('.menu-overlay').fadeIn(200);
+  function showOverlay() {
+    $('.menu-overlay').fadeIn(900);
     $('body').css('overflow', 'hidden');
   }
 
   function hideOverlay() {
-    $('.menu-overlay').fadeOut(200);
+    $('.menu-overlay').fadeOut(900);
     $('body').css('overflow', 'auto');
-  } {% endcomment %}
+  }
 
   // 🔁 Toggle menu section and active style
   function toggleSection(trigger, sectionSelector) {
