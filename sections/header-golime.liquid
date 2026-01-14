@@ -1096,12 +1096,12 @@
     /* 🟤 Overlay */
    function showOverlay() {
   $('.menu-overlay').stop(true, true).fadeIn(200);
-  $('body').addClass('no-scroll');
+  $('body').css('overflow', 'hidden'); .addClass('no-scroll');
 }
 
 function hideOverlay() {
   $('.menu-overlay').stop(true, true).fadeOut(200);
-  $('body').removeClass('no-scroll');
+  $('body').css('overflow', 'auto');.removeClass('no-scroll');
 }
 
     /* 🔁 Menu Toggle Function */
