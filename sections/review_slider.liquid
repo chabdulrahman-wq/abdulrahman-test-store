@@ -318,39 +318,43 @@
       nav: false,
       dots: false,
       autoplay: false,
-      smartSpeed: 800,
+      smartSpeed: 700,
       responsive: {
         0: { items: 2.3 },
         768: { items: 2.3 },
         1024: { items: 2.3 }
       },
+
+      // 🔥 important events
       onInitialized: updateProgress,
       onTranslated: updateProgress
     });
 
-    function updateProgress(event) {
-      const totalItems = event.item.count;        // total slides
-      const visibleItems = event.page.size;       // visible slides
-      const currentIndex = event.item.index - event.relatedTarget._clones.length / 2;
+    function updateProgress(e) {
+      const total = e.item.count;           // total slides
+      const index = e.item.index;           // current index
+      const visible = e.page.size;          // visible items
 
-      let progress = (currentIndex + visibleItems) / totalItems;
+      // loop fix
+      const realIndex = index - e.relatedTarget._clones.length / 2;
+      let progress = (realIndex + visible) / total;
 
-      // limit 0–1
       progress = Math.max(0, Math.min(progress, 1));
 
       $progressBar.css('transform', `scaleX(${progress})`);
     }
 
-    // Custom arrows
-    $('.Review_slider_swiper_icon_prev').click(function () {
+    // 👉 ICON click
+    $('.Review_slider_swiper_icon_prev').on('click', function () {
       $slider.trigger('prev.owl.carousel');
     });
 
-    $('.Review_slider_swiper_icon_Next').click(function () {
+    $('.Review_slider_swiper_icon_Next').on('click', function () {
       $slider.trigger('next.owl.carousel');
     });
   });
 </script>
+
 
 
 {% schema %}
