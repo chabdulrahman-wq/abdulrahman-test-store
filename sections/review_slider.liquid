@@ -309,38 +309,49 @@
 </section>
 <script>
   $(document).ready(function () {
-    $('.Review_sliders_box_main_slider').owlCarousel({
+    const $slider = $('.Review_sliders_box_main_slider');
+    const $progressBar = $('.Review_slider_swiper_scrollbar_progressbar');
+
+    $slider.owlCarousel({
       loop: true,
       margin: 20,
       nav: false,
       dots: false,
       autoplay: false,
-      autoplayTimeout: 4000,
-      autoplayHoverPause: true,
       smartSpeed: 800,
       responsive: {
-        0: {
-          items: 2.3,
-        },
-        768: {
-          items: 2.3,
-        },
-        1024: {
-          items: 2.3,
-        },
+        0: { items: 2.3 },
+        768: { items: 2.3 },
+        1024: { items: 2.3 }
       },
+      onInitialized: updateProgress,
+      onTranslated: updateProgress
     });
+
+    function updateProgress(event) {
+      const totalItems = event.item.count;        // total slides
+      const visibleItems = event.page.size;       // visible slides
+      const currentIndex = event.item.index - event.relatedTarget._clones.length / 2;
+
+      let progress = (currentIndex + visibleItems) / totalItems;
+
+      // limit 0–1
+      progress = Math.max(0, Math.min(progress, 1));
+
+      $progressBar.css('transform', `scaleX(${progress})`);
+    }
 
     // Custom arrows
     $('.Review_slider_swiper_icon_prev').click(function () {
-      $('.Review_sliders_box_main_slider').trigger('prev.owl.carousel');
+      $slider.trigger('prev.owl.carousel');
     });
 
     $('.Review_slider_swiper_icon_Next').click(function () {
-      $('.Review_sliders_box_main_slider').trigger('next.owl.carousel');
+      $slider.trigger('next.owl.carousel');
     });
   });
 </script>
+
 
 {% schema %}
 {
