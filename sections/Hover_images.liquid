@@ -1,7 +1,31 @@
 
 <section class="Hover_images_text_section">
   <div class="Hover_images_text_container">
-  <div c></div>
+  <div class="Hover_images_text_content_title_para">
+    <h2 class="Hover_images_text_content_title">{{ section.settings.main-Hover_images_text_title }}</h2>
+    <p class="Hover_images_text_content_para">{{ section.settings.main-Hover_images_text_para }}</p>
+  </div>
+  <div class="Hover_images_text_boxs_Flex">
+    {% for block in section.blocks %}
+      <div class="Hover_images_text_box_block">
+        <div class="Hover_images_text_main_box">
+        <div class="Hover_images_text_box_img-text">
+          <div class="Hover_images_text_Images_box">
+            {% if block.settings.main-Hover_images_text_images_box-img !=blank %}
+            <img src="{{ block.settings.main-Hover_images_text_images_box-img |img_url:'master' }}" alt="" class="Hover_images_text_images_box-img">
+            {% endif %}
+          </div>
+          <div class="Hover_images_text_content_box_block">
+            <div class="Hover_images_text_content_box_description_block">
+              {{ block.settings.main_Hover_images_text_content_box_description }}
+            </div>
+            
+          </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
   </div>
 </section>
 {% schema %}
