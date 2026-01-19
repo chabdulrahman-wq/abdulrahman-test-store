@@ -31,6 +31,35 @@
 {% schema %}
 {
   "name": "Section name",
-  "settings": []
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-Hover_images_text_title",
+    "label": "Hover Images Text Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-Hover_images_text_para",
+    "label": "Hover Images Text Description"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Images_Box",
+    "name": "Images Box",
+    "settings": [
+      {
+      "type": "image_picker",
+      "id": "main-Hover_images_text_images_box-img",
+      "label": "Hover Images Text Block Images"
+      },
+      {
+      "type": "textarea",
+      "id": "main_Hover_images_text_content_box_description",
+      "label": "Hover Images Text Block Description"
+      }
+    ]
+    }
+  ]
 }
 {% endschema %}
