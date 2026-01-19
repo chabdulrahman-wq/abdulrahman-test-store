@@ -3,12 +3,17 @@
     padding-top: 100px;
     padding-bottom: 80px;
 }
+
+.Hover_images_text_content_title_para {
+    text-align: center;
+    padding-bottom: 25px;
+}
 </style>
 <section class="Hover_images_text_section">
   <div class="Hover_images_text_container">
   <div class="Hover_images_text_content_title_para">
     <h2 class="Hover_images_text_content_title">{{ section.settings.main-Hover_images_text_title }}</h2>
-    <p class="Hover_images_text_content_para">{{ section.settings.main-Hover_images_text_para }}</p>
+    <p>{{ section.settings.main-Hover_images_text_para }}</p>
   </div>
   <div class="Hover_images_text_boxs_Flex">
     {% for block in section.blocks %}
