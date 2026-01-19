@@ -8,6 +8,38 @@
     text-align: center;
     padding-bottom: 25px;
 }
+
+.Hover_images_text_content_title_para p {
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    text-transform: capitalize;
+    color: #7e7e7e;
+    padding-top: 4px;
+}
+
+.Hover_images_text_content_title {
+    margin: 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #000;
+}
+
+.Hover_images_text_boxs_Flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Hover_images_text_box_block {
+    width: 25%;
+}
+
+.Hover_images_text_main_box {
+    position: relative;
+    background: #f3f3f3;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+}
 </style>
 <section class="Hover_images_text_section">
   <div class="Hover_images_text_container">
@@ -19,7 +51,6 @@
     {% for block in section.blocks %}
       <div class="Hover_images_text_box_block">
         <div class="Hover_images_text_main_box">
-        <div class="Hover_images_text_box_img-text">
           <div class="Hover_images_text_Images_box">
             {% if block.settings.main-Hover_images_text_images_box-img !=blank %}
             <img src="{{ block.settings.main-Hover_images_text_images_box-img |img_url:'master' }}" alt="" class="Hover_images_text_images_box-img">
@@ -30,7 +61,6 @@
               {{ block.settings.main_Hover_images_text_content_box_description }}
             </div>
             
-          </div>
           </div>
         </div>
       </div>
