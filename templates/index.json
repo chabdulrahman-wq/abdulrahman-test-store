@@ -603,6 +603,35 @@
         "main-Hover_images_text_para": "<p>Three decades of craft, one family-style studio.</p>"
       }
     },
+    "golime_industries_serve_section_yp6dVz": {
+      "type": "golime_industries-serve-section",
+      "blocks": {
+        "boxs_t9rmgB": {
+          "type": "Boxs",
+          "settings": {
+            "mian-golime-industries-serve-images_img": "shopify://shop_images/Multi_Unit_Residential.webp",
+            "main-golime-industries-serve_text_box_title": "Multi Unit Residential",
+            "main-golime-industries-serve_text_box_para": "<p>We deliver customized heating, cooling, and energy solutions for multi-unit residential buildings, ensuring comfort, efficiency, and long-term reliability for residents and property managers alike.</p>"
+          }
+        },
+        "boxs_XRACwh": {
+          "type": "Boxs",
+          "settings": {
+            "mian-golime-industries-serve-images_img": "shopify://shop_images/Small_Commercial.webp",
+            "main-golime-industries-serve_text_box_title": "Small Commercial",
+            "main-golime-industries-serve_text_box_para": "<p>We provide specialized HVAC and energy solutions designed to meet the unique needs of small commercial spaces, helping businesses run smoothly and efficiently.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "boxs_t9rmgB",
+        "boxs_XRACwh"
+      ],
+      "name": "Golime Industries Serve",
+      "settings": {
+        "main-golime-industries-serve-title-text": "Industries We Serve"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -1077,6 +1106,7 @@
     "watch_coll_images_section_VwVgGU",
     "review_slider_mrJcqq",
     "hover_images_aeeWEf",
+    "golime_industries_serve_section_yp6dVz",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
