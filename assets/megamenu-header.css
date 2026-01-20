@@ -994,6 +994,8 @@ ease-in-out;
   position: relative;
   background: #fff;
   display: block;
+  background-image: url(//golime.com/cdn/shop/files/Newsroom.png?v=1752608933);
+    background-position: center;
   padding: 25px;
   border-radius: 16px;
   text-decoration: none;
