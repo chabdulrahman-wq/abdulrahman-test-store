@@ -64,6 +64,36 @@
     width: 83%;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 768px){
+
+  .golime-industries-serve-Flex{
+    display: block;
+  }
+
+  .golime-industries-serve-images_text_box{
+    width: 100%;
+  }
+
+  .golime-industries-serve-images_box{
+    padding-bottom: 100%;
+  }
+
+  .golime-industries-serve-title-text{
+    font-size: 28px;
+    padding-bottom: 25px;
+  }
+
+  .golime-industries-serve_text_box_title{
+    font-size: 22px;
+  }
+
+  .golime-industries-serve_text_box-para p{
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
 </style>
 <section class="golime-industries-serve-section">
   <div class="golime-industries-serve-container">
@@ -72,7 +102,7 @@
         {{ section.settings['main-golime-industries-serve-title-text'] }}
       </h1>
     </div>
-    <div class="golime-industries-serve-Flex">
+    <div class="golime-industries-serve-Flex owl-carousel">
       {% for block in section.blocks %}
         <div class="golime-industries-serve-images_text_box">
           <div class="golime-industries-serve-images_box">
@@ -96,6 +126,24 @@
     </div>
   </div>
 </section>
+<script>
+  $(document).ready(function () {
+    if ($(window).width() <= 768) {
+      $('.golime-industries-serve-Flex').addClass('owl-carousel');
+      $('.golime-industries-serve-Flex').owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 15,
+        dots: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        smartSpeed: 800
+      });
+    }
+  });
+</script>
+
 {% schema %}
 {
   "name": "Golime Industries Serve",
