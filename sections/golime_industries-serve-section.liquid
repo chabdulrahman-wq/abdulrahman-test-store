@@ -106,7 +106,7 @@
         {{ section.settings['main-golime-industries-serve-title-text'] }}
       </h1>
     </div>
-    <div class="golime-industries-serve-Flex owl-carousel">
+    <div class="golime-industries-serve-Flex">
       {% for block in section.blocks %}
         <div class="golime-industries-serve-images_text_box">
           <div class="golime-industries-serve-images_box">
@@ -132,21 +132,46 @@
 </section>
 <script>
   $(document).ready(function () {
-    if ($(window).width() <= 768) {
-      $('.golime-industries-serve-Flex').addClass('owl-carousel');
-      $('.golime-industries-serve-Flex').owlCarousel({
-        items: 1.2,
-        loop: true,
-        margin: 15,
-        dots: true,
-        nav: true,
-        autoplay: false,
-        autoplayTimeout: 4000,
-        smartSpeed: 800
-      });
+
+    function industriesSlider() {
+      if ($(window).width() <= 768) {
+
+        if (!$('.golime-industries-serve-Flex').hasClass('owl-loaded')) {
+          $('.golime-industries-serve-Flex')
+            .addClass('owl-carousel')
+            .owlCarousel({
+              items: 1.2,
+              loop: true,
+              margin: 15,
+              dots: true,
+              nav: true,
+              autoplay: false,
+              smartSpeed: 800
+            });
+        }
+
+      } else {
+
+        // ✅ Desktop par normal layout restore
+        if ($('.golime-industries-serve-Flex').hasClass('owl-loaded')) {
+          $('.golime-industries-serve-Flex')
+            .trigger('destroy.owl.carousel')
+            .removeClass('owl-carousel owl-loaded');
+          $('.golime-industries-serve-Flex')
+            .find('.owl-stage-outer')
+            .children()
+            .unwrap();
+        }
+
+      }
     }
+
+    industriesSlider();
+    $(window).resize(industriesSlider);
+
   });
 </script>
+
 
 {% schema %}
 {
