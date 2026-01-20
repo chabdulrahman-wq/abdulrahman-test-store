@@ -1,0 +1,71 @@
+<section class="golime-industries-serve-section">
+  <div class="golime-industries-serve-container">
+    <div class="golime-industries-serve-title">
+      <h1 class="golime-industries-serve-title-text">
+        {{ section.settings['main-golime-industries-serve-title-text'] }}
+      </h1>
+    </div>
+    <div class="golime-industries-serve-Flex">
+      {% for block in section.blocks %}
+        <div class="golime-industries-serve-images_text_box">
+          <div class="golime-industries-serve-images_box">
+            {% if block.settings['mian-golime-industries-serve-images_img'] != blank %}
+              <img
+                src="{{ block.settings.mian-golime-industries-serve-images_img |img_url:'master' }}"
+                class="golime-industries-serve-images_img"
+                alt=""
+              >
+            {% endif %}
+
+          </div>
+          <div class="golime-industries-serve_text_box">
+            <h2 class="golime-industries-serve_text_box_title">{{ block.settings.main-golime-industries-serve_text_box_title }}</h2>
+            <div class="golime-industries-serve_text_box-para">
+                <p>{{ block.settings.main-golime-industries-serve_text_box_para }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Golime Industries Serve",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-golime-industries-serve-title-text",
+    "label": "Industries Serve Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Boxs",
+    "name": "Boxs",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "mian-golime-industries-serve-images_img",
+        "label": "Industries Serve Images"
+        },
+        {
+        "type": "text",
+        "id": "main-golime-industries-serve_text_box_title",
+        "label": "Industries Serve block Title"
+        },
+        {
+        "type": "richtext",
+        "id": "main-golime-industries-serve_text_box_para",
+        "label": "Industries Serve block Para"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Industries Serve"
+    }
+  ]
+}
+{% endschema %}
