@@ -76,28 +76,30 @@
       </div>
      
 {%- if cart.requires_shipping -%}
-  {%- assign free_shipping_threshold = 100 -%}  <!-- $100 threshold -->
+  {%- assign free_shipping_threshold = 100 -%}  
   {%- assign cart_total = 0 -%}
 
   {%- for item in cart.items -%}
     {%- if item.requires_shipping -%}
-      {%- assign cart_total = cart_total | plus: item.final_line_price -%} <!-- NO division if prices are in dollars -->
+      {%- assign item_price = item.final_line_price | divided_by: 2 -%}
+      {%- assign cart_total = cart_total | plus: item_price -%}
     {%- endif -%}
   {%- endfor -%}
 
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
+  {%- capture free_shipping_message -%}
+    You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
+  {%- endcapture -%}
 
-  {%- if cart_total >= free_shipping_threshold -%}
+  {%- if amount_remaining <= 0 -%}
+    {%- assign amount_remaining = 0 -%}
     {%- capture free_shipping_message -%}
       Congratulations!!! you have unlocked free shipping
     {%- endcapture -%}
-    {%- assign percentage_filled = 100 -%}
-  {%- else -%}
-    {%- capture free_shipping_message -%}
-      You are <strong>{{ amount_remaining | money_with_currency }}</strong> away from free shipping
-    {%- endcapture -%}
-    {%- assign percentage_filled = cart_total | divided_by: free_shipping_threshold | times: 100 -%}
   {%- endif -%}
+
+  {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
+  {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
 
 {% style %}
 .free_shipping_bar {
@@ -124,7 +126,7 @@
 }
 .free_shipping_progress_bar::before{
   content: "";
-  width: {{ percentage_filled }}%;
+  width: {{ percentage_remaining }}%;
   height: 100%;
   background: green;
   position: absolute;
@@ -132,12 +134,14 @@
   top: 0;
   transition: width 1s ease-out;
 }
+
 {% endstyle %}
 
 <div class="free_shipping_bar">
   <h4>{{ free_shipping_message }}</h4>
   <div class="free_shipping_progress_bar"></div>
 </div>
+
 
 {%- endif -%}
 
