@@ -76,30 +76,29 @@
       </div>
      
 {%- if cart.requires_shipping -%}
-  {%- assign free_shipping_threshold = 100 -%}  
+  {%- assign free_shipping_threshold = 100 -%}  <!-- $100 -->
   {%- assign cart_total = 0 -%}
 
   {%- for item in cart.items -%}
     {%- if item.requires_shipping -%}
-      {%- assign item_price = item.final_line_price | divided_by: 1 -%}
-      {%- assign cart_total = cart_total | plus: item_price -%}
+      {%- assign cart_total = cart_total | plus: item.final_line_price | divided_by: 100 -%} <!-- convert cents to dollars -->
     {%- endif -%}
   {%- endfor -%}
 
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
-  {%- capture free_shipping_message -%}
-    You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
-  {%- endcapture -%}
 
   {%- if amount_remaining <= 0 -%}
     {%- assign amount_remaining = 0 -%}
     {%- capture free_shipping_message -%}
       Congratulations!!! you have unlocked free shipping
     {%- endcapture -%}
+  {%- else -%}
+    {%- capture free_shipping_message -%}
+      You are <strong>{{ amount_remaining | money_with_currency }}</strong> away from free shipping
+    {%- endcapture -%}
   {%- endif -%}
 
-  {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
-  {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
+  {%- assign difference = cart_total | divided_by: free_shipping_threshold | times: 100 -%} <!-- % for progress bar -->
 
 {% style %}
 .free_shipping_bar {
@@ -126,7 +125,7 @@
 }
 .free_shipping_progress_bar::before{
   content: "";
-  width: {{ percentage_remaining }}%;
+  width: {{ difference }}%;
   height: 100%;
   background: green;
   position: absolute;
@@ -134,15 +133,12 @@
   top: 0;
   transition: width 1s ease-out;
 }
-
 {% endstyle %}
 
 <div class="free_shipping_bar">
   <h4>{{ free_shipping_message }}</h4>
   <div class="free_shipping_progress_bar"></div>
 </div>
-
-
 {%- endif -%}
 
       {% comment %} Free shipping bra {% endcomment %}
