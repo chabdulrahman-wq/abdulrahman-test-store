@@ -149,11 +149,11 @@
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
        {%- if cart.requires_shipping -%}
   <div class="drawer-free-shipping">
-    {% assign free_shipping_goal = 20000 %} <!-- Set free shipping goal -->
+    {% assign free_shipping_goal = 10000 %} <!-- Set free shipping goal -->
     {% assign remaining = free_shipping_goal | minus: cart.total_price %}
     {% assign progress = cart.total_price | times: 100 | divided_by: free_shipping_goal %}
-    {% if progress > 200 %}
-      {% assign progress = 200 %}
+    {% if progress > 100 %}
+      {% assign progress = 100 %}
     {% endif %}
 
     <p class="shipping-text">
