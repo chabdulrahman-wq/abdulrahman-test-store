@@ -149,22 +149,22 @@
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
        {%- if cart.requires_shipping -%}
   <div class="drawer-free-shipping">
-    {% assign free_shipping_goal = 20000 %} <!-- Set free shipping goal -->
-    {% assign remaining = free_shipping_goal | minus: cart.total_price %}
-    {% assign progress = cart.total_price | times: 100 | divided_by: free_shipping_goal %}
-    {% if progress > 100 %}
-      {% assign progress = 100 %}
-    {% endif %}
+  {% assign free_shipping_goal = 20000 %} <!-- Set free shipping goal -->
 
-    <p class="shipping-text">
-      {% if remaining > 0 %}
-        {{ settings.Money_totel }} <span class="remaining-amount">{{ remaining | money }}</span> {{ settings.free-shipping-label }}
-      {% else %}
-        <!-- Free Shipping Unlocked Message -->
-        🎉 Free Shipping Unlocked! 🎉
+<ul class="cart-items">
+  {% for item in cart.items %}
+    <li class="cart-item">
+      <p>{{ item.product.title }}</p>
+      
+      <!-- Check if free shipping unlocked -->
+      {% if cart.total_price >= free_shipping_goal %}
+        <span class="free-shipping-badge">🚚 Free Shipping!</span>
       {% endif %}
-    </p>
 
+      <p>Price: {{ item.final_line_price | money }}</p>
+    </li>
+  {% endfor %}
+</ul>
     <div class="pro-cust-icon-flex">
       <progress 
         class="amt_progress" 
