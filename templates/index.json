@@ -638,31 +638,37 @@
         "g_c_box_N3eaD9": {
           "type": "G_C_Box",
           "settings": {
+            "main-G_C_Box_Color": "#f0eade",
             "main-G_C_Box_Heading": "Email Us",
             "mian-G_C_Box_Para": "<p>Questions? Email us at care@golime.com and we'll get back to you fast - no hassle, just answers.</p>",
             "mian-G_C_Box_Link": "/",
-            "main-G_C_Box_Btn_Color": "",
-            "main-G_C_Box_Btn": ""
+            "main-G_C_Box_Btn_Color": "#e0d4bc",
+            "main-G_C_Box_Btn": "SEND US AN EMAIL",
+            "ian-G_C_Box_img": "shopify://shop_images/Go_Lime_Email.webp"
           }
         },
         "g_c_box_tCRgGk": {
           "type": "G_C_Box",
           "settings": {
-            "main-G_C_Box_Heading": "",
-            "mian-G_C_Box_Para": "",
-            "mian-G_C_Box_Link": "",
-            "main-G_C_Box_Btn_Color": "",
-            "main-G_C_Box_Btn": ""
+            "main-G_C_Box_Color": "#eeeeee",
+            "main-G_C_Box_Heading": "Help is Just a Call Away",
+            "mian-G_C_Box_Para": "<p>Need quick answers? Call us at +1 877-747-8292, and we'll make your home comfort journey effortless.</p>",
+            "mian-G_C_Box_Link": "/",
+            "main-G_C_Box_Btn_Color": "#d9d9d9",
+            "main-G_C_Box_Btn": "TALK TO AN EXPERT",
+            "ian-G_C_Box_img": "shopify://shop_images/Go_Lime_Contact.webp"
           }
         },
         "g_c_box_x4KdPa": {
           "type": "G_C_Box",
           "settings": {
-            "main-G_C_Box_Heading": "",
-            "mian-G_C_Box_Para": "",
-            "mian-G_C_Box_Link": "",
-            "main-G_C_Box_Btn_Color": "",
-            "main-G_C_Box_Btn": ""
+            "main-G_C_Box_Color": "#e4f0e1",
+            "main-G_C_Box_Heading": "Chat with Us",
+            "mian-G_C_Box_Para": "<p>For immediate assistance, reach out to us. Our team is ready to help you with any questions or concerns.</p>",
+            "mian-G_C_Box_Link": "/",
+            "main-G_C_Box_Btn_Color": "#2f7400",
+            "main-G_C_Box_Btn": "CHAT LIVE NOW",
+            "ian-G_C_Box_img": "shopify://shop_images/Go_Lime_Chat_Assistance.webp"
           }
         }
       },
