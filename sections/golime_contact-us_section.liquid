@@ -1,111 +1,113 @@
-
 <section class="G_C_section">
-    <div class="G_C_container">
-        <div class="G_C_top_images">
-            {% if section.settings.main-G_C_top_img !=blank%}
-            <img class="G_C_top_img" src="{{ section.settings.main-G_C_top_img |img_url:'master' }}" alt="">
-            {% endif %}
-        </div>
-        <div class="G_C_top_content">
-            <div class="G_C_top_Title">{{ section.settings.main-G_C_top_Title }}</div>
-            <div class="G_C_top_para">
-                <p> {{ section.settings.main-G_C_top_Para }} </p>
-            </div>
-        </div>
-        <div class="G_C_Flex">
-        {% for block in section.blocks %}
-            <div class="G_C_Block_Box" style="{{block.settings.main-G_C_Box_Color }}">
-                <div class="G_C_Box_Content">
-                    <h2 class="G_C_Box_Heading">
-                        {{ block.settings.main-G_C_Box_Heading }}
-                    </h2>
-                    <div class="G_C_Box_Para">
-                        <p>
-                            {{ block.settings.mian-G_C_Box_Para }}
-                        </p>
-                    </div>
-                    <a href="{{ block.settings.mian-G_C_Box_Link }}" class="mian-G_C_Box_Btn" style="{{ block.settings.main-G_C_Box_Btn_Color }}">
-                        {{ block.settings.main-G_C_Box_Btn }}
-                    </a>
-
-                </div>
-                <div class="G_C_Box_Images">
-                    {% if block.settings.mian-G_C_Box_img !=blank%}
-                    <img class="G_C_Box_img" src="{{ block.settings.mian-G_C_Box_img |img_url:'master' }}" alt=""> 
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-            </div>
+  <div class="G_C_container">
+    <div class="G_C_top_images">
+      {% if section.settings['main-G_C_top_img'] != blank %}
+        <img class="G_C_top_img" src="{{ section.settings.main-G_C_top_img |img_url:'master' }}" alt="">
+      {% endif %}
     </div>
+    <div class="G_C_top_content">
+      <div class="G_C_top_Title">{{ section.settings['main-G_C_top_Title'] }}</div>
+      <div class="G_C_top_para">
+        <p>{{ section.settings['main-G_C_top_Para'] }}</p>
+      </div>
+    </div>
+    <div class="G_C_Flex">
+      {% for block in section.blocks %}
+        <div class="G_C_Block_Box" style="{{block.settings.main-G_C_Box_Color }}">
+          <div class="G_C_Box_Content">
+            <h2 class="G_C_Box_Heading">
+              {{ block.settings['main-G_C_Box_Heading'] }}
+            </h2>
+            <div class="G_C_Box_Para">
+              <p>
+                {{ block.settings['mian-G_C_Box_Para'] }}
+              </p>
+            </div>
+            <a
+              href="{{ block.settings.mian-G_C_Box_Link }}"
+              class="mian-G_C_Box_Btn"
+              style="{{ block.settings.main-G_C_Box_Btn_Color }}"
+            >
+              {{ block.settings['main-G_C_Box_Btn'] }}
+            </a>
+          </div>
+          <div class="G_C_Box_Images">
+            {% if block.settings['mian-G_C_Box_img'] != blank %}
+              <img class="G_C_Box_img" src="{{ block.settings.mian-G_C_Box_img |img_url:'master' }}" alt="">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 {% schema %}
 {
-"name": "Golime Contact Us Section",
-"settings": [
+  "name": "Golime Contact Us Section",
+  "settings": [
     {
-    "type": "image_picker",
-    "id": "main-G_C_top_img",
-    "label": "G C Top Images"
+      "type": "image_picker",
+      "id": "main-G_C_top_img",
+      "label": "G C Top Images"
     },
     {
-    "type": "text",
-    "id": "main-G_C_top_Title",
-    "label": "G C Top Title"
+      "type": "text",
+      "id": "main-G_C_top_Title",
+      "label": "G C Top Title"
     },
     {
-    "type": "richtext",
-    "id": "main-G_C_top_Para",
-    "label": "G C Top Para"
+      "type": "richtext",
+      "id": "main-G_C_top_Para",
+      "label": "G C Top Para"
     }
-],
-"blocks": [
+  ],
+  "blocks": [
     {
-    "type": "G_C_Box",
-    "name": "G C Box",
-    "settings": [
+      "type": "G_C_Box",
+      "name": "G C Box",
+      "settings": [
         {
-        "type": "color",
-        "id": "main-G_C_Box_Color",
-        "label": "Color"
+          "type": "color",
+          "id": "main-G_C_Box_Color",
+          "label": "Color"
         },
         {
-        "type": "text",
-        "id": "main-G_C_Box_Heading",
-        "label": "G C Box Heading"
+          "type": "text",
+          "id": "main-G_C_Box_Heading",
+          "label": "G C Box Heading"
         },
         {
-        "type": "richtext",
-        "id": "mian-G_C_Box_Para",
-        "label": "G C Box Para"
+          "type": "richtext",
+          "id": "mian-G_C_Box_Para",
+          "label": "G C Box Para"
         },
         {
-        "type": "url",
-        "id": "mian-G_C_Box_Link",
-        "label": "G C Box Link"
+          "type": "url",
+          "id": "mian-G_C_Box_Link",
+          "label": "G C Box Link"
         },
         {
-  "type": "color",
-  "id": "main-G_C_Box_Btn_Color",
-  "label": "G C Box Button Color"
-},
-        {
-        "type": "text",
-        "id": "main-G_C_Box_Btn",
-        "label": "G C Box Btn"
+          "type": "color",
+          "id": "main-G_C_Box_Btn_Color",
+          "label": "G C Box Button Color"
         },
         {
-        "type": "image_picker",
-        "id": "ian-G_C_Box_img",
-        "label": "G C Box Images"
+          "type": "text",
+          "id": "main-G_C_Box_Btn",
+          "label": "G C Box Btn"
+        },
+        {
+          "type": "image_picker",
+          "id": "ian-G_C_Box_img",
+          "label": "G C Box Images"
         }
-    ]
+      ]
     }
-],
-"presets": [
+  ],
+  "presets": [
     {
-    "name": "Golime Contact Us Section"
+      "name": "Golime Contact Us Section"
     }
-]
+  ]
 }
 {% endschema %}
