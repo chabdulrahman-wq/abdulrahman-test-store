@@ -13,7 +13,11 @@
     </div>
     <div class="G_C_Flex">
       {% for block in section.blocks %}
-        <div class="G_C_Block_Box" style="{{block.settings.main-G_C_Box_Color }}">
+        <div class="G_C_Block_Box" 
+             {% if block.settings.main-G_C_Box_Color != blank %}
+     style="background-color: {{ block.settings.main-G_C_Box_Color }};"
+     {% endif %}
+        >
           <div class="G_C_Box_Content">
             <h2 class="G_C_Box_Heading">
               {{ block.settings['main-G_C_Box_Heading'] }}
@@ -26,7 +30,9 @@
             <a
               href="{{ block.settings.mian-G_C_Box_Link }}"
               class="mian-G_C_Box_Btn"
-              style="{{ block.settings.main-G_C_Box_Btn_Color }}"
+               {% if block.settings.main-G_C_Box_Color != blank %}
+     style="background-color: {{ block.settings.main-G_C_Box_btn_Color }};"
+     {% endif %}
             >
               {{ block.settings['main-G_C_Box_Btn'] }}
             </a>
@@ -67,7 +73,7 @@
       "name": "G C Box",
       "settings": [
         {
-          "type": "color_background",
+          "type": "color",
           "id": "main-G_C_Box_Color",
           "label": "Color"
         },
@@ -87,7 +93,7 @@
           "label": "G C Box Link"
         },
         {
-          "type": "color_background",
+          "type": "color",
           "id": "main-G_C_Box_Btn_Color",
           "label": "G C Box Button Color"
         },
