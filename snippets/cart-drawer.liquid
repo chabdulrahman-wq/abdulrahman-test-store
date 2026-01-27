@@ -76,30 +76,37 @@
       </div>
      
 {%- if cart.requires_shipping -%}
-  {%- assign free_shipping_threshold = 10000 -%}  
+  {%- assign free_shipping_threshold = 10000 -%}
+  {%- assign free_gift_variant_id = 1234567890 -%} {# 👈 CHANGE THIS #}
+
   {%- assign cart_total = 0 -%}
+  {%- assign free_gift_in_cart = false -%}
 
   {%- for item in cart.items -%}
     {%- if item.requires_shipping -%}
-      {%- assign item_price = item.final_line_price | divided_by: 1 -%}
-      {%- assign cart_total = cart_total | plus: item_price -%}
+      {%- assign cart_total = cart_total | plus: item.final_line_price -%}
+    {%- endif -%}
+
+    {%- if item.variant_id == free_gift_variant_id -%}
+      {%- assign free_gift_in_cart = true -%}
     {%- endif -%}
   {%- endfor -%}
 
   {%- assign amount_remaining = free_shipping_threshold | minus: cart_total -%}
-  {%- capture free_shipping_message -%}
-    You are <strong>{{ amount_remaining | times: 100 | money_with_currency }}</strong> away from free shipping
-  {%- endcapture -%}
 
-  {%- if amount_remaining <= 0 -%}
+  {%- if amount_remaining > 0 -%}
+    {%- capture free_shipping_message -%}
+      You are <strong>{{ amount_remaining | money_with_currency }}</strong> away from free shipping 🎁
+    {%- endcapture -%}
+  {%- else -%}
     {%- assign amount_remaining = 0 -%}
     {%- capture free_shipping_message -%}
-      Congratulations!!! you have unlocked free shipping
+      🎉 Congratulations! Free Shipping unlocked + Free Gift added
     {%- endcapture -%}
   {%- endif -%}
 
-  {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
-  {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
+  {%- assign progress = free_shipping_threshold | minus: amount_remaining -%}
+  {%- assign percentage_remaining = progress | times: 100 | divided_by: free_shipping_threshold -%}
 
 {% style %}
 .free_shipping_bar {
@@ -120,11 +127,10 @@
   height: 5px;
   background-color: #e0c1c1;
   border-radius: 100px;
-  display: block !important;
   position: relative;
   overflow: hidden;
 }
-.free_shipping_progress_bar::before{
+.free_shipping_progress_bar::before {
   content: "";
   width: {{ percentage_remaining }}%;
   height: 100%;
@@ -132,9 +138,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  transition: width 1s ease-out;
+  transition: width 0.6s ease;
 }
-
 {% endstyle %}
 
 <div class="free_shipping_bar">
@@ -142,8 +147,40 @@
   <div class="free_shipping_progress_bar"></div>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  var thresholdReached = {{ amount_remaining }} <= 0;
+  var giftInCart = {{ free_gift_in_cart | json }};
+  var giftVariantId = {{ free_gift_variant_id }};
+
+  if (thresholdReached && !giftInCart) {
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: giftVariantId,
+        quantity: 1
+      })
+    });
+  }
+
+  if (!thresholdReached && giftInCart) {
+    fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: giftVariantId,
+        quantity: 0
+      })
+    });
+  }
+
+});
+</script>
 
 {%- endif -%}
+
 
       {% comment %} Free shipping bra {% endcomment %}
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
