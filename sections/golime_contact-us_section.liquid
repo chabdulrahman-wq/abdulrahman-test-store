@@ -14,7 +14,7 @@
         </div>
         <div class="G_C_Flex">
         {% for block in section.blocks %}
-            <div class="G_C_Block_Box">
+            <div class="G_C_Block_Box" style="{{block.settings.main-G_C_Box_Color }}">
                 <div class="G_C_Box_Content">
                     <h2 class="G_C_Box_Heading">
                         {{ block.settings.main-G_C_Box_Heading }}
@@ -64,6 +64,11 @@
     "type": "G_C_Box",
     "name": "G C Box",
     "settings": [
+        {
+        "type": "color",
+        "id": "main-G_C_Box_Color",
+        "label": "Color"
+        },
         {
         "type": "text",
         "id": "main-G_C_Box_Heading",
