@@ -632,6 +632,52 @@
         "main-golime-industries-serve-title-text": "Industries We Serve"
       }
     },
+    "golime_contact_us_section_dRVXBf": {
+      "type": "golime_contact-us_section",
+      "blocks": {
+        "g_c_box_N3eaD9": {
+          "type": "G_C_Box",
+          "settings": {
+            "main-G_C_Box_Heading": "Email Us",
+            "mian-G_C_Box_Para": "<p>Questions? Email us at care@golime.com and we'll get back to you fast - no hassle, just answers.</p>",
+            "mian-G_C_Box_Link": "/",
+            "main-G_C_Box_Btn_Color": "",
+            "main-G_C_Box_Btn": ""
+          }
+        },
+        "g_c_box_tCRgGk": {
+          "type": "G_C_Box",
+          "settings": {
+            "main-G_C_Box_Heading": "",
+            "mian-G_C_Box_Para": "",
+            "mian-G_C_Box_Link": "",
+            "main-G_C_Box_Btn_Color": "",
+            "main-G_C_Box_Btn": ""
+          }
+        },
+        "g_c_box_x4KdPa": {
+          "type": "G_C_Box",
+          "settings": {
+            "main-G_C_Box_Heading": "",
+            "mian-G_C_Box_Para": "",
+            "mian-G_C_Box_Link": "",
+            "main-G_C_Box_Btn_Color": "",
+            "main-G_C_Box_Btn": ""
+          }
+        }
+      },
+      "block_order": [
+        "g_c_box_N3eaD9",
+        "g_c_box_tCRgGk",
+        "g_c_box_x4KdPa"
+      ],
+      "name": "Golime Contact Us Section",
+      "settings": {
+        "main-G_C_top_img": "shopify://shop_images/Go_Lime_Support.avif",
+        "main-G_C_top_Title": "We've Got Your Back. Let’s Chat.",
+        "main-G_C_top_Para": "<p>Whether it's a quick repair, an installation, or finding the perfect solution for your home, we're here to make it simple. No stress, no upselling, just honest help from a team that's as committed to your comfort as you are.</p>"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -1107,6 +1153,7 @@
     "review_slider_mrJcqq",
     "hover_images_aeeWEf",
     "golime_industries_serve_section_yp6dVz",
+    "golime_contact_us_section_dRVXBf",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
