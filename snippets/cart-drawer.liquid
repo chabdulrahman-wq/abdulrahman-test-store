@@ -147,6 +147,7 @@
 
       {% comment %} Free shipping bra {% endcomment %}
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
+       {%- if cart.requires_shipping -%}
  <div class="drawer-free-shipping">
   {% assign free_shipping_goal = 10000 %} <!-- $100 -->
   {% assign remaining = free_shipping_goal | minus: cart.total_price %}
@@ -182,6 +183,7 @@
     <p>Free Shipping</p>
   </div>
 </div> 
+{%- endif -%}
 <!-- ✅ END FREE SHIPPING BAR -->
 
       <cart-drawer-items
