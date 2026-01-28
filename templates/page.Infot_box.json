@@ -191,6 +191,73 @@
         "main-christmas-holiday-timer-box-number-images-img": "shopify://shop_images/download_341ce436-98de-4b28-9d7c-dc06aed7618b.webp"
       }
     },
+    "watch_coll_images_section_VwVgGU": {
+      "type": "watch_coll-images-section",
+      "blocks": {
+        "boxs_GhgRPx": {
+          "type": "Boxs",
+          "settings": {
+            "mian-Watch_coll_content_block_box": "/",
+            "main_Watch_coll_content_block_box_Images-IMG": "shopify://shop_images/download_bd1880e7-c524-45e6-ba02-2dad51ba08fe.webp",
+            "main_Watch_coll_content_block_box_Images-IMG2": "shopify://shop_images/5b00fdbe44c17adbb3385fdfdc846e39a84c6f32_1.webp",
+            "main-Watch_coll_content_block_box_button_text": "PATEK PHILIPPE",
+            "main_Watch_coll_content_block_box_btn_arrow-IMG": "shopify://shop_images/icon-blacck-arrow.png"
+          }
+        },
+        "boxs_RpzhhU": {
+          "type": "Boxs",
+          "settings": {
+            "mian-Watch_coll_content_block_box": "/",
+            "main_Watch_coll_content_block_box_Images-IMG": "shopify://shop_images/download_a733759e-3489-4c51-b3fa-dc480a0166d0.webp",
+            "main_Watch_coll_content_block_box_Images-IMG2": "shopify://shop_images/905a48b14d3ac0c90027d76d0049f41a73f10eaa.jpg",
+            "main-Watch_coll_content_block_box_button_text": "CARTIER",
+            "main_Watch_coll_content_block_box_btn_arrow-IMG": "shopify://shop_images/icon-blacck-arrow_e69536c8-d9aa-48e0-9ff0-2dab6f4a1c05.png"
+          }
+        },
+        "boxs_YDWGh9": {
+          "type": "Boxs",
+          "settings": {
+            "mian-Watch_coll_content_block_box": "",
+            "main_Watch_coll_content_block_box_Images-IMG": "shopify://shop_images/download_02c2d38a-fb9b-4dc3-9188-a54677bddf83.webp",
+            "main_Watch_coll_content_block_box_Images-IMG2": "shopify://shop_images/aac974c9655e8ea69cfda23ac458cbc59df3e5ef.webp",
+            "main-Watch_coll_content_block_box_button_text": "ROLEX",
+            "main_Watch_coll_content_block_box_btn_arrow-IMG": "shopify://shop_images/icon-blacck-arrow_fd6df0f2-ec3d-479c-9d25-5dc5a8a620e3.png"
+          }
+        },
+        "boxs_VG3zcQ": {
+          "type": "Boxs",
+          "settings": {
+            "mian-Watch_coll_content_block_box": "/",
+            "main_Watch_coll_content_block_box_Images-IMG": "shopify://shop_images/download_ed447bca-4e72-4e49-8818-29698a1203e8.webp",
+            "main_Watch_coll_content_block_box_Images-IMG2": "shopify://shop_images/download_c61ea280-3171-476d-8e4a-961839252a5a.webp",
+            "main-Watch_coll_content_block_box_button_text": "AUDEMARS PIGUET",
+            "main_Watch_coll_content_block_box_btn_arrow-IMG": "shopify://shop_images/icon-blacck-arrow_1fc04e73-c1f3-44db-869b-9efa7e55d300.png"
+          }
+        },
+        "boxs_fafz9b": {
+          "type": "Boxs",
+          "settings": {
+            "mian-Watch_coll_content_block_box": "/",
+            "main_Watch_coll_content_block_box_Images-IMG": "shopify://shop_images/download_bc3a4574-63b3-4f8e-b8ab-4df9c7212658.webp",
+            "main_Watch_coll_content_block_box_Images-IMG2": "shopify://shop_images/download_a76d52fa-77a1-43f6-b518-b2eb345ad1b5.jpg",
+            "main-Watch_coll_content_block_box_button_text": "HUBOLT",
+            "main_Watch_coll_content_block_box_btn_arrow-IMG": "shopify://shop_images/icon-blacck-arrow_1fc04e73-c1f3-44db-869b-9efa7e55d300.png"
+          }
+        }
+      },
+      "block_order": [
+        "boxs_GhgRPx",
+        "boxs_RpzhhU",
+        "boxs_YDWGh9",
+        "boxs_VG3zcQ",
+        "boxs_fafz9b"
+      ],
+      "name": "Watch Coll images Section",
+      "settings": {
+        "main-Watch_coll_content_View_ALL_title-link": "/",
+        "main_Watch_coll_content_View_ALL_title": "View ALL"
+      }
+    },
     "golime_new_section_faqs_MjV4ND": {
       "type": "Golime_New_section_Faqs",
       "blocks": {
@@ -311,6 +378,7 @@
     "water_heater_slider_Djq4ar",
     "golime_slider_8_images_pVjVkc",
     "christmas_holiday_timer_xgT6dm",
+    "watch_coll_images_section_VwVgGU",
     "golime_new_section_faqs_MjV4ND",
     "golime_slider_section_BAkAXK"
   ]
