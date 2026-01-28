@@ -1,3 +1,25 @@
+<style>
+  .G_C_section {
+    padding: 40px 0 60px;
+}
+
+.G_C_container {
+    width: 100%;
+    max-width: 1336px;
+    margin: 0 auto;
+}
+
+.G_C_top_images {
+    max-width: 46px;
+    margin: 0 auto;
+}
+
+.G_C_top_img {
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 <section class="G_C_section">
   <div class="G_C_container">
     <div class="G_C_top_images">
@@ -6,7 +28,7 @@
       {% endif %}
     </div>
     <div class="G_C_top_content">
-      <div class="G_C_top_Title">{{ section.settings['main-G_C_top_Title'] }}</div>
+      <h2 class="G_C_top_Title">{{ section.settings['main-G_C_top_Title'] }}</h2>
       <div class="G_C_top_para">
         <p>{{ section.settings['main-G_C_top_Para'] }}</p>
       </div>
