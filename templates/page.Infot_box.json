@@ -175,6 +175,22 @@
         "main_Sub_Golime_slider_heading": "Ontario Cities We Proudly Serve"
       }
     },
+    "christmas_holiday_timer_xgT6dm": {
+      "type": "christmas-holiday-timer",
+      "name": "Christmasa Holiday Timer",
+      "settings": {
+        "main-christmas-holiday-timer-left-box-img": "shopify://shop_images/Mask_group_1_509289e3-0808-4dda-85a2-9b1c387c3476.webp",
+        "main-christmas-holiday-timer-left-box-img-moblie": "shopify://shop_images/download_532877b5-fad4-4d8a-9714-3bdf79bafc66.webp",
+        "main-christmas-holiday-timer-right_timer-heading": "Sale ending soon:",
+        "main-christmas-holiday-timer-right_timer-heading-day": "DAYS",
+        "main-christmas-holiday-timer-right_timer-heading-hours": "HOURS",
+        "main-christmas-holiday-timer-right_timer-heading-mins": "MINS",
+        "main-christmas-holiday-timer-right_timer-heading-secs": "SECS",
+        "main-christmas-holiday-timer-right-box-img": "shopify://shop_images/Right.webp",
+        "main-christmas-holiday-timer-right-box-img-moblie": "shopify://shop_images/AdobeStock_743896327_2.avif",
+        "main-christmas-holiday-timer-box-number-images-img": "shopify://shop_images/download_341ce436-98de-4b28-9d7c-dc06aed7618b.webp"
+      }
+    },
     "golime_new_section_faqs_MjV4ND": {
       "type": "Golime_New_section_Faqs",
       "blocks": {
@@ -294,6 +310,7 @@
     "golime_new_section_map_KCKcdF",
     "water_heater_slider_Djq4ar",
     "golime_slider_8_images_pVjVkc",
+    "christmas_holiday_timer_xgT6dm",
     "golime_new_section_faqs_MjV4ND",
     "golime_slider_section_BAkAXK"
   ]
