@@ -3809,3 +3809,15 @@ details-disclosure > details {
     margin-left: 13px;
     letter-spacing: 0;
 }
+
+
+
+.sticky-option-select {
+    padding: 10px 10px;
+    border-radius: 33px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: monospace;
+}
