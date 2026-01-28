@@ -53,7 +53,7 @@ ease-in-out !important;
 .container-header-golime {
   width: 100%;
   margin: 0 auto;
-  padding: 6px 30px;
+  padding: 0 30px;
   border-radius: 50px;
   background: #ffffff95;
   border: 1px solid #0005;
@@ -144,7 +144,7 @@ ease-in-out !important;
 .desktop-menu-list-header-golime-li-Retail {
   transition: all 0.2s ease-in-out;
   display: flex;
-  padding: 15px 18px;
+  padding: 6px 18px;
   border-radius: 50px;
   cursor: pointer;
   color: black;
@@ -164,7 +164,7 @@ ease-in-out !important;
 .desktop-menu-list-header-golime-li-Commercial {
   transition: all 0.2s ease-in-out;
   display: flex;
-  padding: 15px 18px;
+  padding: 6px 18px;
   border-radius: 50px;
   cursor: pointer;
   color: black;
