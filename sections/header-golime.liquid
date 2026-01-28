@@ -1099,6 +1099,7 @@
     const isInsideSearch = $(e.target).closest(
       '.golime-search-bar-wrapper, .mian-images-icon-search-box-header'
     ).length;
+
     if (!isInsideSearch) {
       $('.golime-search-bar-wrapper').slideUp(300);
       headerSection.classList.remove('active-blur');
@@ -1106,7 +1107,7 @@
   });
 
   // ===============================
-  // 🟤 Overlay functions
+  // 🟤 Overlay
   // ===============================
   function showOverlay() {
     $('.menu-overlay').fadeIn(200);
@@ -1119,27 +1120,36 @@
   }
 
   // ===============================
-  // 🔴 ACTIVE MENU LOGIC
+  // 🔴 ACTIVE MENU (CSS REUSE)
   // ===============================
   function setActiveMenu(trigger) {
-    $('.desktop-menu-list-header-golime li').removeClass('active');
-    $(trigger).closest('li').addClass('active');
+    $('.desktop-menu-list-header-golime li')
+      .removeClass('menu-active');
+
+    $(trigger)
+      .closest('li')
+      .addClass('menu-active');
   }
 
   function removeActiveMenu() {
-    $('.desktop-menu-list-header-golime li').removeClass('active');
+    $('.desktop-menu-list-header-golime li')
+      .removeClass('menu-active');
   }
 
   // ===============================
-  // 🔁 Toggle menu section
+  // 🔁 Toggle sections
   // ===============================
   function toggleSection(trigger, sectionSelector) {
     const $section = $(sectionSelector);
     const isOpen = $section.is(':visible');
 
-    // Close all sections
+    // Close all
     $(
-      '.main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+      '.main-golime-new-header-11-boxs-section, \
+       .main-golime-header-banner-info-faqs-box-tab, \
+       .main-golime-header-banner-About-Go-Lime-box-tab, \
+       .main-golime-header-banner-Retail-Go-Lime-box-tab, \
+       .main-golime-header-banner-Commercial-Go-Lime-box-tab'
     ).slideUp(300);
 
     $('.fa-chevron-down').removeClass('rotate-icon');
@@ -1148,6 +1158,8 @@
       $section.slideDown(300);
       $(trigger).find('.fa-chevron-down').addClass('rotate-icon');
       $('.Section-golime-new-header_black').addClass('active-style');
+
+      // 🔥 ACTIVE BG HERE
       setActiveMenu(trigger);
       showOverlay();
     } else {
@@ -1158,7 +1170,7 @@
   }
 
   // ===============================
-  // 📌 Menu click handlers
+  // 📌 Menu clicks
   // ===============================
   $('.desktop-menu-list-header-golime-li-a-hover').on('click', function (e) {
     e.preventDefault();
@@ -1186,16 +1198,26 @@
   });
 
   // ===============================
-  // ❌ Click outside → close all
+  // ❌ Outside click → close all
   // ===============================
   $(document).on('click', function (e) {
     const isInside = $(e.target).closest(
-      '.desktop-menu-list-header-golime-li-a-hover, .mian-images-icon-search-box-header, .desktop-menu-list-header-golime-li-a, .desktop-menu-list-header-golime-li-about, .desktop-menu-list-header-golime-li-Retail, .desktop-menu-list-header-golime-li-Commercial, .main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+      '.desktop-menu-list-header-golime, \
+       .main-golime-new-header-11-boxs-section, \
+       .main-golime-header-banner-info-faqs-box-tab, \
+       .main-golime-header-banner-About-Go-Lime-box-tab, \
+       .main-golime-header-banner-Retail-Go-Lime-box-tab, \
+       .main-golime-header-banner-Commercial-Go-Lime-box-tab'
     ).length;
 
     if (!isInside) {
       $(
-        '.main-golime-new-header-11-boxs-section, .golime-search-bar-wrapper, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+        '.main-golime-new-header-11-boxs-section, \
+         .golime-search-bar-wrapper, \
+         .main-golime-header-banner-info-faqs-box-tab, \
+         .main-golime-header-banner-About-Go-Lime-box-tab, \
+         .main-golime-header-banner-Retail-Go-Lime-box-tab, \
+         .main-golime-header-banner-Commercial-Go-Lime-box-tab'
       ).slideUp(300);
 
       $('.fa-chevron-down').removeClass('rotate-icon');
@@ -1231,7 +1253,7 @@
   });
 
   // ===============================
-  // 📱 Mobile menu toggle
+  // 📱 Mobile menu
   // ===============================
   $('.main-bar-number-golime-header').on('click', function () {
     $('.navs-links-header-ul-golime-section-bot').slideToggle(300);
@@ -1240,7 +1262,7 @@
   });
 
   // ===============================
-  // ⬆️⬇️ Header scroll behavior
+  // ⬆️⬇️ Scroll header
   // ===============================
   let lastScrollTop = 0;
   const header = document.querySelector('.Golime-header-new-section');
@@ -1286,6 +1308,7 @@
     });
   });
 </script>
+
 
 
 {% schema %}
