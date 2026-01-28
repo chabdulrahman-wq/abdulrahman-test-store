@@ -1107,10 +1107,10 @@
     $('body').css('overflow', 'hidden');
   }
 
-  function hideOverlay() {
+  {% comment %} function hideOverlay() {
     $('.menu-overlay').fadeOut(200);
     $('body').css('overflow', 'auto');
-  }
+  } {% endcomment %}
 
   // 🔁 Toggle menu section and active style
   function toggleSection(trigger, sectionSelector) {
