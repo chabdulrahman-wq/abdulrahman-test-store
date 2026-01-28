@@ -141,10 +141,13 @@
             </div>
             <div
             
+            {% if block.settings.main-G_C_Box_Btn_background_Color != blank %}
+    style="
+      background-color: {{ block.settings.main-G_C_Box_Btn_background_Color }};
+      color: {{ block.settings.main-G_C_Box_Btn_Color }};
+    "
+  {% endif %}
               class="mian-G_C_Box_Btn" 
-              {% if block.settings.main-G_C_Box_btn_Color != blank %}
-     style="background-color: {{ block.settings.main-G_C_Box_background_btn_Color }}; color:{{ block.settings.main-G_C_Box_btn_color }}"
-     {% endif %}
             >
               {{ block.settings['main-G_C_Box_Btn'] }}
             </div>
