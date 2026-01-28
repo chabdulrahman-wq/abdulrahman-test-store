@@ -1081,10 +1081,14 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  // Reference to header section
+  // ===============================
+  // Header reference
+  // ===============================
   const headerSection = document.querySelector('.Golime-header-new-section');
 
+  // ===============================
   // 🔍 Toggle search bar
+  // ===============================
   $('.mian-images-icon-search-box-header').on('click', function () {
     $('.golime-search-bar-wrapper').slideToggle(300);
     headerSection.classList.toggle('active-blur');
@@ -1101,7 +1105,9 @@
     }
   });
 
+  // ===============================
   // 🟤 Overlay functions
+  // ===============================
   function showOverlay() {
     $('.menu-overlay').fadeIn(200);
     $('body').css('overflow', 'hidden');
@@ -1112,29 +1118,48 @@
     $('body').css('overflow', 'auto');
   }
 
-  // 🔁 Toggle menu section and active style
+  // ===============================
+  // 🔴 ACTIVE MENU LOGIC
+  // ===============================
+  function setActiveMenu(trigger) {
+    $('.desktop-menu-list-header-golime li').removeClass('active');
+    $(trigger).closest('li').addClass('active');
+  }
+
+  function removeActiveMenu() {
+    $('.desktop-menu-list-header-golime li').removeClass('active');
+  }
+
+  // ===============================
+  // 🔁 Toggle menu section
+  // ===============================
   function toggleSection(trigger, sectionSelector) {
     const $section = $(sectionSelector);
     const isOpen = $section.is(':visible');
 
-    // Close all
+    // Close all sections
     $(
       '.main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
     ).slideUp(300);
+
     $('.fa-chevron-down').removeClass('rotate-icon');
 
     if (!isOpen) {
       $section.slideDown(300);
       $(trigger).find('.fa-chevron-down').addClass('rotate-icon');
       $('.Section-golime-new-header_black').addClass('active-style');
+      setActiveMenu(trigger);
       showOverlay();
     } else {
       $('.Section-golime-new-header_black').removeClass('active-style');
+      removeActiveMenu();
       hideOverlay();
     }
   }
 
-  // 📌 Menu button handlers
+  // ===============================
+  // 📌 Menu click handlers
+  // ===============================
   $('.desktop-menu-list-header-golime-li-a-hover').on('click', function (e) {
     e.preventDefault();
     toggleSection(this, '.main-golime-new-header-11-boxs-section');
@@ -1160,23 +1185,29 @@
     toggleSection(this, '.main-golime-header-banner-Commercial-Go-Lime-box-tab');
   });
 
-  // ❌ Click outside: close all and remove overlay
+  // ===============================
+  // ❌ Click outside → close all
+  // ===============================
   $(document).on('click', function (e) {
     const isInside = $(e.target).closest(
-      '.desktop-menu-list-header-golime-li-a-hover, mian-images-icon-search-box-header, .desktop-menu-list-header-golime-li-a, .desktop-menu-list-header-golime-li-about, .desktop-menu-list-header-golime-li-Retail, .desktop-menu-list-header-golime-li-Commercial, .main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+      '.desktop-menu-list-header-golime-li-a-hover, .mian-images-icon-search-box-header, .desktop-menu-list-header-golime-li-a, .desktop-menu-list-header-golime-li-about, .desktop-menu-list-header-golime-li-Retail, .desktop-menu-list-header-golime-li-Commercial, .main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
     ).length;
 
     if (!isInside) {
       $(
-        '.main-golime-new-header-11-boxs-section, golime-search-bar-wrapper, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+        '.main-golime-new-header-11-boxs-section, .golime-search-bar-wrapper, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
       ).slideUp(300);
+
       $('.fa-chevron-down').removeClass('rotate-icon');
       $('.Section-golime-new-header_black').removeClass('active-style');
+      removeActiveMenu();
       hideOverlay();
     }
   });
 
+  // ===============================
   // ❓ FAQ toggle
+  // ===============================
   $('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex').on('click', function () {
     const $faqBox = $(this).closest('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-1');
     const $answer = $faqBox.find('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none');
@@ -1189,27 +1220,34 @@
     $icon.toggleClass('rotate-cross');
   });
 
-  // (Baaki aapka header ka pura JS same as before...)
-  // 🔎 Search Tags button → Shopify search results open
+  // ===============================
+  // 🔎 Search tag click
+  // ===============================
   $(document).on('click', '.search-tags-button', function () {
-    const query = $(this).text().trim(); // Button text
+    const query = $(this).text().trim();
     if (query) {
       window.location.href = `/search?q=${encodeURIComponent(query)}`;
     }
   });
+
+  // ===============================
+  // 📱 Mobile menu toggle
+  // ===============================
   $('.main-bar-number-golime-header').on('click', function () {
     $('.navs-links-header-ul-golime-section-bot').slideToggle(300);
-
-    // Toggle icons
     $('.menu-toggle-icon').toggle();
     $('.menu-close-icon').toggle();
   });
+
+  // ===============================
+  // ⬆️⬇️ Header scroll behavior
+  // ===============================
   let lastScrollTop = 0;
   const header = document.querySelector('.Golime-header-new-section');
   const topBanner = document.querySelector('.header-main-top-banner-text-golime-new-top-banner');
 
   window.addEventListener('load', function () {
-    header.classList.add('show', 'at-top'); // reload par top:50px
+    header.classList.add('show', 'at-top');
     topBanner.classList.add('show');
   });
 
@@ -1217,27 +1255,25 @@
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop === 0) {
-      // 🔝 page bilkul top par
       header.classList.remove('hide');
       header.classList.add('show', 'at-top');
-
       topBanner.classList.add('show');
     } else if (scrollTop > lastScrollTop) {
-      // 👇 scrolling down
       header.classList.add('hide');
       header.classList.remove('show', 'at-top');
-
       topBanner.classList.add('show');
     } else {
-      // 👆 scrolling up
       header.classList.remove('hide', 'at-top');
       header.classList.add('show');
-
       topBanner.classList.remove('show');
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
+
+  // ===============================
+  // 🎠 Owl carousel
+  // ===============================
   $(document).ready(function () {
     $('.main-faq-and-images-slider').owlCarousel({
       items: 1,
@@ -1246,11 +1282,11 @@
       autoplayTimeout: 3000,
       smartSpeed: 700,
       dots: true,
-      nav: false,
-      //   navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+      nav: false
     });
   });
 </script>
+
 
 {% schema %}
 {
