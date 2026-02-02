@@ -61,6 +61,14 @@ iframe.G_Tb_iframe-map {
     object-fit: cover;
     border-radius: 16px;
 }
+
+.G_Tb_Map_box_content {
+  display: none;
+}
+
+.G_Tb_Map_box_content.active {
+  display: block;
+}
 </style>
 <section class="G_Tb_section">
   <div class="G_Tb_contienr">
@@ -92,6 +100,33 @@ iframe.G_Tb_iframe-map {
     </div>
   </div>
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".G_Tb_Btn_title");
+  const maps = document.querySelectorAll(".G_Tb_Map_box_content");
+
+  if (!tabs.length || !maps.length) return;
+
+  // ---- default active (first tab) ----
+  tabs[0].classList.add("active");
+  maps[0].classList.add("active");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      // remove active from all
+      tabs.forEach(t => t.classList.remove("active"));
+      maps.forEach(m => m.classList.remove("active"));
+
+      // add active to clicked
+      tab.classList.add("active");
+      if (maps[index]) {
+        maps[index].classList.add("active");
+      }
+    });
+  });
+});
+</script>
+
 {% schema %}
 {
   "name": "Golime Map Tabing",
