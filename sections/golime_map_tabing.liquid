@@ -31,7 +31,9 @@
               </div>
           {% endcase %}
         {% endfor %}
-        <div class="G_Tb_Map_box">
+        
+      </div>
+      <div class="G_Tb_Map_box">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'MapBox' %}
@@ -43,7 +45,6 @@
             {% endcase %}
           {% endfor %}
         </div>
-      </div>
     </div>
   </div>
 </section>
