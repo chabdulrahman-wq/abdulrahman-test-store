@@ -1,6 +1,70 @@
+<section class="G_Tb_section">
+  <div class="G_Tb_contienr">
+    <h2 class="G_Tb_Title">{{ section.settings['main-G_Tb_Title'] }}</h2>
+    <div class="G_Tb_content_box">
+      <div class="G_Tb_box_flex">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'TabingBox' %}
+              <div class="G_Tb_Btn">
+                <span class="G_Tb_Btn_title">{{ section.settings['main-G_Tb_Btn_title'] }}</span>
+              </div>
+          {% endcase %}
+        {% endfor %}
+        <div class="G_Tb_Map_box">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'MapBox' %}
+                <div class="G_Tb_Map_box_content">
+                  <div class="G_Tb_Map_Link_box">
+                    {{ block.settings.mian-G_Tb_Map_Link_box }}
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% schema %}
 {
-  "name": "Section name",
-  "settings": []
+  "name": "Golime Map Tabing",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-G_Tb_Title",
+    "label": "Main Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "TabingBox",
+    "name": "Tabing Box",
+    "settings": [
+        {
+        "type": "text",
+        "id": "main-G_Tb_Btn_title",
+        "label": "Tabing Btn Title"
+        },
+    ]
+    },
+    {
+    "type": "MapBox",
+    "name": "Map Box",
+    "settings": [
+        {
+        "type": "text",
+        "id": "mian-G_Tb_Map_Link_box",
+        "label": "Map Link Box"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime Map Tabing"
+    }
+  ]
 }
 {% endschema %}
