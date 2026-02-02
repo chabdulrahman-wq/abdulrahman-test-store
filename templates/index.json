@@ -557,6 +557,80 @@
         "main-G_C_top_Para": "<p>Whether it's a quick repair, an installation, or finding the perfect solution for your home, we're here to make it simple. No stress, no upselling, just honest help from a team that's as committed to your comfort as you are.</p>"
       }
     },
+    "golime_map_tabing_GMjbCT": {
+      "type": "golime_map_tabing",
+      "blocks": {
+        "tabing_box_4FBLzT": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_YB7URY": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_DFfaEe": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_QtRH9R": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_KCgQnn": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_68AcBe": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_cCWaq4": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_4GqAwW": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        },
+        "tabing_box_pQF3n8": {
+          "type": "TabingBox",
+          "settings": {
+            "main-G_Tb_Btn_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "tabing_box_4FBLzT",
+        "tabing_box_YB7URY",
+        "tabing_box_DFfaEe",
+        "tabing_box_QtRH9R",
+        "tabing_box_KCgQnn",
+        "tabing_box_68AcBe",
+        "tabing_box_cCWaq4",
+        "tabing_box_4GqAwW",
+        "tabing_box_pQF3n8"
+      ],
+      "name": "Golime Map Tabing",
+      "settings": {
+        "main-G_Tb_Title": "Home Depot Locations"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -1030,6 +1104,7 @@
     "review_slider_mrJcqq",
     "golime_industries_serve_section_yp6dVz",
     "golime_contact_us_section_dRVXBf",
+    "golime_map_tabing_GMjbCT",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "rich_text_Uaa44p",
