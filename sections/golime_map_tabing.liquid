@@ -136,14 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (tabs.length === 0 || maps.length === 0) return;
 
-  // ===== FORCE FIRST ACTIVE =====
   tabs.forEach(t => t.classList.remove("active"));
   maps.forEach(m => m.classList.remove("active"));
 
   tabs[0].classList.add("active");
   maps[0].classList.add("active");
 
-  // ===== CLICK LOGIC =====
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", function () {
       tabs.forEach(t => t.classList.remove("active"));
