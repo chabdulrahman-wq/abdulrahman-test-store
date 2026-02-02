@@ -613,6 +613,60 @@
           "settings": {
             "main-G_Tb_Btn_title": "Brantford"
           }
+        },
+        "map_box_BX4eDt": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908.793633476211!2d-79.81664342384741!3d43.19284077112759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c99ef4675c9eb%3A0x2af9029046dd5db2!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759242582710!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_JVfjXg": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.0086748962112!2d-79.9472971238455!3d43.23027777112521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c851f3c4bac7f%3A0xae13628eedf348bc!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759242798223!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_K7Ucqi": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.126589819723!2d-80.28581062434792!3d43.562245258309545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b90797d4b91eb%3A0x5c4417723fe17939!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759242874517!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_FV6BEm": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.3972242538143!2d-80.7336439234912!3d43.11718098693336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c1f51b60b68c5%3A0xbfed83f14eb89413!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759242953992!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_L8JYxW": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.2231077432098!2d-80.51896682347906!3d43.41416506785781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf5bd3402a049%3A0x4d18062c498fc4a!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759242994831!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_GBNCMJ": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.5346121804473!2d-80.3906492234794!3d43.407655768277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b8a4065437897%3A0x51e2dd3d5580e33f!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759243132723!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_eP96tf": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.581320503213!2d-80.32887772347938!3d43.4066796683397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b89b22418712b%3A0x3dcbfaa638761a5!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759243180948!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_cR3A9t": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.968227443344!2d-80.53608322347546!3d43.502998362132075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf3dad6ab36af%3A0xa4c037df922033df!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759243218630!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
+        },
+        "map_box_tzXV4b": {
+          "type": "MapBox",
+          "settings": {
+            "mian-G_Tb_Map_Link_box": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.1265468444212!2d-80.24045652348924!3d43.1648677838772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c65b64a01e8f5%3A0x205411a2b56b59f4!2sThe%20Home%20Depot!5e0!3m2!1sen!2sca!4v1759243249821!5m2!1sen!2sca\" class=\"iframe-map-pointer_mn\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+          }
         }
       },
       "block_order": [
@@ -624,7 +678,16 @@
         "tabing_box_68AcBe",
         "tabing_box_cCWaq4",
         "tabing_box_4GqAwW",
-        "tabing_box_pQF3n8"
+        "tabing_box_pQF3n8",
+        "map_box_BX4eDt",
+        "map_box_JVfjXg",
+        "map_box_K7Ucqi",
+        "map_box_FV6BEm",
+        "map_box_L8JYxW",
+        "map_box_GBNCMJ",
+        "map_box_eP96tf",
+        "map_box_cR3A9t",
+        "map_box_tzXV4b"
       ],
       "name": "Golime Map Tabing",
       "settings": {
