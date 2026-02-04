@@ -1081,164 +1081,170 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  // Reference to header section
-  const headerSection = document.querySelector('.Golime-header-new-section');
-
-  // 🔍 Toggle search bar
-  $('.mian-images-icon-search-box-header').on('click', function () {
-    $('.golime-search-bar-wrapper').slideToggle(300);
-    headerSection.classList.toggle('active-blur');
-  });
-
-  // ❌ Close search bar if clicked outside
-  $(document).on('click', function (e) {
-    const isInsideSearch = $(e.target).closest(
-      '.golime-search-bar-wrapper, .mian-images-icon-search-box-header'
-    ).length;
-    if (!isInsideSearch) {
-      $('.golime-search-bar-wrapper').slideUp(300);
-      headerSection.classList.remove('active-blur');
-    }
-  });
-
-  // 🟤 Overlay functions
-  function showOverlay() {
-    $('.menu-overlay').fadeIn(200);
-    $('body').css('overflow', 'hidden');
-  }
-
-  function hideOverlay() {
-    $('.menu-overlay').fadeOut(200);
-    $('body').css('overflow', 'auto');
-  }
-
-  // 🔁 Toggle menu section and active style
-  function toggleSection(trigger, sectionSelector) {
-    const $section = $(sectionSelector);
-    const isOpen = $section.is(':visible');
-
-    // Close all
-    $(
-      '.main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
-    ).slideUp(300);
-    $('.fa-chevron-down').removeClass('rotate-icon');
-
-    if (!isOpen) {
-      $section.slideDown(300);
-      $(trigger).find('.fa-chevron-down').addClass('rotate-icon');
-      $('.Section-golime-new-header_black').addClass('active-style');
-      showOverlay();
-    } else {
-      $('.Section-golime-new-header_black').removeClass('active-style');
-      hideOverlay();
-    }
-  }
-
-  // 📌 Menu button handlers
-  $('.desktop-menu-list-header-golime-li-a-hover').on('click', function (e) {
-    e.preventDefault();
-    toggleSection(this, '.main-golime-new-header-11-boxs-section');
-  });
-
-  $('.desktop-menu-list-header-golime-li-a').on('click', function (e) {
-    e.preventDefault();
-    toggleSection(this, '.main-golime-header-banner-info-faqs-box-tab');
-  });
-
-  $('.desktop-menu-list-header-golime-li-about').on('click', function (e) {
-    e.preventDefault();
-    toggleSection(this, '.main-golime-header-banner-About-Go-Lime-box-tab');
-  });
-
-  $('.desktop-menu-list-header-golime-li-Retail').on('click', function (e) {
-    e.preventDefault();
-    toggleSection(this, '.main-golime-header-banner-Retail-Go-Lime-box-tab');
-  });
-
-  $('.desktop-menu-list-header-golime-li-Commercial').on('click', function (e) {
-    e.preventDefault();
-    toggleSection(this, '.main-golime-header-banner-Commercial-Go-Lime-box-tab');
-  });
-
-  // ❌ Click outside: close all and remove overlay
-  $(document).on('click', function (e) {
-    const isInside = $(e.target).closest(
-      '.desktop-menu-list-header-golime-li-a-hover, mian-images-icon-search-box-header, .desktop-menu-list-header-golime-li-a, .desktop-menu-list-header-golime-li-about, .desktop-menu-list-header-golime-li-Retail, .desktop-menu-list-header-golime-li-Commercial, .main-golime-new-header-11-boxs-section, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
-    ).length;
-
-    if (!isInside) {
-      $(
-        '.main-golime-new-header-11-boxs-section, golime-search-bar-wrapper, .main-golime-header-banner-info-faqs-box-tab, .main-golime-header-banner-About-Go-Lime-box-tab, .main-golime-header-banner-Retail-Go-Lime-box-tab, .main-golime-header-banner-Commercial-Go-Lime-box-tab'
-      ).slideUp(300);
-      $('.fa-chevron-down').removeClass('rotate-icon');
-      $('.Section-golime-new-header_black').removeClass('active-style');
-      hideOverlay();
-    }
-  });
-
-  // ❓ FAQ toggle
-  $('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex').on('click', function () {
-    const $faqBox = $(this).closest('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-1');
-    const $answer = $faqBox.find('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none');
-    const $icon = $faqBox.find('.faq-toggle-icon');
-
-    $('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none').not($answer).slideUp(300);
-    $('.faq-toggle-icon').not($icon).removeClass('rotate-cross');
-
-    $answer.slideToggle(300);
-    $icon.toggleClass('rotate-cross');
-  });
-
-  // (Baaki aapka header ka pura JS same as before...)
-  // 🔎 Search Tags button → Shopify search results open
-  $(document).on('click', '.search-tags-button', function () {
-    const query = $(this).text().trim(); // Button text
-    if (query) {
-      window.location.href = `/search?q=${encodeURIComponent(query)}`;
-    }
-  });
-  $('.main-bar-number-golime-header').on('click', function () {
-    $('.navs-links-header-ul-golime-section-bot').slideToggle(300);
-
-    // Toggle icons
-    $('.menu-toggle-icon').toggle();
-    $('.menu-close-icon').toggle();
-  });
-  let lastScrollTop = 0;
-  const header = document.querySelector('.Golime-header-new-section');
-  const topBanner = document.querySelector('.header-main-top-banner-text-golime-new-top-banner');
-
-  window.addEventListener('load', function () {
-    header.classList.add('show', 'at-top'); // reload par top:50px
-    topBanner.classList.add('show');
-  });
-
-  window.addEventListener('scroll', function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop === 0) {
-      // 🔝 page bilkul top par
-      header.classList.remove('hide');
-      header.classList.add('show', 'at-top');
-
-      topBanner.classList.add('show');
-    } else if (scrollTop > lastScrollTop) {
-      // 👇 scrolling down
-      header.classList.add('hide');
-      header.classList.remove('show', 'at-top');
-
-      topBanner.classList.add('show');
-    } else {
-      // 👆 scrolling up
-      header.classList.remove('hide', 'at-top');
-      header.classList.add('show');
-
-      topBanner.classList.remove('show');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
   $(document).ready(function () {
+    const header = document.querySelector('.Golime-header-new-section');
+    const topBanner = document.querySelector('.header-main-top-banner-text-golime-new-top-banner');
+    let lastScrollTop = 0;
+
+    /* 🔍 Search Toggle */
+    $('.mian-images-icon-search-box-header').on('click', function (e) {
+      e.stopPropagation();
+      $('.golime-search-bar-wrapper').slideToggle(300);
+      header.classList.toggle('active-blur');
+    });
+
+    /* 🟤 Overlay */
+    function showOverlay() {
+      $('.menu-overlay').fadeIn(200);
+      $('body').css('overflow', 'hidden');
+    }
+
+    function hideOverlay() {
+      $('.menu-overlay').fadeOut(200);
+      $('body').css('overflow', 'auto');
+    }
+
+    /* 🔁 Menu Toggle Function */
+    function toggleSection(trigger, section) {
+      const $section = $(section);
+      const isOpen = $section.is(':visible');
+
+      $('.main-golime-new-header-11-boxs-section,\
+        .main-golime-header-banner-info-faqs-box-tab,\
+        .main-golime-header-banner-About-Go-Lime-box-tab,\
+        .main-golime-header-banner-Retail-Go-Lime-box-tab,\
+        .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+      ).slideUp(300);
+
+      $('.fa-chevron-down').removeClass('rotate-icon');
+
+      if (!isOpen) {
+        $section.slideDown(300);
+        $(trigger).find('.fa-chevron-down').addClass('rotate-icon');
+        $('.Section-golime-new-header_black').addClass('active-style');
+        showOverlay();
+      } else {
+        $('.Section-golime-new-header_black').removeClass('active-style');
+        hideOverlay();
+      }
+    }
+
+    /* 📌 Menu Clicks */
+    $('.desktop-menu-list-header-golime-li-a-hover').on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSection(this, '.main-golime-new-header-11-boxs-section');
+    });
+
+    $('.desktop-menu-list-header-golime-li-a').on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSection(this, '.main-golime-header-banner-info-faqs-box-tab');
+    });
+
+    $('.desktop-menu-list-header-golime-li-about').on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSection(this, '.main-golime-header-banner-About-Go-Lime-box-tab');
+    });
+
+    $('.desktop-menu-list-header-golime-li-Retail').on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSection(this, '.main-golime-header-banner-Retail-Go-Lime-box-tab');
+    });
+
+    $('.desktop-menu-list-header-golime-li-Commercial').on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSection(this, '.main-golime-header-banner-Commercial-Go-Lime-box-tab');
+    });
+
+    /* ❌ Outside Click Close */
+    $(document).on('click', function (e) {
+      if (
+        !$(e.target).closest(
+          '.golime-search-bar-wrapper,\
+           .mian-images-icon-search-box-header,\
+           .desktop-menu-list-header-golime-li-a-hover,\
+           .desktop-menu-list-header-golime-li-a,\
+           .desktop-menu-list-header-golime-li-about,\
+           .desktop-menu-list-header-golime-li-Retail,\
+           .desktop-menu-list-header-golime-li-Commercial,\
+           .main-golime-new-header-11-boxs-section,\
+           .main-golime-header-banner-info-faqs-box-tab,\
+           .main-golime-header-banner-About-Go-Lime-box-tab,\
+           .main-golime-header-banner-Retail-Go-Lime-box-tab,\
+           .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+        ).length
+      ) {
+        $('.golime-search-bar-wrapper').slideUp(300);
+        $('.main-golime-new-header-11-boxs-section,\
+           .main-golime-header-banner-info-faqs-box-tab,\
+           .main-golime-header-banner-About-Go-Lime-box-tab,\
+           .main-golime-header-banner-Retail-Go-Lime-box-tab,\
+           .main-golime-header-banner-Commercial-Go-Lime-box-tab'
+        ).slideUp(300);
+
+        $('.fa-chevron-down').removeClass('rotate-icon');
+        $('.Section-golime-new-header_black').removeClass('active-style');
+        header.classList.remove('active-blur');
+        hideOverlay();
+      }
+    });
+
+    /* ❓ FAQ Toggle */
+    $('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-text-flex').on('click', function () {
+      const box = $(this).closest('.faq-nav-main-flex-right-bot-div-left-faqs-main-box-1');
+
+      $('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none')
+        .not(box.find('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none'))
+        .slideUp(300);
+
+      $('.faq-toggle-icon').not(box.find('.faq-toggle-icon')).removeClass('rotate-cross');
+
+      box.find('.faqs-main-box-nav-flex-right-col-bot-box-data-para-none').slideToggle(300);
+      box.find('.faq-toggle-icon').toggleClass('rotate-cross');
+    });
+
+    /* 🔎 Search Tag Redirect */
+    $(document).on('click', '.search-tags-button', function () {
+      const query = $(this).text().trim();
+      if (query) window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    });
+
+    /* 📱 Mobile Menu */
+    $('.main-bar-number-golime-header').on('click', function () {
+      $('.navs-links-header-ul-golime-section-bot').slideToggle(300);
+      $('.menu-toggle-icon, .menu-close-icon').toggle();
+    });
+
+    /* ⬆️⬇️ Scroll Header */
+    window.addEventListener('load', () => {
+      header.classList.add('show', 'at-top');
+      topBanner.classList.add('show');
+    });
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop === 0) {
+        header.classList.add('show', 'at-top');
+        header.classList.remove('hide');
+        topBanner.classList.add('show');
+      } else if (scrollTop > lastScrollTop) {
+        header.classList.add('hide');
+        header.classList.remove('show', 'at-top');
+        topBanner.classList.add('show');
+      } else {
+        header.classList.add('show');
+        header.classList.remove('hide', 'at-top');
+        topBanner.classList.remove('show');
+      }
+      lastScrollTop = scrollTop;
+    });
+
+    /* 🖼️ Owl Slider */
     $('.main-faq-and-images-slider').owlCarousel({
       items: 1,
       loop: true,
@@ -1247,10 +1253,10 @@
       smartSpeed: 700,
       dots: true,
       nav: false,
-      //   navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
     });
   });
 </script>
+
 
 {% schema %}
 {
