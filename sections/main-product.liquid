@@ -738,6 +738,12 @@
       <div class="sticky-left-title-price">
         <span class="sticky-title">{{ product.title }}</span>
         <span class="sticky-price" id="StickyProductPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
+        {%- if product.metafields.custom.material !=blank -%}
+                <div class="product__Material"> 
+                  <p> <strong>Material:</strong> {{ product.metafields.custom.material }} </p>
+                </div>
+              {%- endif -%}
+
       </div>
     </div>
 
