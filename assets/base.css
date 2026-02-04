@@ -3277,10 +3277,10 @@ details-disclosure > details {
     }
   }
 
-  .scroll-trigger.animate--fade-in,
+  /* .scroll-trigger.animate--fade-in,
   .scroll-trigger.animate--slide-in {
     opacity: 0.01;
-  }
+  } */
 
   .scroll-trigger.animate--slide-in {
     transform: translateY(2rem);
