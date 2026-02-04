@@ -191,6 +191,10 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+              {% when 'Material' %}
+                <div class="product__Material"> 
+                  <p> <strong>Material:</strong> {{ product.metafields.custom.material }} </p>
+                </div>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
