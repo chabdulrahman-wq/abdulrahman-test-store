@@ -1,0 +1,63 @@
+
+<section class="G_B_Section">
+    <div class="G_B_Container">
+        <div class="G_B_Content">
+            <h2 class="G_B_Title">{{ section.settings.main-G_B_Title }}</h2>
+        </div>
+        <div class="G_B_Flex">
+            {% for block in section.blocks %}
+            <div class="G_B_Box">
+                <div class="G_B_Box_Images">
+                    {% if block.settings.main-G_B_Box_Img !=blank%}
+                    <img src="{{ block.settings.main-G_B_Box_Img |img_url:'master' }}" class="G_B_Box_Img" alt="">
+                    {% endif %}
+                </div>
+                <div class="G_B_Box_content">
+                        <h2 class="G_B_Box_Title">{{ block.settings.main-G_B_Box_Title }}</h2>
+                        <p>{{ block.settings.main-G_B_Box_content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "Golime 3 Boxs Section",
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-G_B_Title",
+    "label": "Title"
+    },
+  ],
+  "blocks": [
+    {
+    "type": "Boxs",
+    "name": "Boxs",
+    "settings": [
+        {
+    "type": "image_picker",
+    "id": "main-G_B_Box_Img",
+    "label": "Images"
+    },
+    {
+    "type": "text",
+    "id": "main-G_B_Box_Title",
+    "label": "Box Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-G_B_Box_content",
+    "label": "Box Content"
+    }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime 3 Boxs Section"
+    }
+  ]
+}
+{% endschema %}
