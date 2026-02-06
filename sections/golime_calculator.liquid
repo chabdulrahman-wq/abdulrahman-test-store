@@ -532,75 +532,56 @@
   </div>
 </section>
 <script>
-  const otherInput = document.querySelector('.golime_calculator_left_box_price_input');
-  const planSelect = document.querySelector('.golime_calculator_left_box-select');
-  const rangeSlider = document.querySelector('.golime_calculator_left_box_bottom_range-slider');
-  const minMonthsText = document.querySelector('.golime_calculator_left_box_bottom_miMonths');
-  const maxYearsText = document.querySelector('.golime_calculator_left_box_bottom_maxMonths');
-  const totalSavingsEl = document.querySelector('.golime_calculator_Right_box_total_Savings_title');
-  const savingPercentEl = document.querySelector('.golime_calculator_Right_box_progress-content');
-  const goFlexPrice1 = document.querySelector('.golime_calculator_Right_box_bottom_price1_span');
-  const goFlexPrice2 = document.querySelector('.golime_calculator_Right_box_bottom_price_span');
-  const progressCircle = document.getElementById('progressCircle');
+  // Animated Placeholder Text
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.querySelector('.golime_calculator_left_box_price_input');
+    if (!input) return;
 
-  let years = 0;
+    // Words for sliding placeholder
+    const words = [
+      "Enter other provider price",
+      "Compare with GoFlex",
+      "Save more every month",
+      "Check your total savings"
+    ];
 
-  function setYears(y) {
-    years = y;
-    rangeSlider.value = y * 12;
-    updateYearsFromRange();
-  }
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-  function updateYearsFromRange() {
-    const months = parseInt(rangeSlider.value);
-    years = months / 12;
+    function animatePlaceholder() {
+      const currentWord = words[wordIndex];
 
-    minMonthsText.textContent = `${months} mos`;
-    maxYearsText.textContent = `${years.toFixed(1)} yrs`;
+      if (!isDeleting) {
+        charIndex++;
+        input.setAttribute("placeholder", currentWord.substring(0, charIndex));
 
-    calculateSavings();
-  }
+        if (charIndex === currentWord.length) {
+          isDeleting = true;
+          setTimeout(animatePlaceholder, 1200); // pause at full word
+          return;
+        }
+      } else {
+        charIndex--;
+        input.setAttribute("placeholder", currentWord.substring(0, charIndex));
 
-  function calculateSavings() {
-    const otherPrice = parseFloat(otherInput.value) || 0;
-    const goFlexPrice = parseFloat(planSelect.value) || 0;
-    const months = parseInt(rangeSlider.value);
+        if (charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+      }
 
-    if (otherPrice <= 0 || goFlexPrice <= 0 || months === 0) {
-      totalSavingsEl.textContent = '$0.00';
-      savingPercentEl.textContent = '0% Less!';
-      goFlexPrice1.textContent = '$0.00';
-      goFlexPrice2.textContent = '$0.00';
-      setProgress(0);
-      return;
+      setTimeout(animatePlaceholder, isDeleting ? 60 : 120);
     }
 
-    const totalOther = otherPrice * months;
-    const totalFlex = goFlexPrice * months;
-    const savings = totalOther - totalFlex;
-    const percent = ((savings / totalOther) * 100).toFixed(1);
+    animatePlaceholder();
 
-    totalSavingsEl.textContent = `$${savings.toFixed(2)}`;
-    savingPercentEl.textContent = `${percent}% Less!`;
-    goFlexPrice1.textContent = `$${totalFlex.toFixed(2)}`;
-    goFlexPrice2.textContent = `$${totalOther.toFixed(2)}`;
-
-    setProgress(percent);
-  }
-
-  function setProgress(percent) {
-    const circleLength = 376.991; 
-    const progress = Math.max(0, Math.min(100, percent)); 
-    const dashArray = (progress / 100) * circleLength;
-    progressCircle.style.strokeDasharray = `${dashArray}, ${circleLength}`;
-  }
-
-  otherInput.addEventListener('input', calculateSavings);
-  planSelect.addEventListener('change', calculateSavings);
-  rangeSlider.addEventListener('input', updateYearsFromRange);
-
-  updateYearsFromRange();
+    // Stop animation on focus
+    input.addEventListener('focus', () => input.setAttribute("placeholder", ""));
+    input.addEventListener('blur', () => animatePlaceholder());
+  });
 </script>
+
 
 {% schema %}
 {
