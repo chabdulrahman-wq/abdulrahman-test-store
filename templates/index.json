@@ -271,6 +271,44 @@
         "main-G_Tb_Title": "Home Depot Locations"
       }
     },
+    "3_boxs_golime_new_QMPCfP": {
+      "type": "3_boxs_golime_new",
+      "blocks": {
+        "boxs_A4trTa": {
+          "type": "Boxs",
+          "settings": {
+            "main-G_B_Box_Img": "shopify://shop_images/home_depot_hvac_ontario.webp",
+            "main-G_B_Box_Title": "Exclusive Offers",
+            "main-G_B_Box_content": "<p>Take advantage of promotions on select equipment.</p>"
+          }
+        },
+        "boxs_j77pLj": {
+          "type": "Boxs",
+          "settings": {
+            "main-G_B_Box_Img": "shopify://shop_images/go_lime_water_heaters_home_depot.png",
+            "main-G_B_Box_Title": "Licensed Installers",
+            "main-G_B_Box_content": "<p>All installations handled by Go Lime professionals.</p>"
+          }
+        },
+        "boxs_YEWrzF": {
+          "type": "Boxs",
+          "settings": {
+            "main-G_B_Box_Img": "shopify://shop_images/go_lime_home_depot_bb9c4efb-f6de-4ed2-a928-a351f206ec43.webp",
+            "main-G_B_Box_Title": "Flexible Options",
+            "main-G_B_Box_content": "<p>Rent or buy with transparent pricing and no long-term contracts.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "boxs_A4trTa",
+        "boxs_j77pLj",
+        "boxs_YEWrzF"
+      ],
+      "name": "Golime 3 Boxs Section",
+      "settings": {
+        "main-G_B_Title": "Why Homeowners Choose Go Lime at Home Depot"
+      }
+    },
     "golime_banner_pmWTAg": {
       "type": "Golime-banner",
       "disabled": true,
@@ -1160,6 +1198,7 @@
     "golime_new_banner_home_page_Pkq7RX",
     "christmas_holiday_banner_QmU3Yn",
     "golime_map_tabing_GMjbCT",
+    "3_boxs_golime_new_QMPCfP",
     "golime_banner_pmWTAg",
     "christmas_holiday_7bPdqm",
     "christmas_holiday_boxs_H77Mb3",
