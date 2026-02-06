@@ -64,7 +64,7 @@
   .golime_calculator_left_box_price_input_box:before{
       content: "$";
       position: absolute;
-      z-index: 0;
+      z-index: 4;
       top: 44%;
       left: 15px;
       transform: translateY(-50%);
@@ -75,7 +75,7 @@
   .golime_calculator_left_box_price_input_box:after{
      content: "$";
       position: absolute;
-      z-index: 0;
+      z-index: 4;
       top: 44%;
       right: 15px;
       transform: translateY(-50%);
@@ -532,6 +532,76 @@
   </div>
 </section>
 <script>
+  
+  const otherInput = document.querySelector('.golime_calculator_left_box_price_input');
+  const planSelect = document.querySelector('.golime_calculator_left_box-select');
+  const rangeSlider = document.querySelector('.golime_calculator_left_box_bottom_range-slider');
+  const minMonthsText = document.querySelector('.golime_calculator_left_box_bottom_miMonths');
+  const maxYearsText = document.querySelector('.golime_calculator_left_box_bottom_maxMonths');
+  const totalSavingsEl = document.querySelector('.golime_calculator_Right_box_total_Savings_title');
+  const savingPercentEl = document.querySelector('.golime_calculator_Right_box_progress-content');
+  const goFlexPrice1 = document.querySelector('.golime_calculator_Right_box_bottom_price1_span');
+  const goFlexPrice2 = document.querySelector('.golime_calculator_Right_box_bottom_price_span');
+  const progressCircle = document.getElementById('progressCircle');
+
+  let years = 0;
+
+  function setYears(y) {
+    years = y;
+    rangeSlider.value = y * 12;
+    updateYearsFromRange();
+  }
+
+  function updateYearsFromRange() {
+    const months = parseInt(rangeSlider.value);
+    years = months / 12;
+
+    minMonthsText.textContent = `${months} mos`;
+    maxYearsText.textContent = `${years.toFixed(1)} yrs`;
+
+    calculateSavings();
+  }
+
+  function calculateSavings() {
+    const otherPrice = parseFloat(otherInput.value) || 0;
+    const goFlexPrice = parseFloat(planSelect.value) || 0;
+    const months = parseInt(rangeSlider.value);
+
+    if (otherPrice <= 0 || goFlexPrice <= 0 || months === 0) {
+      totalSavingsEl.textContent = '$0.00';
+      savingPercentEl.textContent = '0% Less!';
+      goFlexPrice1.textContent = '$0.00';
+      goFlexPrice2.textContent = '$0.00';
+      setProgress(0);
+      return;
+    }
+
+    const totalOther = otherPrice * months;
+    const totalFlex = goFlexPrice * months;
+    const savings = totalOther - totalFlex;
+    const percent = ((savings / totalOther) * 100).toFixed(1);
+
+    totalSavingsEl.textContent = `$${savings.toFixed(2)}`;
+    savingPercentEl.textContent = `${percent}% Less!`;
+    goFlexPrice1.textContent = `$${totalFlex.toFixed(2)}`;
+    goFlexPrice2.textContent = `$${totalOther.toFixed(2)}`;
+
+    setProgress(percent);
+  }
+
+  function setProgress(percent) {
+    const circleLength = 376.991; 
+    const progress = Math.max(0, Math.min(100, percent)); 
+    const dashArray = (progress / 100) * circleLength;
+    progressCircle.style.strokeDasharray = `${dashArray}, ${circleLength}`;
+  }
+
+  otherInput.addEventListener('input', calculateSavings);
+  planSelect.addEventListener('change', calculateSavings);
+  rangeSlider.addEventListener('input', updateYearsFromRange);
+
+  updateYearsFromRange();
+  
   // Animated Placeholder Text
   document.addEventListener("DOMContentLoaded", function () {
     const input = document.querySelector('.golime_calculator_left_box_price_input');
@@ -548,7 +618,6 @@
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let timeoutId = null;
 
     function animatePlaceholder() {
       const currentWord = words[wordIndex];
