@@ -197,6 +197,10 @@
                   <p> <strong>Material:</strong> {{ product.metafields.custom.material }} </p>
                 </div>
               {%- endif -%}
+            {%- when 'infuencer' -%}
+              {% if product.infuencer.custom.infuencer !=blank %}
+                <div></div>
+              {% endif %}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
