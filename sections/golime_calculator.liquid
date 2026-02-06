@@ -575,7 +575,6 @@
       return;
     }
 
-    // Total cost for both
     const totalOther = otherPrice * months;
     const totalFlex = goFlexPrice * months;
     const savings = totalOther - totalFlex;
@@ -590,18 +589,16 @@
   }
 
   function setProgress(percent) {
-    const circleLength = 376.991; // full circle stroke length
-    const progress = Math.max(0, Math.min(100, percent)); // clamp 0–100
+    const circleLength = 376.991; 
+    const progress = Math.max(0, Math.min(100, percent)); 
     const dashArray = (progress / 100) * circleLength;
     progressCircle.style.strokeDasharray = `${dashArray}, ${circleLength}`;
   }
 
-  // Event listeners
   otherInput.addEventListener('input', calculateSavings);
   planSelect.addEventListener('change', calculateSavings);
   rangeSlider.addEventListener('input', updateYearsFromRange);
 
-  // Initialize
   updateYearsFromRange();
 </script>
 
