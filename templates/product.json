@@ -17,7 +17,7 @@
           "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text_style": "body"
           }
         },
         "title": {
@@ -43,7 +43,7 @@
           "type": "inventory",
           "settings": {
             "text_style": "body",
-            "inventory_threshold": 10,
+            "inventory_threshold": 5,
             "show_inventory_quantity": true
           }
         },
