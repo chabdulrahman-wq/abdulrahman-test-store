@@ -64,7 +64,7 @@
   .golime_calculator_left_box_price_input_box:before{
       content: "$";
       position: absolute;
-      z-index: 4;
+      z-index: 0;
       top: 44%;
       left: 15px;
       transform: translateY(-50%);
@@ -75,7 +75,7 @@
   .golime_calculator_left_box_price_input_box:after{
      content: "$";
       position: absolute;
-      z-index: 4;
+      z-index: 0;
       top: 44%;
       right: 15px;
       transform: translateY(-50%);
@@ -601,7 +601,7 @@
   rangeSlider.addEventListener('input', updateYearsFromRange);
 
   updateYearsFromRange();
-  
+
   // Animated Placeholder Text
   document.addEventListener("DOMContentLoaded", function () {
     const input = document.querySelector('.golime_calculator_left_box_price_input');
