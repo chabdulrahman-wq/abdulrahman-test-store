@@ -200,7 +200,15 @@
             {%- when 'infuencer' -%}
               {% if product.infuencer.custom.infuencer !=blank %}
                 <div class="Product_infuencer">
+                  {% if product.infuencer.custom.infuencer !=blank %}
                   <img src="{{ product.infuencer.custom.infuencer | img_url: 'master' }}">
+                  {% endif %}
+                <h2>{{ product.infuencer.custom.infuencer }}</h2>
+                {%- if product.infuencer.custom.infuencer != blank -%}
+                  <div class="product__description" {{ block.shopify_attributes }}>
+                    {{ product.infuencer.custom.infuencer }}
+                  </div>
+                {%- endif -%}
                 </div>
               {% endif %}
               {%- when 'description' -%}
