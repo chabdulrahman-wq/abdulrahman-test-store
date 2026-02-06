@@ -199,7 +199,9 @@
               {%- endif -%}
             {%- when 'infuencer' -%}
               {% if product.infuencer.custom.infuencer !=blank %}
-                <div></div>
+                <div class="Product_infuencer">
+                  <img src="{{ product.infuencer.custom.infuencer | img_url: 'master' }}">
+                </div>
               {% endif %}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
