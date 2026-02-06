@@ -18,7 +18,7 @@
 }
 
 .Golime-header-new-section.hide {
-  top: 100px;
+  top: 90px;
   transform: translateY(-40px);
   transition: all .3s 
 ease-in-out !important;
