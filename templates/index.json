@@ -1062,6 +1062,7 @@
     },
     "featured_collection_iM8mnf": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "man-t-shirt",
@@ -1256,7 +1257,6 @@
     "golime_banner_pmWTAg",
     "golime_new_banner_home_page_Pkq7RX",
     "christmas_holiday_banner_QmU3Yn",
-    "christmas_holiday_7bPdqm",
     "golime_map_tabing_GMjbCT",
     "3_boxs_golime_new_QMPCfP",
     "christmas_holiday_boxs_H77Mb3",
@@ -1275,6 +1275,7 @@
     "golime_section_img_4box_eDraqL",
     "golime_faq_MKtNjj",
     "featured_collection_iM8mnf",
+    "christmas_holiday_7bPdqm",
     "golime_slider_images_text_UtwcNB",
     "golime_calculator_7Upq6r",
     "golime_footer_top_section_NVQMhx"
