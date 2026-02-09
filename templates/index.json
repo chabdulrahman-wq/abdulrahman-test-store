@@ -45,7 +45,7 @@
         "main-G_N_S_mob_button-link": "#",
         "mian-G_N_S_mob_main_button": "Get Affordable Hot Water",
         "main-G_N_S_mob_button-btm-link": "#",
-        "main-G_N_S_mob_button-btm": "Upgrade to Tankless"
+        "mian-G_N_S_mob_main_button-btm": "Upgrade to Tankless"
       }
     },
     "golime_new_banner_home_page_Pkq7RX": {
@@ -306,7 +306,6 @@
         "map_box_cR3A9t",
         "map_box_tzXV4b"
       ],
-      "disabled": true,
       "name": "Golime Map Tabing",
       "settings": {
         "main-G_Tb_Title": "Home Depot Locations"
@@ -429,7 +428,6 @@
         "products_box_inhbxF",
         "products_box_WL9PDT"
       ],
-      "disabled": true,
       "name": "Christmas Holiday products",
       "settings": {
         "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!"
@@ -1216,9 +1214,9 @@
     "golime_banner_pmWTAg",
     "golime_new_banner_home_page_Pkq7RX",
     "christmas_holiday_banner_QmU3Yn",
+    "christmas_holiday_7bPdqm",
     "golime_map_tabing_GMjbCT",
     "3_boxs_golime_new_QMPCfP",
-    "christmas_holiday_7bPdqm",
     "christmas_holiday_boxs_H77Mb3",
     "custom_golime_form_qXReUq",
     "watches_diamond_video_images_EPhppD",
