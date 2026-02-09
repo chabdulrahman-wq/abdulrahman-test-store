@@ -257,47 +257,6 @@
         "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!"
       }
     },
-    "golime_new_products_Ap34LW": {
-      "type": "Golime_new_products",
-      "blocks": {
-        "products_Xw3LzL": {
-          "type": "Products",
-          "settings": {
-            "product_list": [
-              "bradford-white-50-gallon-power-vent-water-heater-1"
-            ],
-            "main-G_P_button_title": "Ask An Expert"
-          }
-        },
-        "products_PTaXCL": {
-          "type": "Products",
-          "settings": {
-            "product_list": [
-              "bradford-white-50-gallon-power-vent-water-heater-copy"
-            ],
-            "main-G_P_button_title": "Ask An Expert"
-          }
-        },
-        "products_jdaAkh": {
-          "type": "Products",
-          "settings": {
-            "product_list": [
-              "go-soft-whole-home-water-softener"
-            ],
-            "main-G_P_button_title": "Ask An Expert"
-          }
-        }
-      },
-      "block_order": [
-        "products_Xw3LzL",
-        "products_PTaXCL",
-        "products_jdaAkh"
-      ],
-      "name": "Golime New Products",
-      "settings": {
-        "mian-G_P_Title": "Our Best Sellers"
-      }
-    },
     "golime_map_tabing_GMjbCT": {
       "type": "golime_map_tabing",
       "blocks": {
@@ -430,6 +389,7 @@
         "map_box_cR3A9t",
         "map_box_tzXV4b"
       ],
+      "disabled": true,
       "name": "Golime Map Tabing",
       "settings": {
         "main-G_Tb_Title": "Home Depot Locations"
@@ -877,6 +837,47 @@
         "pause_icon": "shopify://shop_images/Vector_6258a726-103b-4ad4-bcc3-f083143867e0.webp"
       }
     },
+    "golime_new_products_Ap34LW": {
+      "type": "Golime_new_products",
+      "blocks": {
+        "products_Xw3LzL": {
+          "type": "Products",
+          "settings": {
+            "product_list": [
+              "bradford-white-50-gallon-power-vent-water-heater-1"
+            ],
+            "main-G_P_button_title": "Ask An Expert"
+          }
+        },
+        "products_PTaXCL": {
+          "type": "Products",
+          "settings": {
+            "product_list": [
+              "bradford-white-50-gallon-power-vent-water-heater-copy"
+            ],
+            "main-G_P_button_title": "Ask An Expert"
+          }
+        },
+        "products_jdaAkh": {
+          "type": "Products",
+          "settings": {
+            "product_list": [
+              "go-soft-whole-home-water-softener"
+            ],
+            "main-G_P_button_title": "Ask An Expert"
+          }
+        }
+      },
+      "block_order": [
+        "products_Xw3LzL",
+        "products_PTaXCL",
+        "products_jdaAkh"
+      ],
+      "name": "Golime New Products",
+      "settings": {
+        "mian-G_P_Title": "Our Best Sellers"
+      }
+    },
     "rich_text_Uaa44p": {
       "type": "rich-text",
       "blocks": {
@@ -1256,7 +1257,6 @@
     "golime_new_banner_home_page_Pkq7RX",
     "christmas_holiday_banner_QmU3Yn",
     "christmas_holiday_7bPdqm",
-    "golime_new_products_Ap34LW",
     "golime_map_tabing_GMjbCT",
     "3_boxs_golime_new_QMPCfP",
     "christmas_holiday_boxs_H77Mb3",
@@ -1267,6 +1267,7 @@
     "golime_contact_us_section_dRVXBf",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
+    "golime_new_products_Ap34LW",
     "rich_text_Uaa44p",
     "golime_all_section_xJ8GkE",
     "golime_images_text_new_YG69E7",
