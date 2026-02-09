@@ -191,6 +191,170 @@
         "main-christmas-holiday-timer-box-number-images-img": "shopify://shop_images/download_341ce436-98de-4b28-9d7c-dc06aed7618b.webp"
       }
     },
+    "watches_diamond_video_images_EPhppD": {
+      "type": "watches_diamond_video_images",
+      "disabled": true,
+      "name": "Diamond Watches Section",
+      "settings": {
+        "main_Diamond_watch_video_top_box_img": "shopify://shop_images/Vector.png",
+        "main-Diamond_watch_video_top_box_text": "Luxury Made Honest",
+        "main_Diamond_watch_video_top_box_img2": "shopify://shop_images/Vector.png",
+        "mian-Diamond_watch_video_top_title": "New York Precision.",
+        "main-Diamond_watch_video_flex_content_first_box_title": "EXPLORE OUR WORLD OF LUXURY",
+        "main-Diamond_watch_video_flex_content_first_box_description": "<p>At Sea Wave Diamonds, we bring over 30 years of expertise from New York’s renowned Diamond District. Our heritage is built on trust, precision, and unparalleled quality.</p>",
+        "main-Diamond_watch_video_flex_content_first_box_button-link": "/",
+        "main-Diamond_watch_video_flex_content_first_box_button": "Uncover Your Perfect Piece",
+        "main_Diamond_watch_video_flex_content_video-box": "shopify://shop_images/videoframe_4137.png",
+        "main-Diamond_watch_video_flex_content_img": "shopify://shop_images/1dff26869ddedd22d39963d10bdd2d9f57680cc4.webp"
+      }
+    },
+    "review_slider_mrJcqq": {
+      "type": "review_slider",
+      "blocks": {
+        "slider_item_Uh89yx": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_AimwWK": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_WzmJ3r": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_hxDzy7": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_GCQfHR": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_bULzz7": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_JFtamW": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        },
+        "slider_item_GGLTzJ": {
+          "type": "Slider_item",
+          "settings": {
+            "main-Review_sliders_content_Images_box_img": "shopify://shop_images/download_12aec466-9234-4112-9f08-52e88bce8e62.webp",
+            "main-Review_sliders_content_Text_Title": "Seamless from design to ‘yes’”",
+            "main-Review_sliders_content_desp": "<p>We brought a Pinterest board and a budget—left with a custom oval solitaire that looks twice the price. Clear timelines, GIA paperwork, and painless resizing.</p>",
+            "mian-Review_sliders_content_Text_review_img": "shopify://shop_images/download_2f2e6d70-3da0-4e2c-b575-7f5e3707925f.png",
+            "main-Review_sliders_content_logo_bottom_img": "shopify://shop_images/download_2d0c76f1-2897-48cf-916e-8d051e9a6ac8.webp",
+            "main-Review_sliders_content_logo_bottom_text_para": "<p>Brenda Langley</p>",
+            "main_Review_sliders_content_logo_bottom_sub_text": "Jewellery Enthusiasts"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_Uh89yx",
+        "slider_item_AimwWK",
+        "slider_item_WzmJ3r",
+        "slider_item_hxDzy7",
+        "slider_item_GCQfHR",
+        "slider_item_bULzz7",
+        "slider_item_JFtamW",
+        "slider_item_GGLTzJ"
+      ],
+      "disabled": true,
+      "name": "custom Review Slider",
+      "settings": {
+        "main-Review_slider_content_logo_images": "shopify://shop_images/Frame_1000019374.webp",
+        "main-Review_slider_content_heading": "What Our Customers are saying"
+      }
+    },
+    "golime_industries_serve_section_yp6dVz": {
+      "type": "golime_industries-serve-section",
+      "blocks": {
+        "boxs_t9rmgB": {
+          "type": "Boxs",
+          "settings": {
+            "mian-golime-industries-serve-images_img": "shopify://shop_images/Multi_Unit_Residential.webp",
+            "main-golime-industries-serve_text_box_title": "Multi Unit Residential",
+            "main-golime-industries-serve_text_box_para": "<p>We deliver customized heating, cooling, and energy solutions for multi-unit residential buildings, ensuring comfort, efficiency, and long-term reliability for residents and property managers alike.</p>"
+          }
+        },
+        "boxs_XRACwh": {
+          "type": "Boxs",
+          "settings": {
+            "mian-golime-industries-serve-images_img": "shopify://shop_images/Small_Commercial.webp",
+            "main-golime-industries-serve_text_box_title": "Small Commercial",
+            "main-golime-industries-serve_text_box_para": "<p>We provide specialized HVAC and energy solutions designed to meet the unique needs of small commercial spaces, helping businesses run smoothly and efficiently.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "boxs_t9rmgB",
+        "boxs_XRACwh"
+      ],
+      "disabled": true,
+      "name": "Golime Industries Serve",
+      "settings": {
+        "main-golime-industries-serve-title-text": "Industries We Serve"
+      }
+    },
     "watch_coll_images_section_VwVgGU": {
       "type": "watch_coll-images-section",
       "blocks": {
@@ -422,6 +586,9 @@
     "water_heater_slider_Djq4ar",
     "golime_slider_8_images_pVjVkc",
     "christmas_holiday_timer_xgT6dm",
+    "watches_diamond_video_images_EPhppD",
+    "review_slider_mrJcqq",
+    "golime_industries_serve_section_yp6dVz",
     "watch_coll_images_section_VwVgGU",
     "hover_images_aeeWEf",
     "golime_new_section_faqs_MjV4ND",
