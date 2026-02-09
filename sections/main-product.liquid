@@ -738,7 +738,9 @@
       <div class="sticky-left-title-price">
         <span class="sticky-title">{{ product.title }}</span>
         <span class="sticky-price" id="StickyProductPrice">{{ product.selected_or_first_available_variant.price | money }}</span>
-        
+        {% if product.compare_at_price > product.price %}
+                  <span class="G_P_Compare_price">{{ product.compare_at_price | money }}</span>
+                {% endif %}
 
       </div>
     </div>
