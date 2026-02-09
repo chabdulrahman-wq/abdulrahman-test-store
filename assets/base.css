@@ -3700,6 +3700,13 @@ details-disclosure > details {
     color: #000;
   }
 
+  .sticky_Compare_price {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #454545;
+    font-weight: 600;
+}
+
  .sticky-left-title-price {
     display: flex
 ;
