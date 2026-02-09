@@ -193,7 +193,6 @@
     },
     "watches_diamond_video_images_EPhppD": {
       "type": "watches_diamond_video_images",
-      "disabled": true,
       "name": "Diamond Watches Section",
       "settings": {
         "main_Diamond_watch_video_top_box_img": "shopify://shop_images/Vector.png",
@@ -318,7 +317,6 @@
         "slider_item_JFtamW",
         "slider_item_GGLTzJ"
       ],
-      "disabled": true,
       "name": "custom Review Slider",
       "settings": {
         "main-Review_slider_content_logo_images": "shopify://shop_images/Frame_1000019374.webp",
@@ -349,7 +347,6 @@
         "boxs_t9rmgB",
         "boxs_XRACwh"
       ],
-      "disabled": true,
       "name": "Golime Industries Serve",
       "settings": {
         "main-golime-industries-serve-title-text": "Industries We Serve"
@@ -400,7 +397,6 @@
         "g_c_box_tCRgGk",
         "g_c_box_x4KdPa"
       ],
-      "disabled": true,
       "name": "Golime Contact Us Section",
       "settings": {
         "main-G_C_top_img": "shopify://shop_images/Go_Lime_Support.avif",
@@ -473,6 +469,50 @@
       "settings": {
         "main-Watch_coll_content_View_ALL_title-link": "/",
         "main_Watch_coll_content_View_ALL_title": "View ALL"
+      }
+    },
+    "hover_images_aeeWEf": {
+      "type": "Hover_images",
+      "blocks": {
+        "images_box_c7ti8H": {
+          "type": "Images_Box",
+          "settings": {
+            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_197384a6-650f-4852-8213-5ae4113b5a53.webp",
+            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
+          }
+        },
+        "images_box_kKBKrP": {
+          "type": "Images_Box",
+          "settings": {
+            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_158f3555-0ed9-4b61-9be5-d6333258ba86.webp",
+            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
+          }
+        },
+        "images_box_7MnEyd": {
+          "type": "Images_Box",
+          "settings": {
+            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_ae66a5aa-5d27-40c7-a2a3-6ab304386605.webp",
+            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
+          }
+        },
+        "images_box_gpf44n": {
+          "type": "Images_Box",
+          "settings": {
+            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_197384a6-650f-4852-8213-5ae4113b5a53.webp",
+            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
+          }
+        }
+      },
+      "block_order": [
+        "images_box_c7ti8H",
+        "images_box_kKBKrP",
+        "images_box_7MnEyd",
+        "images_box_gpf44n"
+      ],
+      "name": "Hover Imaegs Boxs",
+      "settings": {
+        "main-Hover_images_text_title": "Meet Our Team",
+        "main-Hover_images_text_para": "<p>Three decades of craft, one family-style studio.</p>"
       }
     },
     "golime_new_section_faqs_MjV4ND": {
@@ -587,51 +627,7 @@
         "main_Golime_slider_home_pare_links": "",
         "Golime_slider_home_pare_links_para_text_left": "4.7 <span>★</span> out of 5 based on 5,000+ reviews"
       }
-    },
-    "hover_images_aeeWEf": {
-      "type": "Hover_images",
-      "blocks": {
-        "images_box_c7ti8H": {
-          "type": "Images_Box",
-          "settings": {
-            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_197384a6-650f-4852-8213-5ae4113b5a53.webp",
-            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
-          }
-        },
-        "images_box_kKBKrP": {
-          "type": "Images_Box",
-          "settings": {
-            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_158f3555-0ed9-4b61-9be5-d6333258ba86.webp",
-            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
-          }
-        },
-        "images_box_7MnEyd": {
-          "type": "Images_Box",
-          "settings": {
-            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_ae66a5aa-5d27-40c7-a2a3-6ab304386605.webp",
-            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
-          }
-        },
-        "images_box_gpf44n": {
-          "type": "Images_Box",
-          "settings": {
-            "main-Hover_images_text_images_box-img": "shopify://shop_images/download_197384a6-650f-4852-8213-5ae4113b5a53.webp",
-            "main_Hover_images_text_content_box_description": "<p>Sea Wave Diamonds is a family-owned jeweler with 30+ years in New York’s Diamond District, known for bridal, engagement, and custom pieces crafted with care. We pair GIA-grad</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p><p>Sea Wave Diamonds is a family-owned jeweler with 30</p>"
-          }
-        }
-      },
-      "block_order": [
-        "images_box_c7ti8H",
-        "images_box_kKBKrP",
-        "images_box_7MnEyd",
-        "images_box_gpf44n"
-      ],
-      "name": "Hover Imaegs Boxs",
-      "settings": {
-        "main-Hover_images_text_title": "Meet Our Team",
-        "main-Hover_images_text_para": "<p>Three decades of craft, one family-style studio.</p>"
-      }
-    },
+    }
   },
   "order": [
     "main",
