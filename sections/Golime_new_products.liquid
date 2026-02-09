@@ -111,6 +111,16 @@
 .G_P_Box:hover {
     background: #f9f7f2;
 }
+
+@media screen and (max-width: 767px){
+.G_P_Flex {
+    flex-direction: column;
+}
+
+.G_P_Box {
+    width: 100%;
+}
+}
 </style>
 
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
