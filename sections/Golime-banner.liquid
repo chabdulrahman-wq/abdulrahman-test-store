@@ -261,6 +261,13 @@
         </div>
       </div>
     </div>
+    <div class="G_N_S_banner_mobile">
+      <div class="G_N_S_banner_mob-Images">
+        {% if section.settings.main-G_N_S_banner_mob-Img !=blank%}
+        <img src="{{ section.settings.main-G_N_S_banner_mob-Img |img_url:'master' }}" alt="" class="G_N_S_banner_mob-Img">
+        {% endif %}
+      </div>
+    </div>
   </div>
 </section>
 {% schema %}
