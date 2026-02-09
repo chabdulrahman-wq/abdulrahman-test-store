@@ -3643,6 +3643,10 @@ details-disclosure > details {
     border-radius: 30px
 }
 
+.product-form__submit {
+    border-radius: 100px;
+}
+
 .sticky-add-to-cart {
     position: fixed;
     bottom: -120px; 
