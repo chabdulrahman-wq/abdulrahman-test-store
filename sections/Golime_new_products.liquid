@@ -35,7 +35,7 @@
               </div>
               <a class="G_P_button">
                 <span class="G_P_button_title">
-                    {{ section.settings.main-G_P_button_title }}
+                    {{ block.settings.main-G_P_button_title }}
                 </span>
                 <i class="fa-solid fa-chevron-right"></i>
               </a>
@@ -48,7 +48,36 @@
 </section>
 {% schema %}
 {
-  "name": "Section nmae",
-  "settings": []
+  "name": "Golime New Products",
+  "settings": [
+    {
+    "type": "text",
+    "id": "mian-G_P_Title",
+    "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "Products",
+    "name": "Products",
+    "settings": [
+        {
+        "type": "product_list",
+        "id": "product_list",
+        "label": "Select Products"
+        },
+        {
+        "type": "text",
+        "id": "main-G_P_button_title",
+        "label": "Button Title"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Golime New Products"
+    }
+  ]
 }
 {% endschema %}
