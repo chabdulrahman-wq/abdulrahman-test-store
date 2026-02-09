@@ -1,0 +1,54 @@
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<section class="G_P_Section">
+  <div class="G_P_Containe">
+    <div class="G_P_Content">
+      <h2 class="G_P_Title">{{ section.settings['mian-G_P_Title'] }}</h2>
+    </div>
+    <div class="G_P_Flex">
+      {% for block in section.blocks %}
+        {% assign products_product = block.settings.product_list %}
+        {% assign product_form_id = 'quick-add-' | append: section_id | append: product.id %}
+        {% if products_product != blank %}
+          {% for products in products_product %}
+            <div class="G_P_Box">
+              <a href="{{ products.url }}" class="G_P_Images">
+                <img src="{{ products.featured_image |img_url:'master' }}" alt="{{ products.title }}" class="G_P_Img">
+              </a>
+              <a href="{{ products.url }}" class="G_P_Box_content">
+                <h3 class="G_P_Box_Title">{{ products.title }}</h3>
+              </a>
+              <div class="G_P_price_Content">
+                <span class="G_P_price">{{ products.price | money }}</span>
+                {% if products.compare_at_price > products.price %}
+                  <span class="G_P_Compare_price">{{ products.compare_at_price | money }}</span>
+                {% endif %}
+              </div>
+              <div class="G_P_Buy_Button">
+                {%- render 'new-buy-buttons',
+                  block: block,
+                  product: products,
+                  product_form_id: product_form_id,
+                  section_id: section.id,
+                  show_pickup_availability: true
+                -%}
+              </div>
+              <a class="G_P_button">
+                <span class="G_P_button_title">
+                    {{ section.settings.main-G_P_button_title }}
+                </span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Section nmae",
+  "settings": []
+}
+{% endschema %}
