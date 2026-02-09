@@ -174,6 +174,130 @@
         "mian-Christmas_hoilday_banner_main_Slider_title_mobile": "Holiday Comfort,<br> Smarter Savings!✨"
       }
     },
+    "christmas_holiday_7bPdqm": {
+      "type": "christmas-holiday",
+      "blocks": {
+        "products_box_6d6kTM": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2.webp",
+            "main-christmas_products_box_stars_text": "235 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "bradford-white-pv50-water-heater"
+            ]
+          }
+        },
+        "products_box_pnaXDC": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_Logo": "shopify://shop_images/Badge_2_3.webp",
+            "main-christmas_products_box_stars_text": "86 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "navien-npe-180s2-tankless-water-heater"
+            ]
+          }
+        },
+        "products_box_YUrp7W": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "main-christmas_products_box_stars_text": "14 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "lennox-el297-45-000-btu-furnace"
+            ]
+          }
+        },
+        "products_box_jRChLM": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "main-christmas_products_box_stars_text": "24 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "kinghome-ku-2-3-ton-heat-pump"
+            ]
+          }
+        },
+        "products_box_inhbxF": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
+            "main-christmas_products_box_stars_text": "15 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "kinghome-kd-2-ton-heat-pump"
+            ]
+          }
+        },
+        "products_box_WL9PDT": {
+          "type": "products_Box",
+          "settings": {
+            "main-christmas_products_box_Logo": "shopify://shop_images/Badge_2_3.webp",
+            "main-christmas_products_box_stars_text": "15 reviews",
+            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
+            "prod_list": [
+              "whole-home-water-softener"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "products_box_6d6kTM",
+        "products_box_pnaXDC",
+        "products_box_YUrp7W",
+        "products_box_jRChLM",
+        "products_box_inhbxF",
+        "products_box_WL9PDT"
+      ],
+      "name": "Christmas Holiday products",
+      "settings": {
+        "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!"
+      }
+    },
+    "golime_new_products_Ap34LW": {
+      "type": "Golime_new_products",
+      "blocks": {
+        "products_Xw3LzL": {
+          "type": "Products",
+          "settings": {
+            "product_list": [
+              "bradford-white-50-gallon-power-vent-water-heater-1"
+            ],
+            "main-G_P_button_title": "Ask An Expert"
+          }
+        },
+        "products_PTaXCL": {
+          "type": "Products",
+          "settings": {
+            "product_list": [
+              "bradford-white-50-gallon-power-vent-water-heater-copy"
+            ],
+            "main-G_P_button_title": "Ask An Expert"
+          }
+        },
+        "products_jdaAkh": {
+          "type": "Products",
+          "settings": {
+            "product_list": [
+              "go-soft-whole-home-water-softener"
+            ],
+            "main-G_P_button_title": "Ask An Expert"
+          }
+        }
+      },
+      "block_order": [
+        "products_Xw3LzL",
+        "products_PTaXCL",
+        "products_jdaAkh"
+      ],
+      "name": "Golime New Products",
+      "settings": {
+        "mian-G_P_Title": "Our Best Sellers"
+      }
+    },
     "golime_map_tabing_GMjbCT": {
       "type": "golime_map_tabing",
       "blocks": {
@@ -348,89 +472,6 @@
       "name": "Golime 3 Boxs Section",
       "settings": {
         "main-G_B_Title": "Why Homeowners Choose Go Lime at Home Depot"
-      }
-    },
-    "christmas_holiday_7bPdqm": {
-      "type": "christmas-holiday",
-      "blocks": {
-        "products_box_6d6kTM": {
-          "type": "products_Box",
-          "settings": {
-            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2.webp",
-            "main-christmas_products_box_stars_text": "235 reviews",
-            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-            "prod_list": [
-              "bradford-white-pv50-water-heater"
-            ]
-          }
-        },
-        "products_box_pnaXDC": {
-          "type": "products_Box",
-          "settings": {
-            "main-christmas_products_box_Logo": "shopify://shop_images/Badge_2_3.webp",
-            "main-christmas_products_box_stars_text": "86 reviews",
-            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-            "prod_list": [
-              "navien-npe-180s2-tankless-water-heater"
-            ]
-          }
-        },
-        "products_box_YUrp7W": {
-          "type": "products_Box",
-          "settings": {
-            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
-            "main-christmas_products_box_stars_text": "14 reviews",
-            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-            "prod_list": [
-              "lennox-el297-45-000-btu-furnace"
-            ]
-          }
-        },
-        "products_box_jRChLM": {
-          "type": "products_Box",
-          "settings": {
-            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
-            "main-christmas_products_box_stars_text": "24 reviews",
-            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-            "prod_list": [
-              "kinghome-ku-2-3-ton-heat-pump"
-            ]
-          }
-        },
-        "products_box_inhbxF": {
-          "type": "products_Box",
-          "settings": {
-            "main-christmas_products_box_Logo": "shopify://shop_images/badge_2_5cb658fe-c110-459d-8fca-e33de9bc84f5.webp",
-            "main-christmas_products_box_stars_text": "15 reviews",
-            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-            "prod_list": [
-              "kinghome-kd-2-ton-heat-pump"
-            ]
-          }
-        },
-        "products_box_WL9PDT": {
-          "type": "products_Box",
-          "settings": {
-            "main-christmas_products_box_Logo": "shopify://shop_images/Badge_2_3.webp",
-            "main-christmas_products_box_stars_text": "15 reviews",
-            "main-main-christmas_products_box_Button_ASk": "Ask an Expert",
-            "prod_list": [
-              "whole-home-water-softener"
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "products_box_6d6kTM",
-        "products_box_pnaXDC",
-        "products_box_YUrp7W",
-        "products_box_jRChLM",
-        "products_box_inhbxF",
-        "products_box_WL9PDT"
-      ],
-      "name": "Christmas Holiday products",
-      "settings": {
-        "maim-christmas_products_Title": "🎉 Exciting Holiday Promotions!"
       }
     },
     "christmas_holiday_boxs_H77Mb3": {
@@ -1215,6 +1256,7 @@
     "golime_new_banner_home_page_Pkq7RX",
     "christmas_holiday_banner_QmU3Yn",
     "christmas_holiday_7bPdqm",
+    "golime_new_products_Ap34LW",
     "golime_map_tabing_GMjbCT",
     "3_boxs_golime_new_QMPCfP",
     "christmas_holiday_boxs_H77Mb3",
