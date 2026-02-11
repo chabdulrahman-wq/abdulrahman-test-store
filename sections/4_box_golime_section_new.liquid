@@ -1,0 +1,177 @@
+<style>
+  .C_G_content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .C_G_Box {
+    display: flex;
+    gap: 15px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 100%;
+  }
+
+  /* Section Flex Directions */
+  .main-row {
+    flex-direction: row;
+  }
+
+  .main-column {
+    flex-direction: column;
+  }
+
+  .main-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .main-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  /* Box Flex Directions */
+  .box-row {
+    flex-direction: row;
+  }
+
+  .box-column {
+    flex-direction: column;
+  }
+
+  .box-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .box-column-reverse {
+    flex-direction: column-reverse;
+  }
+</style>
+<section class="C_G_section">
+  <div class="C_G_Container">
+    
+    <h2 class="C_G_Title">
+      {{ section.settings.mainC_G_Title }}
+    </h2>
+
+    <div class="C_G_content {{ section.settings.main_flex_direction }}">
+      {% for block in section.blocks %}
+        
+        <div class="C_G_Box {{ block.settings.box_flex_direction }}">
+          
+          <div class="C_G_Box_content">
+            <h2 class="C_G_Box_title">
+              {{ block.settings.main_C_G_Box_title }}
+            </h2>
+
+            <div class="C_G_Box_desp">
+              <p>{{ block.settings.mian_C_G_Box_desp }}</p>
+            </div>
+          </div>
+
+          <div class="C_G_img_contetn">
+            {% if block.settings.mian_C_G_Box_images != blank %}
+              <img 
+                src="{{ block.settings.mian_C_G_Box_images | img_url: 'master' }}" 
+                alt="" 
+                class="C_G_Box_images"
+              >
+            {% endif %}
+          </div>
+
+        </div>
+
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "C_G Custom Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mainC_G_Title",
+      "label": "Main Title",
+    },
+    {
+      "type": "select",
+      "id": "main_flex_direction",
+      "label": "Main Content Flex Direction",
+      "options": [
+        {
+          "value": "main-row",
+          "label": "Row"
+        },
+        {
+          "value": "main-column",
+          "label": "Column"
+        },
+        {
+          "value": "main-row-reverse",
+          "label": "Row Reverse"
+        },
+        {
+          "value": "main-column-reverse",
+          "label": "Column Reverse"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "Box",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "main_C_G_Box_title",
+          "label": "Box Title",
+        },
+        {
+          "type": "richtext",
+          "id": "mian_C_G_Box_desp",
+          "label": "Box Description",
+        },
+        {
+          "type": "image_picker",
+          "id": "mian_C_G_Box_images",
+          "label": "Box Image"
+        },
+        {
+          "type": "select",
+          "id": "box_flex_direction",
+          "label": "Box Flex Direction",
+          "options": [
+            {
+              "value": "box-row",
+              "label": "Row"
+            },
+            {
+              "value": "box-column",
+              "label": "Column"
+            },
+            {
+              "value": "box-row-reverse",
+              "label": "Row Reverse"
+            },
+            {
+              "value": "box-column-reverse",
+              "label": "Column Reverse"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "C_G Custom Section"
+    }
+  ]
+}
+{% endschema %}
