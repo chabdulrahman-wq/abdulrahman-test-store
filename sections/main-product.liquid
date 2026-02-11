@@ -729,7 +729,7 @@
     </script>
   </div>
 </product-info>
-<div id="StickyAddToCart" class="sticky-add-to-cart">
+{% comment %} <div id="StickyAddToCart" class="sticky-add-to-cart">
   <div class="sticky-add-inner page-width">
     <div class="sticky-left">
       {% if product.featured_image %}
@@ -808,7 +808,104 @@ document.addEventListener("DOMContentLoaded", function () {
   bindStickyVariant();
   setInterval(bindStickyVariant, 1000);
 });
-</script> 
+</script>  {% endcomment %}
+{%- if theme.name contains 'Development ' -%}
+  <style>
+    #PBarNextFrameWrapper {
+      display: none;
+    }
+  </style>
+{%- endif -%}
+
+<style>
+  .sticky-atc {
+    border: 1px solid #e9e9e9;
+    background-color: white;
+    position: fixed;
+    inset: 0;
+    top: unset;
+    z-index: 100;
+    padding: 20px;
+  }
+  .sticky-atc .product__title {
+    text-decoration: none;
+  }
+  .sticky-atc .image-with-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  @media screen and (min-width: 768px) {
+    .sticky-atc .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .sticky-atc .product-form__input--dropdown,
+    .sticky-atc .product-form__submit {
+      margin: 0;
+    }
+    .sticky-atc .variant-picker-and-ATC {
+      display: flex;
+      gap: 20px;
+      align-items: end;
+    }
+  }
+</style>
+
+<div class="sticky-atc">
+  <div class="page-width">
+    <div class="wrapper">
+      <div class="image-with-content">
+        <img
+          src="{{ product.featured_media | image_url: width: 150 }}"
+          alt="{{ product.featured_media.alt | escape }}"
+          width="80"
+          height="{{ 80 | divided_by: product.featured_media.preview_image.aspect_ratio }}"
+        >
+        <div>
+          <a href="{{ product.url }}" class="product__title">
+            <h3 class="3">
+              {{ product.title | escape }}
+            </h3>
+          </a>
+          {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+        </div>
+      </div>
+      <div class="variant-picker-and-ATC">
+        {% render 'product-variant-picker-sticky-atc', product: product, product_form_id: product_form_id %}
+        {%- render 'buy-buttons',
+          block: block,
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_pickup_availability: true
+        -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const buyButtons = document.querySelector('.product-form__buttons');
+  const stickyATC = document.querySelector('.sticky-atc');
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        // Buy buttons are in view, hide sticky
+        stickyATC.style.display = "none";
+      } else {
+        // Buy buttons are out of view, show sticky
+        stickyATC.style.display = "block";
+      }
+    },
+    {
+      root: null, // viewport
+      threshold: 0.1
+    }
+  );
+  observer.observe(buyButtons);
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
