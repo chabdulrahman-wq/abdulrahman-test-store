@@ -593,16 +593,18 @@
         "box_hdEw7e": {
           "type": "box",
           "settings": {
-            "main_C_G_Box_title": "",
-            "mian_C_G_Box_desp": "",
-            "box_flex_direction": "box-row"
+            "main_C_G_Box_title": "📈\n<br>\nMonthly bill keeps climbing?",
+            "mian_C_G_Box_desp": "<p>Those \"small\" annual increases add up. What started at $35/month is now $55—and you still don't own anything.</p>",
+            "mian_C_G_Box_images": "shopify://shop_images/d3f06c8c8b9068898b6133952b36a652b2fac770.webp",
+            "box_flex_direction": "box-row-reverse"
           }
         },
         "box_b98jCX": {
           "type": "box",
           "settings": {
-            "main_C_G_Box_title": "",
-            "mian_C_G_Box_desp": "",
+            "main_C_G_Box_title": "🛑\n<br>\nCancelling feels impossible?",
+            "mian_C_G_Box_desp": "<p>Hour-long phone calls, retention specialists, confusing fees, expensive buyout ,return logistics... it shouldn't be this hard.</p>",
+            "mian_C_G_Box_images": "shopify://shop_images/eb0626a91654b8e94df10217e08da8e14d6f8d40.webp",
             "box_flex_direction": "box-row"
           }
         }
