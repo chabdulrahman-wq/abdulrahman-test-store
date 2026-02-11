@@ -75,13 +75,13 @@
         </button>
       </div>
      
-{%- if cart.requires_shipping -%}
-  {%- assign free_shipping_threshold = 5000 -%}
+{% comment %} {%- if cart.requires_shipping -%}
+  {%- assign free_shipping_threshold = 10000 -%}  
   {%- assign cart_total = 0 -%}
 
   {%- for item in cart.items -%}
     {%- if item.requires_shipping -%}
-      {%- assign item_price = item.final_line_price | divided_by: 100 -%}
+      {%- assign item_price = item.final_line_price | divided_by: 1 -%}
       {%- assign cart_total = cart_total | plus: item_price -%}
     {%- endif -%}
   {%- endfor -%}
@@ -101,61 +101,51 @@
   {%- assign difference = free_shipping_threshold | minus: amount_remaining -%}
   {%- assign percentage_remaining = 100 | times: difference | divided_by: free_shipping_threshold -%}
 
-  {% style %}
-    .free_shipping {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background: #e9e9e9;
-      padding: 20px;
-      border-radius: 5px;
-      margin: 10px 0;
-    }
-    .free_shipping h4 {
-      margin: 0;
-    }
-    .free_shipping_progress_bar {
-      width: 100%;
-      height: 5px;
-      background-color: #e0c1c1;
-      border-radius: 100px;
-      display: block !important;
-      position: relative;
-      overflow: hidden;
-    }
+{% style %}
+.free_shipping_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #e9e9e9;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.free_shipping_bar h4 {
+  margin: 0;
+  font-size: 14.9px;
+}
+.free_shipping_progress_bar {
+  width: 100%;
+  height: 5px;
+  background-color: #e0c1c1;
+  border-radius: 100px;
+  display: block !important;
+  position: relative;
+  overflow: hidden;
+}
+.free_shipping_progress_bar::before{
+  content: "";
+  width: {{ percentage_remaining }}%;
+  height: 100%;
+  background: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width 1s ease-out;
+}
 
-    .free_shipping_progress_bar::before{
-      content: "";
-      width: 0%;
-      height: 100%;
-      background: green;
-      position: absolute;
-      left: 0;
-      top: 0;
-      transition: width 1s ease-out;
-    }
+{% endstyle %}
 
-    /* Add the active class with the calculated percentage width */
-    .free_shipping_progress_bar.active::before {
-      width: {{ percentage_remaining }}%;
-    }
-  {% endstyle %}
+<div class="free_shipping_bar">
+  <h4>{{ free_shipping_message }}</h4>
+  <div class="free_shipping_progress_bar"></div>
+</div>
 
-  <div class="free_shipping">
-    <h4>{{ free_shipping_message }}</h4>
-    <div class="free_shipping_progress_bar"></div>
-  </div>
-{%- endif -%}
 
-<script defer>
-  (() => {
-    var progressBar = document.querySelector(".free_shipping_progress_bar");
-    // Add the active class after the page loads to trigger the animation
-    progressBar.classList.add("active");
-  })()
-</script>
+{%- endif -%} {% endcomment %}
 
-      {% comment %} Free shipping bra 
+      {% comment %} Free shipping bra {% endcomment %}
        <!-- ✅ FREE SHIPPING BAR USING <progress> (100% same style) -->
        {%- if cart.requires_shipping -%}
   <div class="drawer-free-shipping">
@@ -202,7 +192,7 @@
     </div>
   </div> 
 {%- endif -%}
-{% endcomment %}
+
 <!-- ✅ END FREE SHIPPING BAR -->
 
       <cart-drawer-items
