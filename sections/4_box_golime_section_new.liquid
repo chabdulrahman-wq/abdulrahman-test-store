@@ -54,7 +54,7 @@
       {{ section.settings.mainC_G_Title }}
     </h2>
 
-    <div class="C_G_content {{ section.settings.main_flex_direction }}">
+    <div class="C_G_content>
       {% for block in section.blocks %}
         
         <div class="C_G_Box {{ block.settings.box_flex_direction }}">
@@ -98,29 +98,7 @@
       "id": "mainC_G_Title",
       "label": "Main Title",
     },
-    {
-      "type": "select",
-      "id": "main_flex_direction",
-      "label": "Main Content Flex Direction",
-      "options": [
-        {
-          "value": "main-row",
-          "label": "Row"
-        },
-        {
-          "value": "main-column",
-          "label": "Column"
-        },
-        {
-          "value": "main-row-reverse",
-          "label": "Row Reverse"
-        },
-        {
-          "value": "main-column-reverse",
-          "label": "Column Reverse"
-        }
-      ]
-    }
+
   ],
   "blocks": [
     {

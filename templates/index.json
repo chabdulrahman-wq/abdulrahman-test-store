@@ -578,6 +578,45 @@
         "mian-G_P_Title": "Our Best Sellers"
       }
     },
+    "4_box_golime_section_new_FfpATK": {
+      "type": "4_box_golime_section_new",
+      "blocks": {
+        "box_YMXcDL": {
+          "type": "box",
+          "settings": {
+            "main_C_G_Box_title": "🔒\n<br> \nTrapped in a 15-year contract?",
+            "mian_C_G_Box_desp": "<p>Most Ontario homeowners don't realize they're locked in until they try to leave—then comes the $800+ buyout nobody mentioned.</p>",
+            "mian_C_G_Box_images": "shopify://shop_images/d8b146a6eb471d29a53d0c206e0ff6fed630f72c.webp",
+            "box_flex_direction": "box-row"
+          }
+        },
+        "box_hdEw7e": {
+          "type": "box",
+          "settings": {
+            "main_C_G_Box_title": "",
+            "mian_C_G_Box_desp": "",
+            "box_flex_direction": "box-row"
+          }
+        },
+        "box_b98jCX": {
+          "type": "box",
+          "settings": {
+            "main_C_G_Box_title": "",
+            "mian_C_G_Box_desp": "",
+            "box_flex_direction": "box-row"
+          }
+        }
+      },
+      "block_order": [
+        "box_YMXcDL",
+        "box_hdEw7e",
+        "box_b98jCX"
+      ],
+      "name": "C_G Custom Section",
+      "settings": {
+        "mainC_G_Title": "The Reality of Water Heater Rentals in Ontario 🤕"
+      }
+    },
     "rich_text_Uaa44p": {
       "type": "rich-text",
       "blocks": {
@@ -1047,6 +1086,7 @@
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "golime_new_products_Ap34LW",
+    "4_box_golime_section_new_FfpATK",
     "rich_text_Uaa44p",
     "golime_all_section_xJ8GkE",
     "golime_images_text_new_YG69E7",
