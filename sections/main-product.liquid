@@ -806,7 +806,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Bind once and re-check every second (if sticky reloads dynamically)
   bindStickyVariant();
-  setInterval(bindStickyVariant, 1900);
+  setInterval(bindStickyVariant, 1000);
 });
 </script> 
 
@@ -820,7 +820,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function toggleSticky() {
-      if (window.scrollY > 150) { // Show after scrolling 150px
+      if (window.scrollY > 190) { // Show after scrolling 150px
         stickyBar.classList.add("active");
       } else {
         stickyBar.classList.remove("active");
