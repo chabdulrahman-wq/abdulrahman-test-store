@@ -1,157 +1,157 @@
 <style>
-    .G_B_Section {
-    padding: 30px 0 30px;
-}
+      .G_B_Section {
+      padding: 30px 0 30px;
+  }
 
-.G_B_Container {
-    max-width: 1393px;
-    margin: 0 auto;
-    width: 100%;
-}
+  .G_B_Container {
+      max-width: 1393px;
+      margin: 0 auto;
+      width: 100%;
+  }
 
-.G_B_Title {
-    margin: 0;
-    padding: 0 0 20px;
-    font-size: 40px;
-    color: #3C4043;
-    font-weight: 700;
-}
+  .G_B_Title {
+      margin: 0;
+      padding: 0 0 20px;
+      font-size: 40px;
+      color: #3C4043;
+      font-weight: 700;
+  }
 
-.G_B_Content {
-    text-align: center;
-}
+  .G_B_Content {
+      text-align: center;
+  }
 
-.G_B_Flex {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+  .G_B_Flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
 
-.G_B_Box {
-    width: 32%;
-}
+  .G_B_Box {
+      width: 32%;
+  }
 
-.G_B_Box_Images {
-    position: relative;
-    padding-bottom: 343px;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
+  .G_B_Box_Images {
+      position: relative;
+      padding-bottom: 343px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 20px;
+  }
 
 
-.G_B_Box_Img {
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    right: 0;
-    bottom: 0;
-}
+  .G_B_Box_Img {
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      right: 0;
+      bottom: 0;
+  }
 
-.G_B_Box_content {
-    text-align: center;
-}
+  .G_B_Box_content {
+      text-align: center;
+  }
 
-.G_B_Box_Title {
-    margin: 0;
-    color: #454545;
-    font-size: 26px;
-    font-weight: 700;
-}
+  .G_B_Box_Title {
+      margin: 0;
+      color: #454545;
+      font-size: 26px;
+      font-weight: 700;
+  }
 
-.G_B_Box_content p {
-    font-size: 20px;
-    padding-top: 20px;
-    line-height: 20px;
-    color: #454545;
-    font-weight: 500;
-}
+  .G_B_Box_content p {
+      font-size: 20px;
+      padding-top: 20px;
+      line-height: 20px;
+      color: #454545;
+      font-weight: 500;
+  }
 
-@media screen and (max-width: 767px){
+  @media screen and (max-width: 767px){
 
-    .G_B_Flex {
-    flex-direction: column;
-}
+      .G_B_Flex {
+      flex-direction: column;
+  }
 
-.G_B_Box {
-    padding-bottom: 30px;
-    width: 100%;
-}
+  .G_B_Box {
+      padding-bottom: 30px;
+      width: 100%;
+  }
 
-.G_B_Container {
-    padding: 0 15px;
-}
+  .G_B_Container {
+      padding: 0 15px;
+  }
 
-.G_B_Title {
-    font-size: 27px;
-}
+  .G_B_Title {
+      font-size: 27px;
+  }
 
-.G_B_Box_Images {
-    margin-bottom: 11px;
-}
-}
+  .G_B_Box_Images {
+      margin-bottom: 11px;
+  }
+  }
 </style>
 <section class="G_B_Section">
-    <div class="G_B_Container">
-        <div class="G_B_Content">
-            <h2 class="G_B_Title">{{ section.settings.main-G_B_Title }}</h2>
-        </div>
-        <div class="G_B_Flex">
-            {% for block in section.blocks %}
-            <div class="G_B_Box">
-                <div class="G_B_Box_Images">
-                    {% if block.settings.main-G_B_Box_Img !=blank%}
-                    <img src="{{ block.settings.main-G_B_Box_Img |img_url:'master' }}" class="G_B_Box_Img" alt="">
-                    {% endif %}
-                </div>
-                <div class="G_B_Box_content">
-                        <h2 class="G_B_Box_Title">{{ block.settings.main-G_B_Box_Title }}</h2>
-                        <p>{{ block.settings.main-G_B_Box_content }}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+  <div class="G_B_Container">
+    <div class="G_B_Content">
+      <h2 class="G_B_Title">{{ section.settings['main-G_B_Title'] }}</h2>
     </div>
+    <div class="G_B_Flex">
+      {% for block in section.blocks %}
+        <div class="G_B_Box">
+          <div class="G_B_Box_Images">
+            {% if block.settings['main-G_B_Box_Img'] != blank %}
+              <img src="{{ block.settings.main-G_B_Box_Img |img_url:'master' }}" class="G_B_Box_Img" alt="">
+            {% endif %}
+          </div>
+          <div class="G_B_Box_content">
+            <h2 class="G_B_Box_Title">{{ block.settings['main-G_B_Box_Title'] }}</h2>
+            <p>{{ block.settings['main-G_B_Box_content'] }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 {% schema %}
 {
   "name": "Golime 3 Boxs Section",
   "settings": [
     {
-    "type": "text",
-    "id": "main-G_B_Title",
-    "label": "Title"
-    },
+      "type": "text",
+      "id": "main-G_B_Title",
+      "label": "Title"
+    }
   ],
   "blocks": [
     {
-    "type": "Boxs",
-    "name": "Boxs",
-    "settings": [
+      "type": "Boxs",
+      "name": "Boxs",
+      "settings": [
         {
-    "type": "image_picker",
-    "id": "main-G_B_Box_Img",
-    "label": "Images"
-    },
-    {
-    "type": "text",
-    "id": "main-G_B_Box_Title",
-    "label": "Box Title"
-    },
-    {
-    "type": "richtext",
-    "id": "main-G_B_Box_content",
-    "label": "Box Content"
-    }
-    ]
+          "type": "image_picker",
+          "id": "main-G_B_Box_Img",
+          "label": "Images"
+        },
+        {
+          "type": "text",
+          "id": "main-G_B_Box_Title",
+          "label": "Box Title"
+        },
+        {
+          "type": "richtext",
+          "id": "main-G_B_Box_content",
+          "label": "Box Content"
+        }
+      ]
     }
   ],
   "presets": [
     {
-    "name": "Golime 3 Boxs Section"
+      "name": "Golime 3 Boxs Section"
     }
   ]
 }
