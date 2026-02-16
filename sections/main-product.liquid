@@ -818,7 +818,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function toggleSticky() {
-      if (window.scrollY > 400) { // Show after scrolling 400px
+      if (window.scrollY > 400) { 
         stickyBar.classList.add("active");
       } else {
         stickyBar.classList.remove("active");
@@ -826,7 +826,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", toggleSticky);
-    toggleSticky(); // Run once on page load
+    toggleSticky(); 
   });
 </script>
 
