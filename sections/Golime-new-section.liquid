@@ -1,0 +1,36 @@
+
+<section class="S_S_B_Section">
+<div class="S_S_B_Container">
+    <div class="S_S_B_Content">
+        <h2 class="S_S_B_Title">
+            {{ section.settings.main-S_S_B_Title }}
+        </h2>
+        <p>{{ section.settings.main-S_S_B_Para }}</p>
+    </div>
+    <div class="S_S_B_Flex">
+        {% for block in section.blocks %}
+        <div class="S_S_B_Box">
+            <div class="S_S_B_Box_content">
+                <h2 class="S_S_B_Box_title">
+                    {{ block.settings.S_S_B_Box_title }}
+                </h2>
+                <div class="S_S_B_Box_images">
+                    {% if block.settings.main-S_S_B_img !=blank %}
+                    <img src="{{ block.settings.main-S_S_B_img |img_url:'master' }}" class="S_S_B_Box_img" alt="">
+                    {% endif %}
+                </div>
+                <div class="S_S_B_Box_description">
+                    <p>{{ block.settings.mian-S_S_B_description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
