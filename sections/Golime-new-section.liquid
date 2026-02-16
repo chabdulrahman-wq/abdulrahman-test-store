@@ -31,6 +31,30 @@
 {% schema %}
 {
   "name": "Section name",
-  "settings": []
+  "settings": [
+    {
+    "type": "text",
+    "id": "main-S_S_B_Title",
+    "label": "Main Title"
+    },
+    {
+    "type": "richtext",
+    "id": "main-S_S_B_Para",
+    "label": "Main Para"
+    },
+  ],
+  "blocks": [
+    {
+    "type": "Box",
+    "name": "Box",
+    "settings": [
+        {
+        "type": "text",
+        "id": "S_S_B_Box_title",
+        "label": "Box Title"
+        }
+    ]
+    }
+  ]
 }
 {% endschema %}
