@@ -449,6 +449,45 @@
         "Sub-main-custom_Golime_form_Bottom_Button": "Submit"
       }
     },
+    "golime_new_section_wM7tDt": {
+      "type": "Golime-new-section",
+      "blocks": {
+        "box_LRMB9x": {
+          "type": "Box",
+          "settings": {
+            "S_S_B_Box_title": "Choose Your Plan",
+            "main-S_S_B_img": "shopify://shop_images/PlanVisual.webp",
+            "mian-S_S_B_description": "<p>Clear pricing upfront. No calls required. Pick what works for you.</p>"
+          }
+        },
+        "box_TUWDjW": {
+          "type": "Box",
+          "settings": {
+            "S_S_B_Box_title": "We Handle Everything",
+            "main-S_S_B_img": "shopify://shop_images/InstallVisual.webp",
+            "mian-S_S_B_description": "<p>Installation, old rental return, zero hassle. We do the heavy lifting.</p>"
+          }
+        },
+        "box_Brj4yX": {
+          "type": "Box",
+          "settings": {
+            "S_S_B_Box_title": "Enjoy Flexibility",
+            "main-S_S_B_img": "shopify://shop_images/PlanVisual_1.webp",
+            "mian-S_S_B_description": "<p>Clear pricing upfront. No calls required. Pick what works for you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "box_LRMB9x",
+        "box_TUWDjW",
+        "box_Brj4yX"
+      ],
+      "name": "Golime new Section",
+      "settings": {
+        "main-S_S_B_Title": "Switch Your Water Heater Rental in 3 Easy Steps",
+        "main-S_S_B_Para": "<p>Upgrade your home comfort without the headache. Simple, transparent, and flexible.</p>"
+      }
+    },
     "water_heater_slider_mVy9je": {
       "type": "Water-Heater-slider",
       "blocks": {
@@ -616,7 +655,7 @@
       ],
       "name": "C_G Custom Section",
       "settings": {
-        "mainC_G_Title": "The Reality of Water Heater Rentals in Ontario 🤕",
+        "main-C_G_Title": "",
         "main-C_G_Box_img": "shopify://shop_images/d4ef5ee21efa4996945d0682097f6b0e7d7c15e6_d25bc452-e602-4bb4-aa47-6d00e77d3c9c.jpg",
         "main-C_G_Box_img2": "shopify://shop_images/download_b71be34f-5e72-4511-b37d-0b851de8933a.webp"
       }
@@ -1087,6 +1126,7 @@
     "3_boxs_golime_new_QMPCfP",
     "christmas_holiday_boxs_H77Mb3",
     "custom_golime_form_qXReUq",
+    "golime_new_section_wM7tDt",
     "water_heater_slider_mVy9je",
     "video_section_golime_qMBpKC",
     "golime_new_products_Ap34LW",
