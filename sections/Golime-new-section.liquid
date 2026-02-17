@@ -1,164 +1,164 @@
 <style>
-    .S_S_B_Section {
-    padding: 80px 0 80px;
-    background-color: #F9F7F2;
-}
+      .S_S_B_Section {
+      padding: 80px 0 80px;
+      background-color: #F9F7F2;
+  }
 
-.S_S_B_Container {
-    max-width: 1334px;
-    width: 100%;
-    margin: 0 auto;
-}
+  .S_S_B_Container {
+      max-width: 1334px;
+      width: 100%;
+      margin: 0 auto;
+  }
 
-.S_S_B_Content {
-    text-align: center;
-}
+  .S_S_B_Content {
+      text-align: center;
+  }
 
-.S_S_B_Title {
-    font-size: 42px;
-    margin: 0;
-    font-weight: 700;
-    color: #454545;
-    line-height: 100%;
-    letter-spacing: 0;
-    padding-bottom: 24px;
-}
+  .S_S_B_Title {
+      font-size: 42px;
+      margin: 0;
+      font-weight: 700;
+      color: #454545;
+      line-height: 100%;
+      letter-spacing: 0;
+      padding-bottom: 24px;
+  }
 
-.S_S_B_Content p {
-    font-size: 20px;
-    color: #454545;
-}
+  .S_S_B_Content p {
+      font-size: 20px;
+      color: #454545;
+  }
 
-.S_S_B_Flex {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 48px;
-    gap: 24px;
-}
+  .S_S_B_Flex {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 48px;
+      gap: 24px;
+  }
 
-.S_S_B_Box {
-    background: #FFFFFF;
-    padding: 32px 42px;
-    width: 33%;
-    border: 2px solid #D9D9D9;
-    border-radius: 24px;
-}
+  .S_S_B_Box {
+      background: #FFFFFF;
+      padding: 32px 42px;
+      width: 33%;
+      border: 2px solid #D9D9D9;
+      border-radius: 24px;
+  }
 
-.S_S_B_Box_title {
-    font-size: 28px;
-    margin: 0;
-    color: #454545;
-    line-height: 100%;
-    letter-spacing: 0;
-    font-weight: 700;
-    padding-bottom: 24px;
-}
+  .S_S_B_Box_title {
+      font-size: 28px;
+      margin: 0;
+      color: #454545;
+      line-height: 100%;
+      letter-spacing: 0;
+      font-weight: 700;
+      padding-bottom: 24px;
+  }
 
-.S_S_B_Box_img {
-    width: 100%;
-    height: 100%;
-    max-width: 298px;
-    object-fit: cover;
-    border-radius: 14px;
-}
+  .S_S_B_Box_img {
+      width: 100%;
+      height: 100%;
+      max-width: 298px;
+      object-fit: cover;
+      border-radius: 14px;
+  }
 
-.S_S_B_Box_description p {
-    font-size: 16px;
-    line-height: 22px;
-    color: #454545;
-    letter-spacing: 0;
-    padding-top: 10px;
-}
+  .S_S_B_Box_description p {
+      font-size: 16px;
+      line-height: 22px;
+      color: #454545;
+      letter-spacing: 0;
+      padding-top: 10px;
+  }
 
-@media screen and (max-width: 767px){
-.S_S_B_Flex {
-    flex-direction: column;
-}
+  @media screen and (max-width: 767px){
+  .S_S_B_Flex {
+      flex-direction: column;
+  }
 
-.S_S_B_Box {
-    width: 100%;
-}
+  .S_S_B_Box {
+      width: 100%;
+  }
 
 
-.S_S_B_Title {
-    font-size: 28px;
-}
+  .S_S_B_Title {
+      font-size: 28px;
+  }
 
-.S_S_B_Content p {
-    font-size: 18px;
-}
-}
+  .S_S_B_Content p {
+      font-size: 18px;
+  }
+  }
 </style>
 <section class="S_S_B_Section">
-<div class="S_S_B_Container">
+  <div class="S_S_B_Container">
     <div class="S_S_B_Content">
-        <h2 class="S_S_B_Title">
-            {{ section.settings.main-S_S_B_Title }}
-        </h2>
-        <p>{{ section.settings.main-S_S_B_Para }}</p>
+      <h2 class="S_S_B_Title">
+        {{ section.settings['main-S_S_B_Title'] }}
+      </h2>
+      <p>{{ section.settings['main-S_S_B_Para'] }}</p>
     </div>
     <div class="S_S_B_Flex">
-        {% for block in section.blocks %}
+      {% for block in section.blocks %}
         <div class="S_S_B_Box">
-            <div class="S_S_B_Box_content">
-                <h2 class="S_S_B_Box_title">
-                    {{ block.settings.S_S_B_Box_title }}
-                </h2>
-                <div class="S_S_B_Box_images">
-                    {% if block.settings.main-S_S_B_img !=blank %}
-                    <img src="{{ block.settings.main-S_S_B_img |img_url:'master' }}" class="S_S_B_Box_img" alt="">
-                    {% endif %}
-                </div>
-                <div class="S_S_B_Box_description">
-                    <p>{{ block.settings.mian-S_S_B_description }}</p>
-                </div>
+          <div class="S_S_B_Box_content">
+            <h2 class="S_S_B_Box_title">
+              {{ block.settings.S_S_B_Box_title }}
+            </h2>
+            <div class="S_S_B_Box_images">
+              {% if block.settings['main-S_S_B_img'] != blank %}
+                <img src="{{ block.settings.main-S_S_B_img |img_url:'master' }}" class="S_S_B_Box_img" alt="">
+              {% endif %}
             </div>
+            <div class="S_S_B_Box_description">
+              <p>{{ block.settings['mian-S_S_B_description'] }}</p>
+            </div>
+          </div>
         </div>
-        {% endfor %}
+      {% endfor %}
     </div>
-</div>
+  </div>
 </section>
 {% schema %}
 {
   "name": "Golime new Section",
   "settings": [
     {
-    "type": "text",
-    "id": "main-S_S_B_Title",
-    "label": "Main Title"
+      "type": "text",
+      "id": "main-S_S_B_Title",
+      "label": "Main Title"
     },
     {
-    "type": "richtext",
-    "id": "main-S_S_B_Para",
-    "label": "Main Para"
-    },
+      "type": "richtext",
+      "id": "main-S_S_B_Para",
+      "label": "Main Para"
+    }
   ],
   "blocks": [
     {
-    "type": "Box",
-    "name": "Box",
-    "settings": [
+      "type": "Box",
+      "name": "Box",
+      "settings": [
         {
-        "type": "text",
-        "id": "S_S_B_Box_title",
-        "label": "Box Title"
+          "type": "text",
+          "id": "S_S_B_Box_title",
+          "label": "Box Title"
         },
         {
-        "type": "image_picker",
-        "id": "main-S_S_B_img",
-        "label": "Box Images"
+          "type": "image_picker",
+          "id": "main-S_S_B_img",
+          "label": "Box Images"
         },
         {
-        "type": "richtext",
-        "id": "mian-S_S_B_description",
-        "label": "Box Para"
+          "type": "richtext",
+          "id": "mian-S_S_B_description",
+          "label": "Box Para"
         }
-    ]
+      ]
     }
   ],
   "presets": [
     {
-    "name": "Golime new Section"
+      "name": "Golime new Section"
     }
   ]
 }
