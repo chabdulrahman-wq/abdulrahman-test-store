@@ -41,7 +41,9 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
+    {% comment %} Product Badges card {% endcomment %}
     {%- render 'badges', product: card_product -%}
+    {% comment %} Product Badges card end {% endcomment %}
     <div
       class="
         card card--{{ settings.card_style }}
