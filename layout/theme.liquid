@@ -14,8 +14,8 @@
 
     <!-- Font Awesome for arrows -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -326,7 +326,7 @@
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
-    
+
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -392,8 +392,8 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
@@ -621,40 +621,39 @@
         });
       </script>
     {% endcomment %}
-     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  function updateShippingProgress() {
-    fetch('/cart.js')
-      .then(res => res.json())
-      .then(cart => {
-        const goal = 10000; // $100 in cents
-        const total = cart.total_price;
-        const remaining = goal - total;
-        const progressBar = document.querySelector('.amt_progress');
-        const text = document.querySelector('.drawer-free-shipping .shipping-text');
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        function updateShippingProgress() {
+          fetch('/cart.js')
+            .then((res) => res.json())
+            .then((cart) => {
+              const goal = 10000; // $100 in cents
+              const total = cart.total_price;
+              const remaining = goal - total;
+              const progressBar = document.querySelector('.amt_progress');
+              const text = document.querySelector('.drawer-free-shipping .shipping-text');
 
-        if (!progressBar || !text) return;
+              if (!progressBar || !text) return;
 
-        let percent = (total / goal) * 100;
-        if (percent > 100) percent = 100;
-        progressBar.value = percent;
+              let percent = (total / goal) * 100;
+              if (percent > 100) percent = 100;
+              progressBar.value = percent;
 
-        if (remaining > 0) {
-          const amount = (remaining / 100).toFixed(2);
-          text.innerHTML = `YOU'RE <span class="remaining-amount">$${amount}</span> AWAY FROM FREE SHIPPING!`;
-        } else {
-          text.innerHTML = `🎉 FREE SHIPPING <span class="free-text">UNLOCKED!</span>`;
+              if (remaining > 0) {
+                const amount = (remaining / 100).toFixed(2);
+                text.innerHTML = `YOU'RE <span class="remaining-amount">$${amount}</span> AWAY FROM FREE SHIPPING!`;
+              } else {
+                text.innerHTML = `🎉 FREE SHIPPING <span class="free-text">UNLOCKED!</span>`;
+              }
+            });
         }
+
+        updateShippingProgress();
+
+        document.addEventListener('cart:updated', updateShippingProgress);
+        document.addEventListener('cart:refresh', updateShippingProgress);
       });
-  }
-
-  updateShippingProgress();
-
-  document.addEventListener('cart:updated', updateShippingProgress);
-  document.addEventListener('cart:refresh', updateShippingProgress);
-});
-</script>
-
+    </script>
   </body>
   {% comment %} free  {% endcomment %}
 </html>
