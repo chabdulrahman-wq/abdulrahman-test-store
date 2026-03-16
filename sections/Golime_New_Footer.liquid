@@ -815,7 +815,6 @@
         
 </footer>
 <script>
-
 document.addEventListener("DOMContentLoaded", function(){
 
 let footerMenu = document.querySelectorAll(".Golime_New_footer_mn_right_box_menu_inner");
@@ -828,6 +827,14 @@ title.addEventListener("click", function(){
 
 if(window.innerWidth <= 1100){
 
+/* sab close karo */
+footerMenu.forEach(function(el){
+if(el !== item){
+el.classList.remove("active");
+}
+});
+
+/* current toggle */
 item.classList.toggle("active");
 
 }
@@ -837,7 +844,6 @@ item.classList.toggle("active");
 });
 
 });
-
 </script>
 {% schema %}
 {
