@@ -1,1 +1,169 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"golime_video_about_section_VBL6Rr":{"type":"golime-video-about-section","name":"Golime Video About Section","settings":{"main-Golime_Newsroom-contant":"Go Lime Newsroom","video-golime_Newsroom_video_box":"shopify:\/\/files\/videos\/56c1107f110947fbb362dcb4ad69b3c1.mp4"}},"golime_blog_block_boxes_YkgQrp":{"type":"golime-blog-block-boxes","blocks":{"blog_box_cHq4PW":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"February 28, 2025 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Go Lime opens retail spaces in Ontario Walmart locations<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More ","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/hpac.avif"}},"blog_box_VTLn8A":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"February 27, 2025 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Go Lime launches in Walmart Canada, with 1st two retail stores in...<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More ","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/ri.png"}},"blog_box_zUFBAY":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"November 26, 2024 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Toronto-based company offers households in Ontario the power of choice<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More ","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/chch.avif"}},"blog_box_6ipNbt":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"November 21, 2024 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Toronto-based company is changing the game in hot water<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/4th.webp"}},"blog_box_B93iHJ":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"October 3, 2024 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Go Lime Inc. Launches Cutting-Edge Home Services E-Commerce Site, Strengthening...<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/5th.webp"}},"blog_box_QXqaCB":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"June 3, 2024 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Go Lime Inc. Announces the Launch Of A New Home Service And...<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More ","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/6th.webp"}},"blog_box_9KGp94":{"type":"Blog_Box","settings":{"main-golime_blog_post_Block_box_Main-text-heading":"June 3, 2024 •","main-sub-golime_blog_post_Block_box_Main-text-tag":"News","mina-golime_blog_post_Block_box_Main-content-para":"<p>Go Lime Inc. Announces the launch of a new, home service and...<\/p>","golime_blog_post_Block_box_Main-box-btm-button-link":"","main-golime_blog_post_Block_box_Main-box-btm-button":"Read More ","main-golime_blog_post_Block_box_Main-box-btm-logo-images":"shopify:\/\/shop_images\/7th.webp"}}},"block_order":["blog_box_cHq4PW","blog_box_VTLn8A","blog_box_zUFBAY","blog_box_6ipNbt","blog_box_B93iHJ","blog_box_QXqaCB","blog_box_9KGp94"],"name":"Golime Blog Block Box","settings":{"main-golime_blog_post_Block_box_heading":"All the Latest"}}},"order":["main","golime_video_about_section_VBL6Rr","golime_blog_block_boxes_YkgQrp"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "golime_video_about_section_VBL6Rr": {
+      "type": "golime-video-about-section",
+      "name": "Golime Video About Section",
+      "settings": {
+        "main-Golime_Newsroom-contant": "Go Lime Newsroom",
+        "video-golime_Newsroom_video_box": "shopify://files/videos/56c1107f110947fbb362dcb4ad69b3c1.mp4"
+      }
+    },
+    "golime_new_section_kdbKEA": {
+      "type": "golime_new_section",
+      "blocks": {
+        "boxs_Yt3Gzh": {
+          "type": "Boxs",
+          "settings": {
+            "main-C_S_img": "shopify://shop_images/Vector_507d787a-f7f9-4c15-a462-1dff7c8d3487.webp",
+            "main-C_O_text": "Equal Opportunity",
+            "main_para": "<p>Go Lime is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</p>"
+          }
+        },
+        "boxs_gP8FrL": {
+          "type": "Boxs",
+          "settings": {
+            "main-C_S_img": "shopify://shop_images/Vector_1_6646faff-a837-4fab-a114-638d48d68a5c.webp",
+            "main-C_O_text": "Authentic Selves",
+            "main_para": "<p>We foster a respectful, inclusive, and barrier-free workplace where each individual feels empowered to be their authentic selves at work.</p>"
+          }
+        },
+        "boxs_T8iE7w": {
+          "type": "Boxs",
+          "settings": {
+            "main-C_S_img": "shopify://shop_images/globe_1.webp",
+            "main-C_O_text": "Stronger Together",
+            "main_para": "<p>A diverse workforce is essential to our success. Inclusion, diversity, and equity strengthen our culture and help us build meaningful connections with our customers, colleagues, and communities.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "boxs_Yt3Gzh",
+        "boxs_gP8FrL",
+        "boxs_T8iE7w"
+      ],
+      "name": "Custom Divrsty Img Text",
+      "settings": {
+        "main-C_I_images": "shopify://shop_images/Frame_11443_6b522825-fcf6-4994-90b7-f11909b2a111.webp",
+        "main_Title": "Diversity, Equity & Inclusion"
+      }
+    },
+    "golime_blog_block_boxes_YkgQrp": {
+      "type": "golime-blog-block-boxes",
+      "blocks": {
+        "blog_box_cHq4PW": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "February 28, 2025 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Go Lime opens retail spaces in Ontario Walmart locations</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More ",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/hpac.avif"
+          }
+        },
+        "blog_box_VTLn8A": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "February 27, 2025 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Go Lime launches in Walmart Canada, with 1st two retail stores in...</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More ",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/ri.png"
+          }
+        },
+        "blog_box_zUFBAY": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "November 26, 2024 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Toronto-based company offers households in Ontario the power of choice</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More ",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/chch.avif"
+          }
+        },
+        "blog_box_6ipNbt": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "November 21, 2024 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Toronto-based company is changing the game in hot water</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/4th.webp"
+          }
+        },
+        "blog_box_B93iHJ": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "October 3, 2024 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Go Lime Inc. Launches Cutting-Edge Home Services E-Commerce Site, Strengthening...</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/5th.webp"
+          }
+        },
+        "blog_box_QXqaCB": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "June 3, 2024 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Go Lime Inc. Announces the Launch Of A New Home Service And...</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More ",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/6th.webp"
+          }
+        },
+        "blog_box_9KGp94": {
+          "type": "Blog_Box",
+          "settings": {
+            "main-golime_blog_post_Block_box_Main-text-heading": "June 3, 2024 •",
+            "main-sub-golime_blog_post_Block_box_Main-text-tag": "News",
+            "mina-golime_blog_post_Block_box_Main-content-para": "<p>Go Lime Inc. Announces the launch of a new, home service and...</p>",
+            "golime_blog_post_Block_box_Main-box-btm-button-link": "",
+            "main-golime_blog_post_Block_box_Main-box-btm-button": "Read More ",
+            "main-golime_blog_post_Block_box_Main-box-btm-logo-images": "shopify://shop_images/7th.webp"
+          }
+        }
+      },
+      "block_order": [
+        "blog_box_cHq4PW",
+        "blog_box_VTLn8A",
+        "blog_box_zUFBAY",
+        "blog_box_6ipNbt",
+        "blog_box_B93iHJ",
+        "blog_box_QXqaCB",
+        "blog_box_9KGp94"
+      ],
+      "name": "Golime Blog Block Box",
+      "settings": {
+        "main-golime_blog_post_Block_box_heading": "All the Latest"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "golime_video_about_section_VBL6Rr",
+    "golime_new_section_kdbKEA",
+    "golime_blog_block_boxes_YkgQrp"
+  ]
+}
