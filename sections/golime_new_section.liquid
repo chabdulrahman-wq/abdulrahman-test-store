@@ -1,0 +1,86 @@
+<section class="C_D_img_text">
+  <div class="C_D_container">
+    <div class="C_D_Flex">
+      <div class="C_I_images">
+        {% if section.settings['main-C_I_images'] != blank %}
+          <img
+            class="C_I_img"
+            src="{{ section.settings.main-C_I_images |img_url:'master' }}"
+            alt=""
+            width="100%"
+            height="100%"
+          >
+        {% endif %}
+      </div>
+      <div class="C_E_content">
+        <h2 class="C_E_Title">{{ section.settings.main_Title }}</h2>
+        <div class="C_E_block">
+          {% for block in section.blocks %}
+            <div class="C_E_S_item">
+              <div class="C_S_Images">
+                {% if block.settings['main-C_S_img'] %}
+                  <img
+                    class="C_S_img"
+                    src="{{ block.settings.main-C_S_img |img_url:'master' }}"
+                    alt=""
+                    width="100%"
+                    height="100%"
+                  >
+                {% endif %}
+              </div>
+              <div class="C_S_opputinty">
+                <h4 class="C_O_text">{{ block.settings['main-C_O_text'] }}</h4>
+                <p>{{ block.settings.main_para }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Custom Divrsty Img Text",
+  "settings": [
+    {
+    "type": "image_picker",
+    "id": "main-C_I_images",
+    "label": "Images"
+    },
+    {
+    "type": "text",
+    "id": "main_Title",
+    "label": "Main Title"
+    },
+  ],
+  "blocks": [
+    {
+    "type": "Boxs",
+    "name": "Boxs",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "main-C_S_img",
+        "label": "Images"
+        },
+        {
+        "type": "text",
+        "id": "main-C_O_text",
+        "label": "Main Text",
+        },
+        {
+        "type": "richtext",
+        "id": "main_para",
+        "label": "Main Para"
+        }
+    ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Custom Divrsty Img Text"
+    }
+  ]
+}
+{% endschema %}
