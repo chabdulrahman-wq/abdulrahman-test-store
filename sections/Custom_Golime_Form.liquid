@@ -268,7 +268,7 @@
         </div>
       </div>
       <div class="custom_Golime_form_box">
-        {%- form 'contact', id: 'ContactForm', class: custom_Golime_form; -%}
+        {%- form 'contact', id: 'ContactForm', class: custom_Golime_form -%}
           <div class="custom_Golime_form_input_main_box">
             <div class="custom_Golime_form_input_box">
               <input
@@ -463,3 +463,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- form 'contact', id: 'ContactForm', class: custom_Golime_form; -%}"
+  to: "{%- form 'contact', id: 'ContactForm', class: custom_Golime_form -%}"
+  position: 6223..6291
+{% endcomment %}
