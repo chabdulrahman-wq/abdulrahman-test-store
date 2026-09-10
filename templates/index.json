@@ -11,6 +11,7 @@
   "sections": {
     "golime_banner_pmWTAg": {
       "type": "Golime-banner",
+      "disabled": true,
       "name": "Golime Banner",
       "settings": {
         "background_image": "shopify://shop_images/left-image.webp",
@@ -166,7 +167,6 @@
         "product_HYEage",
         "product_raAQLF"
       ],
-      "disabled": true,
       "name": "Christmas Holiday Banner",
       "settings": {
         "main-Christmas_hoilday_banner_desktop_img": "shopify://shop_images/download_17e631b6-9c5d-4f93-a306-fc94913148cc.webp",
