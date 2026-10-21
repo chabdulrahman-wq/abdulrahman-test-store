@@ -87,7 +87,6 @@
         "banner_box_PpBkjV",
         "banner_box_RRJyLG"
       ],
-      "disabled": true,
       "name": "Golime New Banner Home Page",
       "settings": {
         "main_Golime_New_Banner_hppb_row": "shopify://shop_images/download_590ba77e-c648-487b-9e6e-4b4caa63c69c.webp",
@@ -167,6 +166,7 @@
         "product_HYEage",
         "product_raAQLF"
       ],
+      "disabled": true,
       "name": "Christmas Holiday Banner",
       "settings": {
         "main-Christmas_hoilday_banner_desktop_img": "shopify://shop_images/download_17e631b6-9c5d-4f93-a306-fc94913148cc.webp",
