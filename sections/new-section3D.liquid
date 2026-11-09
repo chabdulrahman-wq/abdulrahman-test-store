@@ -187,6 +187,10 @@
   height: 19px;
 }
 
+.Buton-link {
+    text-decoration: none;
+    color: black;
+}
 #collection-steps-{{ section.id }} .cs-dots {
   display: flex;
   align-items: center;
@@ -300,11 +304,11 @@
                 </div>
               </div>
 
+              <a class="Buton-link" href="{{ block.settings.main-link }}">
               <div class="cs-card-label">
-                <a class="Buton-link" href="{{ block.settings.main-link }}">
                     {{ block.settings.heading | default: 'New Collection' }}
-                </a>
-              </div>
+                </div>
+            </a>
             </div>
 
           {% endif %}
