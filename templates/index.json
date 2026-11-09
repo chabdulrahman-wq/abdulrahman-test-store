@@ -176,17 +176,48 @@
     },
     "new_section3_d_LFHaUq": {
       "type": "new-section3D",
+      "blocks": {
+        "collection_slide_gp7abf": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "heading": "Explore Collections",
+            "description": "Discover our carefully selected collection."
+          }
+        },
+        "collection_slide_VR3Dp6": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "heading": "Explore Collections",
+            "description": "Discover our carefully selected collection."
+          }
+        },
+        "collection_slide_HVat8p": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "heading": "Explore Collections",
+            "description": "Discover our carefully selected collection."
+          }
+        },
+        "collection_slide_EY8eqD": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "",
+            "heading": "Explore Collections",
+            "description": "Discover our carefully selected collection."
+          }
+        }
+      },
+      "block_order": [
+        "collection_slide_gp7abf",
+        "collection_slide_VR3Dp6",
+        "collection_slide_HVat8p",
+        "collection_slide_EY8eqD"
+      ],
       "name": "Collection Steps Carousel",
       "settings": {
-        "collection_1": "man-t-shirt",
-        "title_1": "Explore Collections",
-        "description_1": "Discover our carefully selected collection.",
-        "collection_2": "man-and-woman",
-        "title_2": "Our Best Sellers",
-        "description_2": "Shop our most loved products.",
-        "collection_3": "",
-        "title_3": "Discover More",
-        "description_3": "Find something special in our collections.",
         "background": "#f5f3eb",
         "card_background": "#e9e7df",
         "label_background": "#ffffff",
