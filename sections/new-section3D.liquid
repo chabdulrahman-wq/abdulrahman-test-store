@@ -7,6 +7,11 @@
   text-align: center;
 }
 
+.Buton-link {
+    text-decoration: none;
+    color: black;
+}
+
 #collection-steps-{{ section.id }} * {
   box-sizing: border-box;
 }
@@ -16,13 +21,18 @@
   margin: auto;
 }
 
+/* CAROUSEL */
+
 #collection-steps-{{ section.id }} .cs-carousel {
   position: relative;
-  height: 490px;
-  max-width: 900px;
+  height: 500px;
+  max-width: 950px;
   margin: 0 auto 20px;
-  perspective: 1200px;
+  perspective: 1300px;
+  isolation: isolate;
 }
+
+/* ALL CARDS */
 
 #collection-steps-{{ section.id }} .cs-slide {
   position: absolute;
@@ -30,49 +40,60 @@
   height: 460px;
   left: 50%;
   top: 0;
-  transform: translateX(-50%) scale(.75);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: transform .65s ease, opacity .65s ease;
-  z-index: 1;
+  transform: translateX(-50%) scale(.65);
+  transition:
+    transform .7s cubic-bezier(.22,.61,.36,1),
+    opacity .7s ease,
+    visibility .7s ease;
 }
+
+/* CENTER CARD */
 
 #collection-steps-{{ section.id }} .cs-slide.is-active {
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) translateY(0) scale(1);
   opacity: 1;
   visibility: visible;
-  z-index: 3;
   pointer-events: auto;
+  z-index: 5;
 }
 
-#collection-steps-{{ section.id }} .cs-slide.is-prev {
-  transform: translateX(-112%) translateY(5px) scale(.82);
-  opacity: .68;
-  visibility: visible;
-  z-index: 2;
-  pointer-events: auto;
-}
+/* BACK CARD - SECOND COLLECTION */
 
 #collection-steps-{{ section.id }} .cs-slide.is-next {
   transform: translateX(-50%) translateY(35px) scale(.82);
   opacity: .78;
   visibility: visible;
-  z-index: 1;
   pointer-events: auto;
+  z-index: 2;
 }
+
+/* LEFT CARD - PREVIOUS COLLECTION */
+
+#collection-steps-{{ section.id }} .cs-slide.is-prev {
+  transform: translateX(-112%) translateY(5px) scale(.82);
+  opacity: .68;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 3;
+}
+
+/* CARD DESIGN */
 
 #collection-steps-{{ section.id }} .cs-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 12px;
   background: {{ section.settings.card_background }};
   border-radius: 17px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.13);
+  box-shadow: 0 18px 45px rgba(0,0,0,.13);
   text-decoration: none;
   color: inherit;
+  overflow: hidden;
 }
 
 #collection-steps-{{ section.id }} .cs-image {
@@ -83,8 +104,8 @@
   border-radius: 10px;
   background: #e9e7df;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 #collection-steps-{{ section.id }} .cs-image img {
@@ -102,20 +123,24 @@
 #collection-steps-{{ section.id }} .cs-card-label {
   min-height: 45px;
   margin-top: 12px;
-      cursor: pointer;
+  cursor: pointer;
   border-radius: 10px;
   background: {{ section.settings.label_background }};
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 500;
 }
 
+/* TEXT CONTENT */
+
 #collection-steps-{{ section.id }} .cs-content {
   max-width: 750px;
   margin: 0 auto;
+  position: relative;
+  z-index: 6;
 }
 
 #collection-steps-{{ section.id }} .cs-step {
@@ -136,25 +161,14 @@
   color: {{ section.settings.accent_color }};
 }
 
-#collection-steps-{{ section.id }} .cs-explore {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 22px;
-  padding: 13px 30px;
-  background: {{ section.settings.accent_color }};
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .3s ease;
+#collection-steps-{{ section.id }} .cs-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 650px;
 }
 
-#collection-steps-{{ section.id }} .cs-explore:hover {
-  opacity: .8;
-  transform: translateY(-2px);
-}
+/* NAVIGATION */
 
 #collection-steps-{{ section.id }} .cs-controls {
   display: flex;
@@ -162,6 +176,8 @@
   justify-content: center;
   gap: 15px;
   margin-top: 36px;
+  position: relative;
+  z-index: 7;
 }
 
 #collection-steps-{{ section.id }} .cs-arrow {
@@ -172,8 +188,8 @@
   color: {{ section.settings.accent_color }};
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: .25s ease;
 }
@@ -188,16 +204,13 @@
   height: 19px;
 }
 
-.Buton-link {
-    text-decoration: none;
-    color: black;
-}
 #collection-steps-{{ section.id }} .cs-dots {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   flex-wrap: wrap;
-  justify-content: center;
+  max-width: 180px;
 }
 
 #collection-steps-{{ section.id }} .cs-dot {
@@ -216,36 +229,44 @@
   outline: 1px solid {{ section.settings.accent_color }};
 }
 
+/* MOBILE */
+
 @media(max-width: 600px) {
   #collection-steps-{{ section.id }} {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   #collection-steps-{{ section.id }} .cs-carousel {
-    height: 350px;
+    height: 370px;
   }
 
   #collection-steps-{{ section.id }} .cs-slide {
     width: 72vw;
-    height: 330px;
-  }
-
-  #collection-steps-{{ section.id }} .cs-slide.is-prev {
-    transform: translateX(-108%) translateY(5px) scale(.78);
+    height: 340px;
   }
 
   #collection-steps-{{ section.id }} .cs-slide.is-next {
     transform: translateX(-50%) translateY(28px) scale(.80);
   }
 
+  #collection-steps-{{ section.id }} .cs-slide.is-prev {
+    transform: translateX(-108%) translateY(5px) scale(.78);
+  }
+
   #collection-steps-{{ section.id }} .cs-card {
     padding: 9px;
+    border-radius: 13px;
   }
 
   #collection-steps-{{ section.id }} .cs-card-label {
     min-height: 38px;
     font-size: 12px;
+    margin-top: 9px;
+  }
+
+  #collection-steps-{{ section.id }} .cs-description {
+    font-size: 14px;
   }
 
   #collection-steps-{{ section.id }} .cs-controls {
@@ -268,7 +289,7 @@
           class="cs-slide"
           data-slide="{{ forloop.index0 }}"
           data-title="{{ block.settings.heading | escape }}"
-          data-url="{% if collection_item != blank %}{{ collection_item.url }}{% endif %}"
+          data-description="{{ block.settings.description | escape }}"
           {{ block.shopify_attributes }}
         >
 
@@ -331,19 +352,15 @@
           {{ section.blocks.first.settings.heading }}
         </h2>
 
-        <a
-          class="cs-explore"
-          data-explore
-          href="{{ section.blocks.first.settings.collection.url }}"
-        >
-          {{ section.settings.button_text }}
-        </a>
+        <p class="cs-description" data-description>
+          {{ section.blocks.first.settings.description }}
+        </p>
 
       </div>
 
       <div class="cs-controls">
 
-        <button class="cs-arrow" type="button" data-prev aria-label="Previous collection">
+        <button class="cs-arrow" type="button" data-prev aria-label="Previous">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M15 18L9 12L15 6"/>
           </svg>
@@ -355,12 +372,12 @@
               class="cs-dot"
               type="button"
               data-dot="{{ forloop.index0 }}"
-              aria-label="Go to collection {{ forloop.index }}"
+              aria-label="Go to slide {{ forloop.index }}"
             ></button>
           {% endfor %}
         </div>
 
-        <button class="cs-arrow" type="button" data-next aria-label="Next collection">
+        <button class="cs-arrow" type="button" data-next aria-label="Next">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 18L15 12L9 6"/>
           </svg>
@@ -386,13 +403,14 @@
   const dots = Array.from(section.querySelectorAll('[data-dot]'));
 
   const heading = section.querySelector('[data-heading]');
+  const description = section.querySelector('[data-description]');
   const step = section.querySelector('[data-step]');
-  const explore = section.querySelector('[data-explore]');
 
   const prev = section.querySelector('[data-prev]');
   const next = section.querySelector('[data-next]');
 
   const total = slides.length;
+
   let current = 0;
 
   if (!total) return;
@@ -446,36 +464,54 @@
       heading.textContent = activeSlide.dataset.title || '';
     }
 
-    if (step) {
-      step.textContent = 'STEP ' + (current + 1) + ' OF ' + total;
+    if (description) {
+      description.textContent = activeSlide.dataset.description || '';
     }
 
-    if (explore) {
-      explore.href = activeSlide.dataset.url || '#';
-      explore.style.display = activeSlide.dataset.url ? 'inline-flex' : 'none';
+    if (step) {
+      step.textContent = 'STEP ' + (current + 1) + ' OF ' + total;
     }
 
   }
 
   function goTo(index) {
+
     current = (index + total) % total;
+
     updateCarousel();
+
   }
 
-  prev.addEventListener('click', () => goTo(current - 1));
-  next.addEventListener('click', () => goTo(current + 1));
+  prev.addEventListener('click', function() {
+    goTo(current - 1);
+  });
+
+  next.addEventListener('click', function() {
+    goTo(current + 1);
+  });
 
   dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => goTo(index));
+
+    dot.addEventListener('click', function() {
+      goTo(index);
+    });
+
   });
 
   slides.forEach((slide, index) => {
-    slide.addEventListener('click', (event) => {
+
+    slide.addEventListener('click', function(event) {
+
       if (index !== current) {
+
         event.preventDefault();
+
         goTo(index);
+
       }
+
     });
+
   });
 
   updateCarousel();
@@ -485,18 +521,12 @@
 
 {% schema %}
 {
-  "name": "Collection Steps Carousel",
+  "name": "3D Collection Carousel",
   "max_blocks": 12,
   "settings": [
     {
       "type": "header",
-      "content": "Carousel Design"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Explore Collection"
+      "content": "Carousel Colors"
     },
     {
       "type": "color",
@@ -561,7 +591,7 @@
           "id": "collection",
           "label": "Select Collection"
         },
-        {
+       {
         "type": "url",
         "id": "main-link",
         "label": "Button Link"
@@ -577,8 +607,14 @@
   ],
   "presets": [
     {
-      "name": "Collection Steps Carousel",
+      "name": "3D Collection Carousel",
       "blocks": [
+        {
+          "type": "collection_slide"
+        },
+        {
+          "type": "collection_slide"
+        },
         {
           "type": "collection_slide"
         },
