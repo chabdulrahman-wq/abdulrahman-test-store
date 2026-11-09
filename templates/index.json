@@ -174,6 +174,28 @@
         "mian-Christmas_hoilday_banner_main_Slider_title_mobile": "Holiday Comfort,<br> Smarter Savings!✨"
       }
     },
+    "new_section3_d_LFHaUq": {
+      "type": "new-section3D",
+      "name": "Collection Steps Carousel",
+      "settings": {
+        "collection_1": "man-t-shirt",
+        "title_1": "Explore Collections",
+        "description_1": "Discover our carefully selected collection.",
+        "collection_2": "man-and-woman",
+        "title_2": "Our Best Sellers",
+        "description_2": "Shop our most loved products.",
+        "collection_3": "",
+        "title_3": "Discover More",
+        "description_3": "Find something special in our collections.",
+        "background": "#f5f3eb",
+        "card_background": "#e9e7df",
+        "label_background": "#ffffff",
+        "text_color": "#303d38",
+        "accent_color": "#294b43",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "golime_map_tabing_GMjbCT": {
       "type": "golime_map_tabing",
       "blocks": {
@@ -1090,6 +1112,7 @@
     "golime_banner_pmWTAg",
     "golime_new_banner_home_page_Pkq7RX",
     "christmas_holiday_banner_QmU3Yn",
+    "new_section3_d_LFHaUq",
     "golime_map_tabing_GMjbCT",
     "christmas_holiday_7bPdqm",
     "3_boxs_golime_new_QMPCfP",
