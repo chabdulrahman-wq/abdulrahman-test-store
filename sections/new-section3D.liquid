@@ -7,7 +7,9 @@
   text-align: center;
 }
 
-#collection-steps-{{ section.id }} * { box-sizing: border-box; }
+#collection-steps-{{ section.id }} * {
+  box-sizing: border-box;
+}
 
 #collection-steps-{{ section.id }} .cs-container {
   max-width: 1200px;
@@ -30,6 +32,7 @@
   top: 0;
   transform: translateX(-50%) scale(.75);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: transform .65s ease, opacity .65s ease;
   z-index: 1;
@@ -38,21 +41,24 @@
 #collection-steps-{{ section.id }} .cs-slide.is-active {
   transform: translateX(-50%) scale(1);
   opacity: 1;
+  visibility: visible;
   z-index: 3;
   pointer-events: auto;
 }
 
 #collection-steps-{{ section.id }} .cs-slide.is-prev {
-  transform: translateX(-88%) scale(.84);
-  opacity: .62;
+  transform: translateX(-112%) translateY(5px) scale(.82);
+  opacity: .68;
+  visibility: visible;
   z-index: 2;
   pointer-events: auto;
 }
 
 #collection-steps-{{ section.id }} .cs-slide.is-next {
-  transform: translateX(-12%) scale(.84);
-  opacity: .62;
-  z-index: 2;
+  transform: translateX(-50%) translateY(35px) scale(.82);
+  opacity: .78;
+  visibility: visible;
+  z-index: 1;
   pointer-events: auto;
 }
 
@@ -129,11 +135,24 @@
   color: {{ section.settings.accent_color }};
 }
 
-#collection-steps-{{ section.id }} .cs-description {
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 650px;
+#collection-steps-{{ section.id }} .cs-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  padding: 13px 30px;
+  background: {{ section.settings.accent_color }};
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+#collection-steps-{{ section.id }} .cs-explore:hover {
+  opacity: .8;
+  transform: translateY(-2px);
 }
 
 #collection-steps-{{ section.id }} .cs-controls {
@@ -208,11 +227,11 @@
   }
 
   #collection-steps-{{ section.id }} .cs-slide.is-prev {
-    transform: translateX(-91%) scale(.78);
+    transform: translateX(-108%) translateY(5px) scale(.78);
   }
 
   #collection-steps-{{ section.id }} .cs-slide.is-next {
-    transform: translateX(-9%) scale(.78);
+    transform: translateX(-50%) translateY(28px) scale(.80);
   }
 
   #collection-steps-{{ section.id }} .cs-card {
@@ -222,10 +241,6 @@
   #collection-steps-{{ section.id }} .cs-card-label {
     min-height: 38px;
     font-size: 12px;
-  }
-
-  #collection-steps-{{ section.id }} .cs-description {
-    font-size: 14px;
   }
 
   #collection-steps-{{ section.id }} .cs-controls {
@@ -239,7 +254,7 @@
 
     {% assign total_slides = section.blocks.size %}
 
-    <div class="cs-carousel" data-carousel>
+    <div class="cs-carousel">
 
       {% for block in section.blocks %}
         {% assign collection_item = block.settings.collection %}
@@ -248,11 +263,12 @@
           class="cs-slide"
           data-slide="{{ forloop.index0 }}"
           data-title="{{ block.settings.heading | escape }}"
-          data-description="{{ block.settings.description | escape }}"
+          data-url="{% if collection_item != blank %}{{ collection_item.url }}{% endif %}"
           {{ block.shopify_attributes }}
         >
 
           {% if collection_item != blank %}
+
             <a class="cs-card" href="{{ collection_item.url }}">
 
               <div class="cs-image">
@@ -263,7 +279,9 @@
                     | image_tag: loading: 'lazy', alt: collection_item.title
                   }}
                 {% else %}
-                  <div class="cs-placeholder">No collection image</div>
+                  <div class="cs-placeholder">
+                    No collection image
+                  </div>
                 {% endif %}
               </div>
 
@@ -272,15 +290,21 @@
               </div>
 
             </a>
+
           {% else %}
+
             <div class="cs-card">
               <div class="cs-image">
-                <div class="cs-placeholder">Select a collection</div>
+                <div class="cs-placeholder">
+                  Select a collection
+                </div>
               </div>
+
               <div class="cs-card-label">
                 {{ block.settings.heading | default: 'New Collection' }}
               </div>
             </div>
+
           {% endif %}
 
         </div>
@@ -288,55 +312,65 @@
 
     </div>
 
-    <div class="cs-content">
-      <div class="cs-step" data-step>
-        STEP 1 OF {{ total_slides }}
-      </div>
+    {% if total_slides > 0 %}
 
-      <h2 class="cs-title" data-heading>
-        {% if section.blocks.first != blank %}
+      <div class="cs-content">
+
+        <div class="cs-step" data-step>
+          STEP 1 OF {{ total_slides }}
+        </div>
+
+        <h2 class="cs-title" data-heading>
           {{ section.blocks.first.settings.heading }}
-        {% endif %}
-      </h2>
+        </h2>
 
-      <p class="cs-description" data-description>
-        {% if section.blocks.first != blank %}
-          {{ section.blocks.first.settings.description }}
-        {% endif %}
-      </p>
-    </div>
+        <a
+          class="cs-explore"
+          data-explore
+          href="{{ section.blocks.first.settings.collection.url }}"
+        >
+          {{ section.settings.button_text }}
+        </a>
 
-    <div class="cs-controls">
-      <button class="cs-arrow" type="button" data-prev aria-label="Previous collection">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M15 18L9 12L15 6"/>
-        </svg>
-      </button>
-
-      <div class="cs-dots">
-        {% for block in section.blocks %}
-          <button
-            class="cs-dot"
-            type="button"
-            data-dot="{{ forloop.index0 }}"
-            aria-label="Go to collection {{ forloop.index }}"
-          ></button>
-        {% endfor %}
       </div>
 
-      <button class="cs-arrow" type="button" data-next aria-label="Next collection">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 18L15 12L9 6"/>
-        </svg>
-      </button>
-    </div>
+      <div class="cs-controls">
+
+        <button class="cs-arrow" type="button" data-prev aria-label="Previous collection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18L9 12L15 6"/>
+          </svg>
+        </button>
+
+        <div class="cs-dots">
+          {% for block in section.blocks %}
+            <button
+              class="cs-dot"
+              type="button"
+              data-dot="{{ forloop.index0 }}"
+              aria-label="Go to collection {{ forloop.index }}"
+            ></button>
+          {% endfor %}
+        </div>
+
+        <button class="cs-arrow" type="button" data-next aria-label="Next collection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18L15 12L9 6"/>
+          </svg>
+        </button>
+
+      </div>
+
+    {% endif %}
 
   </div>
 </section>
 
 <script>
 (function() {
+
   const section = document.getElementById('collection-steps-{{ section.id }}');
+
   if (!section || section.dataset.initialized === 'true') return;
 
   section.dataset.initialized = 'true';
@@ -345,43 +379,75 @@
   const dots = Array.from(section.querySelectorAll('[data-dot]'));
 
   const heading = section.querySelector('[data-heading]');
-  const description = section.querySelector('[data-description]');
   const step = section.querySelector('[data-step]');
+  const explore = section.querySelector('[data-explore]');
 
   const prev = section.querySelector('[data-prev]');
   const next = section.querySelector('[data-next]');
 
-  let current = 0;
   const total = slides.length;
+  let current = 0;
 
-  if (!total) {
-    section.querySelector('.cs-controls').style.display = 'none';
-    return;
-  }
+  if (!total) return;
 
   function updateCarousel() {
+
     slides.forEach((slide, index) => {
-      slide.classList.remove('is-active', 'is-prev', 'is-next');
+
+      slide.classList.remove(
+        'is-active',
+        'is-prev',
+        'is-next'
+      );
 
       if (index === current) {
+
         slide.classList.add('is-active');
-      } else if (total >= 3 && index === (current - 1 + total) % total) {
+
+      } else if (
+        total >= 3 &&
+        index === (current - 1 + total) % total
+      ) {
+
         slide.classList.add('is-prev');
-      } else if (total >= 2 && index === (current + 1) % total) {
+
+      } else if (
+        total >= 2 &&
+        index === (current + 1) % total
+      ) {
+
         slide.classList.add('is-next');
+
       }
+
     });
 
     dots.forEach((dot, index) => {
+
       dot.classList.toggle('is-active', index === current);
-      dot.setAttribute('aria-current', index === current ? 'step' : 'false');
+
+      dot.setAttribute(
+        'aria-current',
+        index === current ? 'step' : 'false'
+      );
+
     });
 
     const activeSlide = slides[current];
 
-    heading.textContent = activeSlide.dataset.title || '';
-    description.textContent = activeSlide.dataset.description || '';
-    step.textContent = 'STEP ' + (current + 1) + ' OF ' + total;
+    if (heading) {
+      heading.textContent = activeSlide.dataset.title || '';
+    }
+
+    if (step) {
+      step.textContent = 'STEP ' + (current + 1) + ' OF ' + total;
+    }
+
+    if (explore) {
+      explore.href = activeSlide.dataset.url || '#';
+      explore.style.display = activeSlide.dataset.url ? 'inline-flex' : 'none';
+    }
+
   }
 
   function goTo(index) {
@@ -407,11 +473,6 @@
 
   updateCarousel();
 
-  document.addEventListener('shopify:section:unload', function(event) {
-    if (event.detail.sectionId === '{{ section.id }}') {
-      section.dataset.initialized = 'false';
-    }
-  });
 })();
 </script>
 
@@ -423,6 +484,12 @@
     {
       "type": "header",
       "content": "Carousel Design"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Explore Collection"
     },
     {
       "type": "color",
@@ -439,7 +506,7 @@
     {
       "type": "color",
       "id": "label_background",
-      "label": "Collection Label Background",
+      "label": "Label Background",
       "default": "#ffffff"
     },
     {
@@ -453,6 +520,10 @@
       "id": "accent_color",
       "label": "Accent Color",
       "default": "#294b43"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
     },
     {
       "type": "range",
@@ -488,12 +559,6 @@
           "id": "heading",
           "label": "Heading",
           "default": "Explore Collections"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Discover our carefully selected collection."
         }
       ]
     }
