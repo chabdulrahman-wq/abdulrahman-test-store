@@ -1,79 +1,90 @@
 {% style %}
 #collection-steps-{{ section.id }} {
-  background: {{ section.settings.background_color }};
+  background: {{ section.settings.background }};
   color: {{ section.settings.text_color }};
   padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
   overflow: hidden;
-}
-
-#collection-steps-{{ section.id }} .cs-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#collection-steps-{{ section.id }} .cs-heading {
   text-align: center;
-  margin-bottom: 25px;
-  font-size: 32px;
-  font-weight: 700;
 }
 
-#collection-steps-{{ section.id }} .cs-stage {
+#collection-steps-{{ section.id }} * {
+  box-sizing: border-box;
+}
+
+#collection-steps-{{ section.id }} .cs-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+#collection-steps-{{ section.id }} .cs-carousel {
   position: relative;
-  height: 440px;
-  max-width: 850px;
-  margin: 0 auto;
+  height: 490px;
+  max-width: 900px;
+  margin: 0 auto 20px;
   perspective: 1200px;
 }
 
 #collection-steps-{{ section.id }} .cs-slide {
   position: absolute;
-  width: 300px;
-  height: 360px;
+  width: min(460px, 68vw);
+  height: 460px;
   left: 50%;
-  top: 15px;
-  transform: translateX(-50%);
+  top: 0;
+  transform: translateX(-50%) scale(.75);
   opacity: 0;
   visibility: hidden;
-  transition: all .55s ease;
-  border-radius: 22px;
-  overflow: hidden;
-  background: {{ section.settings.card_background }};
-  box-shadow: 0 18px 40px rgba(0,0,0,.16);
+  pointer-events: none;
+  transition: transform .65s ease, opacity .65s ease;
+  z-index: 1;
 }
 
 #collection-steps-{{ section.id }} .cs-slide.is-active {
+  transform: translateX(-50%) scale(1);
   opacity: 1;
   visibility: visible;
   z-index: 3;
-  transform: translateX(-50%) translateY(0) scale(1);
-}
-
-#collection-steps-{{ section.id }} .cs-slide.is-next {
-  opacity: .75;
-  visibility: visible;
-  z-index: 2;
-  transform: translateX(-50%) translateY(35px) scale(.82);
+  pointer-events: auto;
 }
 
 #collection-steps-{{ section.id }} .cs-slide.is-prev {
-  opacity: .75;
-  visibility: visible;
-  z-index: 1;
   transform: translateX(-112%) translateY(5px) scale(.82);
+  opacity: .68;
+  visibility: visible;
+  z-index: 2;
+  pointer-events: auto;
 }
 
-#collection-steps-{{ section.id }} .cs-slide a.cs-card-link {
-  display: block;
+#collection-steps-{{ section.id }} .cs-slide.is-next {
+  transform: translateX(-50%) translateY(35px) scale(.82);
+  opacity: .78;
+  visibility: visible;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+#collection-steps-{{ section.id }} .cs-card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  color: inherit;
+  width: 100%;
+  padding: 12px;
+  background: {{ section.settings.card_background }};
+  border-radius: 17px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.13);
   text-decoration: none;
+  color: inherit;
 }
 
 #collection-steps-{{ section.id }} .cs-image {
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: 100%;
-  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e9e7df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #collection-steps-{{ section.id }} .cs-image img {
@@ -84,254 +95,375 @@
 }
 
 #collection-steps-{{ section.id }} .cs-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #eeeeee;
-  color: #555;
+  color: #777;
+  font-size: 14px;
 }
 
-#collection-steps-{{ section.id }} .cs-card-title {
-  position: absolute;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  padding: 13px;
-  text-align: center;
-  border-radius: 12px;
+#collection-steps-{{ section.id }} .cs-card-label {
+  min-height: 45px;
+  margin-top: 12px;
+  border-radius: 10px;
   background: {{ section.settings.label_background }};
-  color: {{ section.settings.text_color }};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#collection-steps-{{ section.id }} .cs-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#collection-steps-{{ section.id }} .cs-step {
+  font-size: 13px;
   font-weight: 700;
-  font-size: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+  opacity: .8;
+}
+
+#collection-steps-{{ section.id }} .cs-title {
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 4vw, 36px);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0 0 12px;
+  color: {{ section.settings.accent_color }};
+}
+
+#collection-steps-{{ section.id }} .cs-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  padding: 13px 30px;
+  background: {{ section.settings.accent_color }};
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+#collection-steps-{{ section.id }} .cs-explore:hover {
+  opacity: .8;
+  transform: translateY(-2px);
 }
 
 #collection-steps-{{ section.id }} .cs-controls {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 18px;
-  margin-top: 5px;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 36px;
 }
 
 #collection-steps-{{ section.id }} .cs-arrow {
-  width: 42px;
-  height: 42px;
-  border: 0;
+  width: 49px;
+  height: 49px;
+  border: 1px solid {{ section.settings.accent_color }};
+  background: transparent;
+  color: {{ section.settings.accent_color }};
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+#collection-steps-{{ section.id }} .cs-arrow:hover {
   background: {{ section.settings.accent_color }};
-  color: #fff;
-  font-size: 22px;
+  color: white;
+}
+
+#collection-steps-{{ section.id }} .cs-arrow svg {
+  width: 19px;
+  height: 19px;
+}
+
+#collection-steps-{{ section.id }} .cs-dots {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#collection-steps-{{ section.id }} .cs-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid {{ section.settings.accent_color }};
+  background: transparent;
   cursor: pointer;
 }
 
-#collection-steps-{{ section.id }} .cs-count {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-#collection-steps-{{ section.id }} .cs-side-button-wrap {
-  text-align: center;
-  margin-top: 12px;
-}
-
-#collection-steps-{{ section.id }} .cs-side-button,
-#collection-steps-{{ section.id }} .cs-bottom-button {
-  display: inline-block;
-  padding: 13px 28px;
-  border-radius: 30px;
+#collection-steps-{{ section.id }} .cs-dot.is-active {
   background: {{ section.settings.accent_color }};
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: opacity .2s ease;
+  box-shadow: inset 0 0 0 3px {{ section.settings.background }};
+  outline: 1px solid {{ section.settings.accent_color }};
 }
 
-#collection-steps-{{ section.id }} .cs-side-button:hover,
-#collection-steps-{{ section.id }} .cs-bottom-button:hover {
-  opacity: .85;
-}
-
-#collection-steps-{{ section.id }} .cs-bottom-button-wrap {
-  text-align: center;
-  margin-top: 25px;
-}
-
-@media (max-width: 600px) {
-  #collection-steps-{{ section.id }} .cs-heading {
-    font-size: 25px;
+@media(max-width: 600px) {
+  #collection-steps-{{ section.id }} {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  #collection-steps-{{ section.id }} .cs-stage {
-    height: 365px;
+  #collection-steps-{{ section.id }} .cs-carousel {
+    height: 350px;
   }
 
   #collection-steps-{{ section.id }} .cs-slide {
-    width: 245px;
-    height: 300px;
+    width: 72vw;
+    height: 330px;
   }
 
   #collection-steps-{{ section.id }} .cs-slide.is-prev {
-    transform: translateX(-90%) translateY(5px) scale(.78);
+    transform: translateX(-108%) translateY(5px) scale(.78);
   }
 
   #collection-steps-{{ section.id }} .cs-slide.is-next {
-    transform: translateX(-50%) translateY(30px) scale(.78);
+    transform: translateX(-50%) translateY(28px) scale(.80);
   }
 
-  #collection-steps-{{ section.id }} .cs-side-button,
-  #collection-steps-{{ section.id }} .cs-bottom-button {
-    padding: 11px 22px;
-    font-size: 14px;
+  #collection-steps-{{ section.id }} .cs-card {
+    padding: 9px;
+  }
+
+  #collection-steps-{{ section.id }} .cs-card-label {
+    min-height: 38px;
+    font-size: 12px;
+  }
+
+  #collection-steps-{{ section.id }} .cs-controls {
+    margin-top: 25px;
   }
 }
 {% endstyle %}
 
 <section id="collection-steps-{{ section.id }}">
-  <div class="cs-inner">
+  <div class="cs-container">
 
-    {% if section.settings.heading != blank %}
-      <h2 class="cs-heading">{{ section.settings.heading }}</h2>
-    {% endif %}
+    {% assign total_slides = section.blocks.size %}
 
-    <div class="cs-stage" data-cs-stage>
+    <div class="cs-carousel">
+
       {% for block in section.blocks %}
         {% assign collection_item = block.settings.collection %}
+
         <div
-          class="cs-slide{% if forloop.first %} is-active{% endif %}"
-          data-cs-slide
-          data-index="{{ forloop.index0 }}"
+          class="cs-slide"
+          data-slide="{{ forloop.index0 }}"
+          data-title="{{ block.settings.heading | escape }}"
+          data-url="{% if collection_item != blank %}{{ collection_item.url }}{% endif %}"
           {{ block.shopify_attributes }}
         >
+
           {% if collection_item != blank %}
-            <a
-              class="cs-card-link"
-              href="{% if block.settings.card_custom_link != blank %}{{ block.settings.card_custom_link }}{% else %}{{ collection_item.url }}{% endif %}"
-            >
+
+            <a class="cs-card" href="{{ collection_item.url }}">
+
               <div class="cs-image">
                 {% if collection_item.featured_image != blank %}
-                  <img
-                    src="{{ collection_item.featured_image | image_url: width: 900 }}"
-                    alt="{{ collection_item.title | escape }}"
-                    loading="lazy"
-                    width="900"
-                    height="1100"
-                  >
+                  {{
+                    collection_item.featured_image
+                    | image_url: width: 1200
+                    | image_tag: loading: 'lazy', alt: collection_item.title
+                  }}
                 {% else %}
-                  <div class="cs-placeholder">Collection Image</div>
+                  <div class="cs-placeholder">
+                    No collection image
+                  </div>
                 {% endif %}
+              </div>
 
-                <div class="cs-card-title">
-                  {% if block.settings.heading != blank %}
-                    {{ block.settings.heading }}
-                  {% else %}
-                    {{ collection_item.title }}
-                  {% endif %}
+              <div class="cs-card-label">
+                {{ collection_item.title }}
+              </div>
+
+            </a>
+
+          {% else %}
+
+            <div class="cs-card">
+              <div class="cs-image">
+                <div class="cs-placeholder">
+                  Select a collection
                 </div>
               </div>
-            </a>
-          {% else %}
-            <div class="cs-image">
-              <div class="cs-placeholder">Select a Collection</div>
+
+              <div class="cs-card-label">
+                {{ block.settings.heading | default: 'New Collection' }}
+              </div>
             </div>
+
           {% endif %}
+
         </div>
       {% endfor %}
+
     </div>
 
-    {% if section.blocks.size > 0 %}
+    {% if total_slides > 0 %}
+
+      <div class="cs-content">
+
+        <div class="cs-step" data-step>
+          STEP 1 OF {{ total_slides }}
+        </div>
+
+        <h2 class="cs-title" data-heading>
+          {{ section.blocks.first.settings.heading }}
+        </h2>
+
+        <a
+          class="cs-explore"
+          data-explore
+          href="{{ section.blocks.first.settings.collection.url }}"
+        >
+          {{ section.settings.button_text }}
+        </a>
+
+      </div>
+
       <div class="cs-controls">
-        <button class="cs-arrow" type="button" data-cs-prev aria-label="Previous collection">‹</button>
-        <span class="cs-count" data-cs-count>1 / {{ section.blocks.size }}</span>
-        <button class="cs-arrow" type="button" data-cs-next aria-label="Next collection">›</button>
+
+        <button class="cs-arrow" type="button" data-prev aria-label="Previous collection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18L9 12L15 6"/>
+          </svg>
+        </button>
+
+        <div class="cs-dots">
+          {% for block in section.blocks %}
+            <button
+              class="cs-dot"
+              type="button"
+              data-dot="{{ forloop.index0 }}"
+              aria-label="Go to collection {{ forloop.index }}"
+            ></button>
+          {% endfor %}
+        </div>
+
+        <button class="cs-arrow" type="button" data-next aria-label="Next collection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18L15 12L9 6"/>
+          </svg>
+        </button>
+
       </div>
 
-      <div class="cs-side-button-wrap">
-        <a
-          class="cs-side-button"
-          data-cs-side-button
-          href="{{ section.blocks.first.settings.card_custom_link | default: section.blocks.first.settings.collection.url | default: '#' }}"
-        >
-          {{ section.settings.side_button_text | escape }}
-        </a>
-      </div>
-    {% endif %}
-
-    {% if section.settings.bottom_button_text != blank %}
-      <div class="cs-bottom-button-wrap">
-        <a
-          class="cs-bottom-button"
-          href="{{ section.settings.bottom_custom_link | default: '/collections' }}"
-        >
-          {{ section.settings.bottom_button_text | escape }}
-        </a>
-      </div>
     {% endif %}
 
   </div>
 </section>
 
 <script>
-(function () {
-  const root = document.getElementById('collection-steps-{{ section.id }}');
-  if (!root || root.dataset.initialized === 'true') return;
-  root.dataset.initialized = 'true';
+(function() {
 
-  const slides = Array.from(root.querySelectorAll('[data-cs-slide]'));
-  const prev = root.querySelector('[data-cs-prev]');
-  const next = root.querySelector('[data-cs-next]');
-  const count = root.querySelector('[data-cs-count]');
-  const sideButton = root.querySelector('[data-cs-side-button]');
+  const section = document.getElementById('collection-steps-{{ section.id }}');
 
-  if (!slides.length) return;
+  if (!section || section.dataset.initialized === 'true') return;
 
-  const slideData = [
-    {% for block in section.blocks %}
-      {
-        url: {{ block.settings.card_custom_link | default: block.settings.collection.url | default: '#' | json }},
-        title: {{ block.settings.heading | default: block.settings.collection.title | json }}
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
+  section.dataset.initialized = 'true';
 
+  const slides = Array.from(section.querySelectorAll('[data-slide]'));
+  const dots = Array.from(section.querySelectorAll('[data-dot]'));
+
+  const heading = section.querySelector('[data-heading]');
+  const step = section.querySelector('[data-step]');
+  const explore = section.querySelector('[data-explore]');
+
+  const prev = section.querySelector('[data-prev]');
+  const next = section.querySelector('[data-next]');
+
+  const total = slides.length;
   let current = 0;
 
-  function update() {
-    const total = slides.length;
+  if (!total) return;
+
+  function updateCarousel() {
 
     slides.forEach((slide, index) => {
-      slide.classList.remove('is-active', 'is-next', 'is-prev');
+
+      slide.classList.remove(
+        'is-active',
+        'is-prev',
+        'is-next'
+      );
 
       if (index === current) {
+
         slide.classList.add('is-active');
-      } else if (index === (current + 1) % total) {
-        slide.classList.add('is-next');
-      } else if (index === (current - 1 + total) % total) {
+
+      } else if (
+        total >= 3 &&
+        index === (current - 1 + total) % total
+      ) {
+
         slide.classList.add('is-prev');
+
+      } else if (
+        total >= 2 &&
+        index === (current + 1) % total
+      ) {
+
+        slide.classList.add('is-next');
+
       }
+
     });
 
-    if (count) count.textContent = (current + 1) + ' / ' + total;
+    dots.forEach((dot, index) => {
 
-    if (sideButton && slideData[current]) {
-      sideButton.href = slideData[current].url || '#';
+      dot.classList.toggle('is-active', index === current);
+
+      dot.setAttribute(
+        'aria-current',
+        index === current ? 'step' : 'false'
+      );
+
+    });
+
+    const activeSlide = slides[current];
+
+    if (heading) {
+      heading.textContent = activeSlide.dataset.title || '';
     }
+
+    if (step) {
+      step.textContent = 'STEP ' + (current + 1) + ' OF ' + total;
+    }
+
+    if (explore) {
+      explore.href = activeSlide.dataset.url || '#';
+      explore.style.display = activeSlide.dataset.url ? 'inline-flex' : 'none';
+    }
+
   }
 
   function goTo(index) {
-    current = (index + slides.length) % slides.length;
-    update();
+    current = (index + total) % total;
+    updateCarousel();
   }
 
-  if (prev) prev.addEventListener('click', () => goTo(current - 1));
-  if (next) next.addEventListener('click', () => goTo(current + 1));
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => goTo(index));
+  });
 
   slides.forEach((slide, index) => {
-    const link = slide.querySelector('.cs-card-link');
-    if (!link) return;
-
-    link.addEventListener('click', function (event) {
+    slide.addEventListener('click', (event) => {
       if (index !== current) {
         event.preventDefault();
         goTo(index);
@@ -339,120 +471,111 @@
     });
   });
 
-  update();
+  updateCarousel();
+
 })();
 </script>
 
 {% schema %}
 {
-  "name": "Collection 3D Carousel",
+  "name": "Collection Steps Carousel",
+  "max_blocks": 12,
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Main heading",
-      "default": "Explore Our Collections"
+      "type": "header",
+      "content": "Carousel Design"
     },
     {
       "type": "text",
-      "id": "side_button_text",
-      "label": "Side box button text",
+      "id": "button_text",
+      "label": "Button Text",
       "default": "Explore Collection"
     },
     {
-      "type": "url",
-      "id": "bottom_custom_link",
-      "label": "Bottom button custom link",
-      "info": "Choose All Collections or paste a custom page URL."
-    },
-    {
-      "type": "text",
-      "id": "bottom_button_text",
-      "label": "Bottom button text",
-      "default": "Explore All Collections"
-    },
-    {
       "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#ffffff"
+      "id": "background",
+      "label": "Background Color",
+      "default": "#f5f3eb"
     },
     {
       "type": "color",
       "id": "card_background",
-      "label": "Card background",
-      "default": "#f5f5f5"
+      "label": "Card Background",
+      "default": "#e9e7df"
     },
     {
       "type": "color",
       "id": "label_background",
-      "label": "Card title background",
+      "label": "Label Background",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text color",
-      "default": "#111111"
+      "label": "Text Color",
+      "default": "#303d38"
     },
     {
       "type": "color",
       "id": "accent_color",
-      "label": "Button color",
-      "default": "#111111"
+      "label": "Accent Color",
+      "default": "#294b43"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
     },
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Top padding",
+      "label": "Top Spacing",
       "min": 0,
-      "max": 100,
-      "step": 5,
+      "max": 120,
+      "step": 4,
       "default": 40
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Bottom padding",
+      "label": "Bottom Spacing",
       "min": 0,
-      "max": 100,
-      "step": 5,
+      "max": 120,
+      "step": 4,
       "default": 40
     }
   ],
   "blocks": [
     {
       "type": "collection_slide",
-      "name": "Collection slide",
+      "name": "Collection Slide",
       "settings": [
         {
           "type": "collection",
           "id": "collection",
-          "label": "Choose collection"
+          "label": "Select Collection"
         },
         {
           "type": "text",
           "id": "heading",
-          "label": "Card heading",
-          "default": "Collection"
-        },
-        {
-          "type": "url",
-          "id": "card_custom_link",
-          "label": "Side box custom link",
-          "info": "Optional: choose a page or paste a custom URL. Leave empty to use the selected collection."
+          "label": "Heading",
+          "default": "Explore Collections"
         }
       ]
     }
   ],
-  "max_blocks": 12,
   "presets": [
     {
-      "name": "Collection 3D Carousel",
+      "name": "Collection Steps Carousel",
       "blocks": [
-        { "type": "collection_slide" },
-        { "type": "collection_slide" },
-        { "type": "collection_slide" }
+        {
+          "type": "collection_slide"
+        },
+        {
+          "type": "collection_slide"
+        },
+        {
+          "type": "collection_slide"
+        }
       ]
     }
   ]
