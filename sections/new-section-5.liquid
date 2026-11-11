@@ -1,0 +1,753 @@
+{%- comment -%}
+  Clothing Rack – Animated Product Showcase
+  Complete Shopify Liquid Section
+{%- endcomment -%}
+
+{%- assign sid = section.id -%}
+
+<section id="CR-{{ sid }}" class="cr" data-section-id="{{ sid }}"
+  style="--cr-bg: {{ section.settings.bg }}; --cr-text: {{ section.settings.text }}; --cr-rail: {{ section.settings.rail_color }}; --cr-h: {{ section.settings.height }}vh;">
+
+  {%- if section.settings.heading != blank -%}
+    <h2 class="cr__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  <div class="cr__stage">
+    <div class="cr__rail-wrap" data-rail-wrap>
+      <div class="cr__rail" aria-hidden="true"></div>
+      <ul class="cr__items" data-items>
+        {%- for block in section.blocks -%}
+          {%- assign p = block.settings.product -%}
+          {%- if p != blank -%}
+            <li class="cr__item" data-index="{{ forloop.index0 }}" style="--d: {{ forloop.index0 | times: 0.09 }}s" {{ block.shopify_attributes }}>
+              <button type="button" class="cr__hit" data-open="{{ forloop.index0 }}" aria-label="{{ p.title | escape }}">
+                <span class="cr__swing">
+                  <svg class="cr__hanger" viewBox="0 0 60 34" aria-hidden="true">
+                    <path d="M30 2c-4 0-6 3-6 6 0 2 2 3 4 3" fill="none" stroke="#9a9a9a" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M30 12L4 28c-2 1-1 4 1 4h50c2 0 3-3 1-4L30 12z" fill="#7a3b22"/>
+                  </svg>
+                  {%- if p.featured_image -%}
+                    {{ p.featured_image | image_url: width: 500 | image_tag: loading: 'lazy', class: 'cr__img', widths: '240, 360, 500', sizes: '(max-width: 749px) 40vw, 14vw', alt: p.title }}
+                  {%- else -%}
+                    <span class="cr__img cr__img--ph"></span>
+                  {%- endif -%}
+                </span>
+              </button>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <div class="cr__detail" data-detail aria-hidden="true">
+      <button type="button" class="cr__close" data-close>{{ section.settings.close_label }} <span aria-hidden="true">&times;</span></button>
+
+      <button type="button" class="cr__arrow cr__arrow--prev" data-prev aria-label="Previous">&larr;</button>
+      <button type="button" class="cr__arrow cr__arrow--next" data-next aria-label="Next">&rarr;</button>
+
+      <div class="cr__hero">
+        <div class="cr__hero-swing" data-hero>
+          <svg class="cr__hanger cr__hanger--big" viewBox="0 0 60 34" aria-hidden="true">
+            <path d="M30 2c-4 0-6 3-6 6 0 2 2 3 4 3" fill="none" stroke="#9a9a9a" stroke-width="2" stroke-linecap="round"/>
+            <path d="M30 12L4 28c-2 1-1 4 1 4h50c2 0 3-3 1-4L30 12z" fill="#7a3b22"/>
+          </svg>
+          <img class="cr__hero-img" data-hero-img alt="" width="800" height="800">
+        </div>
+        <ul class="cr__tags" data-tags></ul>
+        <span class="cr__shadow" aria-hidden="true"></span>
+      </div>
+
+      <div class="cr__info">
+        <a class="cr__title" data-title href="#"></a>
+        <div class="cr__price" data-price></div>
+        <button type="button" class="cr__add" data-add>{{ section.settings.add_label }}</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/json" data-products>
+    [
+    {%- assign started = false -%}
+    {%- for block in section.blocks -%}
+      {%- assign p = block.settings.product -%}
+      {%- if p != blank -%}
+        {%- assign ci = 0 -%}
+        {%- for o in p.options -%}
+          {%- assign on = o | downcase -%}
+          {%- if on == 'color' or on == 'colour' or on == 'couleur' or on == 'रंग' -%}
+            {%- assign ci = forloop.index -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if started %},{% endif -%}
+        {%- assign started = true -%}
+        {
+          "title": {{ p.title | json }},
+          "url": {{ p.url | json }},
+          "price": {{ p.price | money | json }},
+          "image": {{ p.featured_image | image_url: width: 900 | json }},
+          "variants": [
+          {%- for v in p.variants -%}
+            {
+              "id": {{ v.id }},
+              "color": {% if ci == 1 %}{{ v.option1 | json }}{% elsif ci == 2 %}{{ v.option2 | json }}{% elsif ci == 3 %}{{ v.option3 | json }}{% else %}{{ v.title | json }}{% endif %},
+              "available": {{ v.available | json }},
+              "image": {% if v.featured_image %}{{ v.featured_image | image_url: width: 900 | json }}{% else %}{{ p.featured_image | image_url: width: 900 | json }}{% endif %}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+          ]
+        }
+      {%- endif -%}
+    {%- endfor -%}
+    ]
+  </script>
+</section>
+
+<style>
+#CR-{{ sid }}.cr {
+  background:var(--cr-bg);
+  color:var(--cr-text);
+  position:relative;
+  overflow:hidden;
+  font-family:inherit
+}
+#CR-{{ sid }} .cr__heading {
+  text-align:center;
+  margin:0;
+  padding:2.5rem 1rem 0;
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+#CR-{{ sid }} .cr__stage {
+  position:relative;
+  min-height:var(--cr-h)
+}
+
+/* RAIL */
+#CR-{{ sid }} .cr__rail-wrap {
+  position:absolute;
+  inset:0;
+  padding-top:12vh;
+  transition:transform .8s cubic-bezier(.7,0,.2,1),opacity .6s ease
+}
+#CR-{{ sid }} .cr__rail {
+  position:absolute;
+  left:4%;
+  right:4%;
+  top:calc(12vh + 14px);
+  height:6px;
+  border-radius:6px;
+  background:linear-gradient(#f4f4f4,var(--cr-rail) 55%,#777);
+  box-shadow:0 6px 10px rgba(0,0,0,.18);
+  z-index:1;
+  transform-origin:left;
+  animation:crRail 1s cubic-bezier(.2,.8,.2,1) both
+}
+#CR-{{ sid }} .cr__rail::before,
+#CR-{{ sid }} .cr__rail::after {
+  content:"";
+  position:absolute;
+  top:-4px;
+  width:3px;
+  height:14px;
+  background:#888;
+  border-radius:2px
+}
+#CR-{{ sid }} .cr__rail::before {left:-3px}
+#CR-{{ sid }} .cr__rail::after {right:-3px}
+
+#CR-{{ sid }} .cr__items {
+  list-style:none;
+  margin:0;
+  padding:0 4%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:clamp(.2rem,1.2vw,1.2rem);
+  position:relative;
+  z-index:2;
+  overflow-x:auto;
+  scrollbar-width:none
+}
+#CR-{{ sid }} .cr__items::-webkit-scrollbar {display:none}
+#CR-{{ sid }} .cr__item {
+  flex:0 0 auto;
+  width:clamp(90px,12vw,190px);
+  animation:crDrop .9s cubic-bezier(.2,1.2,.3,1) both;
+  animation-delay:var(--d)
+}
+#CR-{{ sid }} .cr__hit {
+  display:block;
+  width:100%;
+  background:none;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  color:inherit
+}
+#CR-{{ sid }} .cr__swing {
+  display:block;
+  position:relative;
+  transform-origin:50% 0;
+  transition:transform .4s ease
+}
+#CR-{{ sid }} .cr__item:hover .cr__swing {
+  animation:crSway 1.6s ease-in-out infinite
+}
+#CR-{{ sid }} .cr__hanger {
+  display:block;
+  width:34%;
+  margin:0 auto -6%;
+  position:relative;
+  z-index:2
+}
+#CR-{{ sid }} .cr__img {
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 14px 10px rgba(0,0,0,.12))
+}
+#CR-{{ sid }} .cr__img--ph {
+  aspect-ratio:3/4;
+  background:rgba(0,0,0,.06)
+}
+#CR-{{ sid }}.is-open .cr__rail-wrap {
+  transform:translateY(-110%);
+  opacity:0;
+  pointer-events:none
+}
+
+/* DETAIL */
+#CR-{{ sid }} .cr__detail {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .5s ease .25s,visibility 0s linear .8s
+}
+#CR-{{ sid }}.is-open .cr__detail {
+  opacity:1;
+  visibility:visible;
+  transition:opacity .6s ease .35s
+}
+#CR-{{ sid }} .cr__close {
+  position:absolute;
+  top:1.2rem;
+  right:1.6rem;
+  background:none;
+  border:0;
+  cursor:pointer;
+  color:inherit;
+  font:inherit;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:.4rem
+}
+#CR-{{ sid }} .cr__arrow {
+  position:absolute;
+  top:44%;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid currentColor;
+  background:none;
+  color:inherit;
+  cursor:pointer;
+  font-size:1rem;
+  line-height:1;
+  transition:transform .25s,background .25s,color .25s
+}
+#CR-{{ sid }} .cr__arrow:hover {
+  background:var(--cr-text);
+  color:var(--cr-bg);
+  transform:scale(1.1)
+}
+#CR-{{ sid }} .cr__arrow--prev {left:4%}
+#CR-{{ sid }} .cr__arrow--next {right:4%}
+
+#CR-{{ sid }} .cr__hero {
+  position:relative;
+  width:min(70vw,360px);
+  display:flex;
+  justify-content:center
+}
+#CR-{{ sid }} .cr__hero-swing {
+  position:relative;
+  width:100%;
+  transform-origin:50% 0;
+  transform:translateY(-60px) scale(.92);
+  opacity:0;
+  transition:transform .9s cubic-bezier(.2,1.3,.3,1) .35s,opacity .5s ease .35s
+}
+#CR-{{ sid }}.is-open .cr__hero-swing {
+  transform:none;
+  opacity:1;
+  animation:crSway 5s ease-in-out 1.4s infinite
+}
+#CR-{{ sid }} .cr__hanger--big {
+  width:22%;
+  margin-bottom:-3%
+}
+#CR-{{ sid }} .cr__hero-img {
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 20px 14px rgba(0,0,0,.14));
+  transition:opacity .35s ease,transform .5s ease
+}
+#CR-{{ sid }} .cr__hero-img.is-swapping {
+  opacity:0;
+  transform:translateY(6px) scale(.98)
+}
+#CR-{{ sid }} .cr__shadow {
+  position:absolute;
+  left:12%;
+  right:12%;
+  bottom:-18px;
+  height:18px;
+  background:radial-gradient(closest-side,rgba(0,0,0,.18),transparent);
+  filter:blur(4px)
+}
+
+/* COLOR TAGS */
+#CR-{{ sid }} .cr__tags {
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:absolute;
+  left:calc(100% + 8px);
+  top:16%;
+  display:flex;
+  gap:10px;
+  align-items:flex-start
+}
+#CR-{{ sid }} .cr__tag {
+  position:relative;
+  transform-origin:50% 0;
+  animation:crSway 3.4s ease-in-out infinite
+}
+#CR-{{ sid }} .cr__tag:nth-child(2) {animation-delay:-1.2s}
+#CR-{{ sid }} .cr__tag:nth-child(3) {animation-delay:-2.1s}
+#CR-{{ sid }} .cr__tag::before {
+  content:"";
+  display:block;
+  width:1px;
+  height:26px;
+  background:#666;
+  margin:0 auto
+}
+#CR-{{ sid }} .cr__tag button {
+  display:block;
+  width:24px;
+  height:38px;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  border-radius:3px 3px 4px 4px;
+  clip-path:polygon(0 18%,50% 0,100% 18%,100% 100%,0 100%);
+  background:var(--tag,#222);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+  transition:transform .25s
+}
+#CR-{{ sid }} .cr__tag button:hover {transform:scale(1.12)}
+#CR-{{ sid }} .cr__tag.is-active button {
+  transform:scale(1.2);
+  box-shadow:0 0 0 2px var(--cr-text)
+}
+#CR-{{ sid }} .cr__tag.is-off button {
+  opacity:.35;
+  cursor:not-allowed
+}
+
+/* PRODUCT INFO */
+#CR-{{ sid }} .cr__info {
+  margin-top:2.2rem;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.5rem
+}
+#CR-{{ sid }} .cr__title {
+  color:inherit;
+  text-decoration:none;
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600
+}
+#CR-{{ sid }} .cr__price {
+  font-size:.8rem;
+  opacity:.7
+}
+#CR-{{ sid }} .cr__add {
+  margin-top:.4rem;
+  min-width:110px;
+  padding:.55rem 1.4rem;
+  border-radius:999px;
+  border:0;
+  background:var(--cr-text);
+  color:var(--cr-bg);
+  font:inherit;
+  font-size:.7rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:transform .2s,opacity .2s
+}
+#CR-{{ sid }} .cr__add:hover {transform:translateY(-2px)}
+#CR-{{ sid }} .cr__add[disabled] {
+  opacity:.45;
+  cursor:not-allowed;
+  transform:none
+}
+
+/* ANIMATIONS */
+@keyframes crRail {
+  from {transform:scaleX(0)}
+  to {transform:scaleX(1)}
+}
+@keyframes crDrop {
+  0% {opacity:0;transform:translateY(-70px) rotate(-4deg)}
+  60% {opacity:1}
+  100% {opacity:1;transform:none}
+}
+@keyframes crSway {
+  0%,100% {transform:rotate(-1.6deg)}
+  50% {transform:rotate(1.6deg)}
+}
+
+@media (max-width:749px) {
+  #CR-{{ sid }} .cr__items {
+    justify-content:flex-start;
+    scroll-snap-type:x mandatory
+  }
+  #CR-{{ sid }} .cr__item {
+    width:34vw;
+    scroll-snap-align:center
+  }
+  #CR-{{ sid }} .cr__arrow--prev {left:2%}
+  #CR-{{ sid }} .cr__arrow--next {right:2%}
+  #CR-{{ sid }} .cr__hero {width:62vw}
+  #CR-{{ sid }} .cr__tags {
+    left:auto;
+    right:-4px;
+    top:30%;
+    flex-direction:column;
+    gap:2px;
+    align-items:flex-end
+  }
+  #CR-{{ sid }} .cr__tag::before {display:none}
+}
+@media (prefers-reduced-motion:reduce) {
+  #CR-{{ sid }} * {
+    animation:none!important;
+    transition-duration:.01ms!important
+  }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('CR-{{ sid }}');
+  if (!root) return;
+
+  var products = [];
+  try {
+    products = JSON.parse(root.querySelector('[data-products]').textContent);
+  } catch (e) {
+    return;
+  }
+  if (!products.length) return;
+
+  var heroImg = root.querySelector('[data-hero-img]');
+  var tagsEl  = root.querySelector('[data-tags]');
+  var titleEl = root.querySelector('[data-title]');
+  var priceEl = root.querySelector('[data-price]');
+  var addBtn  = root.querySelector('[data-add]');
+  var detail  = root.querySelector('[data-detail]');
+  var current = 0, currentVariant = null;
+  var addLabel = {{ section.settings.add_label | json }};
+
+  function colors(p) {
+    var seen = {}, out = [];
+    p.variants.forEach(function (v) {
+      if (!seen[v.color]) {
+        seen[v.color] = v;
+        out.push(v);
+      } else if (v.available && !seen[v.color].available) {
+        out[out.indexOf(seen[v.color])] = v;
+        seen[v.color] = v;
+      }
+    });
+    return out;
+  }
+
+  function swap(src) {
+    if (!src || heroImg.getAttribute('src') === src) return;
+    heroImg.classList.add('is-swapping');
+    var pre = new Image();
+    pre.onload = function () {
+      setTimeout(function () {
+        heroImg.src = src;
+        heroImg.classList.remove('is-swapping');
+      }, 180);
+    };
+    pre.src = src;
+  }
+
+  function tagColor(name) {
+    var n = (name || '').toLowerCase().trim();
+    return (window.CSS && CSS.supports('color', n)) ? n : '#222';
+  }
+
+  function render(i, first) {
+    current = (i + products.length) % products.length;
+    var p = products[current];
+    var list = colors(p);
+    currentVariant = list.filter(function (v) {
+      return v.available;
+    })[0] || list[0];
+
+    if (first) {
+      heroImg.src = currentVariant.image || p.image;
+    } else {
+      swap(currentVariant.image || p.image);
+    }
+
+    heroImg.alt = p.title;
+    titleEl.textContent = p.title;
+    titleEl.href = p.url;
+    priceEl.textContent = p.price;
+
+    tagsEl.innerHTML = '';
+
+    if (list.length > 1) {
+      list.forEach(function (v) {
+        var li = document.createElement('li');
+        li.className = 'cr__tag' +
+          (v === currentVariant ? ' is-active' : '') +
+          (v.available ? '' : ' is-off');
+
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.style.setProperty('--tag', tagColor(v.color));
+        b.title = v.color;
+        b.setAttribute('aria-label', v.color);
+
+        b.addEventListener('click', function () {
+          if (!v.available) return;
+          currentVariant = v;
+          swap(v.image || p.image);
+
+          [].forEach.call(tagsEl.children, function (c) {
+            c.classList.remove('is-active');
+          });
+
+          li.classList.add('is-active');
+          syncAdd();
+        });
+
+        li.appendChild(b);
+        tagsEl.appendChild(li);
+      });
+    }
+
+    syncAdd();
+  }
+
+  function syncAdd() {
+    addBtn.disabled = !currentVariant.available;
+    addBtn.textContent = currentVariant.available
+      ? addLabel
+      : {{ 'products.product.sold_out' | t | json }};
+  }
+
+  function open(i) {
+    render(i, true);
+    root.classList.add('is-open');
+    detail.setAttribute('aria-hidden', 'false');
+    history.replaceState(null, '', '#' +
+      encodeURIComponent(products[current].title.toLowerCase().replace(/\s+/g, '-')));
+  }
+
+  function close() {
+    root.classList.remove('is-open');
+    detail.setAttribute('aria-hidden', 'true');
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+
+  root.querySelectorAll('[data-open]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      open(parseInt(b.getAttribute('data-open'), 10));
+    });
+  });
+
+  root.querySelector('[data-close]').addEventListener('click', close);
+  root.querySelector('[data-prev]').addEventListener('click', function () {
+    render(current - 1);
+  });
+  root.querySelector('[data-next]').addEventListener('click', function () {
+    render(current + 1);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (!root.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') render(current - 1);
+    if (e.key === 'ArrowRight') render(current + 1);
+  });
+
+  // Mobile swipe
+  var sx = null;
+  detail.addEventListener('touchstart', function (e) {
+    sx = e.touches[0].clientX;
+  }, { passive:true });
+
+  detail.addEventListener('touchend', function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 50) {
+      render(current + (dx < 0 ? 1 : -1));
+    }
+    sx = null;
+  });
+
+  // AJAX ADD TO CART
+  addBtn.addEventListener('click', function () {
+    if (!currentVariant || !currentVariant.available) return;
+    addBtn.disabled = true;
+
+    fetch('{{ routes.cart_add_url }}.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        id: currentVariant.id,
+        quantity: 1
+      })
+    })
+    .then(function (r) {
+      if (!r.ok) throw 0;
+      return r.json();
+    })
+    .then(function () {
+      addBtn.textContent = '✓';
+      document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+      fetch('{{ routes.cart_url }}.js')
+        .then(function (r) { return r.json(); })
+        .then(function (c) {
+          document.querySelectorAll('.cart-count-bubble span, [data-cart-count]')
+            .forEach(function (el) {
+              el.textContent = c.item_count;
+            });
+        });
+
+      setTimeout(function () {
+        addBtn.disabled = false;
+        syncAdd();
+      }, 1400);
+    })
+    .catch(function () {
+      addBtn.disabled = false;
+      syncAdd();
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Clothing Rack",
+  "tag": "div",
+  "class": "section-clothing-rack",
+  "max_blocks": 16,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (optional)"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Section height",
+      "min": 60,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "default": 85
+    },
+    {
+      "type": "color",
+      "id": "bg",
+      "label": "Background",
+      "default": "#f4f3f0"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text / icons",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "rail_color",
+      "label": "Rail color",
+      "default": "#c9c9c9"
+    },
+    {
+      "type": "text",
+      "id": "close_label",
+      "label": "Close button text",
+      "default": "CLOSE"
+    },
+    {
+      "type": "text",
+      "id": "add_label",
+      "label": "Add button text",
+      "default": "ADD"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product on rail",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clothing Rack",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}
